@@ -54,6 +54,8 @@
         $(document).bind('deviceready', function() {
             screen.lockOrientation('portrait');
 	    StatusBar.overlaysWebView(false);
+	    StatusBar.styleLightContent();
+
             //StatusBar.hide();
         });
 
