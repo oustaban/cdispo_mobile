@@ -6,7 +6,7 @@
         id        = "com.moonlikestudio.cdispo"
         versionCode = "100"
         version   = "1.0">
-    <name>CDISPO 1.0</name>
+    <name>CDISPO</name>
 
     <description></description>
 
@@ -16,7 +16,7 @@
     
 
     <preference name="phonegap-version" value="cli-6.5.0" />
-    <preference name="orientation"      value="landscape" />
+    <preference name="orientation"      value="portrait" />
     <preference name="target-device"    value="universal" />
     <preference name="fullscreen"       value="false" />
     <preference name="stay-in-webview"  value="true" />
