@@ -58,7 +58,11 @@
 	    StatusBar.backgroundColorByName("red"); 
             //StatusBar.hide();
         });
-
+	document.addEventListener("deviceready", onDeviceReady, false);
+	function onDeviceReady() {
+		StatusBar.overlaysWebView(true);
+		StatusBar.backgroundColorByName("red");
+	}
     </script>
 
 </head>
