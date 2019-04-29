@@ -52,7 +52,6 @@
         // We should wait to phonegap, if not, we get errors like:
         // http://rickluna.com/wp/2012/04/solving-the-connection-to-the-server-was-unsuccessful-error-in-androidphonegap/
         $(document).bind('deviceready', function() {
-            MM.log('Deviceready fired');
             screen.lockOrientation('landscape');
             StatusBar.hide();
         });
