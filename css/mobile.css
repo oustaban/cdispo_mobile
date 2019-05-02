@@ -1007,10 +1007,10 @@ dt.checkbox2 {
 
 .partner-logo {
     margin: auto;
-    padding-top: 20px;
+    padding-top: 0px;
     padding-bottom: 20px;
     vertical-align: middle;
-    width: 330px;
+    width: 300px;
     position: relative;
     display: block;
     height: auto;

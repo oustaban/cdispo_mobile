@@ -40,21 +40,22 @@
     <script src="js/jquery-1.11.2.min.js"></script>
     <script src="js/jquery.touchswipe.min.js"></script>
 	<script src="js/jquery.main.js"></script>
+	
     <script language="javascript">
         // We should wait to phonegap, if not, we get errors like:
         // http://rickluna.com/wp/2012/04/solving-the-connection-to-the-server-was-unsuccessful-error-in-androidphonegap/
         $(document).bind('deviceready', function() {
             screen.lockOrientation('portrait');
-	    StatusBar.overlaysWebView(true);
-	    //StatusBar.styleBlackOpaque();
-	    StatusBar.backgroundColorByName("red"); 
+			StatusBar.overlaysWebView(true);
+			//StatusBar.styleBlackOpaque();
+			StatusBar.backgroundColorByName("red"); 
             //StatusBar.hide();
         });
-	document.addEventListener("deviceready", onDeviceReady, false);
-	function onDeviceReady() {
-		StatusBar.overlaysWebView(true);
-		StatusBar.backgroundColorByName("red");
-	}
+		document.addEventListener("deviceready", onDeviceReady, false);
+		function onDeviceReady() {
+			StatusBar.overlaysWebView(true);
+			StatusBar.backgroundColorByName("red");
+		}	
     </script>
 
 </head>
@@ -67,8 +68,7 @@
 			
 			<div class="tx-felogin-pi1">
 				<div class="tx-srfeuserregister-pi1">
-					<h4>Le compte associé à l’adresse email  n'existe pas !</h4>
-					<p>Saisissez un nouvelle adresse email.</p></div>
+					<div class="loginmessage">Entrez votre nom d'utilisateur et votre mot de passe pour vous identifier :</div>
 					
 					<!-- ###LOGIN_FORM### -->
 					<div class="container">
