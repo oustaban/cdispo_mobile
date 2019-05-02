@@ -1,6 +1,7 @@
 jQuery(function(){
 	console.log( "jquery!" );
 	initCustomForms();
+	initConnect();
 });
 
 // initialize custom form elements
@@ -20,6 +21,12 @@ function initMobileNav() {
 		menuActiveClass: 'nav-active',
 		menuOpener: '.nav-opener',
 		menuDrop: '.nav-drop'
+	});
+}
+
+function initConnect() {
+	jQuery('#connexion').click(function() {
+		jQuery("#submitlogin").click();
 	});
 }
 
