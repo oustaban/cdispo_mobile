@@ -39,6 +39,7 @@
     <script src="cordova.js"></script>
     <script src="js/jquery-1.11.2.min.js"></script>
     <script src="js/jquery.touchswipe.min.js"></script>
+	<script src="js/spin.min.js"></script>
 	<script src="js/jquery.main.js"></script>
 	
     <script language="javascript">
@@ -55,11 +56,16 @@
 		function onDeviceReady() {
 			StatusBar.overlaysWebView(true);
 			StatusBar.backgroundColorByName("red");
-		}	
+		}
+		
+		$( window ).unload(function() {
+			$('.loader2').show();
+		});
     </script>
 
 </head>
 <body>
+	<div class="loader2" id="loader2"></div>
 	<main id="main">
 		<div id="cdispo_connexion" class="boxconnection">
 			<div class="partner-logo">  

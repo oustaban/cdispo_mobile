@@ -68,14 +68,14 @@
     <gap:splash src="img/splash/android/android_hdpi_landscape.png" gap:platform="android" gap:density="hdpi" gap:qualifier="land-hdpi"/>
     <gap:splash src="img/splash/android/android_xhdpi_landscape.png" gap:platform="android" gap:density="xhdpi" gap:qualifier="land-xhdpi"/>
 
-    <gap:splash src="img/splash/ios/iphone_portrait.png" gap:platform="ios" width="320" height="480"/>
-    <gap:splash src="img/splash/ios/iphone_retina_portrait.png" gap:platform="ios" width="640" height="960"/>
-    <gap:splash src="img/splash/ios/iphone5.png" gap:platform="ios" width="640" height="1136" />
+    <gap:splash src="img/splash/ios/LaunchImage~iphone-320x480.png" gap:platform="ios" width="320" height="480"/>
+    <gap:splash src="img/splash/ios/LaunchImage~iphone_640x960.png" gap:platform="ios" width="640" height="960"/>
+    <gap:splash src="img/splash/ios/LaunchImage-568h@2x~iphone_640x1136.png" gap:platform="ios" width="640" height="1136" />
 
-    <gap:splash src="img/splash/ios/ipad_portrait.png" gap:platform="ios" width="768" height="1004"/>
-    <gap:splash src="img/splash/ios/ipad_landscape.png" gap:platform="ios" width="1024" height="748"/>
-    <gap:splash src="img/splash/ios/ipad_retina_portrait.png" gap:platform="ios" width="1536" height="2008"/>
-    <gap:splash src="img/splash/ios/ipad_retina_landscape.png" gap:platform="ios" width="2048" height="1496"/>
+    <gap:splash src="img/splash/ios/LaunchImage.png" gap:platform="ios" width="768" height="1004"/>
+    <gap:splash src="img/splash/ios/LaunchImage-Landscape~ipad_1024x748.P,NG" gap:platform="ios" width="1024" height="748"/>
+    <gap:splash src="img/splash/ios/LaunchImage-Portrait@2x~ipad_1536x2008.png" gap:platform="ios" width="1536" height="2008"/>
+    <gap:splash src="img/splash/ios/LaunchImage-Landscape@2x~ipad_2048x1496.png" gap:platform="ios" width="2048" height="1496"/>
     
     <gap:splash gap:platform="winphone" width="1100" height="720" src="img/splash/w8/winphone_xhdpi_landscape.png" />
     <gap:splash gap:platform="winphone" width="720"  height="960"  src="img/splash/w8/winphone_xhdpi_portrait.png" />
