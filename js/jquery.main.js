@@ -3,6 +3,8 @@ jQuery(function(){
 	initCustomForms();
 	initConnect();
 	loader2();
+	initPassword();
+	initChangePassword();
 });
 
 
@@ -62,14 +64,24 @@ function initConnect() {
 	jQuery('#form_seconnecter a').click(function() {
         $('.loader2').show();
 	});
-    jQuery('#sendpassword').click(function() {
-        $('.loader2').show();
-	});
     jQuery('.tx-felogin-pi1 a').click(function() {
         $('.loader2').show();
 	});
 }
 
+function initPassword() {
+	jQuery('#sendpassword').click(function() {
+		$('.loader2').show();
+		jQuery("#submitpassword").click();
+	});
+}
+
+function initChangePassword() {
+	jQuery('#changepassword').click(function() {
+		$('.loader2').show();
+		jQuery("#changepasswordsubmit").click();
+	});
+}
 /*
  * Simple Mobile Navigation
  */
