@@ -1019,7 +1019,7 @@ dt.checkbox2 {
     vertical-align: top;
 }
 .logostyle1 {
-    padding-top: 50px;
+    padding-top: 20px;
     padding-bottom: 20px;
 }
 
@@ -1043,10 +1043,10 @@ dt.checkbox2 {
     width:300px;
     height:200px;
     z-index: 9999;
-    background-image:url("../images/logoloader.png");
-    background-repeat:no-repeat;
-    background-position:50% 40%;
     display:none;
+}
 
+#cancelconnexion {
+	display:none;
 }
     

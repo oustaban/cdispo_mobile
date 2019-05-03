@@ -58,6 +58,16 @@ function initConnect() {
 		$('.loader2').show();
 		jQuery("#submitlogin").click();
 	});
+	
+	jQuery('#form_seconnecter a').click(function() {
+        $('.loader2').show();
+	});
+    jQuery('#sendpassword').click(function() {
+        $('.loader2').show();
+	});
+    jQuery('.tx-felogin-pi1 a').click(function() {
+        $('.loader2').show();
+	});
 }
 
 /*

@@ -47,15 +47,14 @@
         // http://rickluna.com/wp/2012/04/solving-the-connection-to-the-server-was-unsuccessful-error-in-androidphonegap/
         $(document).bind('deviceready', function() {
             screen.lockOrientation('portrait');
-			StatusBar.overlaysWebView(true);
-			//StatusBar.styleBlackOpaque();
-			StatusBar.backgroundColorByName("red"); 
-            //StatusBar.hide();
+			//StatusBar.overlaysWebView(true);
+			//StatusBar.backgroundColorByName("red"); 
+            StatusBar.hide();
         });
 		document.addEventListener("deviceready", onDeviceReady, false);
 		function onDeviceReady() {
-			StatusBar.overlaysWebView(true);
-			StatusBar.backgroundColorByName("red");
+			//StatusBar.overlaysWebView(true);
+			//StatusBar.backgroundColorByName("red");
 		}
 		
 		$( window ).unload(function() {
