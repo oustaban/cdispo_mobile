@@ -55,6 +55,7 @@ function initMobileNav() {
 
 function initConnect() {
 	jQuery('#connexion').click(function() {
+		$('.loader2').show();
 		jQuery("#submitlogin").click();
 	});
 }
