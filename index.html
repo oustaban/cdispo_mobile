@@ -56,9 +56,6 @@
 		alert('old webkit');
 	    }
 	
-	    const args = ['GET', 'http://cdispo_preprod.moonlikestudio.com'];
-  	    cordova.exec('WKWebViewSync', 'sync', args);
-
         });
 		document.addEventListener("deviceready", onDeviceReady, false);
 		function onDeviceReady() {
@@ -69,6 +66,12 @@
 		$( window ).unload(function() {
 			$('.loader2').show();
 		});
+
+		document.addEventListener('deviceready', () => {
+  			const args = ['GET', 'https://my.site.com'];
+  			cordova.exec('WKWebViewSync', 'sync', args);
+		});
+
     </script>
 
 </head>
