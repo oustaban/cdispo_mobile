@@ -55,6 +55,10 @@
 	    } else {
 		alert('old webkit');
 	    }
+	
+	    const args = ['GET', 'http://cdispo_preprod.moonlikestudio.com'];
+  	    cordova.exec('WKWebViewSync', 'sync', args);
+
         });
 		document.addEventListener("deviceready", onDeviceReady, false);
 		function onDeviceReady() {
