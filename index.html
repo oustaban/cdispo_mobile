@@ -50,6 +50,11 @@
 			//StatusBar.overlaysWebView(true);
 			//StatusBar.backgroundColorByName("red"); 
             StatusBar.hide();
+	    if (window.webkit) {
+	    	alert('new webkit');
+	    } else {
+		alert('old webkit');
+	    }
         });
 		document.addEventListener("deviceready", onDeviceReady, false);
 		function onDeviceReady() {
