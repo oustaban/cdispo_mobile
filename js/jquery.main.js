@@ -58,7 +58,6 @@ function initMobileNav() {
 function initConnect() {
 	jQuery('#connexion').click(function() {
 		$('.loader2').show();
-		var data = $('#form_seconnecter').serialize();
 		jQuery("#submitlogin").click();
 	});
 	
@@ -75,15 +74,7 @@ function initConnect() {
                 data = data.replace(/=/g, ":");
                 data = data.replace(/&/g, ",");
                 console.log(data);
-		cordovaHTTP.post("http://cdispo_preprod.moonlikestudio.com/mobile/connection", {user:'oustaban@gmail.com',pass:'Bastou211',logintype:'login',pid:4,redirect_url:'/accueil/',tx_felogin_pi1[noredirect]:0,permalogin:1,submit:'Adresse+email'}, {}, function(response) {
-    			console.log('success');
-    			console.log(response);
-		}, function(response) {
-    			console.log('failure');
-    			console.log(response);
-		});
-
-		const options = {
+		var const options = {
   			method: 'post',
   			data: {user:'oustaban@gmail.com',pass:'Bastou211',logintype:'login',pid:4,redirect_url:'/accueil/',tx_felogin_pi1[noredirect]:0,permalogin:1,submit:'Adresse+email'},
 		};
