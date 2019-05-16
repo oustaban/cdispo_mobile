@@ -59,9 +59,11 @@ function initConnect() {
 	jQuery('#connexion').click(function() {
 		$('.loader2').show();
 		var data = $('#form_seconnecter').serialize();
+		console.log('data:'+data);
 		data = data.replace("=", ":");
 		data = data.replace("&", ",");
 		console.log(data);
+		/*
 		const options = {
   			method: 'post',
   			data: {data},
@@ -76,7 +78,7 @@ function initConnect() {
   			//prints Permission denied
   			console.log(response.error);
 		});
-		
+		*/
 		//jQuery("#submitlogin").click();
 	});
 	
