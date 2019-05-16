@@ -81,7 +81,9 @@ function initConnect() {
                 };
                 cordova.plugin.http.sendRequest('http://cdispo_preprod.moonlikestudio.com/mobile/connection/', options, function(response) {
                         // prints 200
-                        console.log(response.status);
+                        console.log('success:'+response.status);
+			console.log(response.data);
+
                 }, function(response) {
                         // prints 403
                         console.log(response.status);
