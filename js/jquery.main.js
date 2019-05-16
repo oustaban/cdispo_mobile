@@ -58,10 +58,13 @@ function initMobileNav() {
 function initConnect() {
 	jQuery('#connexion').click(function() {
 		$('.loader2').show();
-		var data = $('#form_seconnecter').serializeArray();
+		var data = $('#form_seconnecter').serialize();
+		data = data.replace("=", ":");
+		data = data.replace("&", ",");
+		console.log(data);
 		const options = {
   			method: 'post',
-  			data: data,
+  			data: {data},
 		};
 		cordova.plugin.http.sendRequest('http://cdispo_preprod.moonlikestudio.com/mobile/connection/', options, function(response) {
   			// prints 200
