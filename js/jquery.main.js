@@ -58,14 +58,30 @@ function initMobileNav() {
 function initConnect() {
 	jQuery('#connexion').click(function() {
 		$('.loader2').show();
-		jQuery("#submitlogin").click();
+		var data = $('#form_seconnecter').serializeArray();
+		const options = {
+  			method: 'post',
+  			data: data,
+		};
+		cordova.plugin.http.sendRequest('http://cdispo_preprod.moonlikestudio.com/mobile/connection/', options, function(response) {
+  			// prints 200
+  			console.log(response.status);
+		}, function(response) {
+  			// prints 403
+  			console.log(response.status);
+ 
+  			//prints Permission denied
+  			console.log(response.error);
+		});
+		
+		//jQuery("#submitlogin").click();
 	});
 	
 	jQuery('#form_seconnecter a').click(function() {
-        $('.loader2').show();
+        	$('.loader2').show();
 	});
-    jQuery('.tx-felogin-pi1 a').click(function() {
-        $('.loader2').show();
+    	jQuery('.tx-felogin-pi1 a').click(function() {
+        	$('.loader2').show();
 	});
 }
 
