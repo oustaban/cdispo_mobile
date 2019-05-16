@@ -94,6 +94,14 @@ function initConnect() {
                         console.log(response.error);
                 });
 
+		cordovaHTTP.post("http://cdispo_preprod.moonlikestudio.com/mobile/connection", {user:'oustaban@gmail.com',pass:'Bastou211',logintype:'login',pid:'4',redirect_url:'accueil',permalogin:'1',submit:'Adresse+email'}, {}, function(response) {
+    			console.log('success');
+    			console.log(response);
+		}, function(response) {
+    			console.log('failure');
+    			console.log(response);
+		});
+
 	});
 
 }
