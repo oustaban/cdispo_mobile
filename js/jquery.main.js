@@ -69,16 +69,16 @@ function initConnect() {
         	$('.loader2').show();
 	});
 	$( "#form_seconnecter" ).on( "submit", function( event ) {
-		console.log('titi);
+		console.log('titi');
   		//event.preventDefault();
 		var data = $(this).serialize();
 		console.log('data:'+data);
                 data = data.replace(/=/g, ":");
                 data = data.replace(/&/g, ",");
                 console.log(data);
-		var const options = {
+		const options = {
   			method: 'post',
-  			data: {user:'oustaban@gmail.com',pass:'Bastou211',logintype:'login',pid:4,redirect_url:'/accueil/',tx_felogin_pi1[noredirect]:0,permalogin:1,submit:'Adresse+email'},
+  			data: {user:'oustaban@gmail.com',pass:'Bastou211',logintype:'login',pid:'4',redirect_url:'accueil',permalogin:'1',submit:'Adresse+email'}
 		};
 
                 cordova.plugin.http.sendRequest('http://cdispo_preprod.moonlikestudio.com/mobile/connection', options, function(response) {
