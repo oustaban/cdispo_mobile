@@ -81,6 +81,7 @@ function initConnect() {
   			data: {user:'oustaban@gmail.com',pass:'Bastou211',logintype:'login',pid:'4',redirect_url:'accueil',permalogin:'1',submit:'Adresse+email'}
 		};
 
+		/*
                 cordova.plugin.http.sendRequest('http://cdispo_preprod.moonlikestudio.com/mobile/connection', options, function(response) {
                         // prints 200
                         console.log('success:'+response.status);
@@ -93,6 +94,7 @@ function initConnect() {
                         //prints Permission denied
                         console.log(response.error);
                 });
+		*/
 
 		cordovaHTTP.post("http://cdispo_preprod.moonlikestudio.com/mobile/connection", {user:'oustaban@gmail.com',pass:'Bastou211',logintype:'login',pid:'4',redirect_url:'accueil',permalogin:'1',submit:'Adresse+email'}, {}, function(response) {
     			console.log('success');
