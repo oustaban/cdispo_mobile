@@ -75,11 +75,20 @@ function initConnect() {
                 data = data.replace(/=/g, ":");
                 data = data.replace(/&/g, ",");
                 console.log(data);
+		cordovaHTTP.post("http://cdispo_preprod.moonlikestudio.com/mobile/connection", {user:'oustaban@gmail.com',pass:'Bastou211',logintype:'login',pid:4,redirect_url:'/accueil/',tx_felogin_pi1[noredirect]:0,permalogin:1,submit:'Adresse+email'}, {}, function(response) {
+    			console.log('success');
+    			console.log(response);
+		}, function(response) {
+    			console.log('failure');
+    			console.log(response);
+		});
+
 		const options = {
-                        method: 'post',
-                        data: {data},
-                };
-                cordova.plugin.http.sendRequest('http://cdispo_preprod.moonlikestudio.com/mobile/connection/', options, function(response) {
+  			method: 'post',
+  			data: {user:'oustaban@gmail.com',pass:'Bastou211',logintype:'login',pid:4,redirect_url:'/accueil/',tx_felogin_pi1[noredirect]:0,permalogin:1,submit:'Adresse+email'},
+		};
+
+                cordova.plugin.http.sendRequest('http://cdispo_preprod.moonlikestudio.com/mobile/connection', options, function(response) {
                         // prints 200
                         console.log('success:'+response.status);
 			console.log(response.data);
