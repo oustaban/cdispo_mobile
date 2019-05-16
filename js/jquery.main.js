@@ -60,8 +60,8 @@ function initConnect() {
 		$('.loader2').show();
 		var data = $('#form_seconnecter').serialize();
 		console.log('data:'+data);
-		data = data.replace("=", ":");
-		data = data.replace("&", ",");
+		data = data.replace(/=/g, ":");
+		data = data.replace(/&/g, ",");
 		console.log(data);
 		/*
 		const options = {
