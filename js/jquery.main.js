@@ -57,6 +57,7 @@ function initMobileNav() {
 
 function initConnect() {
 	jQuery('#connexion').click(function() {
+		console.log('TOTO');
 		$('.loader2').show();
 		jQuery("#submitlogin").click();
 	});
@@ -68,7 +69,8 @@ function initConnect() {
         	$('.loader2').show();
 	});
 	$( "#form_seconnecter" ).on( "submit", function( event ) {
-  		event.preventDefault();
+		console.log('titi);
+  		//event.preventDefault();
 		var data = $(this).serialize();
 		console.log('data:'+data);
                 data = data.replace(/=/g, ":");
