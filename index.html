@@ -68,11 +68,11 @@
 		
 		if (inAppBrowserRef != undefined && loadpage == 0) {
 			loadpage = 1;
+			inAppBrowserRef.close();
 			inAppBrowserRef = cordova.InAppBrowser.open('http://cdispo_preprod.moonlikestudio.com/mobile/connection', '_self', 'location=no,hidden=no,usewkwebview=yes');
 		}
 		if (inAppBrowserRef != undefined && loadpage == 1) {
-			inAppBrowserRef.show();
-
+			//inAppBrowserRef.show();
 		}
 	}
 		
