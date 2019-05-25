@@ -52,7 +52,7 @@
 		//StatusBar.overlaysWebView(true);
 		//StatusBar.backgroundColorByName("red"); 
             	StatusBar.hide();
-		inAppBrowserRef = cordova.InAppBrowser.open('http://cdispo_preprod.moonlikestudio.com/mobile/connection/?tx_felogin_pi1[forgot]=1', '_blank', 'location=no,hidden=yes,usewkwebview=yes');
+		inAppBrowserRef = cordova.InAppBrowser.open('http://cdispo_preprod.moonlikestudio.com/mobile/connection/?tx_felogin_pi1[forgot]=1', '_blank', 'location=no,hidden=yes');
 		inAppBrowserRef.addEventListener('loadstop', loadStopCallback);
         });
 		document.addEventListener("deviceready", onDeviceReady, false);
@@ -65,15 +65,17 @@
 			$('.loader2').show();
 		});
 	function loadStopCallBack() {
-		
+		console.log('loadStopCallBack');	
 		if (inAppBrowserRef != undefined && loadpage == 0) {
 			loadpage = 1;
-			inAppBrowserRef.show();
+			console.log('loadpage = 0');
+			//inAppBrowserRef.show();
 			//inAppBrowserRef.close();
-			//inAppBrowserRef = cordova.InAppBrowser.open('http://cdispo_preprod.moonlikestudio.com/mobile/connection', '_self', 'location=no,hidden=no,usewkwebview=yes');
+			inAppBrowserRef = cordova.InAppBrowser.open('http://cdispo_preprod.moonlikestudio.com/mobile/connection', '_self', 'location=no,hidden=no');
 		}
 		if (inAppBrowserRef != undefined && loadpage == 1) {
-			//inAppBrowserRef.show();
+			console.log('loadpage = 1');
+			inAppBrowserRef.show();
 		}
 	}
 		
