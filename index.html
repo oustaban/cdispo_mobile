@@ -41,7 +41,8 @@
     <script src="js/jquery.touchswipe.min.js"></script>
     <script src="js/spin.min.js"></script>
     <script src="js/jquery.main.js"></script>
-	
+    <script src="js/jquery-iframe-auto-height.js"></script>
+
     <script language="javascript">
         // We should wait to phonegap, if not, we get errors like:
         // http://rickluna.com/wp/2012/04/solving-the-connection-to-the-server-was-unsuccessful-error-in-androidphonegap/
@@ -52,6 +53,7 @@
 		//StatusBar.overlaysWebView(true);
 		//StatusBar.backgroundColorByName("red"); 
             	StatusBar.hide();
+		$('iframe#iframe').iframeAutoHeight({minHeight: 400});
 		//inAppBrowserRef = cordova.InAppBrowser.open('http://cdispo_preprod.moonlikestudio.com/mobile/connection/?tx_felogin_pi1[forgot]=1', '_self', 'location=no,hidden=yes');
 		//inAppBrowserRef.addEventListener('loadstop', loadStopCallback);
         });
@@ -84,7 +86,7 @@
 </head>
 <body>
 	<div class="loader2" id="loader2"></div>
-	<iframe src="http://cdispo_preprod.moonlikestudio.com/mobile/connection" scrolling="no" frameborder="0" style="height: 100%; width: 100%"></iframe>
+	<iframe id="iframe" src="http://cdispo_preprod.moonlikestudio.com/mobile/connection" scrolling="no" frameborder="0" style="height: 100%; width: 100%"></iframe>
 	<main id="main">
 		<div id="cdispo_connexion" class="boxconnection">
 			<div class="partner-logo">  
