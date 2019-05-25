@@ -61,7 +61,6 @@
 		 inAppBrowserRef = cordova.InAppBrowser.open('http://cdispo_preprod.moonlikestudio.com/mobile/connection/?tx_felogin_pi1[forgot]=1', '_blank', 'location=no,hidden=yes');
 		 inAppBrowserRef.addEventListener('loadstop', loadStopCallBack);
 	}
-
 	function loadStopCallBack() {
 		console.log('loadStopCallBack');	
 		if (inAppBrowserRef != undefined && loadpage == 0) {
