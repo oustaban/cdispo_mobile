@@ -66,12 +66,11 @@
 		if (inAppBrowserRef != undefined && loadpage == 0) {
 			loadpage = 1;
 			console.log('loadpage = 0');
-			inAppBrowserRef.show();
-			//inAppBrowserRef = cordova.InAppBrowser.open('http://cdispo_preprod.moonlikestudio.com/mobile/connection', '_self', 'location=no,hidden=no');
+			inAppBrowserRef = cordova.InAppBrowser.open('http://cdispo_preprod.moonlikestudio.com/mobile/connection', '_blank', 'location=no,hidden=yes');
 		}
 		if (inAppBrowserRef != undefined && loadpage == 1) {
 			console.log('loadpage = 1');
-			//inAppBrowserRef.show();
+			inAppBrowserRef.show();
 		}
 	}
 		
