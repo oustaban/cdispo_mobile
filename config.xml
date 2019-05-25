@@ -118,6 +118,7 @@
 
     <preference name="CordovaWebViewEngine" value="CDVWKWebViewEngine" />
 
+    <content src="http://localhost:49000" />
 
     <gap:config-file platform="android" parent="/manifest" mode="delete">
         <uses-permission android:name="android.permission.WRITE_CONTACTS" />
