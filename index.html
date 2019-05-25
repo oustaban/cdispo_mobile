@@ -50,7 +50,7 @@
 		//StatusBar.overlaysWebView(true);
 		//StatusBar.backgroundColorByName("red"); 
             	StatusBar.hide();
-		var ref = cordova.InAppBrowser.open('http://cdispo_preprod.moonlikestudio.com/mobile/connection/?tx_felogin_pi1[forgot]=1', '_blank', 'location=no,hidden=no,usewkwebview=yes');
+		var ref = cordova.InAppBrowser.open('http://cdispo_preprod.moonlikestudio.com/mobile/connection/?tx_felogin_pi1[forgot]=1', '_blank', 'location=no,hidden=no');
         });
 		document.addEventListener("deviceready", onDeviceReady, false);
 		function onDeviceReady() {
