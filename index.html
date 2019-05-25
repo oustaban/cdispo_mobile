@@ -41,7 +41,6 @@
     <script src="js/jquery.touchswipe.min.js"></script>
     <script src="js/spin.min.js"></script>
     <script src="js/jquery.main.js"></script>
-    <script src="js/jquery-iframe-auto-height.js"></script>
 
     <script language="javascript">
         // We should wait to phonegap, if not, we get errors like:
@@ -53,27 +52,23 @@
 		//StatusBar.overlaysWebView(true);
 		//StatusBar.backgroundColorByName("red"); 
             	StatusBar.hide();
-		$('iframe#iframe').iframeAutoHeight({minHeight: 400});
-		//inAppBrowserRef = cordova.InAppBrowser.open('http://cdispo_preprod.moonlikestudio.com/mobile/connection/?tx_felogin_pi1[forgot]=1', '_self', 'location=no,hidden=yes');
-		//inAppBrowserRef.addEventListener('loadstop', loadStopCallback);
+		openBrowser();
         });
-		document.addEventListener("deviceready", onDeviceReady, false);
-		function onDeviceReady() {
-			//StatusBar.overlaysWebView(true);
-			//StatusBar.backgroundColorByName("red");
-		}
-		
-		$( window ).unload(function() {
-			$('.loader2').show();
-		});
+	$( window ).unload(function() {
+		$('.loader2').show();
+	});
+	function openBrowser() {
+		 inAppBrowserRef = cordova.InAppBrowser.open('http://cdispo_preprod.moonlikestudio.com/mobile/connection/?tx_felogin_pi1[forgot]=1', '_blank', 'location=no,hidden=yes');
+		 inAppBrowserRef.addEventListener('loadstop', loadStopCallBack);
+	}
+
 	function loadStopCallBack() {
 		console.log('loadStopCallBack');	
 		if (inAppBrowserRef != undefined && loadpage == 0) {
 			loadpage = 1;
 			console.log('loadpage = 0');
-			//inAppBrowserRef.show();
-			//inAppBrowserRef.close();
-			inAppBrowserRef = cordova.InAppBrowser.open('http://cdispo_preprod.moonlikestudio.com/mobile/connection', '_self', 'location=no,hidden=no');
+			inAppBrowserRef.show();
+			//inAppBrowserRef = cordova.InAppBrowser.open('http://cdispo_preprod.moonlikestudio.com/mobile/connection', '_self', 'location=no,hidden=no');
 		}
 		if (inAppBrowserRef != undefined && loadpage == 1) {
 			console.log('loadpage = 1');
@@ -86,7 +81,6 @@
 </head>
 <body>
 	<div class="loader2" id="loader2"></div>
-	<iframe id="iframe" src="http://cdispo_preprod.moonlikestudio.com/mobile/connection" scrolling="no" frameborder="0" style="height: 100%; width: 100%"></iframe>
 	<main id="main">
 		<div id="cdispo_connexion" class="boxconnection">
 			<div class="partner-logo">  
