@@ -53,6 +53,7 @@
 		//StatusBar.backgroundColorByName("red"); 
             	StatusBar.hide();
 		openBrowser();
+		clickSubmit();
         });
 	$( window ).unload(function() {
 		$('.loader2').show();
@@ -74,7 +75,22 @@
 			//inAppBrowserRef.show();
 		}
 	}
-		
+	function clickSubmit() {
+		$('#form_seconnecter').submit(function() {
+			var form = document.querySelector('form')
+			console.log(form);
+
+			cordovaFetch('http://cdispo_preprod.moonlikestudio.com/mobile/connection', {
+  				method: 'POST',
+  				body: new FormData(form)
+			}).then(function(response) {
+  				console.log(res.headers['Set-Cookie']);
+			});
+
+			return false;
+
+		});
+	}
     </script>
 
 </head>
@@ -102,8 +118,8 @@
 							<div class="felogin-hidden">
 								<input type="hidden" name="logintype" value="login" />
 								<input type="hidden" name="pid" value="4" />
-								<input type="hidden" name="redirect_url" value="" />
-								<input type="hidden" name="tx_felogin_pi1[noredirect]" value="0" />	
+								<input type="hidden" name="redirect_url" value="/accueil" />
+								<input type="hidden" name="tx_felogin_pi1[noredirect]" value="0" />
 							</div>
 							
 							<div class="col">
