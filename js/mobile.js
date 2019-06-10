@@ -101,15 +101,15 @@ function initMobileConnect() {
 				if (result[0]) {
                     var cookieName = result[1].ses_name;
 					var cookieValue = result[1].ses_id;
-					/*
-					cookieMaster.setCookieValue('http://'+result.domainsite, cookieName, cookieValue,
+					
+					cookieMaster.setCookieValue('http://'+result[1].domainsite, cookieName, cookieValue,
 						function() {
 							console.log('A cookie has been set');
 						},
 						function(error) {
 							console.log('Error setting cookie: '+error);
 						}
-					);*/
+					);
 					console.log(result[1].domainsite+':'+cookieName+':'+cookieValue);
 					//var myDate = new Date();
 					//myDate.setMonth(myDate.getMonth() + 12);
