@@ -105,7 +105,14 @@ function initMobileConnect() {
 					cookieMaster.setCookieValue('http://'+result[1].domainsite, cookieName, cookieValue,
 						function() {
 							console.log('A cookie has been set');
-							var inAppBrowserRef = cordova.InAppBrowser.open('/main.html', '_self');
+							if (navigator.userAgent.indexOf('Android') > -1) {
+								// Android
+								cordova.InAppBrowser.open('file:///android_asset/www/index.html', '_self');
+							} else {
+								// IOS
+								cordova.InAppBrowser.open('cdvfile://localhost/bundle/www/index.html', '_self');
+							}
+							//var inAppBrowserRef = cordova.InAppBrowser.open('/main.html', '_self');
 						},
 						function(error) {
 							console.log('Error setting cookie: '+error);
