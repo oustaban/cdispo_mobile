@@ -105,13 +105,10 @@ function initMobileConnect() {
 					cookieMaster.setCookieValue('http://'+result[1].domainsite, cookieName, cookieValue,
 						function() {
 							console.log('A cookie has been set');
-							if (navigator.userAgent.indexOf('Android') > -1) {
-								// Android
-								cordova.InAppBrowser.open('file:///android_asset/www/index.html', '_self');
-							} else {
-								// IOS
-								cordova.InAppBrowser.open('cdvfile://localhost/bundle/www/index.html', '_self');
-							}
+							var url = window.location.href;
+							url = url.substring(0, url.lastIndexOf("/") + 1);
+							cordova.InAppBrowser.open(url+'main.html', '_self');
+							
 							//var inAppBrowserRef = cordova.InAppBrowser.open('/main.html', '_self');
 						},
 						function(error) {
