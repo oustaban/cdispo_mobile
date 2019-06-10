@@ -40,57 +40,57 @@
     <script src="js/jquery-1.11.2.min.js"></script>
     <script src="js/jquery.touchswipe.min.js"></script>
     <script src="js/spin.min.js"></script>
-    <script src="js/jquery.main.js"></script>
+    <script src="js/mobile.js"></script>
 
     <script language="javascript">
         // We should wait to phonegap, if not, we get errors like:
         // http://rickluna.com/wp/2012/04/solving-the-connection-to-the-server-was-unsuccessful-error-in-androidphonegap/
         var inAppBrowserRef;
-	var loadpage = 0;
-	$(document).bind('deviceready', function() {
-            	screen.lockOrientation('portrait');
-		//StatusBar.overlaysWebView(true);
-		//StatusBar.backgroundColorByName("red"); 
-            	StatusBar.hide();
-		openBrowser();
-		//clickSubmit();
+		var loadpage = 0;
+		$(document).bind('deviceready', function() {
+            screen.lockOrientation('portrait');
+			//StatusBar.overlaysWebView(true);
+			//StatusBar.backgroundColorByName("red"); 
+            StatusBar.hide();
+			//openBrowser();
+			//clickSubmit();
         });
-	$( window ).unload(function() {
-		$('.loader2').show();
-	});
-	function openBrowser() {
-		 inAppBrowserRef = cordova.InAppBrowser.open('http://cdispo_preprod.moonlikestudio.com/mobile/connection/?tx_felogin_pi1[forgot]=1', '_blank', 'location=no,hidden=yes,footer=no,zoom=no,usewkwebview=yes,toolbar=no,fullscreen=yes,disallowoverscroll=yes');
-		 inAppBrowserRef.addEventListener('loadstop', loadStopCallBack);
-	}
-	function loadStopCallBack() {
-		console.log('loadStopCallBack');	
-		if (inAppBrowserRef != undefined && loadpage == 0) {
-			loadpage = 1;
-			console.log('loadpage = 0');
-			//inAppBrowserRef.show();
-			inAppBrowserRef = cordova.InAppBrowser.open('http://cdispo_preprod.moonlikestudio.com/mobile/connection', '_blank', 'location=no,hidden=yes,footer=no,zoom=no,usewkwebview=yes,toolbar=no,fullscreen=yes,disallowoverscroll=yes');
-		}
-		if (inAppBrowserRef != undefined && loadpage == 1) {
-			console.log('loadpage = 1');
-			inAppBrowserRef.show();
-		}
-	}
-	function clickSubmit() {
-		$('#form_seconnecter').submit(function() {
-			var form = document.querySelector('form')
-			console.log(form);
-
-			cordovaFetch('http://cdispo_preprod.moonlikestudio.com/mobile/connection', {
-  				method: 'POST',
-  				body: new FormData(form)
-			}).then(function(response) {
-  				console.log(res.headers['Set-Cookie']);
-			});
-
-			return false;
-
+		$( window ).unload(function() {
+			$('.loader2').show();
 		});
-	}
+		function openBrowser() {
+			 inAppBrowserRef = cordova.InAppBrowser.open('http://cdispo_preprod.moonlikestudio.com/mobile/connection/?tx_felogin_pi1[forgot]=1', '_blank', 'location=no,hidden=yes,footer=no,zoom=no,usewkwebview=yes,toolbar=no,fullscreen=yes,disallowoverscroll=yes');
+			 inAppBrowserRef.addEventListener('loadstop', loadStopCallBack);
+		}
+		function loadStopCallBack() {
+			console.log('loadStopCallBack');	
+			if (inAppBrowserRef != undefined && loadpage == 0) {
+				loadpage = 1;
+				console.log('loadpage = 0');
+				//inAppBrowserRef.show();
+				inAppBrowserRef = cordova.InAppBrowser.open('http://cdispo_preprod.moonlikestudio.com/mobile/connection', '_blank', 'location=no,hidden=yes,footer=no,zoom=no,usewkwebview=yes,toolbar=no,fullscreen=yes,disallowoverscroll=yes');
+			}
+			if (inAppBrowserRef != undefined && loadpage == 1) {
+				console.log('loadpage = 1');
+				inAppBrowserRef.show();
+			}
+		}
+		function clickSubmit() {
+			$('#form_seconnecter').submit(function() {
+				var form = document.querySelector('form')
+				console.log(form);
+
+				cordovaFetch('http://cdispo_preprod.moonlikestudio.com/mobile/connection', {
+					method: 'POST',
+					body: new FormData(form)
+				}).then(function(response) {
+					console.log(res.headers['Set-Cookie']);
+				});
+
+				return false;
+
+			});
+		}
     </script>
 
 </head>
@@ -104,6 +104,9 @@
 			
 			<div class="tx-felogin-pi1">
 				<div class="tx-srfeuserregister-pi1">
+					
+					<div class="loginmessage" id="messageerror" style="display:none"></div>
+					
 					<div class="loginmessage">Entrez votre nom d'utilisateur et votre mot de passe pour vous identifier : toto</div>
 					
 					<div class="container">
@@ -114,12 +117,6 @@
 							</div>
 							<div class="colfull">
 								<input type="password" id="pass" name="pass" placeholder="Mot de passe" value="" data-rsa-encryption="" />
-							</div>
-							<div class="felogin-hidden">
-								<input type="hidden" name="logintype" value="login" />
-								<input type="hidden" name="pid" value="4" />
-								<input type="hidden" name="redirect_url" value="/accueil" />
-								<input type="hidden" name="tx_felogin_pi1[noredirect]" value="0" />
 							</div>
 							
 							<div class="col">
@@ -144,7 +141,7 @@
 						</form>
 						
 						<div class="button-wrapp">
-							<a href="javascript:void(0)" class="button green-button" id="connexion">Se connecter</a>
+							<a href="javascript:void(0)" class="button green-button" id="mobileconnexion">Se connecter</a>
 						</div>
 						
 					</div>
