@@ -101,6 +101,7 @@ function initMobileConnect() {
 				if (result[0]) {
                     var cookieName = result.ses_name;
 					var cookieValue = result.ses_id;
+					/*
 					cookieMaster.setCookieValue('http://'+result.domainsite, cookieName, cookieValue,
 						function() {
 							console.log('A cookie has been set');
@@ -108,11 +109,12 @@ function initMobileConnect() {
 						function(error) {
 							console.log('Error setting cookie: '+error);
 						}
-					);
+					);*/
+					console.log(result.domainsite+':'+cookieName+':'+cookieValue);
 					//var myDate = new Date();
 					//myDate.setMonth(myDate.getMonth() + 12);
 					//document.cookie = cookieName +"=" + cookieValue + ";expires=" + myDate + ";domain="+result.domainsite+";path=/";
-					window.location.href = "/index.html";
+					//window.location.href = "/index.html";
                 } else {
 					$('#messageerror').show();
 					$('#messageerror').html(result[1]);
