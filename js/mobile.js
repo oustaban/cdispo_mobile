@@ -105,7 +105,7 @@ function initMobileConnect() {
 					cookieMaster.setCookieValue('http://'+result[1].domainsite, cookieName, cookieValue,
 						function() {
 							console.log('A cookie has been set');
-							var inAppBrowserRef = cordova.InAppBrowser.open('main.html', '_self');
+							var inAppBrowserRef = cordova.InAppBrowser.open('/main.html', '_self');
 						},
 						function(error) {
 							console.log('Error setting cookie: '+error);
