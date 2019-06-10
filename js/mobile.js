@@ -111,6 +111,7 @@ function initMobileConnect() {
 						}
 					);
 					console.log(result[1].domainsite+':'+cookieName+':'+cookieValue);
+					window.location = "/main.html"
 					//var myDate = new Date();
 					//myDate.setMonth(myDate.getMonth() + 12);
 					//document.cookie = cookieName +"=" + cookieValue + ";expires=" + myDate + ";domain="+result.domainsite+";path=/";
