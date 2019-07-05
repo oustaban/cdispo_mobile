@@ -1,6 +1,5 @@
-Query(function(){
+jQuery(function(){
 	console.log( "jquery!" );
-	initCustomForms();
 	initConnect();
 	initMobileConnect();
 	loader2();
@@ -35,15 +34,6 @@ function loader2() {
 	  var loading = $("#loader2");
 	  var content = $("#main");
 
-}
-// initialize custom form elements
-function initCustomForms() {
-	jcf.setOptions('Select', {
-		wrapNative: false,
-		wrapNativeOnMobile: false,
-		maxVisibleItems: 5
-	});
-	jcf.replaceAll();
 }
 
 // mobile menu init
