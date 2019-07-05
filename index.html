@@ -92,63 +92,70 @@
 			});
 		}
     </script>
-
 </head>
-<body>
+
+<body class="connection-page">
+	
 	<div class="loader2" id="loader2"></div>
-	<main id="main">
-		<div id="cdispo_connexion" class="boxconnection">
-			<div class="partner-logo">  
-				<img class="logostyle1" src="images/logocdispo2.png" alt="CDispo solution de partage">
-			</div>
-			
-			<div class="tx-felogin-pi1">
-				<div class="tx-srfeuserregister-pi1">
-					
-					<div class="loginmessage" id="messageerror" style="display:none"></div>
-					
-					<div class="loginmessage">Entrez votre nom d'utilisateur et votre mot de passe pour vous identifier : toto</div>
-					
-					<div class="container">
-						<form action="http://cdispo_preprod.moonlikestudio.com/mobile/connection/" class="data-form" target="_top" method="post" id="form_seconnecter">
-
-							<div class="colfull">
-								<input type="text" id="user" name="user" value="" placeholder="Adresse email" />
-							</div>
-							<div class="colfull">
-								<input type="password" id="pass" name="pass" placeholder="Mot de passe" value="" data-rsa-encryption="" />
-							</div>
-							
-							<div class="col">
-								<dt class="checkboxi">
-									<label for="permalogin">Rester connecté :
-										<input name="permalogin" value="0" type="hidden" disabled="disabled" id="permaloginHiddenField" />
-										<input name="permalogin" value="1" type="checkbox" checked="checked" id="permalogin"  onclick="document.getElementById('permaloginHiddenField').disabled = this.checked;" />
-									</label>
-								</dt>
-							</div>
-								
-							<div class="col">
-								<dt class="checkboxi">
-									<a href="http://cdispo_preprod.moonlikestudio.com/mobile/connection/?tx_felogin_pi1%5Bforgot%5D=1" rel="nofollow">Mot de passe oublié/expiré ?</a>
-								</dt>
-							</div>
-								
-							<div class="colfull">
-								<input class="hiddensubmit" id="submitlogin" type="submit" name="submit" value="Adresse email" />
-							</div>
-						
-						</form>
-						
-						<div class="button-wrapp">
-							<a href="javascript:void(0)" class="button green-button" id="mobileconnexion">Se connecter</a>
-						</div>
-						
+	
+	<!-- main container of all the page elements -->
+	<div id="wrapper">
+		<!-- header of the page -->
+		<header id="header">
+			<div class="container">
+				<nav id="nav">
+					<div class="user-icon">
+						<img src="images/user-pic.png" srcset="images/user-pic-2x.png 2x" alt="image description">
 					</div>
-
-				</div>
+					<span class="active-position">MES RESERVATIONS</span>
+					<a href="#" class="nav-opener"><span>Menu</span></a>
+					<!-- main navigation of the page -->
+					<ul class="menu">
+						<li class="active"><a href="#">MES RESERVATIONS</a></li>
+						<li><a href="#">MES INVITATIONS</a></li>
+						<li><a href="#">MES PARTAGES</a></li>
+						<li><a href="#">LES RESERVATIONS A CONFIRMER</a></li>
+					</ul>
+				</nav>
 			</div>
-		</div>
-	</main>
+		</header>
+		<!-- contain main informative part of the site -->
+		<main id="main">
+			<!-- page logo -->
+			<div class="logo-holder">
+				<strong class="logo">
+					<a href="#">
+						<img src="images/logo.png" width="412" alt="DISPO">
+					</a>
+				</strong>
+			</div>
+			<!-- contain the main content of the page -->
+			<div class="container">
+				<div class="loginmessage" id="messageerror" style="display:none"></div>
+				<form action="" class="connection-form" target="_top" method="post" id="form_seconnecter">
+					<label class="input-holder">
+						<i class="icon-mail-closed"></i>
+						<input type="text" id="user" name="user" value="" placeholder="Adresse email" />
+					</label>
+					<label class="input-holder">
+						<i class="icon-lock-rounded"></i>
+						<input type="password" id="pass" name="pass" placeholder="Mot de passe" value="" data-rsa-encryption="" />
+					</label>
+					<label class="checkbox-holder">
+						<input name="permalogin" value="0" type="hidden" disabled="disabled" id="permaloginHiddenField" />
+						<input name="permalogin" value="1" type="checkbox" checked="checked" id="permalogin"  onclick="document.getElementById('permaloginHiddenField').disabled = this.checked;" />
+						<span class="fake-label">Rester connecté</span>
+						<span class="fake-input"></span>
+					</label>
+					<a rel="nofollow" href="http://cdispo_preprod.moonlikestudio.com/mobile/connection/?tx_felogin_pi1%5Bforgot%5D=1" class="link">Mot de passe oublié/expiré?</a>
+					<div class="btn-bottom-holder">
+						<input class="hiddensubmit" id="submitlogin" type="submit" name="submit" value="Adresse email" />
+						<a href="javascript:void(0)" class="btn" id="mobileconnexion">Se connecter</a>
+					</div>
+				</form>
+			</div>
+		</main>
+	</div>
+	
 </body>
 </html>
