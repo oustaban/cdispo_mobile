@@ -1154,7 +1154,7 @@ select:focus {
 }
 
 .connection-page #main {
-	min-height: calc(100vh - 53px);
+	min-height: calc(100vh - 84px);
 }
 
 .connection-page #main:before {
