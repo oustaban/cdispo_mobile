@@ -1,8 +1,8 @@
 function getBooking() {
         
     $('.loader2').show();    
-    var L = $("#sysLanguageUid").val();
-    var url = "/?type=476&tx_cdispofrontend_fcdispofrontend[controller]=Mobile&tx_cdispofrontend_fcdispofrontend[action]=getBooking&tx_cdispofrontend_fcdispofrontend[uid]=1&L="+L
+    var L = 0;
+    var url = "http://cdispo_preprod.moonlikestudio.com/?type=476&tx_cdispofrontend_fcdispofrontend[controller]=Mobile&tx_cdispofrontend_fcdispofrontend[action]=getBooking&tx_cdispofrontend_fcdispofrontend[uid]=1&L="+L
     $.ajax({
           type: 'POST',
           url:url,
