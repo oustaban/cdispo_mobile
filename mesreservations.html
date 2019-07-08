@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Security-Policy" content="img-src 'self' data:;default-src * gap://ready; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
+    <title>CDispo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="format-detection" content="date=no">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="css/mobile.css">
+    <script language="javascript">
+
+        // We use this code for handling unexpected errors.
+        // Using alert, we are sure that the user get notified in a Mobile device.
+        // We add this code at the begining of the index.html and we use only native javascript functions.
+        window.onerror = function(msg, url, lineNumber) {
+            if (typeof(msg) === "string") {
+                var error = msg + "\n\nFile: " + url + "\nLine: " + lineNumber;
+                // Ommit cordova and 3rd party libs errors.
+                if (url.indexOf("cordova") == -1 && url.indexOf("js") == -1 &&
+                        url.indexOf("org.apache.cordova") == -1) {
+                    window.alert(error);
+                }
+            } else {
+                var error = msg;
+            }
+
+            // This may help debugging if we use logging apps in iOs or Android.
+            if(typeof(console) !== "undefined" && typeof(console.log) === "function") {
+                console.log(error);
+            }
+
+            // Let default error handler run.
+            return false;
+        };
+
+    </script>
+    <script src="cordova.js"></script>
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/jquery.touchswipe.min.js"></script>
+    <script src="js/spin.min.js"></script>
+    <script src="js/mobile.js"></script>
+	<script src="js/ajaxmobiledispatcher.js"></script>
+</head>
+
+<body>
+	
+	<div class="loader2" id="loader2"></div>
+	
+	<!-- main container of all the page elements -->
+	<div id="wrapper">
+		<!-- header of the page -->
+		<header id="header">
+			<div class="container">
+				<nav id="nav">
+					<div class="user-icon">
+						<img src="/typo3conf/ext/cdispo_frontend/Resources/Public/mobile/images/user-pic.png" srcset="/typo3conf/ext/cdispo_frontend/Resources/Public/mobile/images/user-pic-2x.png 2x" alt="image description">
+					</div>
+					<span class="active-position">MES RESERVATIONS</span>
+					<a href="#" class="nav-opener"><span>Menu</span></a>
+					<!-- main navigation of the page -->
+					<ul class="menu">
+						<li class="active"><a href="#">MES RESERVATIONS</a></li>
+						<li><a href="#">MES INVITATIONS</a></li>
+						<li><a href="#">MES PARTAGES</a></li>
+						<li><a href="#">LES RESERVATIONS A CONFIRMER</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+		<!-- contain main informative part of the site -->
+		<main id="main">
+			<!-- page logo -->
+			<div class="logo-holder">
+				<strong class="logo">
+					<a href="#">
+						<img src="/typo3conf/ext/cdispo_frontend/Resources/Public/mobile/images/logo.png" width="412" alt="DISPO">
+					</a>
+				</strong>
+			</div>
+			<!-- contain the main content of the page -->
+			<div class="container main-holder">
+				<div class="main-slider">
+					
+				</div>
+			</div>
+			<div class="btn-bottom-holder">
+				<a href="#" class="btn">Scanner</a>
+				<a href="#" class="btn">Reserver</a>
+			</div>
+		</main>
+	</div>
+    
+    <script>
+        $(document).ready(function() {
+           getBooking(); 
+        });
+    </script>
+	
+</body>
+</html>
