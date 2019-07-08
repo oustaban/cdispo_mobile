@@ -1473,6 +1473,37 @@ select:focus {
 	flex-direction: column;
 }
 
+.bg3 {
+	background-color:rgba(255,0,0,1);
+	color:white;
+	font-weight:bold;
+}
+
+.bg0 {
+	background-color:rgba(26,240,132,1);
+	color:white;
+	font-weight:bold;
+}
+
+.bg1 {
+	background-color:rgba(255,255,107,1);
+	color:white;
+	font-weight:bold;
+}
+
+.bg2 {
+	background-color:rgba(107,159,255,1);
+	color:white;
+	font-weight:bold;
+}
+
+.bg4 {
+	background-color:rgba(0,0,0,1);
+	color:white;
+	font-weight:bold;
+}
+
+
 .main-slider .reserved-time {
 	padding-left: 25px;
 	position: relative;
@@ -1497,6 +1528,7 @@ select:focus {
 	display: block;
 	font-size: 12px;
 	margin: 0 0 11px;
+	text-transform: uppercase;
 }
 
 .main-slider .status {
@@ -1537,19 +1569,22 @@ select:focus {
 	margin: 0 0 15px;
 }
 
-.main-slider .time:before {
-	content: ":";
-	position: absolute;
-	top: 50%;
-	left: 46%;
-	-webkit-transform: translate(-50%, -50%);
-	-ms-transform: translate(-50%, -50%);
-	transform: translate(-50%, -50%);
+
+
+
+.main-slider .time .hours {
+	padding: 0 0px;
+	float:left;
+	width:100%;
+	text-align:center;
 }
 
-.main-slider .time .minutes,
-.main-slider .time .hours {
+.main-slider .time .minutes {
 	padding: 0 11px;
+	float:left;
+	width:50%;
+	text-align:left;
+	padding-left:10px;
 }
 
 .main-slider .time-desc {
@@ -1557,8 +1592,19 @@ select:focus {
 	font-size: 12px;
 }
 
-.main-slider .time-desc .description {
+.main-slider .time-desc .descriptionleft {
 	padding: 0 24px;
+	float:left;
+	width:100%;
+	text-align:center;
+}
+
+.main-slider .time-desc .descriptionright {
+	padding: 0 24px;
+	float:left;
+	width:50%;
+	text-align:left;
+	padding-left:10px;
 }
 
 .main-slider .organizator-info {
@@ -1839,7 +1885,6 @@ select:focus {
 	font-size:12px;
 	top:-50px;
 	position:absolute;
-	
 }
 
 .loginmessage h4 {

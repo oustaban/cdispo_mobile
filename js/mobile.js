@@ -98,7 +98,7 @@ function initMobileConnect() {
 							console.log('A cookie has been set');
 							var url = window.location.href;
 							url = url.substring(0, url.lastIndexOf("/") + 1);
-							cordova.InAppBrowser.open(url+'main.html', '_self');
+							cordova.InAppBrowser.open(url+'mesreservations.html', '_self');
 							
 							//var inAppBrowserRef = cordova.InAppBrowser.open('/main.html', '_self');
 						},
