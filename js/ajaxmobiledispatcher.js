@@ -6,10 +6,9 @@ function getBooking(cookievalue) {
     $.ajax({
           type: 'POST',
           url:url,
+          data: {fe_typo_user:cookievalue},
           dataType: "json",
-          xhrFields: {
-            withCredentials: true
-          },
+          
     
           success: function(result) {
                 
