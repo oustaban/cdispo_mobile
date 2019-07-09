@@ -34,7 +34,7 @@ function getBooking(cookievalue) {
       });
     */
     $.ajax({
-            type: 'POST',
+            type: 'GET',
             url:url,
             dataType: 'json',
             contentType: 'application/json',
