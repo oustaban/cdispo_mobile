@@ -7,6 +7,9 @@ function getBooking(cookievalue) {
           type: 'POST',
           url:url,
           dataType: "json",
+          xhrFields: {
+            withCredentials: true
+          },
     
           success: function(result) {
                 
