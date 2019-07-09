@@ -34,6 +34,8 @@
             // Let default error handler run.
             return false;
         };
+		
+		
 
     </script>
     <script src="cordova.js"></script>
@@ -94,6 +96,14 @@
     
     <script>
         $(document).ready(function() {
+		   cookieMaster.getCookieValue('http://cdispo_preprod.moonlikestudio.com', 'fe_typo_user', function(data) {
+			console.log(data.cookieValue);
+		   }, function(error) {
+			if (error) {
+			  console.log('error: ' + error);
+			}
+		  });
+		   
            getBooking(); 
         });
     </script>

@@ -75,10 +75,6 @@ function initMobileConnect() {
 		$.ajax({
 			  type: 'POST',
 			  url:url,
-			  xhrFields: {
-					withCredentials: true
-			  },
-			  crossDomain: true,
 			  data: {login:login,password:password},
 			  dataType: "json",
 		
