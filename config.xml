@@ -109,6 +109,8 @@
     </gap:config-file>
 
     <allow-navigation href="*" />
+    <access origin="*" />
+
     <!-- See MOBILE-892 -->
     <preference name="permissions" value="none"/>
 
