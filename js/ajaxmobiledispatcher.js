@@ -43,7 +43,11 @@ function getBooking(cookievalue) {
             type: 'GET',
             url:url,
             dataType: 'json',
-            data:{cookie:cookievalue},
+            contentType: 'application/json',
+            xhrFields: {
+                withCredentials: true
+            },
+            crossDomain: true,
             success: function(result, status, jqXHR) {
 
                 console.log("result is " + result);
