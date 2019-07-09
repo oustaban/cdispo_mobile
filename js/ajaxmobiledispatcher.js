@@ -14,7 +14,10 @@ function getBooking(cookievalue) {
       cordova.plugin.http.sendRequest(url, options, function(response) {
         // prints 200
         console.log(response.status);
-        if (response.result) {
+        console.log(response.data);
+        console.log(response.url);
+        console.log(response.header);
+        if (response.data.result) {
             console.log('BAP');
             $('.main-slider').html(response.slide);
             console.log('BAP2');
