@@ -9,10 +9,6 @@ function getBooking(cookievalue) {
           xhrFields: {
             withCredentials: true
           },
-          crossDomain: true,
-          headers: {
-              Cookie: 'fe_typo_user='+cookievalue
-          },
           dataType: "json",
     
           success: function(result) {
