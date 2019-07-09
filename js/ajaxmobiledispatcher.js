@@ -36,9 +36,11 @@ function getBooking(cookievalue) {
     $.ajax({
             type: 'POST',
             url:url,
-            dataType: 'jsonp',
-            jsonp: 'callback',
-            contentType: 'application/json;charset=utf-8',
+            dataType: 'json',
+            contentType: 'application/json',
+            xhrFields: {
+                withCredentials: true
+            },
             crossDomain: true,
             success: function(result, status, jqXHR) {
 
