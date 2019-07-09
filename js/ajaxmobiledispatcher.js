@@ -38,7 +38,7 @@ function getBooking(cookievalue) {
             url:url,
             dataType: 'jsonp',
             jsonp: 'callback',
-            contentType: 'text/javascript; charset=utf-8',
+            contentType: 'application/json; charset=UTF-8',
             crossDomain: true,
             success: function(result, status, jqXHR) {
 
