@@ -14,13 +14,6 @@ function getBooking(cookievalue) {
       cordova.plugin.http.sendRequest(url, options, function(response) {
         // prints 200
         console.log(response.status);
-      }, function(response) {
-        // prints 403
-        console.log(response.status);
-       
-        //prints Permission denied
-        console.log(response.error);
-        
         if (response.result) {
             console.log('BAP');
             $('.main-slider').html(response.slide);
@@ -28,8 +21,17 @@ function getBooking(cookievalue) {
             initSlickCarousel();
             console.log('BAP3');
         } else {
-            
+            console.log('BOUU');
         }
+        $('.loader2').hide();
+      }, function(response) {
+        // prints 403
+        console.log(response.status);
+       
+        //prints Permission denied
+        console.log(response.error);
+        
+        
         $('.loader2').hide();
                 
       });
