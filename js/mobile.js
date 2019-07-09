@@ -89,7 +89,8 @@ function initMobileConnect() {
 							var url = window.location.href;
 							url = url.substring(0, url.lastIndexOf("/") + 1);
 							//cordova.InAppBrowser.open(url+'mesreservations.html', '_self');
-							window.open(url+'mesreservations.html', '_self');
+							//window.open(url+'mesreservations.html', '_self');
+							window.location.href = url+'mesreservations.html';
 							
 							//var inAppBrowserRef = cordova.InAppBrowser.open('/main.html', '_self');
 						},
