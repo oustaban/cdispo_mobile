@@ -37,13 +37,7 @@ function getBooking(cookievalue) {
             type: 'POST',
             url:url,
             dataType: 'jsonp',
-            cache: false,
-            async: true,
-            crossDomain: true,
-            headers: {
-              'accept': 'application/json',
-              'Access-Control-Allow-Origin':'*'
-            },
+            
             success: function(result, status, jqXHR) {
 
                 console.log("result is " + result);
