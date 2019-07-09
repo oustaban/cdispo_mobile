@@ -7,6 +7,7 @@ function getBooking(cookievalue) {
     
     const options = {
         method: 'post',
+        data: {id:12},
         headers: { Cookie: 'fe_typo_user='+cookievalue }
     };
        
