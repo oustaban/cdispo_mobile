@@ -1,5 +1,6 @@
 jQuery(function(){
-	console.log( "jquery!" );
+	initMobileNav();
+	initActiveClone();
 	initConnect();
 	initMobileConnect();
 	loader2();
