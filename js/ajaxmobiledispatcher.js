@@ -7,7 +7,7 @@ function getBooking(cookievalue) {
           type: 'POST',
           url:url,
           data: {fe_typo_user:cookievalue},
-          dataType: "json",
+          dataType: "jsonp",
           
     
           success: function(result) {
