@@ -70,6 +70,5 @@ function getBooking(cookievalue) {
     
          
     });
-    */
     
 }
