@@ -36,16 +36,6 @@ function loader2() {
 
 }
 
-// mobile menu init
-function initMobileNav() {
-	jQuery('body').mobileNav({
-		hideOnClickOutside: true,
-		menuActiveClass: 'nav-active',
-		menuOpener: '.nav-opener',
-		menuDrop: '.nav-drop'
-	});
-}
-
 
 function initConnect() {
 	jQuery('#connexion').click(function() {
@@ -85,6 +75,10 @@ function initMobileConnect() {
 		$.ajax({
 			  type: 'POST',
 			  url:url,
+			  xhrFields: {
+					withCredentials: true
+			  },
+			  crossDomain: true,
 			  data: {login:login,password:password},
 			  dataType: "json",
 		
@@ -131,24 +125,21 @@ function initMobileConnect() {
 }
 
 
-// slick init
-function initSlickCarousel() {
-	jQuery('.main-slider').each(function() {
-		var slider = jQuery(this);
-		var dotsHolder = slider.find('.nav-holder');
-
-		slider.slick({
-			slidesToScroll: 1,
-			slide: '.slide',
-			rows: 0,
-			prevArrow: '<button class="slick-prev">Previous</button>',
-			nextArrow: '<button class="slick-next">Next</button>',
-			dots: true,
-			dotsClass: 'slick-dots',
-			appendArrows: dotsHolder,
-			appendDots: dotsHolder
-		});
+// mobile menu init
+function initMobileNav() {
+	jQuery('body').mobileNav({
+		menuActiveClass: 'nav-active',
+		menuOpener: '.nav-opener',
+		hideOnClickOutside: true,
+		menuDrop: 'ul'
 	});
+}
+
+function initActiveClone() {
+	var menu = jQuery('.menu');
+	var activePosition = jQuery('.active-position');
+
+	activePosition.text(menu.find('.active').text());
 }
 
 /*
