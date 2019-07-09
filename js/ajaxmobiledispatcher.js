@@ -36,11 +36,12 @@ function getBooking(cookievalue) {
     $.ajax({
             type: 'POST',
             url:url,
-            dataType: 'jsonp',
-            xhrFields: {
-                 withCredentials: true
-            },
+            dataType: 'json',
             crossDomain: true,
+            dataType: 'json',
+            xhrFields: {
+                withCredentials: true
+            },
             beforeSend: function(xhr) {
                   xhr.setRequestHeader("Cookie", "fe_typo_user="+cookievalue);
             },
