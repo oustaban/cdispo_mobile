@@ -38,7 +38,6 @@
 		
 
     </script>
-    <script src="cordova.js"></script>
     <script src="js/jquery-1.11.2.min.js"></script>
     <script src="js/jquery_touchswipe.min.js"></script>
     <script src="js/spin.min.js"></script>
@@ -96,6 +95,7 @@
     
     <script>
         $(document).ready(function() {
+			
 		   cookieMaster.getCookieValue('http://cdispo_preprod.moonlikestudio.com', 'fe_typo_user', function(data) {
 			console.log(data.cookieValue);
 		   }, function(error) {
