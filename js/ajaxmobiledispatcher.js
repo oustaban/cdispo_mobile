@@ -14,7 +14,7 @@ function getBooking(cookievalue) {
 
                 console.log("result is " + result);
     
-                console.log(JSON.stringify(jqXHR.responseJSON));
+                //console.log(JSON.stringify(jqXHR.responseJSON));
                 
                 if (result.result) {
                     console.log('BAP');
