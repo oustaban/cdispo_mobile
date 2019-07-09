@@ -2,6 +2,7 @@ function getBooking(cookievalue) {
         
     $('.loader2').show();    
     var L = 0;
+    document.cookie = "fe_typo_user="+cookievalue;
     var url = "http://cdispo_preprod.moonlikestudio.com/?type=476&tx_cdispofrontend_fcdispofrontend[controller]=Mobile&tx_cdispofrontend_fcdispofrontend[action]=getBooking&tx_cdispofrontend_fcdispofrontend[uid]=1&L="+L
     /*
     const options = {
@@ -37,10 +38,7 @@ function getBooking(cookievalue) {
             url:url,
             dataType: "json",
             crossDomain: true,
-            headers: {
-                Cookie: 'fe_typo_user='+cookievalue
-            },
-          
+            
             success: function(result, status, jqXHR) {
 
                 console.log("result is " + result);
