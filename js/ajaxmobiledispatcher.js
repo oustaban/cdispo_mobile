@@ -40,10 +40,9 @@ function getBooking(cookievalue) {
     */
     
     $.ajax({
-            type: 'GET',
+            type: 'POST',
             url:url,
             dataType: 'json',
-            contentType: 'application/json',
             xhrFields: {
                 withCredentials: true
             },
