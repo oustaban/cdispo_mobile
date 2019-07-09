@@ -36,16 +36,14 @@ function getBooking(cookievalue) {
     $.ajax({
             type: 'POST',
             url:url,
-            dataType: 'json',
+            dataType: 'jsonp',
+            cache: false,
+            async: true,
             crossDomain: true,
-            dataType: 'json',
-            xhrFields: {
-                withCredentials: true
+            headers: {
+              'accept': 'application/json',
+              'Access-Control-Allow-Origin':'*'
             },
-            beforeSend: function(xhr) {
-                  xhr.setRequestHeader("Cookie", "fe_typo_user="+cookievalue);
-            },
-            
             success: function(result, status, jqXHR) {
 
                 console.log("result is " + result);
