@@ -1,4 +1,4 @@
-function getBooking() {
+function getBooking(cookievalue) {
         
     $('.loader2').show();    
     var L = 0;
@@ -6,6 +6,9 @@ function getBooking() {
     $.ajax({
           type: 'POST',
           url:url,
+          xhrFields: {
+            withCredentials: true
+          },
           dataType: "json",
     
           success: function(result) {

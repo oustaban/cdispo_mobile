@@ -47,16 +47,17 @@
 	<script src="js/ajaxmobiledispatcher.js"></script>
 	<script>
         $(document).bind('deviceready', function() {
-			
+		   
 		   cookieMaster.getCookieValue('http://cdispo_preprod.moonlikestudio.com', 'fe_typo_user', function(data) {
 			console.log(data.cookieValue);
+			getBooking(data.cookieValue); 
 		   }, function(error) {
 			if (error) {
 			  console.log('error: ' + error);
 			}
 		  });
 		   
-           getBooking(); 
+           
         });
     </script>
 </head>
