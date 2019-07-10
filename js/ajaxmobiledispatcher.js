@@ -5,7 +5,7 @@ function getBooking(cookievalue) {
     //document.cookie = "fe_typo_user="+cookievalue;
     var url = "http://cdispo_preprod.moonlikestudio.com/?type=476&tx_cdispofrontend_fcdispofrontend[controller]=Mobile&tx_cdispofrontend_fcdispofrontend[action]=getBooking&tx_cdispofrontend_fcdispofrontend[uid]=1&L="+L
     
-    cordova.plugin.http.setHeader('http://cdispo_preprod.moonlikestudio.com', 'Cookie', 'fe_typo_user='+cookievalue);
+    cordova.plugin.http.setCookie(url, 'fe_typo_user='+cookievalue);
     const options = {
         method: 'post',
         data: {cookie:cookievalue}
