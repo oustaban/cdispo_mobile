@@ -5,7 +5,9 @@ function getBooking(cookievalue) {
     //document.cookie = "fe_typo_user="+cookievalue;
     var url = "http://cdispo_preprod.moonlikestudio.com/?type=476&tx_cdispofrontend_fcdispofrontend[controller]=Mobile&tx_cdispofrontend_fcdispofrontend[action]=getBooking&tx_cdispofrontend_fcdispofrontend[uid]=1&L="+L
     
+    /*
     cordova.plugin.http.setCookie(url, 'fe_typo_user='+cookievalue);
+    
     const options = {
         method: 'post',
         data: {cookie:cookievalue}
@@ -39,8 +41,8 @@ function getBooking(cookievalue) {
                 
         }
     );
+    */
     
-    /*
     $.ajax({
             type: 'POST',
             url:url,
@@ -49,9 +51,6 @@ function getBooking(cookievalue) {
                 withCredentials: true
             },
             crossDomain: true,
-            beforeSend: function(xhr){
-                xhr.setRequestHeader('Cookie', 'fe_typo_user='+cookievalue);
-            },
             success: function(result, status, jqXHR) {
 
                 console.log("result is " + result);
@@ -78,6 +77,6 @@ function getBooking(cookievalue) {
     
          
     });
-    */
+    
     
 }
