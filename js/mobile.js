@@ -124,6 +124,26 @@ function initMobileConnect() {
 }
 
 
+// slick init
+function initSlickCarousel() {
+	jQuery('.main-slider').each(function() {
+		var slider = jQuery(this);
+		var dotsHolder = slider.find('.nav-holder');
+
+		slider.slick({
+			slidesToScroll: 1,
+			slide: '.slide',
+			rows: 0,
+			prevArrow: '<button class="slick-prev">Previous</button>',
+			nextArrow: '<button class="slick-next">Next</button>',
+			dots: true,
+			dotsClass: 'slick-dots',
+			appendArrows: dotsHolder,
+			appendDots: dotsHolder
+		});
+	});
+}
+
 // mobile menu init
 function initMobileNav() {
 	jQuery('body').mobileNav({

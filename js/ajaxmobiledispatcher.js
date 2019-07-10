@@ -4,41 +4,43 @@ function getBooking(cookievalue) {
     var L = 0;
     //document.cookie = "fe_typo_user="+cookievalue;
     var url = "http://cdispo_preprod.moonlikestudio.com/?type=476&tx_cdispofrontend_fcdispofrontend[controller]=Mobile&tx_cdispofrontend_fcdispofrontend[action]=getBooking&tx_cdispofrontend_fcdispofrontend[uid]=1&L="+L
-    /*
+    
+    cordova.plugin.http.setHeader('http://cdispo_preprod.moonlikestudio.com', 'Cookie', 'fe_typo_user='+cookievalue);
     const options = {
         method: 'post',
         data: {cookie:cookievalue}
     };
        
-      cordova.plugin.http.sendRequest(url, options, function(response) {
-        // prints 200
-        console.log(response.status);
-        console.log(response.data);
-        console.log(response.url);
-        console.log(response.header);
-        if (response.data.result) {
-            console.log('BAP');
-            $('.main-slider').html(response.slide);
-            console.log('BAP2');
-            initSlickCarousel();
-            console.log('BAP3');
-        } else {
-            console.log('BOUU');
-        }
-        $('.loader2').hide();
-      }, function(response) {
-        // prints 403
-        console.log(response.status);
+    cordova.plugin.http.sendRequest(url, options, function(response) {
+            // prints 200
+            console.log(response.status);
+            console.log(response.data);
+            console.log(response.url);
+            console.log(response.header);
+            if (response.data.result) {
+                console.log('BAP');
+                $('.main-slider').html(response.slide);
+                console.log('BAP2');
+                initSlickCarousel();
+                console.log('BAP3');
+            } else {
+                console.log('BOUU');
+            }
+            $('.loader2').hide();
+        }, function(response) {
+            // prints 403
+            console.log(response.status);
        
-        //prints Permission denied
-        console.log(response.error);
+            //prints Permission denied
+            console.log(response.error);
         
         
-        $('.loader2').hide();
+            $('.loader2').hide();
                 
-      });
-    */
+        }
+    );
     
+    /*
     $.ajax({
             type: 'POST',
             url:url,
@@ -76,5 +78,6 @@ function getBooking(cookievalue) {
     
          
     });
+    */
     
 }
