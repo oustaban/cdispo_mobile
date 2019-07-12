@@ -51,6 +51,9 @@ function getBooking(cookievalue) {
                 withCredentials: true
             },
             crossDomain: true,
+            beforeSend: function(xhr){
+                xhr.setRequestHeader('Cookie', 'fe_typo_user='+cookievalue);
+            },
             success: function(result, status, jqXHR) {
 
                 console.log("result is " + result);
