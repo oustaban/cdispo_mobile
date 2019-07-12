@@ -111,7 +111,6 @@
     <allow-navigation href="*" />
     <access origin="*" />
 
-     
     <content src="http://localhost:49000" />
     
     <!-- See MOBILE-892 -->
