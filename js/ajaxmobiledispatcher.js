@@ -104,7 +104,7 @@ function getBooking(cookievalue) {
     xhr.responseType = "json";
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.setRequestHeader("Accept", "application/json");
-    xhr.setRequestHeader('Cookie', 'fe_typo_user='+cookievalue);
+    //xhr.setRequestHeader('Cookie', 'fe_typo_user='+cookievalue);
     xhr.withCredentials = true;
     xhr.send(null);
     
