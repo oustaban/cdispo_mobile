@@ -47,13 +47,7 @@ function getBooking(cookievalue) {
             type: 'POST',
             url:url,
             dataType: 'json',
-            xhrFields: {
-                withCredentials: true
-            },
-            crossDomain: true,
-            beforeSend: function(xhr){
-                xhr.setRequestHeader('Cookie', 'fe_typo_user='+cookievalue);
-            },
+            data: {fe_typo_user:cookievalue,action:'getBooking'},
             success: function(result, status, jqXHR) {
 
                 console.log("result is " + result);
