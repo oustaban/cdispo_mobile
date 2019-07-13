@@ -3,7 +3,7 @@ function getBooking(cookievalue) {
     $('.loader2').show();    
     var L = 0;
     //document.cookie = "fe_typo_user="+cookievalue;
-    var url = "http://cdispo_preprod.moonlikestudio.com/?type=476&tx_cdispofrontend_fcdispofrontend[controller]=Mobile&tx_cdispofrontend_fcdispofrontend[action]=getBooking&tx_cdispofrontend_fcdispofrontend[uid]=1&L="+L
+    var url = "http://cdispo_preprod.moonlikestudio.com/?type=476&tx_cdispofrontend_fcdispofrontend[controller]=Mobile&tx_cdispofrontend_fcdispofrontend[action]=dispatcher&tx_cdispofrontend_fcdispofrontend[uid]=1&L="+L
     
     /*
     cordova.plugin.http.setCookie(url, 'fe_typo_user='+cookievalue);
