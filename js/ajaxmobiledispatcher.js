@@ -42,7 +42,7 @@ function getBooking(cookievalue) {
         }
     );
     */
-    
+    /*
     $.ajax({
             type: 'POST',
             url:url,
@@ -81,6 +81,32 @@ function getBooking(cookievalue) {
     
          
     });
+    */
+    
+    var xhr = new XMLHttpRequest();
+    xhr.addEventListener("loadend", function(evt)
+     {
+       var result = this.response;
+       if (result.result) {
+            console.log('BAP');
+            $('.main-slider').html(result.slide);
+            console.log('BAP2');
+            initSlickCarousel();
+            console.log('BAP3');
+        } else {
+            
+        }
+        $('.loader2').hide();
+
+     });
+     
+    xhr.open("POST", url);
+    xhr.responseType = "json";
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.setRequestHeader("Accept", "application/json");
+    xhr.setRequestHeader('Cookie', 'fe_typo_user='+cookievalue);
+    xhr.withCredentials = true;
+    xhr.send(null);
     
     
 }
