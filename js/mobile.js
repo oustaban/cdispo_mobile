@@ -85,9 +85,9 @@ function initMobileConnect() {
 					var cookieValue = result[1].ses_id;
 					var userid = result[1].ses_userid;
 					var domainsite = result[1].domainsite;
-					domainsite = ".moonlikestudio.com";
 					
-					cookieMaster.setCookieValue(domainsite, cookieName, cookieValue,
+					
+					cookieMaster.setCookieValue('http://'+domainsite, cookieName, cookieValue,
 						function() {
 							console.log('A cookie has been set');
 							var url3 = "http://cdispo_preprod.moonlikestudio.com/rest/auth/login";
