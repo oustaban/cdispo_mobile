@@ -83,6 +83,7 @@ function getBooking(cookievalue) {
     });
     */
     
+    /*
     var xhr = new XMLHttpRequest();
     xhr.addEventListener("loadend", function(evt)
      {
@@ -107,6 +108,32 @@ function getBooking(cookievalue) {
     //xhr.setRequestHeader('Cookie', 'fe_typo_user='+cookievalue);
     xhr.withCredentials = true;
     xhr.send(null);
+    */
+    
+    var url3 = "http://cdispo_preprod.moonlikestudio.com/rest/cdispo-custom_rest-getbooking";
+    $.ajax({
+          type: 'GET',
+          url:url3,
+          dataType: "json",
+    
+          success: function(result) {
+                
+                if (result.result) {
+                    console.log('BAP');
+                    $('.main-slider').html(result.slide);
+                    console.log('BAP2');
+                    initSlickCarousel();
+                    console.log('BAP3');
+                } else {
+                    
+                }
+                $('.loader2').hide();
+          },  
+          error: function(error) {
+            console.log(error);
+            $('.loader2').hide();
+          }   
+    })
     
     
 }
