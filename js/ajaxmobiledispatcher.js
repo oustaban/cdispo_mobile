@@ -11,7 +11,7 @@ function getBooking(cookievalue) {
     const options = {
         method: 'post',
         data: {cookie:cookievalue},
-        headers: {"fe_typo_user":cookievalue}
+        headers: { Cookie: 'fe_typo_user='+cookievalue}
     };
        
     cordova.plugin.http.sendRequest(url, options, function(response) {
