@@ -119,7 +119,7 @@
  
     <preference name="CordovaWebViewEngine" value="CDVWKWebViewEngine" />
     
-    <content src="http://cdispo_preprod.moonlikestudio.com" />
+    <content src="http://localhost:49000" />
     
     <!-- See MOBILE-892 -->
     <preference name="permissions" value="none"/>
