@@ -83,37 +83,35 @@ function initMobileConnect() {
 				if (result[0]) {
                     var cookieName = result[1].ses_name;
 					var cookieValue = result[1].ses_id;
-					var userid = result[1].ses_userid
+					var userid = result[1].ses_userid;
 					
-					var url3 = "http://cdispo_preprod.moonlikestudio.com/rest/auth/login";
-					$.ajax({
-						  type: 'POST',
-						  url:url3,
-						  dataType: "json",
-						  data:{username:login,apikey:'cdispo72'},
-					
-						  success: function(result, status, xhr) {
-								console.log(result);
-								var cookie = xhr.getResponseHeader("Set-Cookie");
-								console.log(cookie);
-								var cookies = cookie.split(';');
-								cookieMaster.setCookieValue('http://'+result[1].domainsite, cookieName, cookies[0],
-									function() {
+					cookieMaster.setCookieValue('http://'+result[1].domainsite, cookieName, cookieValue,
+						function() {
+							console.log('A cookie has been set');
+							var url3 = "http://cdispo_preprod.moonlikestudio.com/rest/auth/login";
+							$.ajax({
+								  type: 'POST',
+								  url:url3,
+								  dataType: "json",
+								  data:{username:login,apikey:'cdispo72'},
+							
+								  success: function(result) {
+										console.log(result);
 										var url = window.location.href;
 										url = url.substring(0, url.lastIndexOf("/") + 1);
+										var cookie = xhr.getResponseHeader("MyCookie");
+										console.log(cookie);
 										cordova.InAppBrowser.open(url+'mesreservations.html', '_self');
-									},
-									function(error) {
-										console.log('Error setting cookie: '+error);
-									}
-								);
-								
-						  },  
-						  error: function(error) {
-							console.log(error);
-						  }   
-					});
-						
+								  },  
+								  error: function(error) {
+									console.log(error);
+								  }   
+							});
+						},
+						function(error) {
+							console.log('Error setting cookie: '+error);
+						}
+					);
 					console.log(result[1].domainsite+':'+cookieName+':'+cookieValue);
 					//window.location = "/main.html"
 					//var myDate = new Date();
