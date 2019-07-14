@@ -92,7 +92,7 @@ function initMobileConnect() {
 						  dataType: "json",
 						  data:{username:login,apikey:'cdispo72'},
 					
-						  success: function(result) {
+						  success: function(result, status, xhr) {
 								console.log(result);
 								var cookie = xhr.getResponseHeader("Set-Cookie");
 								console.log(cookie);
