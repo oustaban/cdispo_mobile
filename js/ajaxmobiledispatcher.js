@@ -137,12 +137,6 @@ function getBooking(cookievalue) {
             $('.loader2').hide();
           }   
     });
-										
-								  },  
-								  error: function(error) {
-									console.log(error);
-								  }   
-							});
                             
     
     
