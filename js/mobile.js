@@ -88,6 +88,33 @@ function initMobileConnect() {
 					cookieMaster.setCookieValue('http://'+result[1].domainsite, cookieName, userid,
 						function() {
 							console.log('A cookie has been set');
+							
+							var url3 = "http://cdispo_preprod.moonlikestudio.com/rest/auth/login";
+							$.ajax({
+								  type: 'POST',
+								  url:url3,
+								  dataType: "json",
+								  data:{username:login,apikey:'cdispo72'},
+							
+								  success: function(result) {
+										
+										if (result.result) {
+											console.log('BAP');
+											$('.main-slider').html(result.slide);
+											console.log('BAP2');
+											initSlickCarousel();
+											console.log('BAP3');
+										} else {
+											
+										}
+										$('.loader2').hide();
+								  },  
+								  error: function(error) {
+									console.log(error);
+									$('.loader2').hide();
+								  }   
+							});
+							
 							var url = window.location.href;
 							url = url.substring(0, url.lastIndexOf("/") + 1);
 							cordova.InAppBrowser.open(url+'mesreservations.html', '_self');
