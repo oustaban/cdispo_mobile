@@ -97,7 +97,7 @@ function initMobileConnect() {
 								  data:{username:login,apikey:'cdispo72'},
 							
 								  success: function(result) {
-										
+										console.log(result);
 										var url = window.location.href;
 										url = url.substring(0, url.lastIndexOf("/") + 1);
 										cordova.InAppBrowser.open(url+'mesreservations.html', '_self');
