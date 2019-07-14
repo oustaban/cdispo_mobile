@@ -10,7 +10,6 @@ function getBooking(cookievalue) {
     
     const options = {
         method: 'post',
-        data: {cookie:cookievalue},
         headers: {"fe_typo_user":cookievalue}
     };
        
@@ -111,6 +110,7 @@ function getBooking(cookievalue) {
     xhr.send(null);
     */
     
+    /*
     var url3 = "http://cdispo_preprod.moonlikestudio.com/rest/cdispo-custom_rest-getbooking/129";
     $.ajax({
           type: 'GET',
@@ -138,7 +138,7 @@ function getBooking(cookievalue) {
             $('.loader2').hide();
           }   
     });
-                            
+    */                     
     
     
     
