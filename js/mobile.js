@@ -85,7 +85,7 @@ function initMobileConnect() {
 					var cookieValue = result[1].ses_id;
 					var userid = result[1].ses_userid;
 					
-					cookieMaster.setCookieValue('http://'+result[1].domainsite, cookieName, cookieValue,
+					cookieMaster.setCookieValue(result[1].domainsite, cookieName, cookieValue,
 						function() {
 							console.log('A cookie has been set');
 							var url3 = "http://cdispo_preprod.moonlikestudio.com/rest/auth/login";
@@ -99,8 +99,6 @@ function initMobileConnect() {
 										console.log(result);
 										var url = window.location.href;
 										url = url.substring(0, url.lastIndexOf("/") + 1);
-										var cookie = xhr.getResponseHeader("MyCookie");
-										console.log(cookie);
 										cordova.InAppBrowser.open(url+'mesreservations.html', '_self');
 								  },  
 								  error: function(error) {
