@@ -84,8 +84,9 @@ function initMobileConnect() {
                     var cookieName = result[1].ses_name;
 					var cookieValue = result[1].ses_id;
 					var userid = result[1].ses_userid;
+					var domainsite = result[1].domainsite;
 					
-					cookieMaster.setCookieValue(result[1].domainsite, cookieName, cookieValue,
+					cookieMaster.setCookieValue(domainsite, cookieName, cookieValue,
 						function() {
 							console.log('A cookie has been set');
 							var url3 = "http://cdispo_preprod.moonlikestudio.com/rest/auth/login";
@@ -110,7 +111,7 @@ function initMobileConnect() {
 							console.log('Error setting cookie: '+error);
 						}
 					);
-					console.log(result[1].domainsite+':'+cookieName+':'+cookieValue);
+					console.log(domainsite+':'+cookieName+':'+cookieValue);
 					//window.location = "/main.html"
 					//var myDate = new Date();
 					//myDate.setMonth(myDate.getMonth() + 12);
