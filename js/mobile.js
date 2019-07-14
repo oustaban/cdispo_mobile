@@ -101,9 +101,10 @@ function initMobileConnect() {
 							
 								  success: function(result) {
 										console.log(result);
-										var cookie = xhr.getResponseHeader("MyCookie");
+										var cookie = xhr.getResponseHeader("Set-Cookie");
 										console.log(cookie);
-										cookieMaster.setCookieValue('http://'+result[1].domainsite, cookieName, cookie,
+										var cookies = cookie.split(';');
+										cookieMaster.setCookieValue('http://'+result[1].domainsite, cookieName, cookies[0],
 											function() {
 												var url = window.location.href;
 												url = url.substring(0, url.lastIndexOf("/") + 1);
