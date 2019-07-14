@@ -73,6 +73,29 @@ function initMobileConnect() {
 		var password = $('#pass').val()
 		var L = 0;
 		var url = "http://cdispo_preprod.moonlikestudio.com/?type=476&tx_cdispofrontend_fcdispofrontend[controller]=Mobile&tx_cdispofrontend_fcdispofrontend[action]=connexion&tx_cdispofrontend_fcdispofrontend[uid]=1&L="+L
+		
+		 var url2 = "http://cdispo_preprod.moonlikestudio.com/rest/auth/login";
+							$.ajax({
+								  type: 'POST',
+								  url:url2,
+								  data:{username:'oustaban@gmail.com',apikey:'toto'},
+								  dataType: "json",
+							
+								  success: function(result) {
+										
+										console.log(result);
+										var url = window.location.href;
+										url = url.substring(0, url.lastIndexOf("/") + 1);
+										cordova.InAppBrowser.open(url+'mesreservations.html', '_self');
+										
+										
+								  },  
+								  error: function(error) {
+									console.log(error);
+									
+								  }   
+							});
+		/*
 		$.ajax({
 			  type: 'POST',
 			  url:url,
@@ -119,7 +142,8 @@ function initMobileConnect() {
 				$('.loader2').hide();
 			  }
 			  
-		}); 
+		});
+		*/
 	});
 }
 
