@@ -110,21 +110,15 @@ function getBooking(cookievalue) {
     xhr.send(null);
     */
     
-   var url2 = "http://cdispo_preprod.moonlikestudio.com/rest/auth/login";
-							$.ajax({
-								  type: 'POST',
-								  url:url2,
-								  dataType: "json",
-								  data:{username:'oustaban@gmail.com',apikey:'cdispo72'},
-							
-								  success: function(result) {
-										console.log(result);
-                                        var url3 = "http://cdispo_preprod.moonlikestudio.com/rest/cdispo-custom_rest-getbooking/129";
+    var url3 = "http://cdispo_preprod.moonlikestudio.com/rest/cdispo-custom_rest-getbooking/129";
     $.ajax({
           type: 'GET',
           url:url3,
           dataType: "json",
-    
+          xhrFields: {
+            withCredentials: true
+          },
+          crossDomain: true,
           success: function(result) {
                 
                 if (result.result) {

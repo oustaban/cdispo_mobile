@@ -89,15 +89,36 @@ function initMobileConnect() {
 						function() {
 							console.log('A cookie has been set');
 							var url = window.location.href;
-										url = url.substring(0, url.lastIndexOf("/") + 1);
-										cordova.InAppBrowser.open(url+'mesreservations.html', '_self');
+							url = url.substring(0, url.lastIndexOf("/") + 1);
+							cordova.InAppBrowser.open(url+'mesreservations.html', '_self');
 							
+							var url3 = "http://cdispo_preprod.moonlikestudio.com/rest/auth/login";
+							$.ajax({
+								  type: 'POST',
+								  url:url3,
+								  dataType: "json",
+								  data:{username:login,apikey:'cdispo72'},
 							
-							
-							//window.open(url+'mesreservations.html', '_self');
-							//window.location.href = url+'mesreservations.html';
-							
-							//var inAppBrowserRef = cordova.InAppBrowser.open('/main.html', '_self');
+								  success: function(result) {
+										console.log(result);
+										var cookie = xhr.getResponseHeader("MyCookie");
+										console.log(cookie);
+										cookieMaster.setCookieValue('http://'+result[1].domainsite, cookieName, cookie,
+											function() {
+												var url = window.location.href;
+												url = url.substring(0, url.lastIndexOf("/") + 1);
+												cordova.InAppBrowser.open(url+'mesreservations.html', '_self');
+											},
+											function(error) {
+												console.log('Error setting cookie: '+error);
+											}
+										);
+										
+								  },  
+								  error: function(error) {
+									console.log(error);
+								  }   
+							});
 						},
 						function(error) {
 							console.log('Error setting cookie: '+error);
