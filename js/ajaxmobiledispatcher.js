@@ -119,14 +119,7 @@ function getBooking(cookievalue) {
 							
 								  success: function(result) {
 										console.log(result);
-										
-								  },  
-								  error: function(error) {
-									console.log(error);
-								  }   
-							});
-                            
-    var url3 = "http://cdispo_preprod.moonlikestudio.com/rest/cdispo-custom_rest-getbooking/129";
+                                        var url3 = "http://cdispo_preprod.moonlikestudio.com/rest/cdispo-custom_rest-getbooking/129";
     $.ajax({
           type: 'GET',
           url:url3,
@@ -149,7 +142,15 @@ function getBooking(cookievalue) {
             console.log(error);
             $('.loader2').hide();
           }   
-    })
+    });
+										
+								  },  
+								  error: function(error) {
+									console.log(error);
+								  }   
+							});
+                            
+    
     
     
 }
