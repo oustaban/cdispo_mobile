@@ -85,6 +85,7 @@ function initMobileConnect() {
 					var cookieValue = result[1].ses_id;
 					var userid = result[1].ses_userid;
 					var domainsite = result[1].domainsite;
+					domainsite = ".moonlikestudio.com";
 					
 					cookieMaster.setCookieValue(domainsite, cookieName, cookieValue,
 						function() {
