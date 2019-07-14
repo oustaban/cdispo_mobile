@@ -113,7 +113,7 @@ function getBooking(cookievalue) {
    var url2 = "http://cdispo_preprod.moonlikestudio.com/rest/auth/login";
 							$.ajax({
 								  type: 'POST',
-								  url:urlé,
+								  url:url2,
 								  dataType: "json",
 								  data:{username:'oustaban@gmail.com',apikey:'cdispo72'},
 							
