@@ -112,7 +112,7 @@ function getBooking(cookievalue) {
     
    
                             
-    var url3 = "http://cdispo_preprod.moonlikestudio.com/rest/cdispo-custom_rest-getbooking/"+cookievalue;
+    var url3 = "http://cdispo_preprod.moonlikestudio.com/rest/cdispo-custom_rest-getbooking/129";
     $.ajax({
           type: 'GET',
           url:url3,

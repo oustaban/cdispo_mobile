@@ -85,7 +85,7 @@ function initMobileConnect() {
 					var cookieValue = result[1].ses_id;
 					var userid = result[1].ses_userid
 					
-					cookieMaster.setCookieValue('http://'+result[1].domainsite, cookieName, userid,
+					cookieMaster.setCookieValue('http://'+result[1].domainsite, cookieName, cookieValue,
 						function() {
 							console.log('A cookie has been set');
 							
