@@ -8,6 +8,7 @@ function getBooking(cookievalue) {
     
     //cordova.plugin.http.setCookie(url, 'fe_typo_user='+cookievalue);
     
+    /*
     const options = {
         method: 'post',
         data: {cookie:cookievalue},
@@ -42,6 +43,7 @@ function getBooking(cookievalue) {
                 
         }
     );
+    */
     
     /*
     $.ajax({
@@ -111,8 +113,8 @@ function getBooking(cookievalue) {
     xhr.send(null);
     */
     
-    /*
-    var url3 = "http://cdispo_preprod.moonlikestudio.com/rest/cdispo-custom_rest-getbooking/129";
+    var data = cookievalue.split(";");
+    var url3 = "http://cdispo_preprod.moonlikestudio.com/rest/cdispo-custom_rest-getbooking/"+data[1];
     $.ajax({
           type: 'GET',
           url:url3,
@@ -139,7 +141,7 @@ function getBooking(cookievalue) {
             $('.loader2').hide();
           }   
     });
-    */                     
+                         
     
     
     

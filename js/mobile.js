@@ -85,17 +85,13 @@ function initMobileConnect() {
 					var cookieValue = result[1].ses_id;
 					var userid = result[1].ses_userid;
 					var domainsite = result[1].domainsite;
+					var agregatecookie = cookieValue+";"+userid;
 					
-					
-					cookieMaster.setCookieValue('http://'+domainsite, cookieName, cookieValue,
+					cookieMaster.setCookieValue('http://'+domainsite, cookieName, agregatecookie	,
 						function() {
 							console.log('A cookie has been set');
-							var url = window.location.href;
-							url = url.substring(0, url.lastIndexOf("/") + 1);
-							cordova.InAppBrowser.open(url+'mesreservations.html', '_self');
-										
-							/*
-							var url3 = "http://cdispo_preprod.moonlikestudio.com/rest/auth/login";
+							
+							var url3 = "http://"+domainsite+"/rest/auth/login";
 							$.ajax({
 								  type: 'POST',
 								  url:url3,
@@ -112,7 +108,7 @@ function initMobileConnect() {
 									console.log(error);
 								  }   
 							});
-							*/
+							
 						},
 						function(error) {
 							console.log('Error setting cookie: '+error);
