@@ -1627,7 +1627,7 @@ select:focus {
 }
 
 .main-slider .organizator {
-	width: calc(100% - 10px);
+	width: calc(100% - 70px);
 	font-size: 12px;
 }
 
