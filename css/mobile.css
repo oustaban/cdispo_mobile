@@ -1151,11 +1151,12 @@ select:focus {
 	padding: 73px 0 100px;
 	position: relative;
 	z-index: 2;
+	max-height: 100vh;
 }
 
 .connection-page #main {
 	min-height: calc(100vh - 53px);
-	max-height: 100vh;
+	
 }
 
 .connection-page #main:before {
@@ -1481,7 +1482,7 @@ select:focus {
 
 .bg0 {
 	background-color:rgba(26,240,132,1);
-	color:white;
+	color:black;
 	font-weight:bold;
 }
 
@@ -1625,7 +1626,7 @@ select:focus {
 }
 
 .main-slider .organizator {
-	width: calc(100% - 40px);
+	width: calc(100% - 10px);
 	font-size: 12px;
 }
 
