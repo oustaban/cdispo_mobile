@@ -1487,20 +1487,20 @@ select:focus {
 }
 
 .bg1 {
-	background-color:rgba(255,255,107,1);
-	color:white;
+	background-color:rgba(243,159,12,1);
+	color:black;
 	font-weight:bold;
 }
 
 .bg2 {
-	background-color:rgba(107,159,255,1);
-	color:white;
+	background-color:rgba(13,127,243,1);
+	color:black;
 	font-weight:bold;
 }
 
 .bg4 {
 	background-color:rgba(0,0,0,1);
-	color:white;
+	color:black;
 	font-weight:bold;
 }
 
@@ -1587,6 +1587,7 @@ select:focus {
 	text-align:left;
 	padding-left:10px;
 }
+
 
 .main-slider .time-desc {
 	text-transform: uppercase;
