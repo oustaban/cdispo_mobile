@@ -1,8 +1,13 @@
 {
-	"nav_title1":"Mes Réservations",
-	"nav_title2":"Mes Invitations",
-	"nav_title3":"Mes Partages",
-	"nav_title4":"Les réservations à confirmer",
+	"nav_title1":"MES RÉSERVATIONS",
+	"nav_title2":"MES INVITATIONS",
+	"nav_title3":"MES PARTAGES",
+	"nav_title4":"LES RÉSERVATIONS À CONFIRMER",
 	"menu_title":"Menu",
-	"booking_title":"Mes Réservations"
+	"booking_title":"MES RÉSERVATIONS",
+	"index_stayconnected":"Rester connecté",
+	"index_forgot":"Mot de passe oublié/expiré ?",
+	"index_login":"Se connecter",
+	"placeholder_user":"Adresse email",
+	"placeholder_pass":"Mot de passe"
 }

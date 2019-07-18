@@ -47,9 +47,7 @@
 	<script src="js/ajaxmobiledispatcher.js"></script>
 	<script>
 		
-		var language="fr";
-		
-        $(document).bind('deviceready', function() {
+		$(document).bind('deviceready', function() {
 		   
 			cookieMaster.getCookieValue('http://cdispo_preprod.moonlikestudio.com', 'fe_typo_user', function(data) {
 				console.log(data.cookieValue);
@@ -60,17 +58,7 @@
 				}
 			});
 			
-			getTranslation();
-           
         });
-		
-		function getTranslation() {
-			$.getJSON( "lang/"+language+".json", function( data ) {
-				$.each( data, function( key, val ) {
-					$('#'+key).html(val);
-				});
-			});	
-		}
     </script>
 </head>
 
@@ -87,7 +75,7 @@
 					<div class="user-icon">
 						<img src="images/user-pic.png" srcset="images/user-pic-2x.png 2x" alt="image description">
 					</div>
-					<span class="active-position" id="booking_title">MES</span>
+					<span class="active-position" id="booking_title">MES RESERVATIONS</span>
 					<a href="#" class="nav-opener"><span id="menu_title">Menu</span></a>
 					<!-- main navigation of the page -->
 					<ul class="menu">

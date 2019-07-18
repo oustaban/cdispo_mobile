@@ -1,3 +1,5 @@
+var language = "fr";
+
 jQuery(function(){
 	initMobileNav();
 	initActiveClone();
@@ -6,6 +8,7 @@ jQuery(function(){
 	loader2();
     initPassword();
 	initChangePassword();
+	getTranslation();
 });
 
 
@@ -175,6 +178,20 @@ function initActiveClone() {
 	var activePosition = jQuery('.active-position');
 
 	activePosition.text(menu.find('.active').text());
+}
+
+function getTranslation() {
+	$.getJSON( "lang/"+language+".json", function( data ) {
+		$.each( data, function( key, val ) {
+			var matches = key.match('/^placholder/');
+			console.log(matches[0]+'/'+matches[1])
+			//if (key.startsWith('placeholder')) {
+				//$('input').attr('placeholder',value);
+			//}
+			if ($('#'+key))
+				$('#'+key).html(val);
+			
+	});
 }
 
 /*
