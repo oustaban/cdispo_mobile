@@ -46,19 +46,31 @@
     <script src="js/mobile.js"></script>
 	<script src="js/ajaxmobiledispatcher.js"></script>
 	<script>
+		
+		var language="fr";
+		
         $(document).bind('deviceready', function() {
 		   
-		   cookieMaster.getCookieValue('http://cdispo_preprod.moonlikestudio.com', 'fe_typo_user', function(data) {
-			console.log(data.cookieValue);
-			getBooking(data.cookieValue); 
-		   }, function(error) {
-			if (error) {
-			  console.log('error: ' + error);
-			}
-		  });
-		   
+			cookieMaster.getCookieValue('http://cdispo_preprod.moonlikestudio.com', 'fe_typo_user', function(data) {
+				console.log(data.cookieValue);
+				getBooking(data.cookieValue); 
+			}, function(error) {
+				if (error) {
+					console.log('error: ' + error);
+				}
+			});
+			
+			getTranslation();
            
         });
+		
+		function getTranslation() {
+			$.getJSON( "lang/"+language+".json", function( data ) {
+				$.each( data, function( key, val ) {
+					$('#'+key).html(val);
+				});
+			});	
+		}
     </script>
 </head>
 
@@ -75,14 +87,14 @@
 					<div class="user-icon">
 						<img src="images/user-pic.png" srcset="images/user-pic-2x.png 2x" alt="image description">
 					</div>
-					<span class="active-position">MES RESERVATIONS</span>
-					<a href="#" class="nav-opener"><span>Menu</span></a>
+					<span class="active-position" id="booking_title">MES</span>
+					<a href="#" class="nav-opener"><span id="menu_title">Menu</span></a>
 					<!-- main navigation of the page -->
 					<ul class="menu">
-						<li class="active"><a href="#">MES RESERVATIONS</a></li>
-						<li><a href="#">MES INVITATIONS</a></li>
-						<li><a href="#">MES PARTAGES</a></li>
-						<li><a href="#">LES RESERVATIONS A CONFIRMER</a></li>
+						<li class="active"><a href="#" id="nav_title1">MES RESERVATIONS</a></li>
+						<li><a href="#" id="nav_title2">MES INVIT</a></li>
+						<li><a href="#" id="nav_title3">MES PARTAGES</a></li>
+						<li><a href="#" id="nav_title4">LES RESERVATIONS A CONFIRMER</a></li>
 					</ul>
 				</nav>
 			</div>

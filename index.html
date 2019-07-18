@@ -47,6 +47,9 @@
         // http://rickluna.com/wp/2012/04/solving-the-connection-to-the-server-was-unsuccessful-error-in-androidphonegap/
         var inAppBrowserRef;
 		var loadpage = 0;
+		var language = 'fr';
+		
+		
 		$(document).bind('deviceready', function() {
             screen.lockOrientation('portrait');
 			//StatusBar.overlaysWebView(true);
@@ -54,6 +57,7 @@
             StatusBar.hide();
 			//openBrowser();
 			//clickSubmit();
+			getTranslation();
         });
 		$( window ).unload(function() {
 			$('.loader2').show();
@@ -91,6 +95,15 @@
 
 			});
 		}
+		
+		
+		function getTranslation() {
+			$.getJSON( "lang/"+language+".json", function( data ) {
+				$.each( data, function( key, val ) {
+					$('#'+key).html(val);
+				});
+			});
+		}
     </script>
 </head>
 
@@ -107,14 +120,14 @@
 					<div class="user-icon">
 						<img src="images/user-pic.png" srcset="images/user-pic-2x.png 2x" alt="image description">
 					</div>
-					<span class="active-position">MES RESERVATIONS</span>
-					<a href="#" class="nav-opener"><span>Menu</span></a>
+					<span class="active-position" id="booking_title">MES RESERVATIONS</span>
+					<a href="#" class="nav-opener"><span id="menu_title">Menu</span></a>
 					<!-- main navigation of the page -->
 					<ul class="menu">
-						<li class="active"><a href="#">MES RESERVATIONS</a></li>
-						<li><a href="#">MES INVITATIONS</a></li>
-						<li><a href="#">MES PARTAGES</a></li>
-						<li><a href="#">LES RESERVATIONS A CONFIRMER</a></li>
+						<li class="active"><a href="#" id="nav_title1">MES RESERVATIONS</a></li>
+						<li><a href="#" id="nav_title2">MES INVITATIONS</a></li>
+						<li><a href="#" id="nav_title3">MES PARTAGES</a></li>
+						<li><a href="#" id="nav_title4">LES RESERVATIONS A CONFIRMER</a></li>
 					</ul>
 				</nav>
 			</div>
