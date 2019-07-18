@@ -9,5 +9,7 @@
 	"index_forgot":"Mot de passe oublié/expiré ?",
 	"mobileconnexion":"Se connecter",
 	"placeholder_user":"Adresse email",
-	"placeholder_pass":"Mot de passe"
+	"placeholder_pass":"Mot de passe",
+	"btn_scan":"Scanner",
+	"btn_book":"Réserver"
 }
