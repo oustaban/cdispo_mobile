@@ -126,11 +126,8 @@ function getBooking(cookievalue) {
           success: function(result) {
                 
                 if (result.result) {
-                    console.log('BAP');
                     $('.main-slider').html(result.slide);
-                    console.log('BAP2');
                     initSlickCarousel();
-                    console.log('BAP3');
                 } else {
                     
                 }
@@ -140,9 +137,74 @@ function getBooking(cookievalue) {
             console.log(error);
             $('.loader2').hide();
           }   
-    });
-                         
+    }); 
+}
+
+
+function getPreviewRessource(ressourceId,categoryRessource,user_id) {
+    var L = $("#sysLanguageUid").val();
+    $('.loader2').show();
+    var url = "http://cdispo_preprod.moonlikestudio.com/rest/cdispo-custom_rest-getpreviewressource/"+ressourceId+"/"+categoryRessource+"/"+user_id;
+    $.ajax({
+          type: 'GET',
+          url:url,
+          dataType: "json",
     
-    
-    
+          success: function(result) {
+            
+                if (result.deconnexion) {
+                    
+                    jQuery.magnificPopup.close();
+                    $('.loginmessageajax1').html(result.deconnexion);
+                    jQuery("#deconnector").trigger("click");
+                
+                }
+            
+                if (result.notassistant) {
+                
+                    jQuery.magnificPopup.close();
+                    //$('.loginmessageajax2').html(result.notassistant);
+                    jQuery("#notassistant").trigger("click");
+                
+                }
+                
+                if (result.notdispo) {
+                
+                    jQuery.magnificPopup.close();
+                    $('.loginmessageajax3').html(result.notdispo);
+                    jQuery("#ressourcenotdispo").trigger("click");
+                
+                }
+                
+                if (result.ressourcedeleted) {
+                    
+                    
+                    jQuery.magnificPopup.close();
+                    $('.loginmessageajax3').html(result.ressourcedeleted);
+                    jQuery("#ressourcenotdispo").trigger("click");
+                    
+                }
+                
+                if (result.ok) {
+                    $('.prewiewsharing_title').html(result.title);
+                    $('.prewiewsharing_mandatories').html(result.mandatories);
+                    $('.previewsharing_content').html(result.content);
+                    
+                    $('.main-slider').hide();
+                    $('.info-block').show();
+                    
+                   
+                    console.log('getPreviewRessource success');
+                } else {
+                    console.log('getPreviewRessource error');
+                }
+                
+                $('.loader2').hide();
+                
+          },  
+          error: function(error) {
+                console.log('getPreviewRessource error');
+                $('.loader2').hide();
+          }   
+    }); 
 }

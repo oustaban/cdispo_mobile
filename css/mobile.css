@@ -459,6 +459,14 @@ th {
 	font-style: normal;
 }
 
+@font-face {
+	font-family: "icomoon2";
+	src: url("../../fonts/icomoon2.eot?ak1oz0");
+	src: url("../../fonts/icomoon2.eot?ak1oz0#iefix") format("embedded-opentype"), url("../../fonts/icomoon2.ttf?ak1oz0") format("truetype"), url("../../fonts/icomoon2.woff?ak1oz0") format("woff"), url("../../fonts/icomoon2.svg?ak1oz0#icomoon") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+
 [class^="icon-"],
 [class*=" icon-"] {
 	/* use !important to prevent issues with browser extensions that change fonts */
@@ -1156,7 +1164,6 @@ select:focus {
 
 .connection-page #main {
 	min-height: calc(100vh - 53px);
-	
 }
 
 .connection-page #main:before {
@@ -1406,7 +1413,6 @@ select:focus {
 }
 
 .info-block .text-holder {
-	padding: 20px 35px 10px;
 	text-align: center;
 }
 
@@ -1428,7 +1434,7 @@ select:focus {
 /* carousel styles */
 
 .main-slider {
-	font-size: 10px;
+	font-size: 11px;
 	text-align: center;
 	width: 100%;
 }
@@ -1588,7 +1594,6 @@ select:focus {
 	padding-left:10px;
 }
 
-
 .main-slider .time-desc {
 	text-transform: uppercase;
 	font-size: 12px;
@@ -1597,8 +1602,8 @@ select:focus {
 .main-slider .time-desc .descriptionleft {
 	padding: 0 24px;
 	float:left;
-	width:100%;
-	text-align:center;
+	width:50%;
+	text-align:left;
 }
 
 .main-slider .time-desc .descriptionright {
@@ -1607,6 +1612,7 @@ select:focus {
 	width:50%;
 	text-align:left;
 	padding-left:10px;
+	text-align:right;
 }
 
 .main-slider .organizator-info {
@@ -1627,7 +1633,7 @@ select:focus {
 }
 
 .main-slider .organizator {
-	width: calc(100% - 70px);
+	width: calc(100% - 20px);
 	font-size: 12px;
 }
 
@@ -1891,6 +1897,205 @@ select:focus {
 
 .loginmessage h4 {
 	font-size:16px;
+}
+
+.location-info {
+	font-weight:bold;
+}
+
+.info-block {
+	display:none;
+}
+
+
+/****** PREVIEW SHARING ****/
+
+
+div.prewiewsharing_header {
+	display:block;
+	width:100%;
+	padding-left:10px;
+	padding-right:10px;
+	padding-top:10px;
+	padding-bottom:10px;
+	float:left;
+	position: relative;
+}
+
+div.prewiewsharing_header h1 {
+	text-align:center;
+	color:#fff;
+	margin:0;
+}
+
+div.prewiewsharing_row1 {
+	display:block;
+	width:100%;
+	float:left;
+}
+div.prewiewsharing_col1 {
+	display:block;
+	width:100%;
+	float:left;
+}
+div.prewiewsharing_col2 {
+	display:block;
+	width:30%;
+	float:left;
+}
+div.prewiewsharing_row2 {
+	display:block;
+	width:100%;
+	float:left;
+}
+div.prewiewsharing_row3 {
+	display:block;
+	width:100%;
+	float:left;
+}
+span.prewiewsharing_title,span.prewiewbooking_title,span.prewiewguest_title {
+	color:#000;
+	font-size:18px;
+	text-align:center;
+	width:100%;
+	display:block;
+	font-weight:bold;
+}
+div.prewiewsharing_mandatories,div.prewiewbooking_mandatories,div.prewiewguest_mandatories {
+	color:#000;
+	font-size:15px;
+	text-align:left;
+	width:100%;
+	display:block;
+	font-style:italic;
+}
+span.prewiewsharing_mandatory,span.prewiewbooking_mandatory,span.prewiewguest_mandatory {
+	color:#000;
+	font-size:15px;
+	text-align:left;
+	width:100%;
+	display:block;
+	font-style:italic;
+}
+span.prewiewsharing_edit,span.prewiewbooking_edit,span.prewiewguest_edit {
+	float:right;
+	padding-right:10px;
+}
+span.prewiewsharing_delete,span.prewiewbooking_delete,span.prewiewguest_delete {
+	float:right;
+	padding-right:10px;
+}
+span.prewiewsharing_message,span.prewiewbooking_message,span.prewiewguest_message {
+	float:right;
+	padding-right:10px;
+}
+span.prewiewsharing_close,span.prewiewbooking_close,span.prewiewguest_close {
+	float:right;
+	padding-right:10px;
+}
+span.prewiewsharing_statut,span.prewiewbooking_statut,span.prewiewguest_statut {
+	text-align:right;
+	font-size:16px;
+	font-style:italic;
+	color:orange;
+	font-weight:bold;
+	display:block;
+}
+span.prewiewsharing_edit,span.prewiewbooking_edit,span.prewiewguest_edit {
+	float:right;
+}
+
+div.previewsharing_content,div.previewbooking_content,div.previewguest_content {
+	display:block;
+	width:100%;
+	padding-left:10px;
+	padding-right:10px;
+	padding-bottom:10px;
+	float:left;
+	color:#000;
+	position: relative;
+}
+
+div.previewsharing_slider,div.previewbooking_slider,div.previewguest_slider {
+	margin:auto;
+	width:225px;
+	height:175px;
+	margin-top:10px;
+	margin-bottom:30px;
+}
+
+div.prewiewsharing_location {
+    display: block;
+	text-align:left;
+}
+
+
+div.prewiewsharing_location::before {
+
+    content: "\e947";
+    font-family: 'icomoon2';
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    padding-right: 10px;
+
+}
+
+div.previewsharing_content span.horaire {
+    padding-left: 24px;
+    color: #000;
+    display: block;
+}
+
+div.prewiewsharing_secondaire {
+    display: block;
+    text-align:left;
+}
+
+div.prewiewsharing_owner {
+    display: block;
+    text-align:left;
+	margin-top: 20px;
+}
+
+div.prewiewsharing_owner::before {
+    content: "\e972";
+    font-family: 'icomoon2';
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    padding-right: 10px;
+}
+
+.tooltiptext4 {
+    visibility: hidden;
+    width: auto;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    border: 1px solid #fff;
+    height: auto;
+    padding: 5px;
+    margin-top: 15px;
+    position: absolute;
+    z-index: 100;
+    width: 270px;
+    left: 50%;
+    margin-left: -250px;
+    top: -250px;
+}
+
+a.tooltip4 {
+    -webkit-transition: color .3s linear;
+    transition: color .3s linear;
+    color: #24b8a8;
+    text-decoration: none;
 }
 
 @media (min-width: 480px) {
