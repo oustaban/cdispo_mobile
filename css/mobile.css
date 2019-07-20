@@ -1156,7 +1156,7 @@ select:focus {
 /* main content styles */
 
 #main {
-	padding: 73px 0 100px;
+	padding: 53px 0 100px;
 	position: relative;
 	z-index: 2;
 	max-height: 100vh;
@@ -1205,9 +1205,9 @@ select:focus {
 	-webkit-box-align: start;
 	-ms-flex-align: start;
 	align-items: flex-start;
-	height: calc(100vh - 165px);
+	height: calc(100vh - 125px);
 	overflow-x: hidden;
-	overflow-y: scroll;
+	overflow-y: auto;
 	-webkit-overflow-scrolling: touch;
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -1922,6 +1922,7 @@ div.prewiewsharing_header {
 	position: relative;
 	background-color: rgba(45,165,166,0.25);
 	border-bottom: 1px solid white;
+	
 }
 
 div.prewiewsharing_header h1 {
