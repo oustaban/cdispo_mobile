@@ -1156,7 +1156,7 @@ select:focus {
 /* main content styles */
 
 #main {
-	padding: 53px 0 100px;
+	padding: 73px 0 100px;
 	position: relative;
 	z-index: 2;
 	max-height: 100vh;
@@ -1205,7 +1205,7 @@ select:focus {
 	-webkit-box-align: start;
 	-ms-flex-align: start;
 	align-items: flex-start;
-	height: calc(100vh - 125px);
+	height: calc(100vh - 165px);
 	overflow-x: hidden;
 	overflow-y: auto;
 	-webkit-overflow-scrolling: touch;
