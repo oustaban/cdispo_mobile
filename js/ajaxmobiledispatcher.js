@@ -160,22 +160,6 @@ function getPreviewRessource(ressourceId,categoryRessource,user_id) {
                 
                 }
             
-                if (result.notassistant) {
-                
-                    jQuery.magnificPopup.close();
-                    //$('.loginmessageajax2').html(result.notassistant);
-                    jQuery("#notassistant").trigger("click");
-                
-                }
-                
-                if (result.notdispo) {
-                
-                    jQuery.magnificPopup.close();
-                    $('.loginmessageajax3').html(result.notdispo);
-                    jQuery("#ressourcenotdispo").trigger("click");
-                
-                }
-                
                 if (result.ressourcedeleted) {
                     
                     
@@ -201,6 +185,51 @@ function getPreviewRessource(ressourceId,categoryRessource,user_id) {
           },  
           error: function(error) {
                 console.log('getPreviewRessource error');
+                $('.loader2').hide();
+          }   
+    }); 
+}
+
+
+
+function getUserInfo(user_id) {
+    var L = $("#sysLanguageUid").val();
+    $('.loader2').show();
+    var url = "http://cdispo_preprod.moonlikestudio.com/rest/cdispo-custom_rest-getuserinfo/"+user_id;
+    $.ajax({
+          type: 'GET',
+          url:url,
+          dataType: "json",
+    
+          success: function(result) {
+            
+                if (result.deconnexion) {
+                    
+                    jQuery.magnificPopup.close();
+                    $('.loginmessageajax1').html(result.deconnexion);
+                    jQuery("#deconnector").trigger("click");
+                
+                }
+            
+                
+                if (result.ok) {
+                    
+                    $('.info-block').html(result.content);
+                    
+                    $('.main-slider').hide();
+                    $('.info-block').show();
+                    
+                   
+                    console.log('getUserInfo success');
+                } else {
+                    console.log('getUserInfo error');
+                }
+                
+                $('.loader2').hide();
+                
+          },  
+          error: function(error) {
+                console.log('getUserInfo error');
                 $('.loader2').hide();
           }   
     }); 

@@ -467,10 +467,17 @@ th {
 	font-style: normal;
 }
 
+@font-face {
+	font-family: "icomoon3";
+	src: url("../fonts/icomoon3.eot?ak1oz0");
+	src: url("../fonts/icomoon3.eot?ak1oz0#iefix") format("embedded-opentype"), url("../fonts/icomoon3.ttf?ak1oz0") format("truetype"), url("../fonts/icomoon3.woff?ak1oz0") format("woff"), url("../fonts/icomoon3.svg?ak1oz0#icomoon") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
 [class^="icon-"],
 [class*=" icon-"] {
 	/* use !important to prevent issues with browser extensions that change fonts */
-	font-family: "icomoon" !important;
+	font-family: "icomoon3" !important;
 	speak: none;
 	font-style: normal;
 	font-weight: normal;
@@ -918,7 +925,7 @@ form .link {
 
 .datapicker-wrap:before {
 	content: "\e900";
-	font-family: "icomoon";
+	font-family: "icomoon3";
 	position: absolute;
 	top: 6px;
 	right: 9px;
@@ -1220,7 +1227,7 @@ select:focus {
 
 .main-holder > div {
 	margin: auto;
-	max-width: 100%;
+	min-width: 100%;
 }
 
 /* page logo styles */
@@ -1435,7 +1442,7 @@ select:focus {
 /* carousel styles */
 
 .main-slider {
-	font-size: 11px;
+	font-size: 14px;
 	text-align: center;
 	width: 100%;
 }
@@ -1521,7 +1528,7 @@ select:focus {
 
 .main-slider .reserved-time:before {
 	content: "\e906";
-	font-family: "icomoon";
+	font-family: "icomoon3";
 	position: absolute;
 	top: 50%;
 	-webkit-transform: translateY(-50%);
@@ -1643,7 +1650,8 @@ select:focus {
 }
 
 .main-slider .location-info {
-	margin: 0;
+	line-height: 13px;
+	margin-top: -4px;
 }
 
 .main-slider .location-info i {
@@ -1711,7 +1719,7 @@ select:focus {
 
 .slick-arrow:before {
 	content: "\e903";
-	font-family: "icomoon";
+	font-family: "icomoon3";
 	font-size: 30px;
 	color: rgba(255, 255, 255, .27);
 }
@@ -2032,7 +2040,7 @@ div.prewiewsharing_location {
 div.prewiewsharing_location::before {
 
     content: "\e947";
-    font-family: 'icomoon2';
+    font-family: 'icomoon32';
     font-style: normal;
     font-weight: normal;
     font-variant: normal;
@@ -2099,6 +2107,35 @@ a.tooltip4 {
 
 .previewsharing_slider {
 	display:none;
+}
+
+.example-edit-photo:before {
+	font-family: "icomoon";
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+}
+
+.example-edit-photo {
+	width: 90px;
+	height: 90px;
+	border: 4px solid #000;
+	background: #deecfb;
+	border-radius: 50%;
+	margin: 0 auto 20px;
+	position: relative;
+	overflow: hidden;
+}
+
+.example-edit-photo:before {
+	color: #000;
+	font-size: 75px;
+	position: absolute;
+	top: 12px;
+	left: 4px;
 }
 
 @media (min-width: 480px) {
@@ -2200,7 +2237,7 @@ a.tooltip4 {
 	}
 
 	.main-slider .organizator-info {
-		padding: 24px 5px 21px;
+		padding: 24px 10px 21px;
 	}
 	
 	.loginmessage h4 {
@@ -2212,6 +2249,13 @@ a.tooltip4 {
 		height:275px;
 		margin-top:10px;
 		margin-bottom:30px;
+	}
+	
+	.example-edit-photo {
+		display: inline-block;
+		vertical-align: middle;
+		letter-spacing: normal;
+		
 	}
 }
 
@@ -2450,7 +2494,7 @@ a.tooltip4 {
 	}
 
 	.main-slider .organizator {
-		font-size: 17px;
+		font-size: 22px;
 		width: calc(100% - 70px);
 	}
 
