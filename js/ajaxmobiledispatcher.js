@@ -186,10 +186,7 @@ function getPreviewRessource(ressourceId,categoryRessource,user_id) {
                 }
                 
                 if (result.ok) {
-                    $('.prewiewsharing_title').html(result.title);
-                    $('.prewiewsharing_mandatories').html(result.mandatories);
-                    $('.previewsharing_content').html(result.content);
-                    
+                    $('.info-block').html(result.content);
                     $('.main-slider').hide();
                     $('.info-block').show();
                     
