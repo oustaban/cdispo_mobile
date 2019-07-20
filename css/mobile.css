@@ -1548,7 +1548,7 @@ select:focus {
 }
 
 .main-slider .bureau strong {
-	font-size: 22px;
+	font-size: 18px;
 	display: block;
 }
 
@@ -1634,7 +1634,7 @@ select:focus {
 
 .main-slider .organizator {
 	width: calc(100% - 20px);
-	font-size: 12px;
+	font-size: 14px;
 }
 
 .main-slider .organizator span {
@@ -1958,15 +1958,12 @@ div.prewiewsharing_row3 {
 }
 span.prewiewsharing_title,span.prewiewbooking_title,span.prewiewguest_title {
 	color:#000;
-	font-size:18px;
 	text-align:center;
 	width:100%;
 	display:block;
-	font-weight:bold;
 }
 div.prewiewsharing_mandatories,div.prewiewbooking_mandatories,div.prewiewguest_mandatories {
 	color:#000;
-	font-size:15px;
 	text-align:left;
 	width:100%;
 	display:block;
@@ -1974,7 +1971,6 @@ div.prewiewsharing_mandatories,div.prewiewbooking_mandatories,div.prewiewguest_m
 }
 span.prewiewsharing_mandatory,span.prewiewbooking_mandatory,span.prewiewguest_mandatory {
 	color:#000;
-	font-size:15px;
 	text-align:left;
 	width:100%;
 	display:block;
@@ -1998,7 +1994,6 @@ span.prewiewsharing_close,span.prewiewbooking_close,span.prewiewguest_close {
 }
 span.prewiewsharing_statut,span.prewiewbooking_statut,span.prewiewguest_statut {
 	text-align:right;
-	font-size:16px;
 	font-style:italic;
 	color:orange;
 	font-weight:bold;
@@ -2160,7 +2155,7 @@ a.tooltip4 {
 	}
 
 	.info-block {
-		font-size: 28px;
+		font-size: 22px;
 	}
 
 	.info-block .title {
@@ -2192,7 +2187,7 @@ a.tooltip4 {
 	}
 
 	.main-slider .bureau strong {
-		font-size: 37px;
+		font-size: 32px;
 	}
 
 	.main-slider .btn {
@@ -2212,6 +2207,12 @@ a.tooltip4 {
 		font-size:16px;
 	}
 	
+	div.previewsharing_slider,div.previewbooking_slider,div.previewguest_slider {
+		width:325px;
+		height:275px;
+		margin-top:10px;
+		margin-bottom:30px;
+	}
 }
 
 @media (min-width: 768px) {
