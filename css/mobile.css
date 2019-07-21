@@ -1650,8 +1650,17 @@ select:focus {
 }
 
 .main-slider .location-info {
-	line-height: 13px;
-	margin-top: -4px;
+	line-height: 6px;
+	margin-top: 0px;
+}
+
+.main-slider .location-info i {
+	float:left;
+}
+
+.main-slider .location-info span {
+	margin-top: -2px;
+	line-height: 12px;
 }
 
 .main-slider .location-info i {
