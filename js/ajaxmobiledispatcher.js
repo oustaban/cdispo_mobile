@@ -128,7 +128,7 @@ function getBooking(cookievalue,action) {
                 if (result.result) {
                     if (action == "refresh") {
                         //$('.main-slider').html('');
-                        $('.main-slider').unslick();
+                        $('.main-slider').slick('unslick');
                     }
                     $('.main-slider').html(result.slide);
                     
