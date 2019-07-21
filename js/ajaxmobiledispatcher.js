@@ -1,4 +1,4 @@
-function getBooking(cookievalue) {
+function getBooking(cookievalue,type) {
         
     $('.loader2').show();    
     var L = 0;
@@ -127,6 +127,9 @@ function getBooking(cookievalue) {
                 
                 if (result.result) {
                     $('.main-slider').html(result.slide);
+                    if (type == "refresh") {
+                        $('.main-slider').unslick();
+                    }
                     initSlickCarousel();
                 } else {
                     

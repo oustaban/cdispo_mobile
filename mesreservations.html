@@ -51,7 +51,7 @@
 		   
 			cookieMaster.getCookieValue('http://cdispo_preprod.moonlikestudio.com', 'fe_typo_user', function(data) {
 				console.log(data.cookieValue);
-				getBooking(data.cookieValue); 
+				getBooking(data.cookieValue,'init'); 
 			}, function(error) {
 				if (error) {
 					console.log('error: ' + error);
@@ -61,16 +61,16 @@
         });
 		$(document).bind('resume', function() {
 			
-			/*		   
+				   
 			cookieMaster.getCookieValue('http://cdispo_preprod.moonlikestudio.com', 'fe_typo_user', function(data) {
 				console.log(data.cookieValue);
-				getBooking(data.cookieValue); 
+				getBooking(data.cookieValue,'refresh'); 
 			}, function(error) {
 				if (error) {
 					console.log('error: ' + error);
 				}
 			});
-			*/
+			
 			
         });
     </script>
