@@ -60,7 +60,9 @@ function getBooking(cookievalue,action) {
                 
                 if (result.result) {
                     if (action == "refresh") {
-                        $('.main-slider').slick('unslick');
+                         $('.main-slider').show();
+                         $('.info-block').hide();
+                         $('.main-slider').slick('unslick');
                     }
                     $('.main-slider').html(result.slide);
                     initSlickCarousel();
@@ -178,6 +180,8 @@ function getPreviewRessource(ressourceId,categoryRessource,fe_typo_user) {
                 
                 if (result.ok) {
                     
+                    console.log('title:'+result.title);
+                    console.log('mandatories:'+result.mandatories);
                     $('.prewiewsharing_title').html(result.title);
                     $('.prewiewsharing_mandatories').html(result.mandatories);
                     $('.previewsharing_content').html(result.content);
