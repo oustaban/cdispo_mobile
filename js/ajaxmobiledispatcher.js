@@ -143,7 +143,7 @@ function getBooking(cookievalue,action) {
 function getPreviewRessource(ressourceId,categoryRessource,fe_typo_user) {
     var L = 0;
     $('.loader2').show();
-    var url = "http://cdispo_preprod.moonlikestudio.com/?type=476&tx_cdispofrontend_fcdispofrontend[controller]=Mobile&tx_cdispofrontend_fcdispofrontend[action]=getPreviewRessource&tx_cdispofrontend_fcdispofrontend[uid]=1&L="+L
+    var url = "http://cdispo_preprod.moonlikestudio.com/?type=476&tx_cdispofrontend_fcdispofrontend[controller]=Mobile&tx_cdispofrontend_fcdispofrontend[action]=dispatcher&tx_cdispofrontend_fcdispofrontend[uid]=1&L="+L
     $.ajax({
           type: 'POST',
           url:url,
@@ -197,7 +197,7 @@ function getPreviewRessource(ressourceId,categoryRessource,fe_typo_user) {
 function getUserInfo(user_id) {
     var L = 0;
     $('.loader2').show();
-    var url = "http://cdispo_preprod.moonlikestudio.com/?type=476&tx_cdispofrontend_fcdispofrontend[controller]=Mobile&tx_cdispofrontend_fcdispofrontend[action]=getPreviewRessource&tx_cdispofrontend_fcdispofrontend[uid]=1&L="+L
+    var url = "http://cdispo_preprod.moonlikestudio.com/?type=476&tx_cdispofrontend_fcdispofrontend[controller]=Mobile&tx_cdispofrontend_fcdispofrontend[action]=dispatcher&tx_cdispofrontend_fcdispofrontend[uid]=1&L="+L
     $.ajax({
           type: 'POST',
           url:url,
@@ -244,7 +244,7 @@ function getSiteInfo(site_id,referentiel_id,user_id) {
     
     var L = $("#sysLanguageUid").val();
     $('.loader2').show();
-    var url = "http://cdispo_preprod.moonlikestudio.com/?type=476&tx_cdispofrontend_fcdispofrontend[controller]=Mobile&tx_cdispofrontend_fcdispofrontend[action]=getPreviewRessource&tx_cdispofrontend_fcdispofrontend[uid]=1&L="+L
+    var url = "http://cdispo_preprod.moonlikestudio.com/?type=476&tx_cdispofrontend_fcdispofrontend[controller]=Mobile&tx_cdispofrontend_fcdispofrontend[action]=dispatcher&tx_cdispofrontend_fcdispofrontend[uid]=1&L="+L
     $.ajax({
           type: 'POST',
           url:url,
