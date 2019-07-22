@@ -157,7 +157,7 @@ function getPreviewRessource(ressourceId,categoryRessource,fe_typo_user) {
                     
                     $('.prewiewsharing_header').hide();
                     $('.previewsharing_content').html(result.deconnexion);
-                    $('#closepopin').attr('onclick','$(\'.info-block\').hide();$(\'.main-slider\').show();');
+                    $('#btn_close').attr('onclick','$(\'.info-block\').hide();$(\'.main-slider\').show();');
                     
                     $('.main-slider').hide();
                     $('.info-block').show();
@@ -169,7 +169,7 @@ function getPreviewRessource(ressourceId,categoryRessource,fe_typo_user) {
                     
                     $('.prewiewsharing_header').hide();
                     $('.previewsharing_content').html(result.ressourcedeleted);
-                    $('#closepopin').attr('onclick','$(\'.info-block\').hide();$(\'.main-slider\').show();');
+                    $('#btn_close').attr('onclick','$(\'.main-slider\').slick(\'unslick\');initSlickCarousel();$(\'.info-block\').hide();$(\'.main-slider\').show();');
                     
                     $('.main-slider').hide();
                     $('.info-block').show();
@@ -182,7 +182,7 @@ function getPreviewRessource(ressourceId,categoryRessource,fe_typo_user) {
                     $('.prewiewsharing_title').html(result.title);
                     $('.prewiewsharing_mandatories').html(result.mandatorie);
                     $('.previewsharing_content').html(result.content);
-                    $('#closepopin').attr('onclick','$(\'.info-block\').hide();$(\'.main-slider\').show();');
+                    $('#btn_close').attr('onclick','$(\'.info-block\').hide();$(\'.main-slider\').show();');
                     
                     $('.main-slider').hide();
                     $('.info-block').show();
@@ -221,7 +221,7 @@ function getUserInfo(fe_typo_user) {
                     
                     $('.prewiewsharing_header').hide();
                     $('.previewsharing_content').html(result.deconnexion);
-                    $('#closepopin').attr('onclick','$(\'.info-block\').hide();$(\'.main-slider\').show();');
+                    $('#btn_close').attr('onclick','$(\'.info-block\').hide();$(\'.main-slider\').show();');
                     
                     $('.main-slider').hide();
                     $('.info-block').show();
@@ -233,7 +233,7 @@ function getUserInfo(fe_typo_user) {
                     
                     $('.prewiewsharing_header').hide();
                     $('.previewsharing_content').html(result.content);
-                    $('#closepopin').attr('onclick','$(\'.info-block\').hide();$(\'.main-slider\').show();');
+                    $('#btn_close').attr('onclick','$(\'.info-block\').hide();$(\'.main-slider\').show();');
                     
                     $('.main-slider').hide();
                     $('.info-block').show();
@@ -273,7 +273,7 @@ function getSiteInfo(site_id,referentiel_id,fe_typo_user) {
                     
                     $('.prewiewsharing_header').hide();
                     $('.previewsharing_content').html(result.deconnexion);
-                    $('#closepopin').attr('onclick','$(\'.info-block\').hide();$(\'.main-slider\').show();');
+                    $('#btn_close').attr('onclick','$(\'.info-block\').hide();$(\'.main-slider\').show();');
                     
                     $('.main-slider').hide();
                     $('.info-block').show();
@@ -284,7 +284,7 @@ function getSiteInfo(site_id,referentiel_id,fe_typo_user) {
                     
                     $('.prewiewsharing_header').hide();
                     $('.previewsharing_content').html(result.content);
-                    $('#closepopin').attr('onclick','$(\'.info-block\').hide();$(\'.main-slider\').show();');
+                    $('#btn_close').attr('onclick','$(\'.info-block\').hide();$(\'.main-slider\').show();');
                     
                     $('.main-slider').hide();
                     $('.info-block').show();

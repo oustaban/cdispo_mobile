@@ -11,5 +11,6 @@
 	"placeholder_user":"Adresse email",
 	"placeholder_pass":"Mot de passe",
 	"btn_scan":"Scanner",
-	"btn_book":"Réserver"
+	"btn_book":"Réserver",
+	"btn_close":"Fermer"
 }
