@@ -178,12 +178,12 @@ function getPreviewRessource(ressourceId,categoryRessource,fe_typo_user) {
                 
                 if (result.ok) {
                     
-                    $('.prewiewsharing_header').show();
                     $('.prewiewsharing_title').html(result.title);
                     $('.prewiewsharing_mandatories').html(result.mandatories);
                     $('.previewsharing_content').html(result.content);
                     $('#btn_close').attr('onclick','$(\'.info-block\').hide();$(\'.main-slider\').show();');
                     
+                    $('.prewiewsharing_header').show();
                     $('.main-slider').hide();
                     $('.info-block').show();
                     
