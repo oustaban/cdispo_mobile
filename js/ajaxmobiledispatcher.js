@@ -180,7 +180,7 @@ function getPreviewRessource(ressourceId,categoryRessource,fe_typo_user) {
                     
                     $('.prewiewsharing_header').show();
                     $('.prewiewsharing_title').html(result.title);
-                    $('.prewiewsharing_mandatories').html(result.mandatorie);
+                    $('.prewiewsharing_mandatories').html(result.mandatories);
                     $('.previewsharing_content').html(result.content);
                     $('#btn_close').attr('onclick','$(\'.info-block\').hide();$(\'.main-slider\').show();');
                     
