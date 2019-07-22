@@ -59,11 +59,10 @@ function getBooking(cookievalue,action) {
                 //console.log(JSON.stringify(jqXHR.responseJSON));
                 
                 if (result.result) {
-                    console.log('BAP');
+                    if (action == "refresh") {
+                        $('.main-slider').slick('unslick');
+                    }
                     $('.main-slider').html(result.slide);
-                    console.log('BAP2');
-                    initSlickCarousel();
-                    console.log('BAP3');
                 } else {
                     
                 }
