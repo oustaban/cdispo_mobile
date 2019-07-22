@@ -242,7 +242,7 @@ function getUserInfo(fe_typo_user) {
 
 function getSiteInfo(site_id,referentiel_id,fe_typo_user) {
     
-    var L = $("#sysLanguageUid").val();
+    var L = 0;
     $('.loader2').show();
     var url = "http://cdispo_preprod.moonlikestudio.com/?type=476&tx_cdispofrontend_fcdispofrontend[controller]=Mobile&tx_cdispofrontend_fcdispofrontend[action]=dispatcher&tx_cdispofrontend_fcdispofrontend[uid]=1&L="+L
     $.ajax({
