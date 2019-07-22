@@ -240,6 +240,7 @@ function getUserInfo(fe_typo_user) {
 }
 
 
+
 function getSiteInfo(site_id,referentiel_id,fe_typo_user) {
     
     var L = 0;
