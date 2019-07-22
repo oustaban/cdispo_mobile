@@ -75,11 +75,11 @@ function initMobileConnect() {
 		var login = $('#user').val();
 		var password = $('#pass').val()
 		var L = 0;
-		var url = "http://cdispo_preprod.moonlikestudio.com/?type=476&tx_cdispofrontend_fcdispofrontend[controller]=Mobile&tx_cdispofrontend_fcdispofrontend[action]=connexion&tx_cdispofrontend_fcdispofrontend[uid]=1&L="+L
+		var url = "http://cdispo_preprod.moonlikestudio.com/?type=476&tx_cdispofrontend_fcdispofrontend[controller]=Mobile&tx_cdispofrontend_fcdispofrontend[action]=dispatcher&tx_cdispofrontend_fcdispofrontend[uid]=1&L="+L
 		$.ajax({
 			  type: 'POST',
 			  url:url,
-			  data: {login:login,password:password},
+			  data: {action:'connexion',login:login,password:password},
 			  dataType: "json",
 		
 			  success: function(result) {
