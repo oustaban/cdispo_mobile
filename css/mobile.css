@@ -1418,6 +1418,7 @@ select:focus {
 .info-block {
 	font-size: 16px;
 	line-height: 1.6;
+	border:none;
 }
 
 .info-block .text-holder {
@@ -1660,7 +1661,7 @@ select:focus {
 
 .main-slider .location-info span {
 	margin-top: -2px;
-	line-height: 12px;
+	line-height: 14px;
 }
 
 .main-slider .location-info i {
@@ -1937,8 +1938,8 @@ div.prewiewsharing_header {
 	padding-bottom:10px;
 	float:left;
 	position: relative;
-	background-color: rgba(45,165,166,0.25);
-	border-bottom: 1px solid white;
+	border: 1px solid white;
+	margin-bottom:5px;
 	
 }
 
@@ -2029,6 +2030,9 @@ div.previewsharing_content,div.previewbooking_content,div.previewguest_content {
 	float:left;
 	color:#000;
 	position: relative;
+	border-top: 1px solid white;
+	border-left: 1px solid white;
+	border-right: 1px solid white;
 }
 
 div.previewsharing_slider,div.previewbooking_slider,div.previewguest_slider {
@@ -2049,7 +2053,7 @@ div.prewiewsharing_location {
 div.prewiewsharing_location::before {
 
     content: "\e947";
-    font-family: 'icomoon32';
+    font-family: 'icomoon3';
     font-style: normal;
     font-weight: normal;
     font-variant: normal;

@@ -3,7 +3,7 @@ function getBooking(cookievalue,action) {
     $('.loader2').show();    
     var L = 0;
     //document.cookie = "fe_typo_user="+cookievalue;
-    var url = "http://cdispo_preprod.moonlikestudio.com/?type=476&tx_cdispofrontend_fcdispofrontend[controller]=Mobile&tx_cdispofrontend_fcdispofrontend[action]=getBooking&tx_cdispofrontend_fcdispofrontend[uid]=1&L="+L
+    //var url = "http://cdispo_preprod.moonlikestudio.com/?type=476&tx_cdispofrontend_fcdispofrontend[controller]=Mobile&tx_cdispofrontend_fcdispofrontend[action]=getBooking&tx_cdispofrontend_fcdispofrontend[uid]=1&L="+L
     
     
     //cordova.plugin.http.setCookie(url, 'fe_typo_user='+cookievalue);
@@ -45,19 +45,13 @@ function getBooking(cookievalue,action) {
     );
     */
     
-    /*
+    var url = "http://cdispo_preprod.moonlikestudio.com/?type=476&tx_cdispofrontend_fcdispofrontend[controller]=Mobile&tx_cdispofrontend_fcdispofrontend[action]=dispatcher&tx_cdispofrontend_fcdispofrontend[uid]=1&L="+L
+    var data = cookievalue.split(";");
     $.ajax({
             type: 'POST',
             url:url,
             dataType: 'json',
-            data: {fe_typo_user:cookievalue,action:'getBooking'},
-            xhrFields: {
-                withCredentials: true
-            },
-            crossDomain: true,
-            beforeSend: function(xhr){
-                xhr.setRequestHeader('Cookie', 'fe_typo_user='+cookievalue);
-            },
+            data: {fe_typo_user:data[0],action:'getBooking'},
             success: function(result, status, jqXHR) {
 
                 console.log("result is " + result);
@@ -84,7 +78,7 @@ function getBooking(cookievalue,action) {
     
          
     });
-    */
+    
     
     /*
     var xhr = new XMLHttpRequest();
@@ -112,7 +106,7 @@ function getBooking(cookievalue,action) {
     xhr.withCredentials = true;
     xhr.send(null);
     */
-    
+    /*
     var data = cookievalue.split(";");
     var url3 = "http://cdispo_preprod.moonlikestudio.com/rest/cdispo-custom_rest-getbooking/"+data[1];
     $.ajax({
@@ -142,7 +136,8 @@ function getBooking(cookievalue,action) {
             console.log(error);
             $('.loader2').hide();
           }   
-    }); 
+    });
+    */
 }
 
 
@@ -159,20 +154,22 @@ function getPreviewRessource(ressourceId,categoryRessource,user_id) {
             
                 if (result.deconnexion) {
                     
-                    jQuery.magnificPopup.close();
-                    $('.loginmessageajax1').html(result.deconnexion);
-                    jQuery("#deconnector").trigger("click");
+                    $('.info-block').html(result.deconnexion);
+                    
+                    $('.main-slider').hide();
+                    $('.info-block').show();
                 
                 }
             
                 if (result.ressourcedeleted) {
                     
+                    $('.info-block').html(result.ressourcedeleted);
                     
-                    jQuery.magnificPopup.close();
-                    $('.loginmessageajax3').html(result.ressourcedeleted);
-                    jQuery("#ressourcenotdispo").trigger("click");
-                    
+                    $('.main-slider').hide();
+                    $('.info-block').show();
+                
                 }
+                
                 
                 if (result.ok) {
                     $('.info-block').html(result.content);
@@ -210,9 +207,10 @@ function getUserInfo(user_id) {
             
                 if (result.deconnexion) {
                     
-                    jQuery.magnificPopup.close();
-                    $('.loginmessageajax1').html(result.deconnexion);
-                    jQuery("#deconnector").trigger("click");
+                    $('.info-block').html(result.deconnexion);
+                    
+                    $('.main-slider').hide();
+                    $('.info-block').show();
                 
                 }
             
@@ -238,4 +236,51 @@ function getUserInfo(user_id) {
                 $('.loader2').hide();
           }   
     }); 
+}
+
+
+function getSiteInfo(site_id,referentiel_id,user_id) {
+    
+    var L = $("#sysLanguageUid").val();
+    $('.loader2').show();
+    var url = "/rest/cdispo-custom_rest-getsiteinfo/"+site_id+"/"+referentiel_id+"/"+user_id;
+    
+    $.ajax({
+          type: 'GET',
+          url:url,
+          dataType: "json",
+    
+          success: function(result) {
+            
+                if (result.deconnexion) {
+                    
+                    $('.info-block').html(result.deconnexion);
+                    
+                    $('.main-slider').hide();
+                    $('.info-block').show();
+                
+                }
+            
+                if (result.ok) {
+                    
+                    $('.info-block').html(result.content);
+                    $('.main-slider').hide();
+                    $('.info-block').show();
+                       
+                    console.log('geSiteInfo success');
+                
+                } else {
+                    console.log('geSiteInfo error');
+                }
+                
+                $('.loader2').hide();
+                
+          },  
+          error: function(error) {
+                console.log('geSiteInfo error');
+                $('.loader2').hide();
+          }   
+    
+    });
+    
 }
