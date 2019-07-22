@@ -140,15 +140,16 @@ function getBooking(cookievalue,action) {
 }
 
 
-function getPreviewRessource(ressourceId,categoryRessource,user_id) {
-    var L = $("#sysLanguageUid").val();
+function getPreviewRessource(ressourceId,categoryRessource,fe_typo_user) {
+    var L = 0;
     $('.loader2').show();
-    var url = "http://cdispo_preprod.moonlikestudio.com/rest/cdispo-custom_rest-getpreviewressource/"+ressourceId+"/"+categoryRessource+"/"+user_id;
+    var url = "http://cdispo_preprod.moonlikestudio.com/?type=476&tx_cdispofrontend_fcdispofrontend[controller]=Mobile&tx_cdispofrontend_fcdispofrontend[action]=getPreviewRessource&tx_cdispofrontend_fcdispofrontend[uid]=1&L="+L
     $.ajax({
-          type: 'GET',
+          type: 'POST',
           url:url,
           dataType: "json",
-    
+          data:{action:'getPreviewRessource',ressourceId:ressourceId,categoryRessource:categoryRessource,fe_typo_user:fe_typo_user},
+          
           success: function(result) {
             
                 if (result.deconnexion) {
@@ -194,14 +195,15 @@ function getPreviewRessource(ressourceId,categoryRessource,user_id) {
 
 
 function getUserInfo(user_id) {
-    var L = $("#sysLanguageUid").val();
+    var L = 0;
     $('.loader2').show();
-    var url = "http://cdispo_preprod.moonlikestudio.com/rest/cdispo-custom_rest-getuserinfo/"+user_id;
+    var url = "http://cdispo_preprod.moonlikestudio.com/?type=476&tx_cdispofrontend_fcdispofrontend[controller]=Mobile&tx_cdispofrontend_fcdispofrontend[action]=getPreviewRessource&tx_cdispofrontend_fcdispofrontend[uid]=1&L="+L
     $.ajax({
-          type: 'GET',
+          type: 'POST',
           url:url,
           dataType: "json",
-    
+          data:{action:'getUserInfo',fe_typo_user:fe_typo_user},
+          
           success: function(result) {
             
                 if (result.deconnexion) {
@@ -242,12 +244,12 @@ function getSiteInfo(site_id,referentiel_id,user_id) {
     
     var L = $("#sysLanguageUid").val();
     $('.loader2').show();
-    var url = "/rest/cdispo-custom_rest-getsiteinfo/"+site_id+"/"+referentiel_id+"/"+user_id;
-    
+    var url = "http://cdispo_preprod.moonlikestudio.com/?type=476&tx_cdispofrontend_fcdispofrontend[controller]=Mobile&tx_cdispofrontend_fcdispofrontend[action]=getPreviewRessource&tx_cdispofrontend_fcdispofrontend[uid]=1&L="+L
     $.ajax({
-          type: 'GET',
+          type: 'POST',
           url:url,
           dataType: "json",
+          data:{action:'getSiteInfo',site_id:site_id,referentiel_id:referentiel_id,fe_typo_user:fe_typo_user},
     
           success: function(result) {
             
