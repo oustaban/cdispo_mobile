@@ -94,6 +94,11 @@ function initMobileConnect() {
 						function() {
 							console.log('A cookie has been set');
 							
+							var url = window.location.href;
+							url = url.substring(0, url.lastIndexOf("/") + 1);
+							cordova.InAppBrowser.open(url+'mesreservations.html', '_self');
+										
+							/*
 							var url3 = "http://"+domainsite+"/rest/auth/login";
 							$.ajax({
 								  type: 'POST',
@@ -111,6 +116,7 @@ function initMobileConnect() {
 									console.log(error);
 								  }   
 							});
+							*/
 							
 						},
 						function(error) {
