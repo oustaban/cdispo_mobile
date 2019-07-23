@@ -61,8 +61,9 @@ function getBooking(cookievalue,action) {
                 
                 if (result.result) {
                     if (action == "refresh") {
+                         console.log('countslide:'+countslide);
                          for (var i = 0; i < countslide; i++) {
-                            clearInterval('x'+i);
+                            clearInterval(x+i);
                          }
                          $('.main-slider').show();
                          $('.info-block').hide();
