@@ -80,7 +80,8 @@ function getBooking(cookievalue,action) {
                          }
                          $('.main-slider').show();
                          $('.info-block').hide();
-                         $('.main-slider').slick('unslick');
+                         if (countslide > 0) 
+                            $('.main-slider').slick('unslick');
                     }
                     
                     countslide = result.countslide;
