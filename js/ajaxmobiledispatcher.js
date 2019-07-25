@@ -206,7 +206,7 @@ function getPreviewRessource(ressourceId,categoryRessource,fe_typo_user) {
 
 
 
-function getUserInfo(fe_typo_user) {
+function getUserInfo(fe_typo_user,owner_id) {
     $('.loader2').show();
     var domain = window.localStorage.getItem("domain");
     var L = window.localStorage.getItem("language");
@@ -215,7 +215,7 @@ function getUserInfo(fe_typo_user) {
           type: 'POST',
           url:url,
           dataType: "json",
-          data:{action:'getUserInfo',fe_typo_user:fe_typo_user},
+          data:{action:'getUserInfo',fe_typo_user:fe_typo_user,owner_id:owner_id},
           
           success: function(result) {
             
