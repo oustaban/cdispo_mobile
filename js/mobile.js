@@ -95,12 +95,12 @@ function initMobileConnect() {
 					var userid = result[1].ses_userid;
 					var domainsite = result[1].domainsite;
 					var agregatecookie = cookieValue+";"+domainsite;
-					var language = result[1]['cdispo_language'];
+					var cdispo_language = result[1]['cdispo_language'];
 					
 					window.localStorage.setItem(cookieName, cookieValue);
 					window.localStorage.setItem("domain", domainsite);
 					window.localStorage.setItem("domain", domainsite);
-					window.localStorage.setItem("language", language);
+					window.localStorage.setItem("language", cdispo_language);
 					
 					var url = window.location.href;
 					url = url.substring(0, url.lastIndexOf("/") + 1);
