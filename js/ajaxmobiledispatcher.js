@@ -240,9 +240,7 @@ function getUserInfo(fe_typo_user) {
                     $('.prewiewsharing_header').hide();
                     $('.previewsharing_content').html(result.content);
                     
-                    var url = window.location.href;
-					url = url.substring(0, url.lastIndexOf("/") + 1);       
-                    $('#btn_close').attr('onclick','cordova.InAppBrowser.open(url+\'mesreservations.html\', \'_self\')');
+                    $('#btn_close').attr('onclick','$(\'.info-block\').hide();$(\'.main-slider\').show();');
                     
                     $('.main-slider').hide();
                     $('.info-block').show();

@@ -76,7 +76,8 @@ function initMobileConnect() {
 		var password = $('#pass').val();
 		var fe_typo_user = window.localStorage.getItem("fe_typo_user");
 		var domain = window.localStorage.getItem("domain");
-		var data = fe_typo_user+";"+domain
+		var cdispo_language = window.localStorage.getItem("language");
+		var data = fe_typo_user+";"+domain+";"+cdispo_language;
 		console.log("storage:"+data);
 		
 		var L = 0;
