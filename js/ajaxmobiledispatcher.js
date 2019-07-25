@@ -1,58 +1,16 @@
 var countslide = 0;
-function getBooking(cookievalue,action) {
+function getBooking(fe_typo_user,action) {
         
     $('.loader2').show();    
-    var L = 0;
-    //document.cookie = "fe_typo_user="+cookievalue;
-    //var url = "http://cdispo_preprod.moonlikestudio.com/?type=476&tx_cdispofrontend_fcdispofrontend[controller]=Mobile&tx_cdispofrontend_fcdispofrontend[action]=getBooking&tx_cdispofrontend_fcdispofrontend[uid]=1&L="+L
     
-    
-    //cordova.plugin.http.setCookie(url, 'fe_typo_user='+cookievalue);
-    
-    /*
-    const options = {
-        method: 'post',
-        data: {cookie:cookievalue},
-        headers: { Cookie: 'fe_typo_user='+cookievalue}
-    };
-       
-    cordova.plugin.http.sendRequest(url, options, function(response) {
-            // prints 200
-            console.log(response.status);
-            console.log(response.data);
-            console.log(response.url);
-            console.log(response.header);
-            if (response.data.result) {
-                console.log('BAP');
-                $('.main-slider').html(response.slide);
-                console.log('BAP2');
-                initSlickCarousel();
-                console.log('BAP3');
-            } else {
-                console.log('BOUU');
-            }
-            $('.loader2').hide();
-        }, function(response) {
-            // prints 403
-            console.log(response.status);
-       
-            //prints Permission denied
-            console.log(response.error);
-        
-        
-            $('.loader2').hide();
-                
-        }
-    );
-    */
-    var data = cookievalue.split(";");
-    
-    var url = "http://"+data[1]+"/?type=476&tx_cdispofrontend_fcdispofrontend[controller]=Mobile&tx_cdispofrontend_fcdispofrontend[action]=dispatcher&tx_cdispofrontend_fcdispofrontend[uid]=1&L="+L
+    var domain = window.localStorage.getItem("domain");
+    var L = window.localStorage.getItem("language");
+    var url = "http://"+domain+"/?type=476&tx_cdispofrontend_fcdispofrontend[controller]=Mobile&tx_cdispofrontend_fcdispofrontend[action]=dispatcher&tx_cdispofrontend_fcdispofrontend[uid]=1&L="+L
     $.ajax({
             type: 'POST',
             url:url,
             dataType: 'json',
-            data: {fe_typo_user:data[0],action:'getBooking'},
+            data: {fe_typo_user:fe_typo_user,action:'getBooking'},
             success: function(result, status, jqXHR) {
 
                 console.log("result is " + result);
@@ -92,7 +50,7 @@ function getBooking(cookievalue,action) {
                     } else {
                         $('.prewiewsharing_header').hide();
                         $('.previewsharing_content').html(result.content);
-                        $('#btn_close').attr('onclick','getBooking(\''+data[0]+'\',\'refresh\')');
+                        $('#btn_close').attr('onclick','getBooking(\''+fe_typo_user+'\',\'refresh\')');
                     
                         $('.main-slider').hide();
                         $('.info-block').show();    
@@ -176,9 +134,10 @@ function getBooking(cookievalue,action) {
 
 
 function getPreviewRessource(ressourceId,categoryRessource,fe_typo_user) {
-    var L = 0;
     $('.loader2').show();
-    var url = "http://cdispo_preprod.moonlikestudio.com/?type=476&tx_cdispofrontend_fcdispofrontend[controller]=Mobile&tx_cdispofrontend_fcdispofrontend[action]=dispatcher&tx_cdispofrontend_fcdispofrontend[uid]=1&L="+L
+    var domain = window.localStorage.getItem("domain");
+    var L = window.localStorage.getItem("language");
+    var url = "http://"+domain+"/?type=476&tx_cdispofrontend_fcdispofrontend[controller]=Mobile&tx_cdispofrontend_fcdispofrontend[action]=dispatcher&tx_cdispofrontend_fcdispofrontend[uid]=1&L="+L
     $.ajax({
           type: 'POST',
           url:url,
@@ -246,9 +205,10 @@ function getPreviewRessource(ressourceId,categoryRessource,fe_typo_user) {
 
 
 function getUserInfo(fe_typo_user) {
-    var L = 0;
     $('.loader2').show();
-    var url = "http://cdispo_preprod.moonlikestudio.com/?type=476&tx_cdispofrontend_fcdispofrontend[controller]=Mobile&tx_cdispofrontend_fcdispofrontend[action]=dispatcher&tx_cdispofrontend_fcdispofrontend[uid]=1&L="+L
+    var domain = window.localStorage.getItem("domain");
+    var L = window.localStorage.getItem("language");
+    var url = "http://"+domain+"/?type=476&tx_cdispofrontend_fcdispofrontend[controller]=Mobile&tx_cdispofrontend_fcdispofrontend[action]=dispatcher&tx_cdispofrontend_fcdispofrontend[uid]=1&L="+L
     $.ajax({
           type: 'POST',
           url:url,
@@ -304,9 +264,10 @@ function getUserInfo(fe_typo_user) {
 
 function getSiteInfo(site_id,referentiel_id,fe_typo_user) {
     
-    var L = 0;
     $('.loader2').show();
-    var url = "http://cdispo_preprod.moonlikestudio.com/?type=476&tx_cdispofrontend_fcdispofrontend[controller]=Mobile&tx_cdispofrontend_fcdispofrontend[action]=dispatcher&tx_cdispofrontend_fcdispofrontend[uid]=1&L="+L
+    var domain = window.localStorage.getItem("domain");
+    var L = window.localStorage.getItem("language");
+    var url = "http://"+domain+"/?type=476&tx_cdispofrontend_fcdispofrontend[controller]=Mobile&tx_cdispofrontend_fcdispofrontend[action]=dispatcher&tx_cdispofrontend_fcdispofrontend[uid]=1&L="+L
     $.ajax({
           type: 'POST',
           url:url,
