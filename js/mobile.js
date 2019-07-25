@@ -88,9 +88,9 @@ function initMobileConnect() {
 					var cookieValue = result[1].ses_id;
 					var userid = result[1].ses_userid;
 					var domainsite = result[1].domainsite;
-					var agregatecookie = cookieValue+";"+userid;
+					var agregatecookie = cookieValue+";"+domainsite;
 					
-					cookieMaster.setCookieValue('http://'+domainsite, cookieName, agregatecookie	,
+					cookieMaster.setCookieValue('http://cdispo', cookieName, agregatecookie	,
 						function() {
 							console.log('A cookie has been set');
 							
