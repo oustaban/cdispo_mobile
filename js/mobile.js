@@ -73,7 +73,12 @@ function initChangePassword() {
 function initMobileConnect() {
 	jQuery('#mobileconnexion').click(function() {
 		var login = $('#user').val();
-		var password = $('#pass').val()
+		var password = $('#pass').val();
+		var fe_typo_user = window.localStorage.getItem("fe_typo_user");
+		var domain = window.localStorage.getItem("domain");
+		var data = fe_typo_user+";"+domain
+		console.log("storage:"+data);
+		
 		var L = 0;
 		var url = "http://cdispo_preprod.moonlikestudio.com/?type=476&tx_cdispofrontend_fcdispofrontend[controller]=Mobile&tx_cdispofrontend_fcdispofrontend[action]=dispatcher&tx_cdispofrontend_fcdispofrontend[uid]=1&L="+L
 		$.ajax({
@@ -83,6 +88,7 @@ function initMobileConnect() {
 			  dataType: "json",
 		
 			  success: function(result) {
+				
 				if (result[0]) {
                     var cookieName = result[1].ses_name;
 					var cookieValue = result[1].ses_id;
@@ -90,6 +96,14 @@ function initMobileConnect() {
 					var domainsite = result[1].domainsite;
 					var agregatecookie = cookieValue+";"+domainsite;
 					
+					window.localStorage.setItem(cookieName, cookieValue);
+					window.localStorage.setItem("domain", domainsite);
+					
+					var url = window.location.href;
+					url = url.substring(0, url.lastIndexOf("/") + 1);
+					cordova.InAppBrowser.open(url+'mesreservations.html', '_self');
+							
+					/*
 					cookieMaster.setCookieValue('http://cdispo', cookieName, agregatecookie	,
 						function() {
 							console.log('A cookie has been set');
@@ -97,32 +111,14 @@ function initMobileConnect() {
 							var url = window.location.href;
 							url = url.substring(0, url.lastIndexOf("/") + 1);
 							cordova.InAppBrowser.open(url+'mesreservations.html', '_self');
-										
-							/*
-							var url3 = "http://"+domainsite+"/rest/auth/login";
-							$.ajax({
-								  type: 'POST',
-								  url:url3,
-								  dataType: "json",
-								  data:{username:login,apikey:'cdispo72'},
-							
-								  success: function(result) {
-										console.log(result);
-										var url = window.location.href;
-										url = url.substring(0, url.lastIndexOf("/") + 1);
-										cordova.InAppBrowser.open(url+'mesreservations.html', '_self');
-								  },  
-								  error: function(error) {
-									console.log(error);
-								  }   
-							});
-							*/
 							
 						},
 						function(error) {
 							console.log('Error setting cookie: '+error);
 						}
 					);
+					*/
+					
 					console.log(domainsite+':'+cookieName+':'+cookieValue);
 					//window.location = "/main.html"
 					//var myDate = new Date();

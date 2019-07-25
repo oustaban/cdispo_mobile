@@ -49,6 +49,11 @@
 		
 		$(document).bind('deviceready', function() {
 		   
+		    var fe_typo_user = window.localStorage.getItem("fe_typo_user");
+			var domain = window.localStorage.getItem("domain");
+			var data = fe_typo_user+";"+domain
+			getBooking(data,'init'); 
+			/*
 			cookieMaster.getCookieValue('http://cdispo', 'fe_typo_user', function(data) {
 				console.log(data.cookieValue);
 				getBooking(data.cookieValue,'init'); 
@@ -57,11 +62,18 @@
 					console.log('error: ' + error);
 				}
 			});
+			*/
 			
         });
 		
 		$(document).bind('resume', function() {
 			
+			var fe_typo_user = window.localStorage.getItem("fe_typo_user");
+			var domain = window.localStorage.getItem("domain");
+			var data = fe_typo_user+";"+domain
+			getBooking(data,'refresh');
+			
+			/*
 			cookieMaster.getCookieValue('http://cdispo', 'fe_typo_user', function(data) {
 				console.log(data.cookieValue);
 				getBooking(data.cookieValue,'refresh'); 
@@ -70,6 +82,7 @@
 					console.log('error: ' + error);
 				}
 			});
+			*/
 			
         });
     </script>
