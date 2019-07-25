@@ -57,16 +57,13 @@
             StatusBar.hide();
 			//openBrowser();
 			//clickSubmit();
-			cookieMaster.getCookieValue('http://cdispo', 'fe_typo_user', function(data) {
-				console.log('cookie present');
+			var fe_typo_user = window.localStorage.getItem("fe_typo_user");
+			if (fe_typo_user) {
 				var url = window.location.href;
 				url = url.substring(0, url.lastIndexOf("/") + 1);
 				cordova.InAppBrowser.open(url+'mesreservations.html', '_self');
-			}, function(error) {
-				if (error) {
-					console.log('cookie not present');
-				}
-			});
+            }
+			
         });
 		$( window ).unload(function() {
 			$('.loader2').show();
