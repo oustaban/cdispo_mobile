@@ -58,6 +58,19 @@ function getBooking(cookievalue,action) {
                 console.log("result is " + result);
     
                 //console.log(JSON.stringify(jqXHR.responseJSON));
+                if (result.deconnexion) {
+                    
+                    $('.prewiewsharing_header').hide();
+                    $('.previewsharing_content').html(result.deconnexion);
+                    
+                    var url = window.location.href;
+					url = url.substring(0, url.lastIndexOf("/") + 1);       
+                    $('#btn_close').attr('onclick','cordova.InAppBrowser.open(url+\'mesreservations.html\', \'_self\')');
+                    
+                    $('.main-slider').hide();
+                    $('.info-block').show();
+                
+                }
                 
                 if (result.result) {
                     if (action == "refresh") {
@@ -167,7 +180,10 @@ function getPreviewRessource(ressourceId,categoryRessource,fe_typo_user) {
                     
                     $('.prewiewsharing_header').hide();
                     $('.previewsharing_content').html(result.deconnexion);
-                    $('#btn_close').attr('onclick','$(\'.info-block\').hide();$(\'.main-slider\').show();');
+                    
+                    var url = window.location.href;
+					url = url.substring(0, url.lastIndexOf("/") + 1);       
+                    $('#btn_close').attr('onclick','cordova.InAppBrowser.open(url+\'mesreservations.html\', \'_self\')');
                     
                     $('.main-slider').hide();
                     $('.info-block').show();
@@ -234,7 +250,10 @@ function getUserInfo(fe_typo_user) {
                     
                     $('.prewiewsharing_header').hide();
                     $('.previewsharing_content').html(result.deconnexion);
-                    $('#btn_close').attr('onclick','$(\'.info-block\').hide();$(\'.main-slider\').show();');
+                    
+                    var url = window.location.href;
+					url = url.substring(0, url.lastIndexOf("/") + 1);       
+                    $('#btn_close').attr('onclick','cordova.InAppBrowser.open(url+\'mesreservations.html\', \'_self\')');
                     
                     $('.main-slider').hide();
                     $('.info-block').show();
@@ -246,7 +265,10 @@ function getUserInfo(fe_typo_user) {
                     
                     $('.prewiewsharing_header').hide();
                     $('.previewsharing_content').html(result.content);
-                    $('#btn_close').attr('onclick','$(\'.info-block\').hide();$(\'.main-slider\').show();');
+                    
+                    var url = window.location.href;
+					url = url.substring(0, url.lastIndexOf("/") + 1);       
+                    $('#btn_close').attr('onclick','cordova.InAppBrowser.open(url+\'mesreservations.html\', \'_self\')');
                     
                     $('.main-slider').hide();
                     $('.info-block').show();
@@ -286,7 +308,10 @@ function getSiteInfo(site_id,referentiel_id,fe_typo_user) {
                     
                     $('.prewiewsharing_header').hide();
                     $('.previewsharing_content').html(result.deconnexion);
-                    $('#btn_close').attr('onclick','$(\'.info-block\').hide();$(\'.main-slider\').show();');
+                    
+                    var url = window.location.href;
+					url = url.substring(0, url.lastIndexOf("/") + 1);       
+                    $('#btn_close').attr('onclick','cordova.InAppBrowser.open(url+\'mesreservations.html\', \'_self\')');
                     
                     $('.main-slider').hide();
                     $('.info-block').show();
