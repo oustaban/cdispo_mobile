@@ -85,8 +85,18 @@ function getBooking(cookievalue,action) {
                     
                     countslide = result.countslide;
                     
-                    $('.main-slider').html(result.slide);
-                    initSlickCarousel();
+                    if (countslide > 0) {
+                        $('.main-slider').html(result.slide);
+                        initSlickCarousel();
+                    } else {
+                        $('.prewiewsharing_header').hide();
+                        $('.previewsharing_content').html(result.content);
+                        $('#btn_close').attr('onclick','getBooking(\''+fe_typo_user+'\',\'refresh\')');
+                    
+                        $('.main-slider').hide();
+                        $('.info-block').show();    
+                    }
+                    
                 } else {
                     
                 }
