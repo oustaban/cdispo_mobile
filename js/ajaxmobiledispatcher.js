@@ -337,7 +337,7 @@ function checkDeleteMyBooking(booking_id,category,ressourceid,fe_typo_user,messa
     $('.prewiewsharing_header').hide();
     $('.previewsharing_content').html(trad['confirmdeletebooking']);
     $('#btn_close').text(trad['validate']);
-    $('#btn_close').attr('onclick','deleteMyBooking('+booking_id+',\''+category+'\','+ressourceid+',\''+fe_typo_user+'\')');
+    $('#btn_close').attr('onclick','deleteMyBooking('+booking_id+',\''+category+'\','+ressourceid+',\''+fe_typo_user+'\','+index+')');
     $('#btn_cancel').text(trad['cancel']);
     $('#btn_cancel').attr('onclick','$(\'.info-block\').hide();$(\'.main-slider\').show();');
                     
@@ -346,7 +346,7 @@ function checkDeleteMyBooking(booking_id,category,ressourceid,fe_typo_user,messa
     
 }
 
-function deleteMyBooking(booking_id,category,ressourceid,fe_typo_user) {
+function deleteMyBooking(booking_id,category,ressourceid,fe_typo_user,index) {
     
     var L = $("#sysLanguageUid").val();
     $('.loader2').show();
@@ -511,6 +511,10 @@ function deleteMyBooking(booking_id,category,ressourceid,fe_typo_user) {
                 if (result.ok) {
                     
                     initPopin();
+                    
+                    clearInterval('x'+index);
+                    
+                         
                     $('.prewiewsharing_header').hide();
                     $('.previewsharing_content').html('<p></p><p>'+result.bookingdeleted+'</p>');
                     $('#btn_close').attr('onclick','getBooking(\''+fe_typo_user+'\',\'refresh\')');
