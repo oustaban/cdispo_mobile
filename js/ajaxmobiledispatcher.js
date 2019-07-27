@@ -331,7 +331,7 @@ function getSiteInfo(site_id,referentiel_id,fe_typo_user) {
 }
 
 
-function checkDeleteMyBooking(booking_id,category,ressourceid,fe_typo_user,message,validate,cancel) {
+function checkDeleteMyBooking(booking_id,category,ressourceid,fe_typo_user,index) {
     
     initPopin();
     $('.prewiewsharing_header').hide();
@@ -513,7 +513,6 @@ function deleteMyBooking(booking_id,category,ressourceid,fe_typo_user,index) {
                     initPopin();
                     
                     clearInterval('x'+index);
-                    
                          
                     $('.prewiewsharing_header').hide();
                     $('.previewsharing_content').html('<p></p><p>'+result.bookingdeleted+'</p>');
