@@ -566,9 +566,11 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
     var my_to = myvalues.indexOf(udateend);
     
     
-    console.log('editMyBooking:'+my_from+'/'+my_to+'/'+myvalues.length);
-
-    $(".js-range-slider").ionRangeSlider();
+    $(".js-range-slider").ionRangeSlider({onUpdate: function (data) {
+            $('.main-slider').hide();
+            $('.modification-block').show();
+    }});
+    
     let my_range = $(".js-range-slider").data("ionRangeSlider");
     
     my_range.update({
