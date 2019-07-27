@@ -135,7 +135,7 @@ function getBooking(fe_typo_user,action) {
 }
 
 function initPopin() {
-    $('#btn_cancel').text('');
+    $('#btn_cancel').html('&nbsp;');
     $('#btn_cancel').attr('onclick','');
     $('#btn_close').text(trad['close']);
     $('#btn_close').attr('onclick','');

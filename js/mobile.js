@@ -186,6 +186,7 @@ function initActiveClone() {
 }
 
 function getTranslation() {
+	console.log('getTranslation:'+language);
 	$.getJSON( "lang/"+language+".json", function( data ) {
 		$.each( data, function( key, val ) {
 			var matches = key.match(/^placeholder_(.*)/);
