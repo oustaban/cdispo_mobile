@@ -512,7 +512,7 @@ function deleteMyBooking(booking_id,category,ressourceid,fe_typo_user,index) {
                     
                     initPopin();
                     
-                    clearInterval('x'+index);
+                    //clearInterval('x'+index);
                          
                     $('.prewiewsharing_header').hide();
                     $('.previewsharing_content').html('<p></p><p>'+result.bookingdeleted+'</p>');
