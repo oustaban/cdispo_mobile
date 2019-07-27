@@ -557,9 +557,8 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
         to: 800,
         prefix: "$",
         skin: "big",
-        decorate_both: true
-        drag_interval: true,
-        
+        decorate_both: true,
+        drag_interval: true
     });
     
 
