@@ -78,6 +78,7 @@ function initMobileConnect() {
 		var domain = window.localStorage.getItem("domain");
 		var cdispo_language = window.localStorage.getItem("language");
 		var data = fe_typo_user+";"+domain+";"+cdispo_language;
+		var array_language = ['fr','en'];
 		console.log("storage:"+data);
 		
 		var L = 0;
@@ -100,7 +101,7 @@ function initMobileConnect() {
 					
 					window.localStorage.setItem(cookieName, cookieValue);
 					window.localStorage.setItem("domain", domainsite);
-					window.localStorage.setItem("language", cdispo_language);
+					window.localStorage.setItem("language", array_language[cdispo_language]);
 					
 					var url = window.location.href;
 					url = url.substring(0, url.lastIndexOf("/") + 1);
