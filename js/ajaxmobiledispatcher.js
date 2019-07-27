@@ -25,7 +25,7 @@ function getBooking(fe_typo_user,action) {
                     var url = window.location.href;
 					url = url.substring(0, url.lastIndexOf("/") + 1);
                     window.localStorage.clear();
-                    $('#btn_close').attr('onclick','cordova.InAppBrowser.open(url+\'mesreservations.html\', \'_self\')');
+                    $('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'mesreservations.html\', \'_self\')');
                     
                     $('.main-slider').hide();
                     $('.info-block').show();
@@ -163,7 +163,7 @@ function getPreviewRessource(ressourceId,categoryRessource,fe_typo_user) {
                     var url = window.location.href;
 					url = url.substring(0, url.lastIndexOf("/") + 1);
                     window.localStorage.clear();
-                    $('#btn_close').attr('onclick','cordova.InAppBrowser.open(url+\'mesreservations.html\', \'_self\')');
+                    $('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'mesreservations.html\', \'_self\')');
                     
                     $('.main-slider').hide();
                     $('.info-block').show();
@@ -235,7 +235,7 @@ function getUserInfo(fe_typo_user,owner_id) {
                     var url = window.location.href;
 					url = url.substring(0, url.lastIndexOf("/") + 1);
                     window.localStorage.clear();
-                    $('#btn_close').attr('onclick','cordova.InAppBrowser.open(url+\'mesreservations.html\', \'_self\')');
+                    $('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'mesreservations.html\', \'_self\')');
                     
                     $('.main-slider').hide();
                     $('.info-block').show();
@@ -294,7 +294,7 @@ function getSiteInfo(site_id,referentiel_id,fe_typo_user) {
                     
                     var url = window.location.href;
 					url = url.substring(0, url.lastIndexOf("/") + 1);       
-                    $('#btn_close').attr('onclick','cordova.InAppBrowser.open(url+\'mesreservations.html\', \'_self\')');
+                    $('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'mesreservations.html\', \'_self\')');
                     
                     $('.main-slider').hide();
                     $('.info-block').show();
@@ -368,7 +368,7 @@ function deleteMyBooking(booking_id,category,ressourceid,fe_typo_user) {
                     
                     var url = window.location.href;
 					url = url.substring(0, url.lastIndexOf("/") + 1);       
-                    $('#btn_close').attr('onclick','cordova.InAppBrowser.open(url+\'mesreservations.html\', \'_self\')');
+                    $('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'mesreservations.html\', \'_self\')');
                     
                     $('.main-slider').hide();
                     $('.info-block').show();

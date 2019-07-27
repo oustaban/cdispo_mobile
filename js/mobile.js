@@ -101,7 +101,8 @@ function initMobileConnect() {
 					
 					window.localStorage.setItem(cookieName, cookieValue);
 					window.localStorage.setItem("domain", domainsite);
-					window.localStorage.setItem("language", array_language[cdispo_language]);
+					window.localStorage.setItem("language", cdispo_language);
+					window.localStorage.setItem("lang", array_language[cdispo_language]);
 					
 					var url = window.location.href;
 					url = url.substring(0, url.lastIndexOf("/") + 1);
