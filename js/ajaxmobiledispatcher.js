@@ -568,7 +568,10 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
     
     console.log('editMyBooking:'+my_from+'/'+my_to+'/'+myvalues.length);
 
-    $(".js-range-slider").ionRangeSlider({
+    $(".js-range-slider").ionRangeSlider();
+    let my_range = $(".js-range-slider").data("ionRangeSlider");
+    
+    my_range.update({
         type: "double",
         grid: false,
         grid_snap: true,
