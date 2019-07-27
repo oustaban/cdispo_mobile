@@ -293,7 +293,8 @@ function getSiteInfo(site_id,referentiel_id,fe_typo_user) {
                     $('.previewsharing_content').html('<p></p><p>'+result.deconnexion+'</p>');
                     
                     var url = window.location.href;
-					url = url.substring(0, url.lastIndexOf("/") + 1);       
+					url = url.substring(0, url.lastIndexOf("/") + 1);
+                    window.localStorage.clear();
                     $('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'mesreservations.html\', \'_self\')');
                     
                     $('.main-slider').hide();
@@ -351,12 +352,12 @@ function deleteMyBooking(booking_id,category,ressourceid,fe_typo_user) {
     $('.loader2').show();
     var domain = window.localStorage.getItem("domain");
     var L = window.localStorage.getItem("language");
-    var url = "http://"+domain+"/?type=476&tx_cdispofrontend_fcdispofrontend[controller]=Mobile&tx_cdispofrontend_fcdispofrontend[action]=deleteMyBooking&tx_cdispofrontend_fcdispofrontend[uid]=1&L="+L;
+    var url = "http://"+domain+"/?type=476&tx_cdispofrontend_fcdispofrontend[controller]=Mobile&tx_cdispofrontend_fcdispofrontend[action]=dispatcher&tx_cdispofrontend_fcdispofrontend[uid]=1&L="+L;
     $.ajax({
           type: 'GET',
           url:url,
           dataType: "json",
-          data:{booking_id:booking_id,category:category,ressourceid:ressourceid,fe_typo_user:fe_typo_user},
+          data:{action:"deleteMyBooking",booking_id:booking_id,category:category,ressourceid:ressourceid,fe_typo_user:fe_typo_user},
           
           success: function(result) {
             
@@ -367,7 +368,8 @@ function deleteMyBooking(booking_id,category,ressourceid,fe_typo_user) {
                     $('.previewsharing_content').html('<p></p><p>'+result.deconnexion+'</p>');
                     
                     var url = window.location.href;
-					url = url.substring(0, url.lastIndexOf("/") + 1);       
+					url = url.substring(0, url.lastIndexOf("/") + 1);
+                    window.localStorage.clear();
                     $('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'mesreservations.html\', \'_self\')');
                     
                     $('.main-slider').hide();
