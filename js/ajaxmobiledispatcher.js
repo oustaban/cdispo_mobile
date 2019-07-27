@@ -354,10 +354,10 @@ function deleteMyBooking(booking_id,category,ressourceid,fe_typo_user) {
     var L = window.localStorage.getItem("language");
     var url = "http://"+domain+"/?type=476&tx_cdispofrontend_fcdispofrontend[controller]=Mobile&tx_cdispofrontend_fcdispofrontend[action]=dispatcher&tx_cdispofrontend_fcdispofrontend[uid]=1&L="+L;
     $.ajax({
-          type: 'GET',
+          type: 'POST',
           url:url,
           dataType: "json",
-          data:{action:"deleteMyBooking",booking_id:booking_id,category:category,ressourceid:ressourceid,fe_typo_user:fe_typo_user},
+          data:{action:'deleteMyBooking',booking_id:booking_id,category:category,ressourceid:ressourceid,fe_typo_user:fe_typo_user},
           
           success: function(result) {
             
@@ -556,7 +556,10 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
         from: 200,
         to: 800,
         prefix: "$",
-        skin: "big"
+        skin: "big",
+        decorate_both: true
+        drag_interval: true,
+        
     });
     
 
