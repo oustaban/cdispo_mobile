@@ -1925,6 +1925,9 @@ select:focus {
 	display:none;
 }
 
+.modification-block {
+	display:none;
+}
 
 /****** PREVIEW SHARING ****/
 

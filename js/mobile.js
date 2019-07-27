@@ -1,5 +1,5 @@
-var language = "fr";
-
+var trad = [];
+	
 jQuery(function(){
 	initMobileNav();
 	initActiveClone();
@@ -100,7 +100,6 @@ function initMobileConnect() {
 					
 					window.localStorage.setItem(cookieName, cookieValue);
 					window.localStorage.setItem("domain", domainsite);
-					window.localStorage.setItem("domain", domainsite);
 					window.localStorage.setItem("language", cdispo_language);
 					
 					var url = window.location.href;
@@ -199,6 +198,8 @@ function getTranslation() {
 			//}
 			if ($('#'+key))
 				$('#'+key).html(val);
+			
+			trad[key] = val;
 			
 		});
 	});

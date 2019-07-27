@@ -12,5 +12,14 @@
 	"placeholder_pass":"Mot de passe",
 	"btn_scan":"Scanner",
 	"btn_book":"Réserver",
-	"btn_close":"Fermer"
+	"btn_close":"Fermer",
+	"confirmdeletebooking":"<p></p><p>Vous souhaitez annuler cette réservation.<br/> Si vous acceptez de poursuivre, la mise à jour sera immédiatement effective.</p>",
+	"close":"fermer",
+	"validate":"valider",
+	"cancel":"annuler",
+	"modification_title":"LA MODIFICATION EST POSSIBLE <span>UNIQUEMENT AU SEIN DU CRENEAU DE PARTAGE</span>",
+	"modification_texte1":"Pour une modification avancée, veuillez vous connecter à votre site internet",
+	"modification_texte2":"Une fois modifiée, la réservation ne sera confirmée qu’après validation par le titulaire du partage. Vous serez tenu informé par email de la confirmation. En l’absence d’email de confirmation, la réservation est réputée non confirmée.",
+	"btn_modifynow":"Modifier Maintenant",
+	"btn_back":"Retour"
 }

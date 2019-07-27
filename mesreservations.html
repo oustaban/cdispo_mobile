@@ -9,8 +9,10 @@
     <meta name="format-detection" content="date=no">
     <meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" href="css/mobile.css">
+	<link rel="stylesheet" href="css/ion.rangeSlider.min.css">
     <script language="javascript">
-
+		
+		var language = window.localStorage.getItem("language");
         // We use this code for handling unexpected errors.
         // Using alert, we are sure that the user get notified in a Mobile device.
         // We add this code at the begining of the index.html and we use only native javascript functions.
@@ -45,6 +47,7 @@
     <script src="js/spin.min.js"></script>
     <script src="js/mobile.js"></script>
 	<script src="js/ajaxmobiledispatcher.js"></script>
+	<script src="js/ion.rangeSlider.min.js"></script>
 	<script>
 		
 		$(document).bind('deviceready', function() {
@@ -141,9 +144,28 @@
 					</div>
 					<div class="btn-block">
 						<a href="javascript:void(0)" onclick="" class="btn btn-teal" id="btn_close">Fermer</a>
-						<span class="btn btn-light"></span>
+						<a href="javascript:void(0)" onclick="" class="btn btn-light" id="btn_cancel"></a>
 					</div>
 				</div>
+				
+				<div class="modification-block light-block">
+					<h2 id="modification_title">LA MODIFICATION EST POSSIBLE <span>UNIQUEMENT AU SEIN DU CRENEAU DE PARTAGE</span></h2>
+					<strong class="title"><time id="date_start" datetime="2019-01-28T12:30">Lun., 28 Janvier, 12:30</time> – <time id="date_end" datetime="2019-01-29T15:30">Lun. 29 Janvier, 15h30</time></strong>
+					<p id="modification_texte1">Pour une modification avancée, veuillez vous connecter à votre site internet </p>
+					<p><a href="#" target="_blank" id="modification_lien1">www.cdispo.com</a></p>
+					<div class="warning-block">
+						<i class="icon-warning"></i>
+						<p id="modification_texte2">Une fois modifiée, la réservation ne sera confirmée qu’après validation par le titulaire du partage. Vous serez tenu informé par email de la confirmation. En l’absence d’email de confirmation, la réservation est réputée non confirmée.</p>
+					</div>
+					<div class="slider-holder">
+						<img src="images/placeholder.png" alt="image description">
+					</div>
+					<div class="btn-block">
+						<a href="#" class="btn btn-blue" id="btn_modifynow">MODIFIER MAINTENANT</a>
+						<a href="#" class="btn btn-light" id="btn_back">RETOUR</a>
+					</div>
+				</div>
+				
 			</div>
 			<div class="btn-bottom-holder">
 				<a href="#" class="btn" id="btn_scan">Scanner</a>

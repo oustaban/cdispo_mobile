@@ -18,8 +18,9 @@ function getBooking(fe_typo_user,action) {
                 //console.log(JSON.stringify(jqXHR.responseJSON));
                 if (result.deconnexion) {
                     
+                    initPopin();
                     $('.prewiewsharing_header').hide();
-                    $('.previewsharing_content').html(result.deconnexion);
+                    $('.previewsharing_content').html('<p></p><p>'+result.deconnexion+'</p>');
                     
                     var url = window.location.href;
 					url = url.substring(0, url.lastIndexOf("/") + 1);
@@ -133,6 +134,12 @@ function getBooking(fe_typo_user,action) {
     */
 }
 
+function initPopin() {
+    $('#btn_cancel').text('');
+    $('#btn_cancel').attr('onclick','');
+    $('#btn_close').text(trad['close']);
+    $('#btn_close').attr('onclick','');
+}
 
 function getPreviewRessource(ressourceId,categoryRessource,fe_typo_user) {
     $('.loader2').show();
@@ -149,8 +156,9 @@ function getPreviewRessource(ressourceId,categoryRessource,fe_typo_user) {
             
                 if (result.deconnexion) {
                     
+                    initPopin();
                     $('.prewiewsharing_header').hide();
-                    $('.previewsharing_content').html(result.deconnexion);
+                    $('.previewsharing_content').html('<p></p><p>'+result.deconnexion+'</p>');
                     
                     var url = window.location.href;
 					url = url.substring(0, url.lastIndexOf("/") + 1);
@@ -165,8 +173,9 @@ function getPreviewRessource(ressourceId,categoryRessource,fe_typo_user) {
                 
                 if (result.ressourcedeleted) {
                     
+                    initPopin();
                     $('.prewiewsharing_header').hide();
-                    $('.previewsharing_content').html(result.ressourcedeleted);
+                    $('.previewsharing_content').html('<p></p><p>'+result.ressourcedeleted+'</p>');
                     $('#btn_close').attr('onclick','getBooking(\''+fe_typo_user+'\',\'refresh\')');
                     
                     $('.main-slider').hide();
@@ -176,9 +185,7 @@ function getPreviewRessource(ressourceId,categoryRessource,fe_typo_user) {
                 
                 if (result.ok) {
                     
-                    console.log('title:'+result.title);
-                    console.log('mandatories:'+result.mandatories);
-                    
+                    initPopin();
                     $('.prewiewsharing_title').html(result.title);
                     $('.prewiewsharing_mandatories').html(result.mandatories);
                     $('.previewsharing_content').html(result.content);
@@ -221,8 +228,9 @@ function getUserInfo(fe_typo_user,owner_id) {
             
                 if (result.deconnexion) {
                     
+                    initPopin();
                     $('.prewiewsharing_header').hide();
-                    $('.previewsharing_content').html(result.deconnexion);
+                    $('.previewsharing_content').html('<p></p><p>'+result.deconnexion+'</p>');
                     
                     var url = window.location.href;
 					url = url.substring(0, url.lastIndexOf("/") + 1);
@@ -237,6 +245,7 @@ function getUserInfo(fe_typo_user,owner_id) {
                 
                 if (result.ok) {
                     
+                    initPopin();
                     $('.prewiewsharing_header').hide();
                     $('.previewsharing_content').html(result.content);
                     
@@ -279,8 +288,9 @@ function getSiteInfo(site_id,referentiel_id,fe_typo_user) {
             
                 if (result.deconnexion) {
                     
+                    initPopin();
                     $('.prewiewsharing_header').hide();
-                    $('.previewsharing_content').html(result.deconnexion);
+                    $('.previewsharing_content').html('<p></p><p>'+result.deconnexion+'</p>');
                     
                     var url = window.location.href;
 					url = url.substring(0, url.lastIndexOf("/") + 1);       
@@ -293,6 +303,7 @@ function getSiteInfo(site_id,referentiel_id,fe_typo_user) {
             
                 if (result.ok) {
                     
+                    initPopin();
                     $('.prewiewsharing_header').hide();
                     $('.previewsharing_content').html(result.content);
                     $('#btn_close').attr('onclick','$(\'.info-block\').hide();$(\'.main-slider\').show();');
@@ -315,5 +326,238 @@ function getSiteInfo(site_id,referentiel_id,fe_typo_user) {
           }   
     
     });
+    
+}
+
+
+function checkDeleteMyBooking(booking_id,category,ressourceid,fe_typo_user,message,validate,cancel) {
+    
+    initPopin();
+    $('.prewiewsharing_header').hide();
+    $('.previewsharing_content').html(trad['confirmdeletebooking']);
+    $('#btn_close').text(trad['validate']);
+    $('#btn_close').attr('onclick','deleteMyBooking('+booking_id+',\''+category+'\','+ressourceid+',\''+fe_typo_user+'\')');
+    $('#btn_cancel').text(trad['cancel']);
+    $('#btn_cancel').attr('onclick','$(\'.info-block\').hide();$(\'.main-slider\').show();');
+                    
+    $('.main-slider').hide();
+    $('.info-block').show();
+    
+}
+
+function deleteMyBooking(booking_id,category,ressourceid,fe_typo_user) {
+    
+    var L = $("#sysLanguageUid").val();
+    $('.loader2').show();
+    var url = "/?type=476&tx_cdispofrontend_fcdispofrontend[controller]=Mobile&tx_cdispofrontend_fcdispofrontend[action]=deleteMyBooking&tx_cdispofrontend_fcdispofrontend[uid]=1&L="+L
+    $.ajax({
+          type: 'GET',
+          url:url,
+          dataType: "json",
+          data:{booking_id:booking_id,category:category,ressourceid:ressourceid,fe_typo_user:fe_typo_user},
+          
+          success: function(result) {
+            
+                if (result.deconnexion) {
+                    
+                    initPopin();
+                    $('.prewiewsharing_header').hide();
+                    $('.previewsharing_content').html('<p></p><p>'+result.deconnexion+'</p>');
+                    
+                    var url = window.location.href;
+					url = url.substring(0, url.lastIndexOf("/") + 1);       
+                    $('#btn_close').attr('onclick','cordova.InAppBrowser.open(url+\'mesreservations.html\', \'_self\')');
+                    
+                    $('.main-slider').hide();
+                    $('.info-block').show();
+                
+                }
+                
+                if (result.bookingnotexist) {
+                    
+                    initPopin();
+                    $('.prewiewsharing_header').hide();
+                    $('.previewsharing_content').html('<p></p><p>'+result.bookingnotexist+'</p>');
+                    $('#btn_close').attr('onclick','getBooking(\''+fe_typo_user+'\',\'refresh\')');
+                    
+                    $('.main-slider').hide();
+                    $('.info-block').show();
+                    
+                }
+                
+                if (result.bookinginprogress) {
+                    
+                    initPopin();
+                    $('.prewiewsharing_header').hide();
+                    $('.previewsharing_content').html('<p></p><p>'+result.bookinginprogress+'</p>');
+                    $('#btn_close').attr('onclick','getBooking(\''+fe_typo_user+'\',\'refresh\')');
+                    
+                    $('.main-slider').hide();
+                    $('.info-block').show();
+                    
+                }
+                
+                if (result.bookingfinished) {
+                    
+                    initPopin();
+                    $('.prewiewsharing_header').hide();
+                    $('.previewsharing_content').html('<p></p><p>'+result.bookingfinished+'</p>');
+                    $('#btn_close').attr('onclick','getBooking(\''+fe_typo_user+'\',\'refresh\')');
+                    
+                    $('.main-slider').hide();
+                    $('.info-block').show();
+                    
+                }
+                
+                if (result.bookingcancelled) {
+                    
+                    $('.prewiewsharing_header').hide();
+                    $('.previewsharing_content').html('<p></p><p>'+result.bookingcancelled+'</p>');
+                    $('#btn_close').attr('onclick','getBooking(\''+fe_typo_user+'\',\'refresh\')');
+                    
+                    $('.main-slider').hide();
+                    $('.info-block').show();
+                    
+                }
+                
+                if (result.bookinglocked1) {
+                    
+                    initPopin();
+                    $('.prewiewsharing_header').hide();
+                    $('.previewsharing_content').html('<p></p><p>'+result.ressourcedeleted+'</p>');
+                    $('#btn_close').attr('onclick','getBooking(\''+fe_typo_user+'\',\'refresh\')');
+                    
+                    $('.main-slider').hide();
+                    $('.info-block').show();
+                    
+                }
+                
+                if (result.bookinglocked2) {
+                    
+                    initPopin();
+                    $('.prewiewsharing_header').hide();
+                    $('.previewsharing_content').html('<p></p><p>'+result.bookinglocked2+'</p>');
+                    $('#btn_close').attr('onclick','getBooking(\''+fe_typo_user+'\',\'refresh\')');
+                    
+                    $('.main-slider').hide();
+                    $('.info-block').show();
+                    
+                }
+                
+                if (result.bookinglocked3) {
+                    
+                    initPopin();
+                    $('.prewiewsharing_header').hide();
+                    $('.previewsharing_content').html('<p></p><p>'+result.bookinglocked3+'</p>');
+                    $('#btn_close').attr('onclick','getBooking(\''+fe_typo_user+'\',\'refresh\')');
+                    
+                    $('.main-slider').hide();
+                    $('.info-block').show();
+                    
+                }
+                
+                if (result.bookinglocked4) {
+                    
+                    initPopin();
+                    $('.prewiewsharing_header').hide();
+                    $('.previewsharing_content').html('<p></p><p>'+result.bookinglocked4+'</p>');
+                    $('#btn_close').attr('onclick','getBooking(\''+fe_typo_user+'\',\'refresh\')');
+                    
+                    $('.main-slider').hide();
+                    $('.info-block').show();
+                    
+                }
+                
+                if (result.bookingdeleted) {
+                    
+                    initPopin();
+                    $('.prewiewsharing_header').hide();
+                    $('.previewsharing_content').html('<p></p><p>'+result.bookingdeleted+'</p>');
+                    $('#btn_close').attr('onclick','getBooking(\''+fe_typo_user+'\',\'refresh\')');
+                    
+                    $('.main-slider').hide();
+                    $('.info-block').show();
+                    
+                }
+                
+                if (result.ressourcedeleted) {
+                    
+                    initPopin();
+                    $('.prewiewsharing_header').hide();
+                    $('.previewsharing_content').html('<p></p><p>'+result.ressourcedeleted+'</p>');
+                    $('#btn_close').attr('onclick','getBooking(\''+fe_typo_user+'\',\'refresh\')');
+                    
+                    $('.main-slider').hide();
+                    $('.info-block').show();
+                    
+                }
+                
+                 if (result.sharinglocked) {
+                    
+                    initPopin();
+                    $('.prewiewsharing_header').hide();
+                    $('.previewsharing_content').html('<p></p><p>'+result.ressourcedeleted+'</p>');
+                    $('#btn_close').attr('onclick','getBooking(\''+fe_typo_user+'\',\'refresh\')');
+                    
+                    $('.main-slider').hide();
+                    $('.info-block').show();
+                    
+                }
+            
+                if (result.ok) {
+                    
+                    initPopin();
+                    $('.prewiewsharing_header').hide();
+                    $('.previewsharing_content').html('<p></p><p>'+result.bookingdeleted+'</p>');
+                    $('#btn_close').attr('onclick','getBooking(\''+fe_typo_user+'\',\'refresh\')');
+                    
+                    $('.main-slider').hide();
+                    $('.info-block').show();
+                    
+                    console.log('deleteMyBooking success');
+                
+                } else {
+                    console.log('deleteMyBooking error');
+                }
+                
+                $('.loader2').hide();
+                
+          },  
+          error: function(error) {
+                console.log('deleteMyBooking error');
+                $('.loader2').hide();
+          }   
+    
+    });
+    
+}
+
+function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatestart,udateend,fe_typo_user,domain,url) {
+    
+    initPopin();
+    $('#date_start').text(datestart);
+    $('#date_end').text(dateend);
+    $('#modification_lien1').text(domain);
+    $('#modification_lien1').attr('href',url);
+    $('#btn_back').attr('onclick','$(\'.modification-block\').hide();$(\'.main-slider\').show();');
+    
+    
+
+
+    $(".js-range-slider").ionRangeSlider({
+        type: "double",
+        grid: true,
+        min: 0,
+        max: 1000,
+        from: 200,
+        to: 800,
+        prefix: "$",
+        skin: "big"
+    });
+    
+
+
+    $('.main-slider').hide();
+    $('.modification-block').show();
     
 }
