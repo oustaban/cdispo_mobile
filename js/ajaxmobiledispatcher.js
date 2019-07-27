@@ -543,6 +543,8 @@ function deleteMyBooking(booking_id,category,ressourceid,fe_typo_user,index) {
 function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatestart,udateend,fe_typo_user,domain,url) {
     
     initPopin();
+    var lang = window.localStorage.getItem("lang");
+    
     $('#date_start').text(datestart);
     $('#date_end').text(dateend);
     $('#modification_lien1').text(domain);
@@ -550,19 +552,37 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
     $('#btn_back').attr('onclick','$(\'.modification-block\').hide();$(\'.main-slider\').show();');
     
     
-
+    var step = 5 * 60;
+    moment.locale(lang);
+    console.log(moment.locale());
+    var myvalues = [];
+    
+    
+    for (var i = udatestart;i<=udateend; i+=step) {
+       myvalues.push(i);
+    }
+    
+    var my_from = myvalues.indexOf(udatestart);
+    var my_to = myvalues.indexOf(udateend);
+    
+    
+    console.log('editMyBooking:'+my_from+'/'+my_to+'/'+myvalues.length);
 
     $(".js-range-slider").ionRangeSlider({
         type: "double",
-        grid: true,
-        min: 0,
-        max: 1000,
-        from: 200,
-        to: 800,
-        prefix: "$",
+        grid: false,
+        grid_snap: true,
+        grid_num: 4,
+        min: udatestart,
+        max: udateend,
+        from: my_from,
+        to: my_to,
+        step: step,
         skin: "big",
         decorate_both: true,
-        drag_interval: true
+        drag_interval: true,
+        prettify: my_prettify,
+        values: myvalues
     });
     
 
@@ -570,4 +590,11 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
     $('.main-slider').hide();
     $('.modification-block').show();
     
+}
+
+function my_prettify (n) {
+        
+        var num =  moment(parseInt(n),'X');
+        var formattedDate = num.format("ddd, DD MMMM, LT");
+        return formattedDate;
 }

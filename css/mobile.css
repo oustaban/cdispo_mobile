@@ -1411,7 +1411,7 @@ select:focus {
 }
 
 .modification-block .slider-holder {
-	padding: 25px 11px 8px;
+	padding: 25px 51px 8px;
 	margin: 0 -13px;
 }
 
@@ -2204,7 +2204,7 @@ a.tooltip4 {
 
 	.modification-block .slider-holder {
 		margin: 0 -23px;
-		padding: 45px 21px 27px;
+		padding: 45px 51px 27px;
 	}
 
 	.info-block {
