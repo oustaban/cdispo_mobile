@@ -119,7 +119,7 @@
  
     <preference name="CordovaWebViewEngine" value="CDVWKWebViewEngine" />
     
-    <content src="http://localhost:49000" />
+    <content src="http://localhost:49000/index.html" />
     
     <!-- See MOBILE-892 -->
     <preference name="permissions" value="none"/>
