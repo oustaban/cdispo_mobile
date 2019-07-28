@@ -104,9 +104,10 @@ function initMobileConnect() {
 					window.localStorage.setItem("language", cdispo_language);
 					window.localStorage.setItem("lang", array_language[cdispo_language]);
 					
-					var url = window.location.href;
-					url = url.substring(0, url.lastIndexOf("/") + 1);
-					cordova.InAppBrowser.open(url+'mesreservations.html', '_self');
+					//var url = window.location.href;
+					//url = url.substring(0, url.lastIndexOf("/") + 1);
+					//cordova.InAppBrowser.open(url+'mesreservations.html', '_self');
+					cordova.InAppBrowser.open('mesreservations.html', '_self');
 							
 					/*
 					cookieMaster.setCookieValue('http://cdispo', cookieName, agregatecookie	,
