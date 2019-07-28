@@ -80,7 +80,7 @@ function initMobileConnect() {
 		var data = fe_typo_user+";"+domain+";"+cdispo_language;
 		var array_language = ['fr','en'];
 		console.log("storage:"+data);
-		
+		cordova.plugin.http.setHeader('cdispo_preprod.moonlikestudio.com', 'Access-Control-Allow-Origin', '*');
 		var L = 0;
 		var url = "http://cdispo_preprod.moonlikestudio.com/?type=476&tx_cdispofrontend_fcdispofrontend[controller]=Mobile&tx_cdispofrontend_fcdispofrontend[action]=dispatcher&tx_cdispofrontend_fcdispofrontend[uid]=1&L="+L
 		$.ajax({
