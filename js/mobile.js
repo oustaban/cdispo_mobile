@@ -95,7 +95,46 @@ function initMobileConnect() {
 			  url:url,
 			  data: {action:'connexion',login:login,password:password},
 			  dataType: "jsonp",
-			  jsonpCallback: "logResults"
+			  jsonpCallback: "logResults",
+			  
+			  success: function(result) {
+				
+				if (result[0]) {
+                    var cookieName = result[1].ses_name;
+					var cookieValue = result[1].ses_id;
+					var userid = result[1].ses_userid;
+					var domainsite = result[1].domainsite;
+					var agregatecookie = cookieValue+";"+domainsite;
+					var cdispo_language = result[1]['cdispo_language'];
+					
+					window.localStorage.setItem(cookieName, cookieValue);
+					window.localStorage.setItem("domain", domainsite);
+					window.localStorage.setItem("language", cdispo_language);
+					window.localStorage.setItem("lang", array_language[cdispo_language]);
+					
+					var url = window.location.href;
+					url = url.substring(0, url.lastIndexOf("/") + 1);
+					cordova.InAppBrowser.open(url+'mesreservations.html', '_self');
+					
+					console.log(domainsite+':'+cookieName+':'+cookieValue);
+					//window.location = "/main.html"
+					//var myDate = new Date();
+					//myDate.setMonth(myDate.getMonth() + 12);
+					//document.cookie = cookieName +"=" + cookieValue + ";expires=" + myDate + ";domain="+result.domainsite+";path=/";
+					//window.location.href = "/index.html";
+                } else {
+					$('#messageerror').show();
+					$('#messageerror').html(result[1]);
+					$('#loginmessage').hide();
+				}
+				
+				console.log('initMobileConnect success');
+				$('.loader2').hide();
+			  },  
+			  error: function(error) {
+				console.log('initMobileConnect error');
+				$('.loader2').hide();
+			  }
 		});
 		/*
 		$.ajax({
