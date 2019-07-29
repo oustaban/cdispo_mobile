@@ -141,7 +141,7 @@
     <preference name="WKSuspendInBackground" value="false" />
     <preference name="KeyboardAppearanceDark" value="false" />
     <preference name="KeyboardResize" value="true" />
-    <preference name="KeyboardResizeMode" value="native" />
+    <preference name="KeyboardResizeMode" value="body" />
 
     
     <!--<content src="http://localhost:49000" />-->
