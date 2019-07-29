@@ -96,6 +96,7 @@ function initMobileConnect() {
 			  data: {action:'connexion',login:login,password:password},
 			  dataType: "jsonp",
 			  jsonpCallback: "processJSONPResponse",
+			  contentType: "application/json; charset=utf-8",
 			  
 			  success: function(result) {
 				
