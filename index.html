@@ -73,7 +73,7 @@
         });
 		
 		function updateStatus() {
-			document.getElementById('location').innerHTML = "document.location.href: " + document.location.href;
+			console.log("document.location.href: " + document.location.href);
 			if( httpd ) {
 			  /* use this function to get status of httpd
 			  * if server is up, it will return http://<server's ip>:port/
@@ -81,14 +81,14 @@
 			  */
 				httpd.getURL(function(url){
 					if(url.length > 0) {
-						document.getElementById('url').innerHTML = "server is up: <a href='" + url + "' target='_blank'>" + url + "</a>";
+						console.log("server is up: <a href='" + url + "' target='_blank'>" + url + "</a>");
 					} else {
-						document.getElementById('url').innerHTML = "server is down.";
+						console.log("server is down.");
 					}
 				});
 				// call this function to retrieve the local path of the www root dir
 				httpd.getLocalPath(function(path){
-					document.getElementById('localpath').innerHTML = "<br/>localPath: " + path;
+					console.log("<br/>localPath: " + path);
 				});
 			} else {
 				alert('CorHttpd plugin not available/ready.');
@@ -100,7 +100,7 @@
 				// before start, check whether its up or not
 				httpd.getURL(function(url){
 					if(url.length > 0) {
-						document.getElementById('url').innerHTML = "server is up: <a href='" + url + "' target='_blank'>" + url + "</a>";
+						console.log("server is up: <a href='" + url + "' target='_blank'>" + url + "</a>");
 					} else {
 						/* wwwroot is the root dir of web server, it can be absolute or relative path
 						* if a relative path is given, it will be relative to cordova assets/www/ in APK.
@@ -110,15 +110,15 @@
 						*/
 						httpd.startServer({
 							'www_root' : wwwroot,
-							'port' : 8080,
+							'port' : 49000,
 							'localhost_only' : false
 						}, function( url ){
 						  // if server is up, it will return the url of http://<server ip>:port/
 						  // the ip is the active network connection
 						  // if no wifi or no cell, "127.0.0.1" will be returned.
-							document.getElementById('url').innerHTML = "server is started: <a href='" + url + "' target='_blank'>" + url + "</a>";
+							console.log("server is started: <a href='" + url + "' target='_blank'>" + url + "</a>");
 						}, function( error ){
-							document.getElementById('url').innerHTML = 'failed to start server: ' + error;
+							console.log('failed to start server: ' + error);
 						});
 					}
 					
@@ -132,15 +132,19 @@
 			if ( httpd ) {
 				// call this API to stop web server
 				httpd.stopServer(function(){
-					document.getElementById('url').innerHTML = 'server is stopped.';
+					console.log('server is stopped.');
 				},function( error ){
-					document.getElementById('url').innerHTML = 'failed to stop server' + error;
+					console.log('failed to stop server' + error);
 				});
 			} else {
 				alert('CorHttpd plugin not available/ready.');
 			}
 		}
 	
+		var wwwroot = cordova.file.dataDirectory.replace( 'file://', '' );
+		console.log('wwwroot:'+wwwroot);
+		startServer(cordova.file.dataDirectory.replace( 'file://', '' ));
+		
 		$( window ).unload(function() {
 			$('.loader2').show();
 		});
