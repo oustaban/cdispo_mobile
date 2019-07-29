@@ -58,13 +58,19 @@
     <icon src="img/icon/ios/Icon-114.png" gap:platform="ios" width="114" height="114" />
     <icon src="img/icon/ios/Icon-144.png" gap:platform="ios" width="144" height="144" />
 
-    <splash src="img/splash/android/drawable-ldpi/screen.png" platform="android" qualifier="ldpi" />
-    <splash src="img/splash/android/drawable-mdpi/screen.png" platform="android" qualifier="mdpi" />
-    <splash src="img/splash/android/drawable-hdpi/screen.png" platform="android" qualifier="hdpi" />
-    <splash src="img/splash/android/drawable-xhdpi/screen.png" platform="android" qualifier="xhdpi" />
-    <splash src="img/splash/android/drawable-xxhdpi/screen.png" platform="android" qualifier="port-xxhdpi" />
-    <splash src="img/splash/android/drawable-land-xxhdpi/screen.png" platform="android" qualifier="land-xxhdpi" />
-    <splash src="img/splash/android/drawable-xxxhdpi/screen.png" platform="android" qualifier="xxxhdpi" />
+    <splash src="img/splash/android/drawable-ldpi/screen.png" platform="android" density="port-ldpi" />
+    <splash src="img/splash/android/drawable-mdpi/screen.png" platform="android" density="port-mdpi" />
+    <splash src="img/splash/android/drawable-hdpi/screen.png" platform="android" density="port-hdpi" />
+    <splash src="img/splash/android/drawable-xhdpi/screen.png" platform="android" density="port-xhdpi" />
+    <splash src="img/splash/android/drawable-xxhdpi/screen.png" platform="android" density="port-xxhdpi" />
+    <splash src="img/splash/android/drawable-xxxhdpi/screen.png" platform="android" density="port-xxhdpi" />
+    
+    <splash src="img/splash/android/drawable-land-ldpi/screen.png" platform="android" density="land-ldpi" />
+    <splash src="img/splash/android/drawable-land-mdpi/screen.png" platform="android" density="land-mdpi" />
+    <splash src="img/splash/android/drawable-land-hdpi/screen.png" platform="android" density="land-hdpi" />
+    <splash src="img/splash/android/drawable-land-xhdpi/screen.png" platform="android" density="land-xhdpi" />
+    <splash src="img/splash/android/drawable-land-xxhdpi/screen.png" platform="android" density="land-xxhdpi" />
+    <splash src="img/splash/android/drawable-land-xxxhdpi/screen.png" platform="android" density="land-xxhdpi" />
 
     
     <!-- iPhone and iPod touch -->
