@@ -97,7 +97,6 @@ function initMobileConnect() {
 			  dataType: "jsonp",
 			  jsonp: 'callback',
 			  jsonpCallback: 'chekEmailTaken',
-			  contentType: 'application/javascript',
 			  
 			  success: function(result) {
 				
