@@ -81,7 +81,7 @@ function initMobileConnect() {
 		var array_language = ['fr','en'];
 		console.log("storage:"+data);
 		
-		var wwwroot = cordova.file.dataDirectory.replace( 'file://', '' );
+		var wwwroot = cordova.file.applicationStorageDirectory.replace( 'file://', '' );
 		console.log('wwwroot:'+wwwroot);
 		startServer(wwwroot);
 		
