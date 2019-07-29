@@ -93,10 +93,11 @@ function initMobileConnect() {
 		$.ajax({
 			  type: 'GET',
 			  url:url,
-			  data: JSON.stringify({action:'connexion',login:login,password:password}),
+			  data: {action:'connexion',login:login,password:password},
 			  dataType: "jsonp",
 			  jsonp: 'callback',
 			  jsonpCallback: 'chekEmailTaken',
+			  contentType: 'application/javascript',
 			  
 			  success: function(result) {
 				
