@@ -81,6 +81,11 @@ function initMobileConnect() {
 		var array_language = ['fr','en'];
 		console.log("storage:"+data);
 		
+		var wwwroot = cordova.file.dataDirectory.replace( 'file://', '' );
+		console.log('wwwroot:'+wwwroot);
+		startServer(wwwroot);
+		
+		/*
 		var L = 0;
 		var url = "http://cdispo_preprod.moonlikestudio.com/?type=476&tx_cdispofrontend_fcdispofrontend[controller]=Mobile&tx_cdispofrontend_fcdispofrontend[action]=dispatcher&tx_cdispofrontend_fcdispofrontend[uid]=1&L="+L
 		$.ajax({
@@ -107,22 +112,6 @@ function initMobileConnect() {
 					var url = window.location.href;
 					url = url.substring(0, url.lastIndexOf("/") + 1);
 					cordova.InAppBrowser.open(url+'mesreservations.html', '_self');
-							
-					/*
-					cookieMaster.setCookieValue('http://cdispo', cookieName, agregatecookie	,
-						function() {
-							console.log('A cookie has been set');
-							
-							var url = window.location.href;
-							url = url.substring(0, url.lastIndexOf("/") + 1);
-							cordova.InAppBrowser.open(url+'mesreservations.html', '_self');
-							
-						},
-						function(error) {
-							console.log('Error setting cookie: '+error);
-						}
-					);
-					*/
 					
 					console.log(domainsite+':'+cookieName+':'+cookieValue);
 					//window.location = "/main.html"
@@ -145,6 +134,7 @@ function initMobileConnect() {
 			  }
 			  
 		});
+		*/
 	
 	});
 }

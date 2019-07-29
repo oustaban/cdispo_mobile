@@ -141,9 +141,7 @@
 			}
 		}
 	
-		var wwwroot = cordova.file.dataDirectory.replace( 'file://', '' );
-		console.log('wwwroot:'+wwwroot);
-		startServer(cordova.file.dataDirectory.replace( 'file://', '' ));
+		
 		
 		$( window ).unload(function() {
 			$('.loader2').show();
