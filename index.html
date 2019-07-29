@@ -95,7 +95,7 @@
 			}
 		}
 		
-		function startServer( wwwroot ) {
+		function startServer(  ) {
 			if ( httpd ) {
 				// before start, check whether its up or not
 				httpd.getURL(function(url){
@@ -109,7 +109,6 @@
 						* "/", set the root dir as the www root, it maybe a security issue, but very powerful to browse all dir
 						*/
 						httpd.startServer({
-							'www_root' : wwwroot,
 							'port' : 49000,
 							'localhost_only' : true
 						}, function( url ){
