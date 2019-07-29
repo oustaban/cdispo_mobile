@@ -95,6 +95,8 @@ function initMobileConnect() {
 			  url:url,
 			  data: {action:'connexion',login:login,password:password},
 			  dataType: "jsonp",
+			  jsonp: 'callback',
+			  jsonpCallback: 'chekEmailTaken',
 			  
 			  success: function(result) {
 				
