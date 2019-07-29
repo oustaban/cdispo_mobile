@@ -83,7 +83,7 @@ function initMobileConnect() {
 		
 		var wwwroot = cordova.file.dataDirectory.replace( 'file://', '' );
 		console.log('wwwroot:'+wwwroot);
-		startServer(wwwroot);
+		startServer("/");
 		
 		/*
 		var L = 0;
