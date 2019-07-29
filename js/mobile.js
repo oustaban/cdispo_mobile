@@ -89,14 +89,12 @@ function initMobileConnect() {
 		
 		
 		var L = 0;
-		var url = "http://cdispo_preprod.moonlikestudio.com/?type=476&tx_cdispofrontend_fcdispofrontend[controller]=Mobile&tx_cdispofrontend_fcdispofrontend[action]=dispatcher&tx_cdispofrontend_fcdispofrontend[uid]=1&L="+L
+		var url = "http://cdispo_preprod.moonlikestudio.com/?type=476&tx_cdispofrontend_fcdispofrontend[controller]=Mobile&tx_cdispofrontend_fcdispofrontend[action]=dispatcher&tx_cdispofrontend_fcdispofrontend[uid]=1&L="+L+"&callback=?"
 		$.ajax({
-			  type: 'POST',
+			  type: 'GET',
 			  url:url,
 			  data: {action:'connexion',login:login,password:password},
 			  dataType: "jsonp",
-			  jsonpCallback: "callback",
-			  contentType: "application/json; charset=utf-8",
 			  
 			  success: function(result) {
 				
