@@ -229,7 +229,9 @@ function initActiveClone() {
 
 function getTranslation() {
 	console.log('getTranslation:'+language);
-	$.getJSON( "lang/"+language+".json", function( data ) {
+	var url = window.location.href;
+	url = url.substring(0, url.lastIndexOf("/") + 1);
+	$.getJSON( url+"lang/"+language+".json", function( data ) {
 		$.each( data, function( key, val ) {
 			var matches = key.match(/^placeholder_(.*)/);
 			if (matches) {
