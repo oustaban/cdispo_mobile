@@ -192,7 +192,7 @@ function initActiveClone() {
 function getTranslation() {
 	console.log('getTranslation:'+language+'/'+cordova.file.applicationStorageDirectory);
 	
-	window.resolveLocalFileSystemURL(cordova.file.applicationDirectory + "lang/"+language+".json", gotFile, fail);
+	window.resolveLocalFileSystemURL(cordova.file.applicationDirectory + "www/lang/"+language+".json", gotFile, fail);
 	
 	$.getJSON( "lang/"+language+".json", function( data ) {
 		$.each( data, function( key, val ) {
@@ -226,6 +226,11 @@ function gotFile(file) {
 
 function fail(e) {
     console.info("FileSystem Error : " + e);
+	for (key in e) {
+		console.log(key+'/'+e[key]);
+			//do something with value;
+	}
+	
 }
 
 /*
