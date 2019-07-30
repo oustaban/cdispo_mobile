@@ -53,6 +53,8 @@
 		
 		$(document).bind('deviceready', function() {
 		   
+		    getTranslation();
+			
 		    var fe_typo_user = window.localStorage.getItem("fe_typo_user");
 			getBooking(fe_typo_user,'init'); 
 			/*
