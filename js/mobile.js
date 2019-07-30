@@ -8,7 +8,7 @@ jQuery(function(){
 	loader2();
     initPassword();
 	initChangePassword();
-	getTranslation();
+	//getTranslation();
 });
 
 
