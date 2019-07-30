@@ -129,6 +129,9 @@
  
     <preference name="CordovaWebViewEngine" value="CDVWKWebViewEngine" />
     
+    <preference name="InterceptRemoteRequests" value="all" />
+    <preference name="NativeXHRLogging" value="full" />
+    
     <!--<content src="http://localhost:49000" />-->
     
     <!-- See MOBILE-892 -->
