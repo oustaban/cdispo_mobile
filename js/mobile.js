@@ -191,6 +191,21 @@ function initActiveClone() {
 
 function getTranslation() {
 	console.log('getTranslation:'+language);
+	var url = window.location.href;
+	url = url.substring(0, url.lastIndexOf("/") + 1);
+	var langfile = url + "lang/"+language+".json";
+	
+	langfile.file(function (file) {
+        var reader = new FileReader();
+
+        reader.onloadend = function() {
+            console.log("Successful file read: " + this.result);
+        };
+
+        reader.readAsText(file);
+
+    }, onErrorReadFile);
+	
 	$.getJSON( "lang/"+language+".json", function( data ) {
 		$.each( data, function( key, val ) {
 			var matches = key.match(/^placeholder_(.*)/);
