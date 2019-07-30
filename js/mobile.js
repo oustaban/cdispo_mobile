@@ -69,10 +69,6 @@ function initChangePassword() {
 	});
 }
 
-function logResults(json){
-  console.log(json);
-}
-
 
 function initMobileConnect() {
 	jQuery('#mobileconnexion').click(function() {
@@ -85,59 +81,8 @@ function initMobileConnect() {
 		var array_language = ['fr','en'];
 		console.log("storage:"+data);
 		
-		
-		
-		
 		var L = 0;
-		var url = "http://cdispo_preprod.moonlikestudio.com/?type=476&tx_cdispofrontend_fcdispofrontend[controller]=Mobile&tx_cdispofrontend_fcdispofrontend[action]=dispatcher&tx_cdispofrontend_fcdispofrontend[uid]=1&L="+L;
-		$.ajax({
-			  type: 'GET',
-			  url:url,
-			  data: {action:'connexion',login:login,password:password},
-			  dataType: "jsonp",
-			  jsonp: 'callback',
-			  jsonpCallback: 'cdispoToken',
-			  
-			  success: function(result) {
-				
-				if (result[0]) {
-                    var cookieName = result[1].ses_name;
-					var cookieValue = result[1].ses_id;
-					var userid = result[1].ses_userid;
-					var domainsite = result[1].domainsite;
-					var agregatecookie = cookieValue+";"+domainsite;
-					var cdispo_language = result[1]['cdispo_language'];
-					
-					window.localStorage.setItem(cookieName, cookieValue);
-					window.localStorage.setItem("domain", domainsite);
-					window.localStorage.setItem("language", cdispo_language);
-					window.localStorage.setItem("lang", array_language[cdispo_language]);
-					
-					var url = window.location.href;
-					url = url.substring(0, url.lastIndexOf("/") + 1);
-					cordova.InAppBrowser.open(url+'mesreservations.html', '_self');
-					
-					console.log(domainsite+':'+cookieName+':'+cookieValue);
-					//window.location = "/main.html"
-					//var myDate = new Date();
-					//myDate.setMonth(myDate.getMonth() + 12);
-					//document.cookie = cookieName +"=" + cookieValue + ";expires=" + myDate + ";domain="+result.domainsite+";path=/";
-					//window.location.href = "/index.html";
-                } else {
-					$('#messageerror').show();
-					$('#messageerror').html(result[1]);
-					$('#loginmessage').hide();
-				}
-				
-				console.log('initMobileConnect success');
-				$('.loader2').hide();
-			  },  
-			  error: function(error) {
-				console.log('initMobileConnect error');
-				$('.loader2').hide();
-			  }
-		});
-		/*
+		var url = "http://cdispo_preprod.moonlikestudio.com/?type=476&tx_cdispofrontend_fcdispofrontend[controller]=Mobile&tx_cdispofrontend_fcdispofrontend[action]=dispatcher&tx_cdispofrontend_fcdispofrontend[uid]=1&L="+L
 		$.ajax({
 			  type: 'POST',
 			  url:url,
@@ -162,6 +107,22 @@ function initMobileConnect() {
 					var url = window.location.href;
 					url = url.substring(0, url.lastIndexOf("/") + 1);
 					cordova.InAppBrowser.open(url+'mesreservations.html', '_self');
+							
+					/*
+					cookieMaster.setCookieValue('http://cdispo', cookieName, agregatecookie	,
+						function() {
+							console.log('A cookie has been set');
+							
+							var url = window.location.href;
+							url = url.substring(0, url.lastIndexOf("/") + 1);
+							cordova.InAppBrowser.open(url+'mesreservations.html', '_self');
+							
+						},
+						function(error) {
+							console.log('Error setting cookie: '+error);
+						}
+					);
+					*/
 					
 					console.log(domainsite+':'+cookieName+':'+cookieValue);
 					//window.location = "/main.html"
@@ -184,7 +145,6 @@ function initMobileConnect() {
 			  }
 			  
 		});
-		*/
 	
 	});
 }
@@ -229,9 +189,7 @@ function initActiveClone() {
 
 function getTranslation() {
 	console.log('getTranslation:'+language);
-	var url = window.location.href;
-	url = url.substring(0, url.lastIndexOf("/") + 1);
-	$.getJSON( url+"lang/"+language+".json", function( data ) {
+	$.getJSON( "lang/"+language+".json", function( data ) {
 		$.each( data, function( key, val ) {
 			var matches = key.match(/^placeholder_(.*)/);
 			if (matches) {
@@ -250,76 +208,6 @@ function getTranslation() {
 	});
 }
 
-
-
-function updateStatus() {
-	console.log("document.location.href: " + document.location.href);
-	if( httpd ) {
-	  /* use this function to get status of httpd
-	  * if server is up, it will return http://<server's ip>:port/
-	  * if server is down, it will return empty string ""
-	  */
-		httpd.getURL(function(url){
-			if(url.length > 0) {
-				console.log("server is up: <a href='" + url + "' target='_blank'>" + url + "</a>");
-			} else {
-				console.log("server is down.");
-			}
-		});
-		// call this function to retrieve the local path of the www root dir
-		httpd.getLocalPath(function(path){
-			console.log("<br/>localPath: " + path);
-		});
-	} else {
-		alert('CorHttpd plugin not available/ready.');
-	}
-}
-
-function startServer() {
-	if ( httpd ) {
-		// before start, check whether its up or not
-		httpd.getURL(function(url){
-			if(url.length > 0) {
-				console.log("server is up: <a href='" + url + "' target='_blank'>" + url + "</a>");
-			} else {
-				/* wwwroot is the root dir of web server, it can be absolute or relative path
-				* if a relative path is given, it will be relative to cordova assets/www/ in APK.
-				* "", by default, it will point to cordova assets/www/, it's good to use 'htdocs' for 'www/htdocs'
-				* if a absolute path is given, it will access file system.
-				* "/", set the root dir as the www root, it maybe a security issue, but very powerful to browse all dir
-				*/
-				httpd.startServer({
-					'port' : 49000,
-					'localhost_only' : true
-				}, function( url ){
-				  // if server is up, it will return the url of http://<server ip>:port/
-				  // the ip is the active network connection
-				  // if no wifi or no cell, "127.0.0.1" will be returned.
-					console.log("server is started: <a href='" + url + "' target='_blank'>" + url + "</a>");
-					cordova.InAppBrowser.open(url+'index.html', '_self');
-				}, function( error ){
-					console.log('failed to start server: ' + error);
-				});
-			}
-			
-		});
-	} else {
-		alert('CorHttpd plugin not available/ready.');
-	}
-}
-
-function stopServer() {
-	if ( httpd ) {
-		// call this API to stop web server
-		httpd.stopServer(function(){
-			console.log('server is stopped.');
-		},function( error ){
-			console.log('failed to stop server' + error);
-		});
-	} else {
-		alert('CorHttpd plugin not available/ready.');
-	}
-}
 /*
      _ _      _       _
  ___| (_) ___| | __  (_)___

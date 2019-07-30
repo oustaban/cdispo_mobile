@@ -15,7 +15,7 @@
     
     
 
-    <preference name="phonegap-version" value="cli-6.5.0" />
+    <preference name="phonegap-version" value="cli-7.1.0" />
     <preference name="orientation"      value="portrait" />
     <preference name="target-device"    value="universal" />
     <preference name="fullscreen"       value="false" />
@@ -43,56 +43,42 @@
     <icon src="img/icon/wp8/icon-62.png" width="62" height="62" gap:platform="winphone" />
     <icon src="img/icon/wp8/icon-73.png" width="73" height="73" gap:platform="winphone" />
 
-    <icon src="img/icon/ios/Icon-29.png" gap:platform="ios" width="29" height="29" />
-    <icon src="img/icon/ios/Icon-58.png" gap:platform="ios" width="58" height="58" />
-    <icon src="img/icon/ios/Icon-87.png" gap:platform="ios" width="87" height="87" />
-    <icon src="img/icon/ios/Icon-40.png" gap:platform="ios" width="40" height="40" />
-    <icon src="img/icon/ios/Icon-80.png" gap:platform="ios" width="80" height="80" />
-    <icon src="img/icon/ios/Icon-60.png" gap:platform="ios" width="60" height="60" />
-    <icon src="img/icon/ios/Icon-120.png" gap:platform="ios" width="120" height="120" />
-    <icon src="img/icon/ios/Icon-180.png" gap:platform="ios" width="180" height="180" />
-    <icon src="img/icon/ios/Icon-57.png" gap:platform="ios" width="57" height="57" />
-    <icon src="img/icon/ios/Icon-72.png" gap:platform="ios" width="72" height="72" />
-    <icon src="img/icon/ios/Icon-76.png" gap:platform="ios" width="76" height="76" />
-    <icon src="img/icon/ios/Icon-152.png" gap:platform="ios" width="152" height="152" />
-    <icon src="img/icon/ios/Icon-114.png" gap:platform="ios" width="114" height="114" />
-    <icon src="img/icon/ios/Icon-144.png" gap:platform="ios" width="144" height="144" />
+    <icon src="img/icon/ios/icon-29.png" gap:platform="ios" width="29" height="29" />
+    <icon src="img/icon/ios/icon-58.png" gap:platform="ios" width="58" height="58" />
+    <icon src="img/icon/ios/icon-87.png" gap:platform="ios" width="87" height="87" />
+    <icon src="img/icon/ios/icon-40.png" gap:platform="ios" width="40" height="40" />
+    <icon src="img/icon/ios/icon-80.png" gap:platform="ios" width="80" height="80" />
+    <icon src="img/icon/ios/icon-60.png" gap:platform="ios" width="60" height="60" />
+    <icon src="img/icon/ios/icon-120.png" gap:platform="ios" width="120" height="120" />
+    <icon src="img/icon/ios/icon-180.png" gap:platform="ios" width="180" height="180" />
+    <icon src="img/icon/ios/icon-57.png" gap:platform="ios" width="57" height="57" />
+    <icon src="img/icon/ios/icon-72.png" gap:platform="ios" width="72" height="72" />
+    <icon src="img/icon/ios/icon-76.png" gap:platform="ios" width="76" height="76" />
+    <icon src="img/icon/ios/icon-152.png" gap:platform="ios" width="152" height="152" />
+    <icon src="img/icon/ios/icon-114.png" gap:platform="ios" width="114" height="114" />
+    <icon src="img/icon/ios/icon-144.png" gap:platform="ios" width="144" height="144" />
 
-    <splash src="img/splash/android/drawable-ldpi/screen.png" platform="android" density="port-ldpi" />
-    <splash src="img/splash/android/drawable-mdpi/screen.png" platform="android" density="port-mdpi" />
-    <splash src="img/splash/android/drawable-hdpi/screen.png" platform="android" density="port-hdpi" />
-    <splash src="img/splash/android/drawable-xhdpi/screen.png" platform="android" density="port-xhdpi" />
-    <splash src="img/splash/android/drawable-xxhdpi/screen.png" platform="android" density="port-xxhdpi" />
-    <splash src="img/splash/android/drawable-xxxhdpi/screen.png" platform="android" density="port-xxhdpi" />
+    <gap:splash src="img/splash/android/android_ldpi_portrait.png" gap:platform="android" gap:density="ldpi" gap:qualifier="port-ldpi"/>
+    <gap:splash src="img/splash/android/android_mdpi_portrait.png" gap:platform="android" gap:density="mdpi" gap:qualifier="port-mdpi"/>
+    <gap:splash src="img/splash/android/android_hdpi_portrait.png" gap:platform="android" gap:density="hdpi" gap:qualifier="port-hdpi"/>
+    <gap:splash src="img/splash/android/android_xhdpi_portrait.png" gap:platform="android" gap:density="xhdpi" gap:qualifier="port-xhdpi"/>
     
-    <splash src="img/splash/android/drawable-land-ldpi/screen.png" platform="android" density="land-ldpi" />
-    <splash src="img/splash/android/drawable-land-mdpi/screen.png" platform="android" density="land-mdpi" />
-    <splash src="img/splash/android/drawable-land-hdpi/screen.png" platform="android" density="land-hdpi" />
-    <splash src="img/splash/android/drawable-land-xhdpi/screen.png" platform="android" density="land-xhdpi" />
-    <splash src="img/splash/android/drawable-land-xxhdpi/screen.png" platform="android" density="land-xxhdpi" />
-    <splash src="img/splash/android/drawable-land-xxxhdpi/screen.png" platform="android" density="land-xxhdpi" />
+    <gap:splash src="img/splash/android/android_ldpi_landscape.png" gap:platform="android" gap:density="ldpi" gap:qualifier="land-ldpi"/>
+    <gap:splash src="img/splash/android/android_mdpi_landscape.png" gap:platform="android" gap:density="mdpi" gap:qualifier="land-mdpi"/>
+    <gap:splash src="img/splash/android/android_hdpi_landscape.png" gap:platform="android" gap:density="hdpi" gap:qualifier="land-hdpi"/>
+    <gap:splash src="img/splash/android/android_xhdpi_landscape.png" gap:platform="android" gap:density="xhdpi" gap:qualifier="land-xhdpi"/>
 
-    
-    <!-- iPhone and iPod touch -->
-    <splash src="img/splash/ios/LaunchImage~iphone-320x480.png" platform="ios" width="320" height="480" />
-    <splash src="img/splash/ios/LaunchImage~iphone_640x960.png" platform="ios" width="640" height="960" />
-    
-    <!-- iPhone 5 / iPod Touch (5th Generation) -->
-    <splash src="img/splash/ios/LaunchImage-568h@2x~iphone_640x1136.png" platform="ios" width="640" height="1136" />
-    
-    <!-- iPhone 6 -->
-    <splash src="img/splash/ios/LaunchImage-750@2x~iphone6-portrait_750x1334.png" platform="ios" width="750" height="1334" />
-    <splash src="img/splash/ios/LaunchImage-1242@3x~iphone6s-portrait_1242x2208.png" platform="ios" width="1242" height="2208" />
-    <splash src="img/splash/ios/LaunchImage-1242@3x~iphone6s-landscape_2208x1242.png" platform="ios" width="2208" height="1242" />
-    
-    <!-- iPad -->
-    <splash src="img/splash/ios/LaunchImage-Portrait~ipad_768x1024.png" platform="ios" width="768" height="1024" />
-    <splash src="img/splash/ios/LaunchImage-Landscape~ipad_1024x768.png" platform="ios" width="1024" height="768" />
-    
-    <!-- Retina iPad -->
-    <splash src="img/splash/ios/LaunchImage-Portrait@2x~ipad_1536x2048.png" platform="ios" width="1536" height="2048" />
-    <splash src="img/splash/ios/LaunchImage-Landscape@2x~ipad_2048x1536.png" platform="ios" width="2048" height="1536" />
+    <gap:splash src="img/splash/ios/LaunchImage~iphone-320x480.png" gap:platform="ios" width="320" height="480"/>
+    <gap:splash src="img/splash/ios/LaunchImage~iphone_640x960.png" gap:platform="ios" width="640" height="960"/>
+    <gap:splash src="img/splash/ios/LaunchImage-568h@2x~iphone_640x1136.png" gap:platform="ios" width="640" height="1136" />
 
+    <gap:splash src="img/splash/ios/LaunchImage.png" gap:platform="ios" width="768" height="1004"/>
+    <gap:splash src="img/splash/ios/LaunchImage-Landscape~ipad_1024x748.P,NG" gap:platform="ios" width="1024" height="748"/>
+    <gap:splash src="img/splash/ios/LaunchImage-Portrait@2x~ipad_1536x2008.png" gap:platform="ios" width="1536" height="2008"/>
+    <gap:splash src="img/splash/ios/LaunchImage-Landscape@2x~ipad_2048x1496.png" gap:platform="ios" width="2048" height="1496"/>
+    
+    <gap:splash gap:platform="winphone" width="1100" height="720" src="img/splash/w8/winphone_xhdpi_landscape.png" />
+    <gap:splash gap:platform="winphone" width="720"  height="960"  src="img/splash/w8/winphone_xhdpi_portrait.png" />
 
     <gap:platform name="ios" />
     <gap:platform name="android" />
@@ -116,12 +102,10 @@
     <plugin name="cordova-plugin-cookiemaster" source="npm" spec="1.0.5" />
     <plugin name="cordova-plugin-whitelist" source="npm" spec="1.3.4" />
     <plugin name="cordova-plugin-advanced-http" source="npm" spec="2.1.1" />
-    <plugin name="cordova-plugin-wkwebview-engine-v2" source="npm" spec="2.2.0" />
-    <!--<plugin name="cordova-plugin-ionic-webview" source="npm" spec="4.1.1" />-->
-    <!--<plugin name="cordova-plugin-ionic-keyboard" source="npm" spec="2.1.3" />-->
-    <!--<plugin name="cordova-plugin-httpd" source="npm" spec="0.9.3" />-->
-    <plugin name="cordova-labs-local-webserver-ka" source="npm" spec="1.0.7" />
+    <plugin name="cordova-plugin-wkwebview-engine-v2" source="npm" spec="2.2.0" />-->
+    <!--<plugin name="cordova-labs-local-webserver-ka" source="npm" spec="1.0.7" />-->
     <!--<plugin name="cordova-plugin-wkwebview-file-xhr" source="npm" spec="2.1.1" />-->
+    <plugin name="cordova-plugin-ionic-webview" source="npm" spec="4.1.1" />
     
     <gap:config-file platform="android" parent="/manifest">
          <application android:debuggable="true" />
@@ -136,10 +120,7 @@
  
     <preference name="CordovaWebViewEngine" value="CDVWKWebViewEngine" />
     
-    
-
-    
-    <content src="http://localhost:49000" />
+    <!--<content src="http://localhost:49000" />-->
     
     <!-- See MOBILE-892 -->
     <preference name="permissions" value="none"/>
