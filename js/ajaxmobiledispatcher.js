@@ -519,7 +519,7 @@ function deleteMyBooking(booking_id,category,ressourceid,fe_typo_user,index) {
                     
                 }
             
-                if (result.result) {
+                if (result.ok) {
                     
                     initPopin();
                     
