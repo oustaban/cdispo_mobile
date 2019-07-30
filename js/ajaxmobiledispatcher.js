@@ -7,9 +7,11 @@ function getBooking(fe_typo_user,action) {
     var L = window.localStorage.getItem("language");
     var url = "http://"+domain+"/?type=476&tx_cdispofrontend_fcdispofrontend[controller]=Mobile&tx_cdispofrontend_fcdispofrontend[action]=dispatcher&tx_cdispofrontend_fcdispofrontend[uid]=1&L="+L;
     $.ajax({
-            type: 'POST',
+            type: 'GET',
             url:url,
-            dataType: 'json',
+            dataType: "jsonp",
+			  jsonp: 'callback',
+			  jsonpCallback: 'cdispoToken',
             data: {fe_typo_user:fe_typo_user,action:'getBooking'},
             success: function(result, status, jqXHR) {
 
