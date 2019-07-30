@@ -192,7 +192,7 @@ function initActiveClone() {
 function getTranslation() {
 	console.log('getTranslation:'+language);
 	
-	window.resolveLocalFileSystemURL(cordova.file.applicationDirectory + "lang/"+language+".json", gotFile, fail);
+	window.resolveLocalFileSystemURL(cordova.file.applicationStorageDirectory + "lang/"+language+".json", gotFile, fail);
 	
 	$.getJSON( "lang/"+language+".json", function( data ) {
 		$.each( data, function( key, val ) {
@@ -213,7 +213,8 @@ function getTranslation() {
 	});
 }
 
-function gotFile(file) {           
+function gotFile(file) {
+	console.log('file:'+file);
     file.file(function (file) {                
         var reader = new FileReader();
         reader.onloadend = function (evt) {          
