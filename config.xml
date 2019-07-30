@@ -69,7 +69,7 @@
         <splash src="img/splash/ios/LaunchImage-568h@2x~iphone_640x1136.png" width="640" height="1136"/>
         <splash src="res/screen/ios/Default-667h.png" width="750" height="1334"/>
         <splash src="res/screen/ios/Default-736h.png" width="1242" height="2208"/>
-        <splash src="img/splash/ios/LaunchImage-Landscape@2x~ipad_2048x1496.png width="2048" height="1496"/>
+        <splash src="img/splash/ios/LaunchImage-Landscape@2x~ipad_2048x1496.png" width="2048" height="1496"/>
         
         <splash src="res/screen/ios/Default@2x~universal~anyany.png" />
         <splash src="res/screen/ios/Default@2x~universal~comany.png" />
