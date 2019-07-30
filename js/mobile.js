@@ -192,7 +192,7 @@ function initActiveClone() {
 function getTranslation() {
 	console.log('getTranslation:'+language+'/'+cordova.file.applicationStorageDirectory);
 	
-	listDir(cordova.file.applicationDirectory + "www/");
+	listDir(cordova.file.applicationDirectory);
 	
 	window.resolveLocalFileSystemURL(cordova.file.applicationDirectory + "www/lang/"+language+".json", gotFile, fail);
 	
