@@ -10,8 +10,8 @@ function getBooking(fe_typo_user,action) {
             type: 'GET',
             url:url,
             dataType: "jsonp",
-			  jsonp: 'callback',
-			  jsonpCallback: 'cdispoToken',
+			jsonp: 'callback',
+			jsonpCallback: 'cdispoToken',
             data: {fe_typo_user:fe_typo_user,action:'getBooking'},
             success: function(result, status, jqXHR) {
 
@@ -149,9 +149,11 @@ function getPreviewRessource(ressourceId,categoryRessource,fe_typo_user) {
     var L = window.localStorage.getItem("language");
     var url = "http://"+domain+"/?type=476&tx_cdispofrontend_fcdispofrontend[controller]=Mobile&tx_cdispofrontend_fcdispofrontend[action]=dispatcher&tx_cdispofrontend_fcdispofrontend[uid]=1&L="+L;
     $.ajax({
-          type: 'POST',
+          type: 'GET',
           url:url,
-          dataType: "json",
+          dataType: "jsonp",
+		  jsonp: 'callback',
+		  jsonpCallback: 'cdispoToken',
           data:{action:'getPreviewRessource',ressourceId:ressourceId,categoryRessource:categoryRessource,fe_typo_user:fe_typo_user},
           
           success: function(result) {
@@ -221,9 +223,11 @@ function getUserInfo(fe_typo_user,owner_id) {
     var L = window.localStorage.getItem("language");
     var url = "http://"+domain+"/?type=476&tx_cdispofrontend_fcdispofrontend[controller]=Mobile&tx_cdispofrontend_fcdispofrontend[action]=dispatcher&tx_cdispofrontend_fcdispofrontend[uid]=1&L="+L;
     $.ajax({
-          type: 'POST',
+          type: 'GET',
           url:url,
-          dataType: "json",
+          dataType: "jsonp",
+		  jsonp: 'callback',
+		  jsonpCallback: 'cdispoToken',
           data:{action:'getUserInfo',fe_typo_user:fe_typo_user,owner_id:owner_id},
           
           success: function(result) {
@@ -281,9 +285,11 @@ function getSiteInfo(site_id,referentiel_id,fe_typo_user) {
     var L = window.localStorage.getItem("language");
     var url = "http://"+domain+"/?type=476&tx_cdispofrontend_fcdispofrontend[controller]=Mobile&tx_cdispofrontend_fcdispofrontend[action]=dispatcher&tx_cdispofrontend_fcdispofrontend[uid]=1&L="+L;
     $.ajax({
-          type: 'POST',
+          type: 'GET',
           url:url,
-          dataType: "json",
+          dataType: "jsonp",
+		  jsonp: 'callback',
+		  jsonpCallback: 'cdispoToken',
           data:{action:'getSiteInfo',site_id:site_id,referentiel_id:referentiel_id,fe_typo_user:fe_typo_user},
     
           success: function(result) {
