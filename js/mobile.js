@@ -190,9 +190,9 @@ function initActiveClone() {
 }
 
 function getTranslation() {
-	console.log('getTranslation:'+language);
+	console.log('getTranslation:'+language+'/'+cordova.file.applicationDirectory);
 	
-	window.resolveLocalFileSystemURL(cordova.file.applicationDirectory + "lang/"+language+".json", gotFile, fail);
+	window.resolveLocalFileSystemURL(cordova.file.applicationDirectory + "www/lang/"+language+".json", gotFile, fail);
 	
 	$.getJSON( "lang/"+language+".json", function( data ) {
 		$.each( data, function( key, val ) {
