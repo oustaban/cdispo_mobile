@@ -191,20 +191,8 @@ function initActiveClone() {
 
 function getTranslation() {
 	console.log('getTranslation:'+language);
-	var url = window.location.href;
-	url = url.substring(0, url.lastIndexOf("/") + 1);
-	var langfile = url + "lang/"+language+".json";
 	
-	langfile.file(function (file) {
-        var reader = new FileReader();
-
-        reader.onloadend = function() {
-            console.log("Successful file read: " + this.result);
-        };
-
-        reader.readAsText(file);
-
-    }, onErrorReadFile);
+	window.resolveLocalFileSystemURL(cordova.file.applicationDirectory + "lang/"+language+".json", gotFile, fail);
 	
 	$.getJSON( "lang/"+language+".json", function( data ) {
 		$.each( data, function( key, val ) {
@@ -223,6 +211,20 @@ function getTranslation() {
 			
 		});
 	});
+}
+
+function gotFile(file) {           
+    file.file(function (file) {                
+        var reader = new FileReader();
+        reader.onloadend = function (evt) {          
+            console.log(this.result);
+        }
+        reader.readAsText(file);                
+    }, fail());            
+}
+
+function fail(e) {
+    console.info("FileSystem Error : " + e);
 }
 
 /*
