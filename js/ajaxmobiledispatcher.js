@@ -1238,7 +1238,8 @@ function checkBooking(idBooking,dateStart,dateEnd,fe_typo_user) {
                 
                 
                 if (result.result) {
-                
+                    
+                    console.log("modif ok");
                     initPopin();
                     $('.prewiewsharing_header').hide();
                     $('.previewsharing_content').html('<p></p><p>'+result.message0+result.message1+result.message2+'</p>');
