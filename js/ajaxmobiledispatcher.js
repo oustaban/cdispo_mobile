@@ -15,7 +15,7 @@ function getBooking(fe_typo_user,action) {
             data: {fe_typo_user:fe_typo_user,action:'getBooking'},
             success: function(result, status, jqXHR) {
 
-                console.log("result is " + result);
+                //console.log("result is " + result);
     
                 //console.log(JSON.stringify(jqXHR.responseJSON));
                 if (result.deconnexion) {
@@ -720,7 +720,7 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                                 $('.modification-block').show();
                             },
                             onChange: function (data) {
-                                console.log('change slider 1:'+data);
+                                //console.log('change slider 1:'+data);
                                 $('#modif_datestart').val(data.from_value);
                                 $('#modif_dateend').val(data.to_value);
                                 $('#btn_modifynow').attr('onclick','checkBooking('+booking_id+','+$('#modif_datestart').val()+','+$('#modif_dateend').val()+',\''+fe_typo_user+'\')');
@@ -789,7 +789,6 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                             },
                             
                             onChange: function (data) {
-                                console.log('CHANGE');
                                 myvalues2 = [];
                                 myvalues3 = [];
                                 
@@ -828,7 +827,7 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                                 $('#modif_datestart').val(result.timecode[indexStart1][indexStart2]);
                                 $('#btn_modifynow').attr('onclick','checkBooking('+booking_id+','+$('#modif_datestart').val()+','+$('#modif_dateend').val()+',\''+fe_typo_user+'\')');
                 
-                                console.log(result.timecode[indexStart1][indexStart2]);
+                                //console.log(result.timecode[indexStart1][indexStart2]);
                                 for(var index2 in result.timecode[indexEnd1]) {
                                     myvalues3.push(result.timecode[indexEnd1][index2]);
                                 }
