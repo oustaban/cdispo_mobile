@@ -688,6 +688,7 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                 if (!result.firstEditable && !result.lastEditable) {
                     
                     $('.main-slider').hide();
+                    $('.info-block').hide();        
                     $('.modification-block').show();        
                 
                 } else {
@@ -720,7 +721,10 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                         $(".js-range-slider1").ionRangeSlider({
                             onUpdate: function (data) {
                                 $('.main-slider').hide();
+                                $('.info-block').hide();
                                 $('.modification-block').show();
+                                
+                    
                             },
                             onChange: function (data) {
                                 //console.log('change slider 1:'+data);
@@ -788,6 +792,7 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                         $(".js-range-slider1").ionRangeSlider({
                             onUpdate: function (data) {
                                 $('.main-slider').hide();
+                                $('.info-block').hide();
                                 $('.modification-block').show();
                             },
                             
@@ -882,10 +887,6 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                         var my_from2 = myvalues2.indexOf(result.timecode[indexStart1][indexStart2]);
                         
                        $(".js-range-slider2").ionRangeSlider({
-                            onUpdate: function (data) {
-                                $('.main-slider').hide();
-                                $('.modification-block').show();
-                            },
                             onChange: function (data) {
                                 $('#modif_datestart').val(data.from_value);
                                 $('#btn_modifynow').attr('onclick','checkBooking('+booking_id+','+$('#modif_datestart').val()+','+$('#modif_dateend').val()+',\''+fe_typo_user+'\')');
@@ -917,10 +918,6 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                         var my_from3 = myvalues3.indexOf(result.timecode[indexEnd1][indexEnd2]);
                         
                        $(".js-range-slider3").ionRangeSlider({
-                            onUpdate: function (data) {
-                                $('.main-slider').hide();
-                                $('.modification-block').show();
-                            },
                             onChange: function (data) {
                                 $('#modif_dateend').val(data.from_value);
                                 $('#btn_modifynow').attr('onclick','checkBooking('+booking_id+','+$('#modif_datestart').val()+','+$('#modif_dateend').val()+',\''+fe_typo_user+'\')');
