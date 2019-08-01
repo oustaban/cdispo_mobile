@@ -190,11 +190,8 @@ function initActiveClone() {
 }
 
 function getTranslation() {
+	
 	console.log('getTranslation:'+language+'/'+cordova.file.applicationStorageDirectory);
-	
-	listDir(cordova.file.applicationDirectory);
-	
-	window.resolveLocalFileSystemURL(cordova.file.applicationDirectory + "www/lang/"+language+".json", gotFile, fail);
 	
 	$.getJSON( "lang/"+language+".json", function( data ) {
 		$.each( data, function( key, val ) {
@@ -213,43 +210,6 @@ function getTranslation() {
 			
 		});
 	});
-}
-
-function gotFile(file) {
-	console.log('file:'+file);
-    file.file(function (file) {                
-        var reader = new FileReader();
-        reader.onloadend = function (evt) {          
-            console.log(this.result);
-        }
-        reader.readAsText(file);                
-    }, fail());            
-}
-
-function fail(e) {
-    console.info("FileSystem Error : " + e);
-	for (key in e) {
-		console.log(key+'/'+e[key]);
-			//do something with value;
-	}
-}
-
-function listDir(path){
-  window.resolveLocalFileSystemURL(path,
-    function (fileSystem) {
-      var reader = fileSystem.createReader();
-      reader.readEntries(
-        function (entries) {
-          console.log(entries);
-        },
-        function (err) {
-          console.log(err);
-        }
-      );
-    }, function (err) {
-      console.log(err);
-    }
-  );
 }
 
 /*
