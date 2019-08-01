@@ -12,6 +12,7 @@
 	<link rel="stylesheet" href="css/ion.rangeSlider.min.css">
     <script language="javascript">
 		
+		var language = window.localStorage.getItem("lang");
 		
         // We use this code for handling unexpected errors.
         // Using alert, we are sure that the user get notified in a Mobile device.
@@ -53,7 +54,7 @@
 		
 		$(document).bind('deviceready', function() {
 		   
-		    var language = window.localStorage.getItem("lang");
+		    
 		    getTranslation();
 			
 		    var fe_typo_user = window.localStorage.getItem("fe_typo_user");
@@ -73,8 +74,7 @@
 		
 		$(document).bind('resume', function() {
 			
-			var language = window.localStorage.getItem("lang");
-		    getTranslation();
+			getTranslation();
 			
 			var fe_typo_user = window.localStorage.getItem("fe_typo_user");
 			getBooking(fe_typo_user,'refresh');
