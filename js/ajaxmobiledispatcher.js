@@ -30,6 +30,7 @@ function getBooking(fe_typo_user,action) {
                     $('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'mesreservations.html\', \'_self\')');
                     
                     $('.main-slider').hide();
+                    $('.modification-block').hide();
                     $('.info-block').show();
                 
                 }
@@ -42,6 +43,7 @@ function getBooking(fe_typo_user,action) {
                             clearInterval(varInterval);
                          }
                          $('.main-slider').show();
+                         $('.modification-block').hide();
                          $('.info-block').hide();
                          if (countslide > 0) 
                             $('.main-slider').slick('unslick');
@@ -58,6 +60,7 @@ function getBooking(fe_typo_user,action) {
                         $('#btn_close').attr('onclick','getBooking(\''+fe_typo_user+'\',\'refresh\')');
                     
                         $('.main-slider').hide();
+                        $('.modification-block').hide();
                         $('.info-block').show();    
                     }
                     
