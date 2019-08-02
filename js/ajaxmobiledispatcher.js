@@ -1290,7 +1290,11 @@ function checkBooking(idBooking,dateStart,dateEnd,fe_typo_user) {
                     
                     $('.main-slider').hide();
                     $('.modification-block').hide();
-                    $('.info-block').show();
+                    
+                    setTimeout(function(){
+                        $('.info-block').show();
+                    }, 500);
+                    
                     
                 } else {
                     
