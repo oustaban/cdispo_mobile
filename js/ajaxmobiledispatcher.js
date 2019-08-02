@@ -1,4 +1,9 @@
 var countslide = 0;
+var my_range;
+var my_range1;
+var my_range2;
+var my_range3;
+
 function getBooking(fe_typo_user,action) {
         
     $('.loader2').show();    
@@ -668,7 +673,27 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
             }
             
             if (result.result) {
-            
+                
+                if (my_range1) {
+                    my_range1.reset();
+                    my_range1.destroy();
+                }
+                if (my_range2) {
+                    my_range2.reset();
+                    my_range2.destroy();
+                }
+                if (my_range3) {
+                    my_range3.reset();
+                    my_range3.destroy();
+                }
+                
+                if (timecode) {
+                    timecode = [];
+                }
+                
+                var timecode = result.timecode;
+                
+                
                 $('#date_start').text(datestart);
                 $('#date_end').text(dateend);
                 $('#modification_lien1').text(domain);
@@ -688,19 +713,18 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                 if (!result.firstEditable && !result.lastEditable) {
                     
                     $('.main-slider').hide();
-                    $('.info-block').hide();        
                     $('.modification-block').show();        
                 
                 } else {
                 
                     var step = 5 * 60;
                     moment.locale(lang);
-                    console.log(moment.locale());
+                    
                     $('#modif_datestart').val(result.dateStartBooking);
                     $('#modif_dateend').val(result.dateEndBooking);
                     
-                    
-                    if (result.timecode.length <= 2) {
+                    //Dans le cas ou la plage est sur 1 jour => 1 slider (jour/heure)
+                    if (timecode.length <= 2) {
                         
                         var myvalues = [];
                         $('#slider_holder1').show();
@@ -708,9 +732,9 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                         $('#slider_holder3').hide();
                         
                         
-                        for(var index in result.timecode) {
-                            for(var index2 in result.timecode[index]) {
-                                myvalues.push(result.timecode[index][index2]);
+                        for(var index in timecode) {
+                            for(var index2 in timecode[index]) {
+                                myvalues.push(timecode[index][index2]);
                             }
                         }
                         
@@ -721,13 +745,9 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                         $(".js-range-slider1").ionRangeSlider({
                             onUpdate: function (data) {
                                 $('.main-slider').hide();
-                                $('.info-block').hide();
                                 $('.modification-block').show();
-                                
-                    
                             },
-                            onChange: function (data) {
-                                //console.log('change slider 1:'+data);
+                            onFinish: function (data) {
                                 $('#modif_datestart').val(data.from_value);
                                 $('#modif_dateend').val(data.to_value);
                                 $('#btn_modifynow').attr('onclick','checkBooking('+booking_id+','+$('#modif_datestart').val()+','+$('#modif_dateend').val()+',\''+fe_typo_user+'\')');
@@ -735,15 +755,15 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                             }
                         });
                         
-                        let my_range1 = $(".js-range-slider1").data("ionRangeSlider");
+                        my_range1 = $(".js-range-slider1").data("ionRangeSlider");
                         
                         my_range1.update({
                             type: "double",
                             grid: false,
                             grid_snap: true,
                             grid_num: 4,
-                            min: result.timecode[0][0],
-                            max: result.timecode[index][index2],
+                            min: timecode[0][0],
+                            max: timecode[index][index2],
                             from: my_from1,
                             to: my_to1,
                             step: step,
@@ -753,6 +773,8 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                             prettify: my_prettify1,
                             values: myvalues
                         });
+                    
+                    //Dans le cas ou la plage est sur plus  d'1 jour => 3 slider (jours,heure debut, heure fin)
                     } else {
                         
                         var myvalues1 = [];
@@ -762,19 +784,20 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                         var indexEnd1 = 0;
                         var indexStart2 = 0;
                         var indexEnd2 = 0;
+                        var indexEnd3 = 0;
                         $('#slider_holder1').show();
                         $('#slider_holder2').show();
                         $('#slider_holder3').show();
                         
-                        for(var index in result.timecode) {
-                            for(var index2 in result.timecode[index]) {
+                        for(var index in timecode) {
+                            for(var index2 in timecode[index]) {
                                 if (index2 == 0)
-                                    myvalues1.push(result.timecode[index][index2]);
-                                if (result.timecode[index][index2] ==  result.dateStartBooking) {
+                                    myvalues1.push(timecode[index][index2]);
+                                if (timecode[index][index2] ==  result.dateStartBooking) {
                                     indexStart1 = index;
                                     indexStart2 = index2;
                                 }
-                                if (result.timecode[index][index2] ==  result.dateEndBooking) {
+                                if (timecode[index][index2] ==  result.dateEndBooking) {
                                     indexEnd1 = index;
                                     indexEnd2 = index2;
                                 }
@@ -783,8 +806,8 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                         
                         
                         
-                        var my_from1 = myvalues1.indexOf(result.timecode[indexStart1][0]);
-                        var my_to1 = myvalues1.indexOf(result.timecode[indexEnd1][0]);
+                        var my_from1 = myvalues1.indexOf(timecode[indexStart1][0]);
+                        var my_to1 = myvalues1.indexOf(timecode[indexEnd1][0]);
                         
     
                         
@@ -792,38 +815,45 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                         $(".js-range-slider1").ionRangeSlider({
                             onUpdate: function (data) {
                                 $('.main-slider').hide();
-                                $('.info-block').hide();
                                 $('.modification-block').show();
                             },
                             
-                            onChange: function (data) {
+                            onFinish: function (data) {
+                                
                                 myvalues2 = [];
                                 myvalues3 = [];
                                 
-                                for(var index in result.timecode) {
-                                    for(var index2 in result.timecode[index]) {
-                                        if (result.timecode[index][index2] ==  data.from_value) {
-                                            indexStart1 = index;
-                                            indexStart2 = index2;
+                                for(let index3 in timecode) {
+                                    for(let index4 in timecode[index3]) {
+                                        //console.log('Timecode:'+index3+'/'+index4+'/'+timecode[index3][index4]);
+                                        if (timecode[index3][index4] ==  data.from_value) {
+                                            console.log('from found');
+                                            indexStart1 = index3;
+                                            indexStart2 = index4;
                                         }
-                                        if (result.timecode[index][index2] ==  data.to_value) {
-                                            indexEnd1 = index;
-                                            indexEnd2 = index2;
+                                        if (timecode[index3][index4] ==  data.to_value) {
+                                            //console.log('to found');
+                                            indexEnd1 = index3;
+                                            indexEnd2 = index4;
                                         }
                                     }
                                 }
                                 
-                                for(var index2 in result.timecode[indexStart1]) {
-                                    myvalues2.push(result.timecode[indexStart1][index2]);
+                                //console.log('Index:'+data.from_value+'/'+data.to_value+':'+indexStart1+'/'+indexStart2+':'+indexEnd1+'/'+indexEnd2);
+                                
+                                for(var index5 in timecode[indexStart1]) {
+                                    myvalues2.push(timecode[indexStart1][index5]);
                                 }
-                                my_from2 = myvalues2.indexOf(result.timecode[indexStart1][indexStart2]);
-                                $('.js-range-slider2').val(result.timecode[indexStart1][indexStart2]);
+                                
+                                my_from2 = myvalues2.indexOf(timecode[indexStart1][indexStart2]);
+                                var end2 = timecode[indexStart1].length-1;
+                                
                                 my_range2.update({
                                     grid: false,
                                     grid_snap: true,
                                     grid_num: 4,
-                                    min: result.timecode[indexStart1][0],
-                                    max: result.timecode[indexStart1][result.timecode[indexStart1].length-1],
+                                    min: timecode[indexStart1][0],
+                                    max: timecode[indexStart1][end2],
                                     from: my_from2,
                                     step: step,
                                     skin: "big",
@@ -832,21 +862,25 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                                     prettify: my_prettify3,
                                     values: myvalues2
                                 });
-                                $('#modif_datestart').val(result.timecode[indexStart1][indexStart2]);
+                                
+                                $('#modif_datestart').val(timecode[indexStart1][indexStart2]);
                                 $('#btn_modifynow').attr('onclick','checkBooking('+booking_id+','+$('#modif_datestart').val()+','+$('#modif_dateend').val()+',\''+fe_typo_user+'\')');
                 
-                                //console.log(result.timecode[indexStart1][indexStart2]);
-                                for(var index2 in result.timecode[indexEnd1]) {
-                                    myvalues3.push(result.timecode[indexEnd1][index2]);
+                                //console.log(timecode[indexStart1][indexStart2]);
+                                
+                                for(var index6 in timecode[indexEnd1]) {
+                                    myvalues3.push(timecode[indexEnd1][index6]);
                                 }
-                                var my_from3 = myvalues3.indexOf(result.timecode[indexEnd1][indexEnd2]);
-                                $('.js-range-slider3').val(result.timecode[indexEnd1][indexEnd2]);
+                                
+                                var my_from3 = myvalues3.indexOf(timecode[indexEnd1][indexEnd2]);
+                                var end3 = timecode[indexEnd1].length-1;
+                                
                                 my_range3.update({
                                     grid: false,
                                     grid_snap: true,
                                     grid_num: 4,
-                                    min: result.timecode[indexEnd1][0],
-                                    max: result.timecode[indexEnd1][result.timecode[indexEnd1].length-1],
+                                    min: timecode[indexEnd1][0],
+                                    max: timecode[indexEnd1][end3],
                                     from: my_from3,
                                     step: step,
                                     skin: "big",
@@ -855,21 +889,22 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                                     prettify: my_prettify3,
                                     values: myvalues3
                                 });
-                                $('#modif_dateend').val(result.timecode[indexEnd1][indexEnd2]);
+                                
+                                $('#modif_dateend').val(timecode[indexEnd1][indexEnd2]);
                                 $('#btn_modifynow').attr('onclick','checkBooking('+booking_id+','+$('#modif_datestart').val()+','+$('#modif_dateend').val()+',\''+fe_typo_user+'\')');
                 
                             }
                         });
                         
-                        let my_range1 = $(".js-range-slider1").data("ionRangeSlider");
+                        my_range1 = $(".js-range-slider1").data("ionRangeSlider");
                         
                         my_range1.update({
                             type: "double",
                             grid: false,
                             grid_snap: true,
                             grid_num: 4,
-                            min: result.timecode[0][0],
-                            max: result.timecode[index][0],
+                            min: timecode[0][0],
+                            max: timecode[index][0],
                             from: my_from1,
                             to: my_to1,
                             step: step,
@@ -880,28 +915,33 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                             values: myvalues1
                         });
                         
-                        for(var index2 in result.timecode[indexStart1]) {
-                            myvalues2.push(result.timecode[indexStart1][index2]);
+                        for(var index7 in timecode[indexStart1]) {
+                            myvalues2.push(timecode[indexStart1][index7]);
                         }
                         
-                        var my_from2 = myvalues2.indexOf(result.timecode[indexStart1][indexStart2]);
+                        var my_from2 = myvalues2.indexOf(timecode[indexStart1][indexStart2]);
                         
                        $(".js-range-slider2").ionRangeSlider({
-                            onChange: function (data) {
+                            onUpdate: function (data) {
+                                $('.main-slider').hide();
+                                $('.modification-block').show();
+                            },
+                            onFinish: function (data) {
                                 $('#modif_datestart').val(data.from_value);
                                 $('#btn_modifynow').attr('onclick','checkBooking('+booking_id+','+$('#modif_datestart').val()+','+$('#modif_dateend').val()+',\''+fe_typo_user+'\')');
                 
                             }
                         });
                         
-                        let my_range2 = $(".js-range-slider2").data("ionRangeSlider");
+                        my_range2 = $(".js-range-slider2").data("ionRangeSlider");
+                        var end2 = timecode[indexStart1].length-1;
                         
                         my_range2.update({
                             grid: false,
                             grid_snap: true,
                             grid_num: 4,
-                            min: result.timecode[indexStart1][0],
-                            max: result.timecode[indexStart1][result.timecode[indexStart1].length-1],
+                            min: timecode[indexStart1][0],
+                            max: timecode[indexStart1][end2],
                             from: my_from2,
                             step: step,
                             skin: "big",
@@ -911,28 +951,34 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                             values: myvalues2
                         });
                         
-                        for(var index2 in result.timecode[indexEnd1]) {
-                            myvalues3.push(result.timecode[indexEnd1][index2]);
+                        for(var index8 in timecode[indexEnd1]) {
+                            myvalues3.push(timecode[indexEnd1][index8]);
                         }
                         
-                        var my_from3 = myvalues3.indexOf(result.timecode[indexEnd1][indexEnd2]);
+                        var my_from3 = myvalues3.indexOf(timecode[indexEnd1][indexEnd2]);
                         
                        $(".js-range-slider3").ionRangeSlider({
-                            onChange: function (data) {
+                            onUpdate: function (data) {
+                                $('.main-slider').hide();
+                                $('.modification-block').show();
+                            },
+                            onFinish: function (data) {
                                 $('#modif_dateend').val(data.from_value);
                                 $('#btn_modifynow').attr('onclick','checkBooking('+booking_id+','+$('#modif_datestart').val()+','+$('#modif_dateend').val()+',\''+fe_typo_user+'\')');
                 
                             }
                         });
                         
-                        let my_range3 = $(".js-range-slider3").data("ionRangeSlider");
+                        my_range3 = $(".js-range-slider3").data("ionRangeSlider");
+                        var end3 = timecode[indexEnd1].length-1;
+                        
                         
                         my_range3.update({
                             grid: false,
                             grid_snap: true,
                             grid_num: 4,
-                            min: result.timecode[indexEnd1][0],
-                            max: result.timecode[indexEnd1][result.timecode[indexEnd1].length-1],
+                            min: timecode[indexEnd1][0],
+                            max: timecode[indexEnd1][end3],
                             from: my_from3,
                             step: step,
                             skin: "big",
@@ -945,7 +991,7 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                     }
                 }
     
-            }   
+            } 
                 
             console.log('editBooking success');
             
