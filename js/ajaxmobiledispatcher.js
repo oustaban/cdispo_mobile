@@ -713,6 +713,9 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                 if (!result.firstEditable && !result.lastEditable) {
                     
                     $('.main-slider').hide();
+                    $('#slider_holder1').hide();
+                    $('#slider_holder2').hide();
+                    $('#slider_holder3').hide();
                     $('.modification-block').show();        
                 
                 } else {
@@ -773,6 +776,10 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                             prettify: my_prettify1,
                             values: myvalues
                         });
+                        
+                        if (!result.firstEditable) {
+                            my_range1.update({from_fixed: true});
+                        }
                     
                     //Dans le cas ou la plage est sur plus  d'1 jour => 3 slider (jours,heure debut, heure fin)
                     } else {
@@ -915,6 +922,10 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                             values: myvalues1
                         });
                         
+                        if (!result.firstEditable) {
+                            my_range1.update({from_fixed: true});
+                        }
+                        
                         for(var index7 in timecode[indexStart1]) {
                             myvalues2.push(timecode[indexStart1][index7]);
                         }
@@ -950,6 +961,10 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                             prettify: my_prettify3,
                             values: myvalues2
                         });
+                        
+                        if (!result.firstEditable) {
+                            my_range2.update({from_fixed: true});
+                        }
                         
                         for(var index8 in timecode[indexEnd1]) {
                             myvalues3.push(timecode[indexEnd1][index8]);
@@ -991,7 +1006,7 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                     }
                 }
     
-            } 
+            }  
                 
             console.log('editBooking success');
             
