@@ -374,9 +374,11 @@ function deleteMyBooking(booking_id,category,ressourceid,fe_typo_user,index) {
     var L = window.localStorage.getItem("language");
     var url = "http://"+domain+"/?type=476&tx_cdispofrontend_fcdispofrontend[controller]=Mobile&tx_cdispofrontend_fcdispofrontend[action]=dispatcher&tx_cdispofrontend_fcdispofrontend[uid]=1&L="+L;
     $.ajax({
-          type: 'POST',
+          type: 'GET',
           url:url,
-          dataType: "json",
+          dataType: "jsonp",
+		  jsonp: 'callback',
+		  jsonpCallback: 'cdispoToken',
           data:{action:'deleteMyBooking',booking_id:booking_id,category:category,ressourceid:ressourceid,fe_typo_user:fe_typo_user},
           
           success: function(result) {
@@ -571,6 +573,7 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
         url:url,
         dataType: "jsonp",
 		jsonp: 'callback',
+        jsonpCallback: 'cdispoToken',
         data:{action:"editBooking",booking_id:booking_id,fe_typo_user:fe_typo_user},
           
         success: function(result) {
@@ -1040,6 +1043,7 @@ function checkBooking(idBooking,dateStart,dateEnd,fe_typo_user) {
         url:url,
         dataType: "jsonp",
 		jsonp: 'callback',
+        jsonpCallback: 'cdispoToken',
         data:{action:"checkBooking",idBooking:idBooking,dateStart:dateStart,dateEnd:dateEnd,fe_typo_user:fe_typo_user},
     
           success: function(result) {
@@ -1349,6 +1353,7 @@ function checkStartMyBooking(bookingId,fe_typo_user) {
         url:url,
         dataType: "jsonp",
 		jsonp: 'callback',
+        jsonpCallback: 'cdispoToken',
         data: {action:"checkStartMyBooking",bookingId:bookingId,fe_typo_user:fe_typo_user},
         
             success: function(result) {
@@ -1557,6 +1562,7 @@ function startMyBooking(bookingId,fe_typo_user) {
           url:url,
           dataType: "jsonp",
           jsonp: 'callback',
+          jsonpCallback: 'cdispoToken',
           data: {action:"startMyBooking",bookingId:bookingId,fe_typo_user:fe_typo_user},
           dataType: "json",
     
@@ -1762,6 +1768,7 @@ function checkEndMyBooking(bookingId,fe_typo_user) {
           url:url,
           dataType: "jsonp",
           jsonp: 'callback',
+          jsonpCallback: 'cdispoToken',
           data: {action:"checkEndMyBooking",bookingId:bookingId,fe_typo_user:fe_typo_user},
           dataType: "json",
     
@@ -1956,6 +1963,7 @@ function endMyBooking(bookingId,fe_typo_user) {
           url:url,
           dataType: "jsonp",
           jsonp: 'callback',
+          jsonpCallback: 'cdispoToken',
           data: {action:"enMyBooking",bookingId:bookingId,fe_typo_user:fe_typo_user},
           dataType: "json",
     
