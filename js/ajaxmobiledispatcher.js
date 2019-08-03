@@ -1564,7 +1564,6 @@ function startMyBooking(bookingId,fe_typo_user) {
           jsonp: 'callback',
           jsonpCallback: 'cdispoToken',
           data: {action:"startMyBooking",bookingId:bookingId,fe_typo_user:fe_typo_user},
-          dataType: "json",
     
           success: function(result) {
             
@@ -1770,8 +1769,7 @@ function checkEndMyBooking(bookingId,fe_typo_user) {
           jsonp: 'callback',
           jsonpCallback: 'cdispoToken',
           data: {action:"checkEndMyBooking",bookingId:bookingId,fe_typo_user:fe_typo_user},
-          dataType: "json",
-    
+          
           success: function(result) {
             
                 if (result.deconnexion) {
