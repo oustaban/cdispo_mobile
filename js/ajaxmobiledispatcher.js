@@ -45,7 +45,7 @@ function getBooking(fe_typo_user,action) {
                          console.log('countslide:'+countslide);
                          for (var i = 0; i < countslide; i++) {
                             var varInterval = "x"+i;
-                            clearInterval(varInterval);
+                            window.clearInterval(varInterval);
                          }
                          $('.main-slider').show();
                          $('.modification-block').hide();
@@ -1963,8 +1963,7 @@ function endMyBooking(bookingId,fe_typo_user) {
           jsonp: 'callback',
           jsonpCallback: 'cdispoToken',
           data: {action:"enMyBooking",bookingId:bookingId,fe_typo_user:fe_typo_user},
-          dataType: "json",
-    
+          
           success: function(result) {
             
                 if (result.deconnexion) {
