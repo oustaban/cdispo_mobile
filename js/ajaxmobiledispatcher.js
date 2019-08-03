@@ -44,7 +44,7 @@ function getBooking(fe_typo_user,action) {
                 if (result.result) {
                     if (action == "refresh") {
                          console.log('countslide:'+countslide);
-                         for (var i = 0; i < countslide; i++) {
+                         for (var i = 0; i < (countslide * 2); i++) {
                             var varInterval = "x"+i;
                             window.clearInterval(i);
                          }
