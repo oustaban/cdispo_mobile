@@ -1,4 +1,5 @@
 var countslide = 0;
+var rotatorId;
 var my_range;
 var my_range1;
 var my_range2;
@@ -45,7 +46,7 @@ function getBooking(fe_typo_user,action) {
                          console.log('countslide:'+countslide);
                          for (var i = 0; i < countslide; i++) {
                             var varInterval = "x"+i;
-                            window.clearInterval(varInterval);
+                            window.clearInterval(i);
                          }
                          $('.main-slider').show();
                          $('.modification-block').hide();
@@ -1962,7 +1963,7 @@ function endMyBooking(bookingId,fe_typo_user) {
           dataType: "jsonp",
           jsonp: 'callback',
           jsonpCallback: 'cdispoToken',
-          data: {action:"enMyBooking",bookingId:bookingId,fe_typo_user:fe_typo_user},
+          data: {action:"endMyBooking",bookingId:bookingId,fe_typo_user:fe_typo_user},
           
           success: function(result) {
             
