@@ -1,7 +1,4 @@
 var countslide = 0;
-var indexSlide = 0;
-var arraySlide = [];
-var rotatorId;
 var my_range;
 var my_range1;
 var my_range2;
@@ -46,7 +43,7 @@ function getBooking(fe_typo_user,action) {
                 if (result.result) {
                     if (action == "refresh") {
                          console.log('countslide:'+countslide);
-                         for (var i = 0; i < arraySlide.length; i++) {
+                         for (var i = 0; i < (countslide * 100); i++) {
                             var varInterval = "x"+i;
                             window.clearInterval(i);
                          }
@@ -60,8 +57,6 @@ function getBooking(fe_typo_user,action) {
                     countslide = result.countslide;
                     
                     if (countslide > 0) {
-                        indexSlide = 0;
-                        arraySlide = [];
                         $('.main-slider').html(result.slide);
                         initSlickCarousel();
                     } else {
