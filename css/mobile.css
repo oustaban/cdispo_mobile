@@ -1580,6 +1580,10 @@ select:focus {
 	padding: 12px 15px;
 }
 
+.main-slider .btn.onebtn {
+	padding: 6px 15px 6px 15px;
+}
+
 .main-slider .time {
 	font: italic 400 50px "Digital7", "Helvetica Neue", "Helvetica", sans-serif;
 	position: relative;
