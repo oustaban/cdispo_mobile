@@ -52,6 +52,9 @@
 	<script src="js/moment.min.js"></script>
 	<script>
 		
+		var url = window.location.href;
+		url = url.substring(0, url.lastIndexOf("/") + 1);
+		
 		$(document).bind('deviceready', function() {
 		   
 		    
@@ -111,9 +114,9 @@
 					<a href="#" class="nav-opener"><span id="menu_title">Menu</span></a>
 					<!-- main navigation of the page -->
 					<ul class="menu">
-						<li class="active"><a href="#" id="nav_title1">MES RESERVATIONS</a></li>
+						<li class="active"><a href="javascript:void(0)" onclick="cordova.InAppBrowser.open(url+'mesreservations.html', '_self')" id="nav_title1">MES RESERVATIONS</a></li>
 						<li><a href="#" id="nav_title2">MES INVIT</a></li>
-						<li><a href="#" id="nav_title3">MES PARTAGES</a></li>
+						<li><a href="javascript:void(0)" onclick="cordova.InAppBrowser.open(url+'mespartages.html', '_self')" id="nav_title3">MES PARTAGES</a></li>
 						<li><a href="#" id="nav_title4">LES RESERVATIONS A CONFIRMER</a></li>
 					</ul>
 				</nav>

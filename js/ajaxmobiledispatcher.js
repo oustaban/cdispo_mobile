@@ -701,8 +701,8 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                 var timecode = result.timecode;
                 
                 
-                $('#date_start').text(datestart);
-                $('#date_end').text(dateend);
+                $('#date_start').text(result.firstDate);
+                $('#date_end').text(result.lastDate);
                 $('#modification_lien1').text(domain);
                 $('#modification_lien1').attr('href',url);
                 $('#btn_back').attr('onclick','$(\'.modification-block\').hide();$(\'.main-slider\').show();');
@@ -2150,6 +2150,80 @@ function endMyBooking(bookingId,fe_typo_user) {
     }); 
 }
 
+
+function getSharing(cookievalue,action) {
+    var L = window.localStorage.getItem("language");
+    var lang = window.localStorage.getItem("lang");
+    $('.loader2').show();
+    var domain = window.localStorage.getItem("domain");
+    var url = "http://"+domain+"/?type=476&tx_cdispofrontend_fcdispofrontend[controller]=Mobile&tx_cdispofrontend_fcdispofrontend[action]=dispatcher&tx_cdispofrontend_fcdispofrontend[uid]=1&L="+L;
+    $.ajax({
+          type: 'GET',
+          url:url,
+          dataType: "jsonp",
+          jsonp: 'callback',
+          jsonpCallback: 'cdispoToken',
+          data: {action:"getSharing",fe_typo_user:fe_typo_user},
+          
+          success: function(result) {
+                
+                if (result.deconnexion) {
+                    
+                    initPopin();
+                    $('.prewiewsharing_header').hide();
+                    $('.previewsharing_content').html('<p></p><p>'+result.deconnexion+'</p>');
+                    
+                    var url = window.location.href;
+                    url = url.substring(0, url.lastIndexOf("/") + 1);
+                    window.localStorage.clear();
+                    $('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'mesreservations.html\', \'_self\')');
+                    
+                    $('.main-slider').hide();
+                    $('.modification-block').hide();
+                    $('.info-block').show();
+                    
+                }
+                
+                if (result.result) {
+                    if (action == "refresh") {
+                         console.log('countslide:'+countslide);
+                         for (var i = 0; i < (countslide * 100); i++) {
+                            var varInterval = "x"+i;
+                            window.clearInterval(varInterval);
+                         }
+                         $('.main-slider').show();
+                         $('.info-block').hide();
+                         if (countslide > 0) 
+                            $('.main-slider').slick('unslick');
+                    }
+                    
+                    countslide = result.countslide;
+                    //console.log(countslide);
+                    //console.log(result.slide);
+                    
+                    if (countslide > 0) {
+                        $('.main-slider').html(result.slide);
+                        initSlickCarousel();
+                    } else {
+                        $('.prewiewsharing_header').hide();
+                        $('.previewsharing_content').html(result.content);
+                        $('#btn_close').attr('onclick','getBooking(\''+cookievalue+'\',\'refresh\')');
+                    
+                        $('.main-slider').hide();
+                        $('.info-block').show();    
+                    }
+                    
+                } else {
+                    
+                }
+                $('.loader2').hide();
+          },  
+          error: function(error) {
+            console.log(error);
+            $('.loader2').hide();
+          }   
+    });
+}
 
 function my_prettify1 (n) {
         

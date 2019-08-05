@@ -21,5 +21,6 @@
 	"modification_texte1":"Pour une modification avancée, veuillez vous connecter depuis votre ordinateur à votre site internet",
 	"modification_texte2":"Une fois modifiée, la réservation ne sera confirmée qu’après validation par le titulaire du partage. Vous serez tenu informé par email de la confirmation. En l’absence d’email de confirmation, la réservation est réputée non confirmée.",
 	"btn_modifynow":"Modifier Maintenant",
-	"btn_back":"Retour"
+	"btn_back":"Retour",
+	"sharing_title":"MES PARTAGES",
 }
