@@ -218,12 +218,14 @@ function getTranslation() {
 function initNav() {
 	var url = window.location.href;
 	url = url.substring(0, url.lastIndexOf("/") + 1);
-	console.log(url);
+	
 					
     jQuery('#nav_title1').click(function() {
+		console.log(url);
 		cordova.InAppBrowser.open(url+'mesreservations.html', '_self');
 	});
-	jQuery('#nav_title1').click(function() {
+	jQuery('#nav_title3').click(function() {
+		console.log(url);
 		cordova.InAppBrowser.open(url+'mesreservations.html', '_self');
 	});
 	
