@@ -1520,6 +1520,23 @@ select:focus {
 	font-weight:bold;
 }
 
+.sg0 {
+	background-color:rgba(26,240,132,1);
+	color:black;
+	font-weight:bold;
+}
+
+.sg1 {
+	background-color:rgba(255,0,0,1);
+	color:black;
+	font-weight:bold;
+}
+
+.sg2 {
+	background-color:rgba(255,0,0,1);
+	color:black;
+	font-weight:bold;
+}
 
 .main-slider .reserved-time {
 	padding-left: 25px;
