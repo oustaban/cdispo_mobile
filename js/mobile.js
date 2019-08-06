@@ -226,7 +226,7 @@ function initNav() {
 	});
 	jQuery('#nav_title3').click(function() {
 		console.log(url);
-		cordova.InAppBrowser.open(url+'mesreservations.html', '_self');
+		cordova.InAppBrowser.open(url+'mespartages.html', '_self');
 	});
 	
 }
