@@ -222,10 +222,11 @@ function initNav() {
 					
     jQuery('#nav_title1').click(function() {
 		cordova.InAppBrowser.open(url+'mesreservations.html', '_self');
-	}
+	});
 	jQuery('#nav_title1').click(function() {
 		cordova.InAppBrowser.open(url+'mesreservations.html', '_self');
-	}
+	});
+	
 }
 /*
      _ _      _       _
