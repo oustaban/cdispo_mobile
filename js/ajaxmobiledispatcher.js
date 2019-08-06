@@ -48,7 +48,7 @@ function getBooking(fe_typo_user,action) {
                             window.clearInterval(i);
                          }
                          for (var i = 0; i < countslide; i++) {
-                            $('.main-slider').slickRemove(i);
+                            $('.main-slider').slick('slickRemove',i);
                          }
                          $('.main-slider').show();
                          $('.modification-block').hide();
@@ -2195,7 +2195,7 @@ function getSharing(fe_typo_user,action) {
                             window.clearInterval(i);
                          }
                          for (var i = 0; i < countslide; i++) {
-                            $('.main-slider').slickRemove(i);
+                            $('.main-slider').slick('slickRemove',i);
                          }
                          $('.main-slider').show();
                          $('.info-block').hide();
