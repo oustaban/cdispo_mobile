@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Security-Policy" content="img-src * data:;default-src * gap://ready; style-src 'self' 'unsafe-inline'; script-src * 'self' 'unsafe-inline' 'unsafe-eval'">
+    <title>CDispo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="format-detection" content="date=no">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="css/mobile.css">
+    <script language="javascript">
+
+		var language = "fr";
+        // We use this code for handling unexpected errors.
+        // Using alert, we are sure that the user get notified in a Mobile device.
+        // We add this code at the begining of the index.html and we use only native javascript functions.
+        window.onerror = function(msg, url, lineNumber) {
+            if (typeof(msg) === "string") {
+                var error = msg + "\n\nFile: " + url + "\nLine: " + lineNumber;
+                // Ommit cordova and 3rd party libs errors.
+                if (url.indexOf("cordova") == -1 && url.indexOf("js") == -1 &&
+                        url.indexOf("org.apache.cordova") == -1) {
+                    window.alert(error);
+                }
+            } else {
+                var error = msg;
+            }
+
+            // This may help debugging if we use logging apps in iOs or Android.
+            if(typeof(console) !== "undefined" && typeof(console.log) === "function") {
+                console.log(error);
+            }
+
+            // Let default error handler run.
+            return false;
+        };
+
+    </script>
+    <script src="cordova.js"></script>
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/jquery_touchswipe.min.js"></script>
+    <script src="js/spin.min.js"></script>
+    <script src="js/mobile.js"></script>
+
+    <script language="javascript">
+        // We should wait to phonegap, if not, we get errors like:
+        // http://rickluna.com/wp/2012/04/solving-the-connection-to-the-server-was-unsuccessful-error-in-androidphonegap/
+        var inAppBrowserRef;
+		var loadpage = 0;
+		var language = 'fr';
+		
+		
+		$(document).bind('deviceready', function() {
+            screen.lockOrientation('portrait');
+			//StatusBar.overlaysWebView(true);
+			//StatusBar.backgroundColorByName("red"); 
+            StatusBar.hide();
+			//openBrowser();
+			//clickSubmit();
+			var fe_typo_user = window.localStorage.getItem("fe_typo_user");
+			
+			//alert(fe_typo_user);
+			
+			if (fe_typo_user != null) {
+				var url = window.location.href;
+				url = url.substring(0, url.lastIndexOf("/") + 1);
+				cordova.InAppBrowser.open(url+'mesreservations.html', '_self');
+            }
+			
+			
+			
+        });
+		
+		
+	
+		
+		
+		$( window ).unload(function() {
+			$('.loader2').show();
+		});
+		
+		function openBrowser() {
+			 inAppBrowserRef = cordova.InAppBrowser.open('http://cdispo_preprod.moonlikestudio.com/mobile/connection/?tx_felogin_pi1[forgot]=1', '_blank', 'location=no,hidden=yes,footer=no,zoom=no,usewkwebview=yes,toolbar=no,fullscreen=yes,disallowoverscroll=yes');
+			 inAppBrowserRef.addEventListener('loadstop', loadStopCallBack);
+		}
+		
+		function loadStopCallBack() {
+			console.log('loadStopCallBack');	
+			if (inAppBrowserRef != undefined && loadpage == 0) {
+				loadpage = 1;
+				console.log('loadpage = 0');
+				//inAppBrowserRef.show();
+				inAppBrowserRef = cordova.InAppBrowser.open('http://cdispo_preprod.moonlikestudio.com/mobile/connection', '_blank', 'location=no,hidden=yes,footer=no,zoom=no,usewkwebview=yes,toolbar=no,fullscreen=yes,disallowoverscroll=yes');
+			}
+			if (inAppBrowserRef != undefined && loadpage == 1) {
+				console.log('loadpage = 1');
+				inAppBrowserRef.show();
+			}
+		}
+		
+		function clickSubmit() {
+			$('#form_seconnecter').submit(function() {
+				var form = document.querySelector('form')
+				console.log(form);
+
+				cordovaFetch('http://cdispo_preprod.moonlikestudio.com/mobile/connection', {
+					method: 'POST',
+					body: new FormData(form)
+				}).then(function(response) {
+					console.log(res.headers['Set-Cookie']);
+				});
+
+				return false;
+
+			});
+		}
+    </script>
+</head>
+
+<body class="connection-page">
+	
+	<div class="loader2" id="loader2"></div>
+	
+	<!-- main container of all the page elements -->
+	<div id="wrapper">
+		<!-- header of the page -->
+		<header id="header">
+			<div class="container">
+				<nav id="nav">
+					<div class="user-icon">
+						<img src="images/user-pic.png" srcset="images/user-pic-2x.png 2x" alt="image description">
+					</div>
+					<span class="active-position" id="booking_title">MES RÉSERVATIONS</span>
+					<a href="#" class="nav-opener"><span id="menu_title">Menu</span></a>
+					<!-- main navigation of the page -->
+					<ul class="menu">
+						<li class="active"><a href="#" id="nav_title1">MES RESERVATIONS</a></li>
+						<li><a href="#" id="nav_title2">MES INVITATIONS</a></li>
+						<li><a href="#" id="nav_title3">MES PARTAGES</a></li>
+						<li><a href="#" id="nav_title4">LES RESERVATIONS A CONFIRMER</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+		<!-- contain main informative part of the site -->
+		<main id="main">
+			<!-- page logo -->
+			<div class="logo-holder">
+				<strong class="logo">
+					<a href="#">
+						<img src="images/logo.png" width="412" alt="DISPO">
+					</a>
+				</strong>
+			</div>
+			<!-- contain the main content of the page -->
+			<div class="container">
+				<div class="loginmessage" id="messageerror" style="display:none"></div>
+				<form action="" class="connection-form" target="_top" method="post" id="form_seconnecter">
+					<label class="input-holder">
+						<i class="icon-mail-closed"></i>
+						<input type="text" id="user" name="user" value="" placeholder="Adresse email" />
+					</label>
+					<label class="input-holder">
+						<i class="icon-lock-rounded"></i>
+						<input type="password" id="pass" name="pass" placeholder="Mot de passe" value="" data-rsa-encryption="" />
+					</label>
+					<label class="checkbox-holder">
+						<input name="permalogin" value="0" type="hidden" disabled="disabled" id="permaloginHiddenField" />
+						<input name="permalogin" value="1" type="checkbox" checked="checked" id="permalogin"  onclick="document.getElementById('permaloginHiddenField').disabled = this.checked;" />
+						<span class="fake-label" id="index_stayconnected">Rester connecté</span>
+						<span class="fake-input"></span>
+					</label>
+					<a rel="nofollow" href="http://cdispo_preprod.moonlikestudio.com/mobile/connection/?tx_felogin_pi1%5Bforgot%5D=1" class="link" id="index_forgot">Mot de passe oublié/expiré ?</a>
+					<div class="btn-bottom-holder">
+						<input class="hiddensubmit" id="submitlogin" type="submit" name="submit" value="Adresse email" />
+						<a href="javascript:void(0)" class="btn" id="mobileconnexion">Se connecter</a>
+					</div>
+				</form>
+			</div>
+		</main>
+	</div>
+	
+</body>
+</html>
