@@ -2099,6 +2099,11 @@ div.prewiewsharing_secondaire {
     text-align:left;
 }
 
+div.prewiewsharing_description {
+    display: block;
+    text-align:left;
+}
+
 div.prewiewsharing_owner {
     display: block;
     text-align:left;
