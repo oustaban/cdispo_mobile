@@ -54,8 +54,8 @@ function getBooking(fe_typo_user,action) {
                          $('.main-slider').show();
                          $('.modification-block').hide();
                          $('.info-block').hide();
-                         //if (countslide > 0) 
-                            //$('.main-slider').slick('unslick');
+                         if (countslide > 0) 
+                            $('.main-slider').slick('unslick');
                     }
                     
                     countslide = result.countslide;
@@ -2202,8 +2202,8 @@ function getSharing(fe_typo_user,action) {
                          
                          $('.main-slider').show();
                          $('.info-block').hide();
-                         //if (countslide > 0) 
-                            //$('.main-slider').slick('unslick');
+                         if (countslide > 0) 
+                            $('.main-slider').slick('unslick');
                     }
                     
                     countslide = result.countslide;
