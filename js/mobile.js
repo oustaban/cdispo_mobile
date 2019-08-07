@@ -2,7 +2,7 @@ var trad = [];
 	
 jQuery(function(){
 	initMobileNav();
-	initActiveClone();
+	//initActiveClone();
 	initConnect();
 	initMobileConnect();
 	loader2();
@@ -229,6 +229,21 @@ function initNav() {
 		cordova.InAppBrowser.open(url+'mespartages.html', '_self');
 	});
 	
+}
+
+
+
+function getUrlVars()
+{
+    var vars = [], hash;
+    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+    for(var i = 0; i < hashes.length; i++)
+    {
+        hash = hashes[i].split('=');
+        vars.push(hash[0]);
+        vars[hash[0]] = hash[1];
+    }
+    return vars;
 }
 /*
      _ _      _       _

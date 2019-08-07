@@ -1,0 +1,303 @@
+<html>
+    <head>
+        <script src="js/jquery-1.11.2.min.js"></script>
+    </head>
+<body>
+<div class="slide" id="slide0">
+<div class="col light-block">
+<ul class="reserved-time">
+<li><time datetime="2019-01-28T12:30">lun., 05 août, 08:00</time></li>
+<li><time datetime="2019-01-28T12:30">ven., 09 août, 23:59</time></li>
+</ul>
+</div>
+<div class="col light-block bg0">
+<span class="status">Partage ouvert</span>
+</div>
+<div class="col light-block">
+<span class="reservation">Partage N°<b>16</b>
+<br/>
+<br/>
+<i>Bureau de Séb</i>
+</span>
+<strong class="start" id="start0">Fin dans</strong><div class="time" id="time0">
+<strong class="hours" id="hours0">00</strong>
+</div>
+<script>
+$(document).ready(function() {
+var countDownDate0 = 1565387940000;
+var decompte_limite0 = 403140000;
+var decompte_color0 = '#FF0000';
+var after0 = 0;
+var afterpast0 = 0;
+
+var x0 = window.setInterval(function() {
+var today = new Date();
+var now = today.getTime();
+//var countDownDate = 1565387940000;
+var distance = countDownDate0 - now;
+//var decompte_limite = 403140000;
+var alert_title = '<p></p><p>Votre partage n°16</p><p>vient de se terminer</p>';
+
+if (afterpast0 == 1) {
+$("#start0").html(after_title);
+$("#resa_cancel").text(after_cancel_button);
+$("#resa_cancel").attr('onclick',after_cancel_action);
+$("#resa_modify").text(after_modify_button);
+$("#resa_modify").attr('onclick',after_modify_action);
+//afterpast0 = 0;
+}
+
+
+if (distance > decompte_limite0) {
+$("#start0").css('color','#000');
+$("#hours0").css('color','#000');
+$("#description10").css('color','#000');
+$("#description20").css('color','#000');
+} else {
+$("#hours0").css('color',decompte_color0);
+$("#start0").css('color',decompte_color0);
+$("#description10").css('color',decompte_color0);
+$("#description20").css('color',decompte_color0);
+}
+//console.log('index-0:'+distance+'/403140000');
+//console.log('distance-0:'+distance);
+var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+//console.log('time-0:'+days+'-'+hours+'-'+minutes+'-'+seconds);
+
+if (days >= 0 && days < 10)
+days="0"+days;
+if (hours >= 0 && hours < 10)
+hours="0"+hours;
+if (minutes >= 0 && minutes < 10)
+minutes="0"+minutes;
+if (seconds >= 0 && seconds < 10)
+seconds="0"+seconds;
+
+if (days!=0) {
+$("#hours0").text(days+" : "+hours);
+//$("#minutes0").text(hours);
+$("#description10").text("jours");
+$("#description20").text("heures");
+
+}
+if (days==0 && hours!=0) {
+$("#hours0").text(hours+" : "+minutes);
+//$("#minutes0").text(minutes);
+$("#description10").text("heures");
+$("#description20").text("minutes");
+}
+if (days==0 && hours==0) {
+$("#hours0").text(minutes+" : "+seconds);
+//$("#minutes0").text(seconds);
+$("#description10").text("minutes");
+$("#description20").text("secondes");
+}
+
+if (distance >= 0 && distance <= 1000) {
+if (after0 > 0) {
+console.log('BING:'+after_countDownDate);
+countDownDate0 = after_countDownDate;
+decompte_limite0 = after_decompte_limite;
+decompte_color0 = after_decompte_color;
+after0 = 0;
+afterpast0 = 1;
+}
+}
+
+if (distance < 0) {
+if (after0 == 0) {
+$('.prewiewsharing_header').hide();
+$('.previewsharing_content').html(alert_title);
+$('#btn_close').attr('onclick','getSharing(\'\',\'refresh\')');
+
+$('.main-slider').hide();
+$('.info-block').show();
+clearInterval(x0);
+
+}
+}
+}, 1000);
+});
+
+</script>
+<div class="time-desc">
+<span class="descriptionleft" id="description10">heures</span>
+<span class="descriptionright" id="description20">minutes</span>
+</div>
+</div>
+<div class="col">
+<div class="light-block bureau">
+<p><a href="javascript:void(0)" onclick="getPreviewRessource(16,'bureau','')">Bureau <strong>Bureau de Séb</strong></a></p>
+</div>
+<div class="light-block organizator-info">
+<a href="javascript:void(0)" onclick="getVisibilityInfo('',16)"><strong class="organizator"><span>Partage</span> PUBLIC<br/>SANS CONFIRMATION</span></strong></a>
+</div>
+</div>
+<div class="col">
+<div class="btn-holder">
+<a href="javascript:void(0)" onclick="getBooking('','refresh',16)" class="btn onebtn" id="resa_cancel">Consulter les réservations</a>
+</div>
+</div>
+<div class="col light-block location-info">
+<a href="javascript:void(0)" onclick="getSiteInfo(1,29,'')"><i class="icon-location"></i> <span>Asnières Sur Seine</span></a>
+</div>
+</div><div class="slide" id="slide1">
+<div class="col light-block">
+<ul class="reserved-time">
+<li><time datetime="2019-01-28T12:30">lun., 12 août, 08:00</time></li>
+<li><time datetime="2019-01-28T12:30">ven., 16 août, 23:59</time></li>
+</ul>
+</div>
+<div class="col light-block bg0">
+<span class="status">Partage ouvert</span>
+</div>
+<div class="col light-block">
+<span class="reservation">Partage N°<b>16</b>
+<br/>
+<br/>
+<i>Bureau de Séb</i>
+</span>
+<strong class="start" id="start1">Début dans</strong><div class="time" id="time1">
+<strong class="hours" id="hours1">00</strong>
+</div>
+<script>
+$(document).ready(function() {
+var countDownDate1 = 1565589600000;
+var decompte_limite1 = 172800000;
+var decompte_color1 = '#0da85d';
+var after1 = 1;
+var afterpast1 = 0;
+
+var x1 = window.setInterval(function() {
+var today = new Date();
+var now = today.getTime();
+var after_countDownDate = 1565992740000;
+var after_title = 'Fin dans';
+var after_decompte_limite = 403140000;
+var after_decompte_color = '#FF0000';
+var after_cancel_button = 'Consulter les réservations';
+var after_modify_button = '';
+var after_cancel_action = 'getBooking('','refresh',16)';
+var after_modify_action = '';
+
+
+//var countDownDate = 1565589600000;
+var distance = countDownDate1 - now;
+//var decompte_limite = 172800000;
+var alert_title = '<p></p><p>Votre partage n°16</p><p>vient de se terminer</p>';
+
+if (afterpast1 == 1) {
+$("#start1").html(after_title);
+$("#resa_cancel").text(after_cancel_button);
+$("#resa_cancel").attr('onclick',after_cancel_action);
+$("#resa_modify").text(after_modify_button);
+$("#resa_modify").attr('onclick',after_modify_action);
+//afterpast1 = 0;
+}
+
+
+if (distance > decompte_limite1) {
+$("#start1").css('color','#000');
+$("#hours1").css('color','#000');
+$("#description11").css('color','#000');
+$("#description21").css('color','#000');
+} else {
+$("#hours1").css('color',decompte_color1);
+$("#start1").css('color',decompte_color1);
+$("#description11").css('color',decompte_color1);
+$("#description21").css('color',decompte_color1);
+}
+//console.log('index-1:'+distance+'/172800000');
+//console.log('distance-1:'+distance);
+var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+//console.log('time-1:'+days+'-'+hours+'-'+minutes+'-'+seconds);
+
+if (days >= 0 && days < 10)
+days="0"+days;
+if (hours >= 0 && hours < 10)
+hours="0"+hours;
+if (minutes >= 0 && minutes < 10)
+minutes="0"+minutes;
+if (seconds >= 0 && seconds < 10)
+seconds="0"+seconds;
+
+if (days!=0) {
+$("#hours1").text(days+" : "+hours);
+//$("#minutes1").text(hours);
+$("#description11").text("jours");
+$("#description21").text("heures");
+
+}
+if (days==0 && hours!=0) {
+$("#hours1").text(hours+" : "+minutes);
+//$("#minutes1").text(minutes);
+$("#description11").text("heures");
+$("#description21").text("minutes");
+}
+if (days==0 && hours==0) {
+$("#hours1").text(minutes+" : "+seconds);
+//$("#minutes1").text(seconds);
+$("#description11").text("minutes");
+$("#description21").text("secondes");
+}
+
+if (distance >= 0 && distance <= 1000) {
+if (after1 > 0) {
+console.log('BING:'+after_countDownDate);
+countDownDate1 = after_countDownDate;
+decompte_limite1 = after_decompte_limite;
+decompte_color1 = after_decompte_color;
+after1 = 0;
+afterpast1 = 1;
+}
+}
+
+if (distance < 0) {
+if (after1 == 0) {
+$('.prewiewsharing_header').hide();
+$('.previewsharing_content').html(alert_title);
+$('#btn_close').attr('onclick','getSharing(\'\',\'refresh\')');
+
+$('.main-slider').hide();
+$('.info-block').show();
+clearInterval(x1);
+
+}
+}
+}, 1000);
+});
+
+</script>
+<div class="time-desc">
+<span class="descriptionleft" id="description11">heures</span>
+<span class="descriptionright" id="description21">minutes</span>
+</div>
+</div>
+<div class="col">
+<div class="light-block bureau">
+<p><a href="javascript:void(0)" onclick="getPreviewRessource(16,'bureau','')">Bureau <strong>Bureau de Séb</strong></a></p>
+</div>
+<div class="light-block organizator-info">
+<a href="javascript:void(0)" onclick="getVisibilityInfo('',16)"><strong class="organizator"><span>Partage</span> PUBLIC<br/>AVEC CONFIRMATION</span></strong></a>
+</div>
+</div>
+<div class="col">
+<div class="btn-holder">
+<a href="javascript:void(0)" onclick="getBooking('','refresh',16)" class="btn onebtn" id="resa_cancel">Consulter les réservations</a>
+</div>
+</div>
+<div class="col light-block location-info">
+<a href="javascript:void(0)" onclick="getSiteInfo(1,29,'')"><i class="icon-location"></i> <span>Asnières Sur Seine</span></a>
+</div>
+</div><div class="nav-holder"></div>
+
+</body>
+</html>

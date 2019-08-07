@@ -1920,6 +1920,7 @@ select:focus {
 .active-position {
 	font-size: 20px;
 	color: #fff;
+	text-align: center;
 }
 
 .loginmessage {
@@ -2179,6 +2180,15 @@ a.tooltip4 {
 	position: absolute;
 	top: 12px;
 	left: 4px;
+}
+
+.modification-info {
+	text-align:left;
+}
+
+#backtoshare {
+	position:relative;
+	z-index:4;
 }
 
 @media (min-width: 480px) {
