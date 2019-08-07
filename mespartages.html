@@ -57,8 +57,9 @@
 		    
 		    getTranslation();
 			
+			var indexSlide = getUrlVars()["indexSlide"];
 		    var fe_typo_user = window.localStorage.getItem("fe_typo_user");
-			getSharing(fe_typo_user,'init'); 
+			getSharing(fe_typo_user,'init',indexSlide); 
 			/*
 			cookieMaster.getCookieValue('http://cdispo', 'fe_typo_user', function(data) {
 				console.log(data.cookieValue);
@@ -76,8 +77,9 @@
 			
 			getTranslation();
 			
+			var indexSlide = getUrlVars()["indexSlide"];
 			var fe_typo_user = window.localStorage.getItem("fe_typo_user");
-			getSharing(fe_typo_user,'refresh');
+			getSharing(fe_typo_user,'refresh',indexSlide);
 			
 			/*
 			cookieMaster.getCookieValue('http://cdispo', 'fe_typo_user', function(data) {
