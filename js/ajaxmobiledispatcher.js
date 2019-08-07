@@ -2260,7 +2260,7 @@ function getBookingEvent(fe_typo_user,eventId,action) {
           dataType: "jsonp",
           jsonp: 'callback',
           jsonpCallback: 'cdispoToken',
-          data: {action:"getBookingEvent",fe_typo_user:fe_typo_user,eventId:eventI},
+          data: {action:"getBookingEvent",fe_typo_user:fe_typo_user,eventId:eventId},
           
           success: function(result) {
                 
