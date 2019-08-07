@@ -2213,7 +2213,7 @@ function getSharing(fe_typo_user,action,indexSlide) {
                     if (countslide > 0) {
                         $('.main-slider').html(result.slide);
                         initSlickCarousel();
-                        if (indexSlide) {
+                        if (indexSlide)
                             $('.main-slider').slick('slickGoTo', indexSlide);
                     } else {
                         $('.prewiewsharing_header').hide();
