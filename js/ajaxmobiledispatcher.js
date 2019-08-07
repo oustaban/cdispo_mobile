@@ -2248,7 +2248,7 @@ function loadBookingEvent(eventId,fe_typo_user,indexSlide) {
 
 
 
-function getBookingEvent(cookievalue,eventId,action) {
+function getBookingEvent(fe_typo_user,eventId,action) {
     var L = window.localStorage.getItem("language");
     var lang = window.localStorage.getItem("lang");
     $('.loader2').show();
@@ -2310,7 +2310,7 @@ function getBookingEvent(cookievalue,eventId,action) {
                     } else {
                         $('.prewiewsharing_header').hide();
                         $('.previewsharing_content').html(result.content);
-                        $('#btn_close').attr('onclick','getBookingEvent(\''+cookievalue+'\','+eventId+',\'refresh\')');
+                        $('#btn_close').attr('onclick','getBookingEvent(\''+fe_typo_user+'\','+eventId+',\'refresh\')');
                     
                         $('.main-slider').hide();
                         $('.info-block').show();    
