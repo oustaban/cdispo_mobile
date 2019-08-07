@@ -62,7 +62,7 @@
             var indexSlide = getUrlVars()["indexSlide"];
             $('#eventid').text(eventId);
             $('#eventid2').text(eventId);
-            getBookingEvent("{fe_typo_user}",eventId,"init"); 
+            getBookingEvent(''+fe_typo_user+'',eventId,"init"); 
 			
             $('#backtosharelink').click(function() {
                 loadSharing(''+fe_typo_user+'',indexSlide);
@@ -79,7 +79,7 @@
             var indexSlide = getUrlVars()["indexSlide"];
             $('#eventid').text(eventId);
             $('#eventid2').text(eventId);
-            getBookingEvent("{fe_typo_user}",eventId,"refresh");
+            getBookingEvent(''+fe_typo_user+'',eventId,"refresh");
             
             $('#backtosharelink').click(function() {
                 loadSharing(''+fe_typo_user+'',indexSlide);
