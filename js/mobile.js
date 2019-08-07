@@ -193,7 +193,7 @@ function initActiveClone() {
 
 function getTranslation() {
 	
-	console.log('getTranslation:'+language+'/'+cordova.file.applicationStorageDirectory);
+	//console.log('getTranslation:'+language+'/'+cordova.file.applicationStorageDirectory);
 	
 	$.getJSON( "lang/"+language+".json", function( data ) {
 		$.each( data, function( key, val ) {
