@@ -13,6 +13,9 @@
     <script language="javascript">
 		
 		var language = window.localStorage.getItem("lang");
+		if (language == null) {
+            language = "fr";
+        }
 		console.log('language:'+language);
 		var url ="";
 		
