@@ -13,6 +13,7 @@
     <script language="javascript">
 		
 		var language = window.localStorage.getItem("lang");
+		console.log('language:'+language);
 		var url ="";
 		
         // We use this code for handling unexpected errors.
@@ -58,14 +59,7 @@
 		    
 		    getTranslation();
 			
-			var indexSlide = getUrlVars()["indexSlide"];
-		    var fe_typo_user = window.localStorage.getItem("fe_typo_user");
 			
-			document.addEventListener("offline", function(e){
-				url = window.location.href;
-				url = url.substring(0, url.lastIndexOf("/") + 1);
-				cordova.InAppBrowser.open(url+'noconnexion.html', '_self');
-			}, false);
 			
         });
 		
@@ -73,14 +67,7 @@
 			
 			getTranslation();
 			
-			var indexSlide = getUrlVars()["indexSlide"];
-			var fe_typo_user = window.localStorage.getItem("fe_typo_user");
 			
-			document.addEventListener("offline", function(e){
-				url = window.location.href;
-				url = url.substring(0, url.lastIndexOf("/") + 1);
-				cordova.InAppBrowser.open(url+'noconnexion.html', '_self');
-			}, false);
 			
         });
     </script>
