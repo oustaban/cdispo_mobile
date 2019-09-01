@@ -13,6 +13,7 @@
     <script language="javascript">
 		
 		var language = window.localStorage.getItem("lang");
+		var url ="";
 		
         // We use this code for handling unexpected errors.
         // Using alert, we are sure that the user get notified in a Mobile device.
@@ -52,32 +53,19 @@
 	<script src="js/moment.min.js"></script>
 	<script>
 		
-		var url = window.location.href;
-		url = url.substring(0, url.lastIndexOf("/") + 1);
-		
 		$(document).bind('deviceready', function() {
 		   
 		    
 		    getTranslation();
 			
+			var indexSlide = getUrlVars()["indexSlide"];
+		    var fe_typo_user = window.localStorage.getItem("fe_typo_user");
+			
 			document.addEventListener("offline", function(e){
-				var url = window.location.href;
+				url = window.location.href;
 				url = url.substring(0, url.lastIndexOf("/") + 1);
 				cordova.InAppBrowser.open(url+'noconnexion.html', '_self');
 			}, false);
-			
-		    var fe_typo_user = window.localStorage.getItem("fe_typo_user");
-			getBooking(fe_typo_user,'init'); 
-			/*
-			cookieMaster.getCookieValue('http://cdispo', 'fe_typo_user', function(data) {
-				console.log(data.cookieValue);
-				getBooking(data.cookieValue,'init'); 
-			}, function(error) {
-				if (error) {
-					console.log('error: ' + error);
-				}
-			});
-			*/
 			
         });
 		
@@ -85,25 +73,14 @@
 			
 			getTranslation();
 			
+			var indexSlide = getUrlVars()["indexSlide"];
+			var fe_typo_user = window.localStorage.getItem("fe_typo_user");
+			
 			document.addEventListener("offline", function(e){
-				var url = window.location.href;
+				url = window.location.href;
 				url = url.substring(0, url.lastIndexOf("/") + 1);
 				cordova.InAppBrowser.open(url+'noconnexion.html', '_self');
 			}, false);
-			
-			var fe_typo_user = window.localStorage.getItem("fe_typo_user");
-			getBooking(fe_typo_user,'refresh');
-			
-			/*
-			cookieMaster.getCookieValue('http://cdispo', 'fe_typo_user', function(data) {
-				console.log(data.cookieValue);
-				getBooking(data.cookieValue,'refresh'); 
-			}, function(error) {
-				if (error) {
-					console.log('error: ' + error);
-				}
-			});
-			*/
 			
         });
     </script>
@@ -122,13 +99,13 @@
 					<div class="user-icon">
 						<img src="images/user-pic.png" srcset="images/user-pic-2x.png 2x" alt="image description">
 					</div>
-					<span class="active-position" id="booking_title">MES RESERVATIONS</span>
+					<span class="active-position" id="sharing_title">MES PARTAGES</span>
 					<a href="#" class="nav-opener"><span id="menu_title">Menu</span></a>
 					<!-- main navigation of the page -->
 					<ul class="menu">
-						<li class="active"><a href="javascript:void(0)" id="nav_title1">MES RESERVATIONS</a></li>
+						<li><a href="javascript:void(0)" id="nav_title1">MES RESERVATIONS</a></li>
 						<li><a href="javascript:void(0)" id="nav_title2">MES INVIT</a></li>
-						<li><a href="javascript:void(0)" id="nav_title3">MES PARTAGES</a></li>
+						<li class="active"><a href="javascript:void(0)" id="nav_title3">MES PARTAGES</a></li>
 						<li><a href="javascript:void(0)" id="nav_title4">LES RESERVATIONS A CONFIRMER</a></li>
 					</ul>
 				</nav>
@@ -146,58 +123,20 @@
 			</div>
 			<!-- contain the main content of the page -->
 			<div class="container main-holder">
-				<div class="main-slider">
-					
-				</div>
-				
-				<div class="info-block light-block">
+				<div class="info-block light-block" style="display:block">
 					<div class="text-holder">
-						<div class="prewiewsharing_header">
-							<div class="prewiewsharing_row1">
-								<div class="prewiewsharing_col1">
-									<span class="prewiewsharing_title title"></span>
-									<div class="prewiewsharing_mandatories"></div>
-								</div>
-							</div>
-						</div>
 						<div class="previewsharing_content">
-						
+							<p></p>
+							<p id="noconnexion_text"></p>
 						</div>
 					</div>
 					<div class="btn-block">
-						<a href="javascript:void(0)" onclick="" class="btn btn-teal" id="btn_close">Fermer</a>
+						<a href="javascript:void(0)" onclick="cordova.InAppBrowser.open(url+'mesreservations.html', '_self')" class="btn btn-teal" id="btn_close">Fermer</a>
 						<a href="javascript:void(0)" onclick="" class="btn btn-light" id="btn_cancel">&nbsp;</a>
 					</div>
 				</div>
 				
-				<div class="modification-block light-block">
-					<h2 id="modification_title">LA MODIFICATION EST POSSIBLE <span>UNIQUEMENT AU SEIN DU CRENEAU DE PARTAGE</span></h2>
-					<strong class="title"><time id="date_start" datetime="2019-01-28T12:30">Lun., 28 Janvier, 12:30</time> – <time id="date_end" datetime="2019-01-29T15:30">Lun. 29 Janvier, 15h30</time></strong>
-					<p id="modification_texte1">Pour une modification avancée, veuillez vous connecter à votre site internet </p>
-					<p><a href="#" target="_blank" id="modification_lien1">www.cdispo.com</a></p>
-					<div class="warning-block">
-						<i class="icon-warning"></i>
-						<p id="modification_texte2">Une fois modifiée, la réservation ne sera confirmée qu’après validation par le titulaire du partage. Vous serez tenu informé par email de la confirmation. En l’absence d’email de confirmation, la réservation est réputée non confirmée.</p>
-					</div>
-					<div class="slider-holder" id="slider_holder1">
-						<h2>date de début / date de fin</h2>
-						<input type="text" class="js-range-slider1" name="my_range1" value="" />
-					</div>
-					<div class="slider-holder" id="slider_holder2">
-						<h2>heure de début</h2>
-						<input type="text" class="js-range-slider2" name="my_range2" value="" />
-					</div>
-					<div class="slider-holder" id="slider_holder3">
-						<h2>heure de fin</h2>
-						<input type="text" class="js-range-slider3" name="my_range3" value="" />
-					</div>
-					<div class="btn-block">
-						<a href="#" class="btn btn-blue" id="btn_modifynow">MODIFIER MAINTENANT</a>
-						<a href="#" class="btn btn-light" id="btn_back">RETOUR</a>
-					</div>
-					<input type="hidden" name="datestart" id="modif_datestart" value="">
-					<input type="hidden" name="dateend" id="modif_dateend" value="">
-				</div>
+				
 				
 			</div>
 			<div class="btn-bottom-holder">

@@ -59,6 +59,13 @@
 			
 			var indexSlide = getUrlVars()["indexSlide"];
 		    var fe_typo_user = window.localStorage.getItem("fe_typo_user");
+			
+			document.addEventListener("offline", function(e){
+				var url = window.location.href;
+				url = url.substring(0, url.lastIndexOf("/") + 1);
+				cordova.InAppBrowser.open(url+'noconnexion.html', '_self');
+			}, false);
+			
 			console.log('indexSlide1:'+indexSlide);
 			getSharing(fe_typo_user,'init',indexSlide); 
 			/*
@@ -80,6 +87,13 @@
 			
 			var indexSlide = getUrlVars()["indexSlide"];
 			var fe_typo_user = window.localStorage.getItem("fe_typo_user");
+			
+			document.addEventListener("offline", function(e){
+				var url = window.location.href;
+				url = url.substring(0, url.lastIndexOf("/") + 1);
+				cordova.InAppBrowser.open(url+'noconnexion.html', '_self');
+			}, false);
+			
 			getSharing(fe_typo_user,'refresh',indexSlide);
 			
 			/*

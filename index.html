@@ -63,6 +63,12 @@
 			getTranslation();
 			//alert(fe_typo_user);
 			
+			document.addEventListener("offline", function(e){
+				var url = window.location.href;
+				url = url.substring(0, url.lastIndexOf("/") + 1);
+				cordova.InAppBrowser.open(url+'noconnexion.html', '_self');
+			}, false);
+			
 			if (fe_typo_user != null) {
 				var url = window.location.href;
 				url = url.substring(0, url.lastIndexOf("/") + 1);
