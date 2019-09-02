@@ -2189,7 +2189,6 @@ a.tooltip4 {
 #wrapper #main #backtoshare {
 	position:relative;
 	z-index:5;
-	top:7vh;
 }
 
 @media (min-width: 480px) {
