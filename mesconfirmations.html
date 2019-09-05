@@ -52,6 +52,9 @@
 	<script src="js/moment.min.js"></script>
 	<script>
 		
+		var url = window.location.href;
+		url = url.substring(0, url.lastIndexOf("/") + 1);
+		
 		$(document).bind('deviceready', function() {
 		   
 		    
@@ -64,15 +67,17 @@
 			}, false);
 			
 		    var fe_typo_user = window.localStorage.getItem("fe_typo_user");
-            var eventId = getUrlVars()["eventId"];
-            var indexSlide = getUrlVars()["indexSlide"];
-            $('#eventid').text(eventId);
-            $('#eventid2').text(eventId);
-            getBookingEvent(''+fe_typo_user+'',eventId,"init"); 
-			
-            $('#backtosharelink').click(function() {
-                loadSharing(''+fe_typo_user+'',indexSlide);
-            });
+			getBookingToConfirm(fe_typo_user,'init'); 
+			/*
+			cookieMaster.getCookieValue('http://cdispo', 'fe_typo_user', function(data) {
+				console.log(data.cookieValue);
+				getBooking(data.cookieValue,'init'); 
+			}, function(error) {
+				if (error) {
+					console.log('error: ' + error);
+				}
+			});
+			*/
 			
         });
 		
@@ -87,15 +92,7 @@
 			}, false);
 			
 			var fe_typo_user = window.localStorage.getItem("fe_typo_user");
-			var eventId = getUrlVars()["eventId"];
-            var indexSlide = getUrlVars()["indexSlide"];
-            $('#eventid').text(eventId);
-            $('#eventid2').text(eventId);
-            getBookingEvent(''+fe_typo_user+'',eventId,"refresh");
-            
-            $('#backtosharelink').click(function() {
-                loadSharing(''+fe_typo_user+'',indexSlide);
-            });
+			getBookingToConfirm(fe_typo_user,'refresh');
 			
 			/*
 			cookieMaster.getCookieValue('http://cdispo', 'fe_typo_user', function(data) {
@@ -125,14 +122,14 @@
 					<div class="user-icon">
 						<img src="images/user-pic.png" srcset="images/user-pic-2x.png 2x" alt="image description">
 					</div>
-					<span class="active-position" id="bookingevent_title">RESERVATIONS<br/> SUR LE PARTAGE N°<span id="eventid"></span></span>
+					<span class="active-position" id="mesconfirmations_title">LES RESERVATIONS A CONFIRMER</span>
 					<a href="#" class="nav-opener"><span id="menu_title">Menu</span></a>
 					<!-- main navigation of the page -->
 					<ul class="menu">
 						<li><a href="javascript:void(0)" id="nav_title1">MES RESERVATIONS</a></li>
 						<li><a href="javascript:void(0)" id="nav_title2">MES INVIT</a></li>
-						<li class="active"><a href="javascript:void(0)" id="nav_title3">MES PARTAGES</a></li>
-						<li><a href="javascript:void(0)" id="nav_title4">LES RESERVATIONS A CONFIRMER</a></li>
+						<li><a href="javascript:void(0)" id="nav_title3">MES PARTAGES</a></li>
+						<li class="active"><a href="javascript:void(0)" id="nav_title4">LES RESERVATIONS A CONFIRMER</a></li>
 					</ul>
 				</nav>
 			</div>
@@ -147,11 +144,6 @@
 					</a>
 				</strong>
 			</div>
-            
-            <div class="btn-block container" id="backtoshare">
-                <a href="javascript:void(0)" id="backtosharelink" class="btn btn-blue">RETOUR AU PARTAGE N°<span id="eventid2"></span></a>
-            </div>
-            
 			<!-- contain the main content of the page -->
 			<div class="container main-holder">
 				<div class="main-slider">
@@ -178,13 +170,9 @@
 					</div>
 				</div>
 				
-                
 				
 				
 			</div>
-            
-            
-            
 			<div class="btn-bottom-holder">
 				<a href="#" class="btn" id="btn_scan">Scanner</a>
 				<a href="#" class="btn" id="btn_book">Reserver</a>

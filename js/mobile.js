@@ -229,6 +229,11 @@ function initNav() {
 		cordova.InAppBrowser.open(url+'mespartages.html', '_self');
 	});
 	
+	jQuery('#nav_title4').click(function() {
+		console.log(url);
+		cordova.InAppBrowser.open(url+'mesconfirmations.html', '_self');
+	});
+	
 }
 
 

@@ -23,5 +23,7 @@
 	"btn_modifynow":"Modifier Maintenant",
 	"btn_back":"Retour",
 	"sharing_title":"MES PARTAGES",
-	"noconnexion_text":"Cette apllication nécessite une connection internet"
+	"noconnexion_text":"Cette apllication nécessite une connection internet",
+	"bookingevent_title":"RESERVATIONS<br/> SUR LE PARTAGE N°<span id=\"eventid\"></span>",
+	"mesconfirmations_title":"LES RESERVATIONS A CONFIRMER"
 }
