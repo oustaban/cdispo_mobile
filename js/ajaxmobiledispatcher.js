@@ -2708,7 +2708,7 @@ function getBookingEvent(fe_typo_user,eventId,action) {
 }
 
 
-function getBookingToConfirm(cookievalue,action) {
+function getBookingToConfirm(fe_typo_user,action) {
     var L = window.localStorage.getItem("language");
     var lang = window.localStorage.getItem("lang");
     $('.loader2').show();
@@ -2766,7 +2766,7 @@ function getBookingToConfirm(cookievalue,action) {
                         
                         $('.prewiewsharing_header').hide();
                         $('.previewsharing_content').html(result.content);
-                        $('#btn_close').attr('onclick','getBookingToConfirm(\''+cookievalue+'\',\'refresh\')');
+                        $('#btn_close').attr('onclick','getBookingToConfirm(\''+fe_typo_user+'\',\'refresh\')');
                         $('.main-slider').hide();
                         $('.info-block').show();    
                     }
