@@ -2720,7 +2720,7 @@ function getBookingToConfirm(cookievalue,action) {
           dataType: "jsonp",
           jsonp: 'callback',
           jsonpCallback: 'cdispoToken',
-          data: {action:"getBookingToConfirm",fe_typo_user:fe_typo_userd},
+          data: {action:"getBookingToConfirm",fe_typo_user:fe_typo_user},
           
           success: function(result) {
                 
