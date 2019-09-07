@@ -20,10 +20,11 @@
 	"modification_title":"LA MODIFICATION EST POSSIBLE <span>UNIQUEMENT AU SEIN DU CRENEAU DE PARTAGE</span>",
 	"modification_texte1":"Pour une modification avancée, veuillez vous connecter depuis votre ordinateur à votre site internet",
 	"modification_texte2":"Une fois modifiée, la réservation ne sera confirmée qu’après validation par le titulaire du partage. Vous serez tenu informé par email de la confirmation. En l’absence d’email de confirmation, la réservation est réputée non confirmée.",
-	"btn_modifynow":"Modifier Maintenant",
+	"btn_modifynow":"RETOUR AU PARTAGE N°<span id=\"eventid2\"></span>",
 	"btn_back":"Retour",
 	"sharing_title":"MES PARTAGES",
 	"noconnexion_text":"Cette apllication nécessite une connection internet",
 	"bookingevent_title":"RESERVATIONS<br/> SUR LE PARTAGE N°<span id=\"eventid\"></span>",
-	"mesconfirmations_title":"LES RESERVATIONS A CONFIRMER"
+	"mesconfirmations_title":"LES RESERVATIONS A CONFIRMER",
+	"mesinvitations_title":"MES INVITATIONS"
 }

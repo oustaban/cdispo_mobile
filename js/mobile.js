@@ -224,6 +224,10 @@ function initNav() {
 		console.log(url);
 		cordova.InAppBrowser.open(url+'mesreservations.html', '_self');
 	});
+	jQuery('#nav_title2').click(function() {
+		console.log(url);
+		cordova.InAppBrowser.open(url+'mesinvitations.html', '_self');
+	});
 	jQuery('#nav_title3').click(function() {
 		console.log(url);
 		cordova.InAppBrowser.open(url+'mespartages.html', '_self');
