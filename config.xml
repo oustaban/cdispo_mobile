@@ -117,6 +117,7 @@
     <!--<plugin name="cordova-plugin-wkwebview-file-xhr" source="npm" spec="2.1.1" />-->
     <!--<plugin name="cordova-plugin-ionic-webview" source="npm" spec="4.1.1" />-->
     <plugin name="cordova-plugin-qrscanner" source="npm" spec="3.0.1" />
+    <plugin name="cordova-plugin-add-swift-support" source="npm" spec="2.0.2" />
     
     <gap:config-file platform="android" parent="/manifest">
          <application android:debuggable="true" />
@@ -532,8 +533,6 @@
         </array>
     </gap:config-file>
     
-    
-
     <access allows-arbitrary-loads-for-media='true' allows-arbitrary-loads-in-web-content='true' allows-local-networking='true' origin="*" subdomains="true" />
 
 </widget>
