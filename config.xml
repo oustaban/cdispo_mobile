@@ -172,6 +172,13 @@
                 <false/>
             </dict>
             <dict>
+                <key>CFBundleLocalizations</key>
+                <array>
+                    <string>it</string>
+                    <string>fr</string>
+                </array>
+            </dict>
+            <dict>
                 <key>CFBundleTypeName</key>
                 <string>Unknown File</string>
                 <key>LSHandlerRank</key>
