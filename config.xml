@@ -33,7 +33,8 @@
     <preference name="windows-arch" value="x64" />
     <preference name="windows-identity-name" value="20793Magnetic.coop.com.inhni.inhnov" />
 
-    <preference name="StatusBarBackgroundColor" value="#ffffff" />
+    <preference name="StatusBarOverlaysWebView" value="false" />
+
 
     <icon src="icon.png" />
     
