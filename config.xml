@@ -120,18 +120,13 @@
     <!--<plugin name="cordova-plugin-wkwebview-file-xhr" source="npm" spec="2.1.1" />-->
     <!--<plugin name="cordova-plugin-ionic-webview" source="npm" spec="4.1.1" />-->
     <plugin name="phonegap-plugin-barcodescanner" source="npm" spec="8.1.0" />
-    <plugin name="cordova-custom-config" source="npm" spec="5.1.0" />
+    <plugin name="cordova-plugin-settings-hook" source="npm" spec="0.3.1" />
     
     <gap:config-file platform="android" parent="/manifest">
          <application android:debuggable="true" />
     </gap:config-file>
 
-    <gap:config-file platform="ios" parent="CFBundleLocalizations" mode="replace"> 
-        <array>
-          <string>it</string>
-          <string>fr</string>
-        </array>
-    </gap:config-file>
+    
     
     <allow-navigation href="*" />
     <access origin="*" />
@@ -163,17 +158,14 @@
     
 
     <platform name="ios">
-        <!-- Replace existing values -->
-        <custom-config-file platform="ios" target="*-Info.plist" parent="CFBundleDevelopmentRegion" mode="replace">
+        <config-file platform="ios" target="*-Info.plist" parent="CFBundleLocalizations">
             <array>
+                <string>es</string>
+                <string>en</string>
                 <string>fr</string>
+                <string>it</string>
             </array>
-        </custom-config-file>
-        <custom-config-file platform="ios" target="*-Info.plist" parent="CFBundleLocalizations" mode="replace">
-            <array>
-                <string>fr</string>
-            </array>
-        </custom-config-file>
+        </config-file>
     </platform>
     
     <gap:config-file platform="android" parent="/manifest" mode="delete">
