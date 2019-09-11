@@ -3085,6 +3085,50 @@ function guestRefuse(bookingId,guestId,fe_typo_user,index) {
 }
 
 
+function getScan(fe_typo_user,urlScan) {
+    var L = window.localStorage.getItem("language");
+    var lang = window.localStorage.getItem("lang");
+    $('.loader2').show();
+    var domain = window.localStorage.getItem("domain");
+    var url = "http://"+domain+"/?type=476&tx_cdispofrontend_fcdispofrontend[controller]=Mobile&tx_cdispofrontend_fcdispofrontend[action]=dispatcher&tx_cdispofrontend_fcdispofrontend[uid]=1&L="+L+urlScan;
+    $.ajax({
+          type: 'GET',
+          url:url,
+          dataType: "jsonp",
+          jsonp: 'callback',
+          jsonpCallback: 'cdispoToken',
+          data: {action:"getScan",fe_typo_user:fe_typo_user},
+          
+          success: function(result) {
+            
+                if (result.deconnexion) {
+                    
+                    initPopin();
+                    $('.prewiewsharing_header').hide();
+                    $('.previewsharing_content').html('<p></p><p>'+result.deconnexion+'</p>');
+                    $('#btn_close').attr('onclick','$(\'.info-block\').hide();$(\'.main-slider\').show();');
+                    
+                    $('.main-slider').hide();
+                    $('.info-block').show();
+                
+                }
+                
+                
+                if (result.result) {
+                    console.log('success getScan:'+result.ressourceId+"/"+result.category);
+                }
+                
+                
+                $('.loader2').hide();
+          },  
+          error: function(error) {
+                console.log('getScan error');
+                $('.loader2').hide();
+          }   
+    }); 
+}
+
+
 
 function loadSharing(fe_typo_user,indexSlide) {
     var url = window.location.href;
