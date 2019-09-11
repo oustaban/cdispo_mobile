@@ -156,9 +156,9 @@
     <platform name="ios">
         <config-file platform="ios" target="*-Info.plist" parent="CFBundleLocalizations">
             <array>
+                <string>fr</string>
                 <string>es</string>
                 <string>en</string>
-                <string>fr</string>
                 <string>it</string>
                 <string>de</string>
                 <string>nl</string>
