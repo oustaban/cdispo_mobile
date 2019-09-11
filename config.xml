@@ -117,8 +117,7 @@
     <!--<plugin name="cordova-labs-local-webserver-ka" source="npm" spec="1.0.7" />-->
     <!--<plugin name="cordova-plugin-wkwebview-file-xhr" source="npm" spec="2.1.1" />-->
     <!--<plugin name="cordova-plugin-ionic-webview" source="npm" spec="4.1.1" />-->
-    <plugin name="cordova-plugin-add-swift-support" source="npm" spec="2.0.2" />
-    <plugin name="cordova-plugin-qrscanner" source="npm" spec="3.0.1" />
+    <plugin name="phonegap-plugin-barcodescanner" source="npm" spec="8.1.0" />
     
     <gap:config-file platform="android" parent="/manifest">
          <application android:debuggable="true" />
