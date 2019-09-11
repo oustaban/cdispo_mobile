@@ -3156,7 +3156,7 @@ function getScan(fe_typo_user,ressourceId,category,action) {
                     if (result.bookingtostartfinished) {
                        initPopin();
                         $('.prewiewsharing_header').hide();
-                        $('.previewsharing_content').html('<p></p><p>'+result.bookingtostartcancelled+'</p>');
+                        $('.previewsharing_content').html('<p></p><p>'+result.bookingtostartfinished+'</p>');
                         $('#btn_close').attr('onclick','getScan(\''+fe_typo_user+'\',\''+ressourceId+'\',\''+category+'\',\'refresh\')');
                         $('.main-slider').hide();
                         $('.modification-block').hide();
@@ -3165,7 +3165,7 @@ function getScan(fe_typo_user,ressourceId,category,action) {
                     if (result.nobookingstostart) {
                        initPopin();
                         $('.prewiewsharing_header').hide();
-                        $('.previewsharing_content').html('<p></p><p>'+result.bookingtostartcancelled+'</p>');
+                        $('.previewsharing_content').html('<p></p><p>'+result.nobookingstostart+'</p>');
                         $('#btn_close').attr('onclick','getScan(\''+fe_typo_user+'\',\''+ressourceId+'\',\''+category+'\',\'refresh\')');
                         $('.main-slider').hide();
                         $('.modification-block').hide();
