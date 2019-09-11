@@ -9,6 +9,7 @@ jQuery(function(){
     initPassword();
 	initChangePassword();
 	initNav();
+	initScan();
 	//getTranslation();
 });
 
@@ -241,6 +242,20 @@ function initNav() {
 }
 
 
+function initScan() {
+	
+	jQuery('#btn_scan').click(function() {
+		cordova.plugins.barcodeScanner.scan(
+                function (result) {
+                    console.log("Barcode/QR code data\n" + "Result: " + result.text + "\n" + "Format: " + result.format + "\n" + "Cancelled: " + result.cancelled);
+                },
+                function (error) {
+                    console.log("Scanning failed: " + error);
+                }
+        );
+	});
+	
+}
 
 function getUrlVars()
 {
