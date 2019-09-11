@@ -34,6 +34,7 @@
     <preference name="windows-identity-name" value="20793Magnetic.coop.com.inhni.inhnov" />
 
     <preference name="StatusBarOverlaysWebView" value="false" />
+    <preference name="StatusBarDefaultScrollToTop" value="true" />
 
 
     <icon src="icon.png" />
