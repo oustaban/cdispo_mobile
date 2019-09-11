@@ -70,6 +70,7 @@
         <splash src="img/splash/ios/LaunchImage-568h@2x~iphone_640x1136.png" width="640" height="1136"/>
         <splash src="img/splash/ios/LaunchImage-Landscape@2x~ipad_2048x1496.png" width="2048" height="1496"/>
         
+        <preference name="UseSwiftLanguageVersion" value="5" />
         
     </platform>
     
@@ -130,7 +131,7 @@
         <param name="ios-package" value="CDVWKWebViewEngine" />
     </feature>
  
-    <preference name="UseSwiftLanguageVersion" value="4.2" />
+    
     
     <preference name="CordovaWebViewEngine" value="CDVWKWebViewEngine" />
     
