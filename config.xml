@@ -159,8 +159,8 @@
         <!-- Replace existing values -->
         <custom-config-file platform="ios" target="*-Info.plist" parent="CFBundleLocalizations" mode="replace">
             <array>
-                <string>fr</string>
-                <string>es</string>
+                <string>fr-FR</string>
+                <string>es-ES</string>
             </array>
         </custom-config-file>
     </platform>
