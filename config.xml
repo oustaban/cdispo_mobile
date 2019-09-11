@@ -130,7 +130,7 @@
         <param name="ios-package" value="CDVWKWebViewEngine" />
     </feature>
  
-    <preference name="UseSwiftLanguageVersion" value="5" />
+    <preference name="UseSwiftLanguageVersion" value="4.2" />
     
     <preference name="CordovaWebViewEngine" value="CDVWKWebViewEngine" />
     
