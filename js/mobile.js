@@ -250,8 +250,10 @@ function initScan() {
                 function (result) {
 					$('.loader2').hide();
                     console.log("Barcode/QR code data\n" + "Result: " + result.text + "\n" + "Format: " + result.format + "\n" + "Cancelled: " + result.cancelled);
-					fe_typo_user = window.localStorage.getItem("fe_typo_user");
-					getScan(fe_typo_user,result.text);
+					if (!result.cancelled) {
+                        fe_typo_user = window.localStorage.getItem("fe_typo_user");
+						cordova.InAppBrowser.open(url+'scan.html?uid=1'+result.text, '_self');
+					}
 				},
                 function (error) {
 					$('.loader2').hide();

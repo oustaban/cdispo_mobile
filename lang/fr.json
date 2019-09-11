@@ -26,5 +26,6 @@
 	"noconnexion_text":"Cette apllication nécessite une connection internet",
 	"bookingevent_title":"RESERVATIONS<br/> SUR LE PARTAGE N°<span id=\"eventid\"></span>",
 	"mesconfirmations_title":"LES RESERVATIONS A CONFIRMER",
-	"mesinvitations_title":"MES INVITATIONS"
+	"mesinvitations_title":"MES INVITATIONS",
+	"scan_title":"SCAN"
 }
