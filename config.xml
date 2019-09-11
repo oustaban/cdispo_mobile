@@ -138,11 +138,6 @@
     
     <preference name="InterceptRemoteRequests" value="all" />
     
-    <preference name="StatusBarOverlaysWebView" value="true" />
-    <preference name="StatusBarCropsWebview" value="false" />
-    <preference name="StatusBarStyle" value="lightcontent" />
-    <preference name="StatusBarBackgroundColor" value="#2980b9" />
-    <preference name="StatusBarDefaultScrollToTop" value="false" />
     
     
     <!--<content src="http://localhost:49000" />-->
