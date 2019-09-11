@@ -253,7 +253,7 @@ function initScan() {
                     console.log("Scanning failed: " + error);
                 },
 				{
-					preferFrontCamera : true, // iOS and Android
+					preferFrontCamera : false, // iOS and Android
 					showFlipCameraButton : false, // iOS and Android
 					showTorchButton : true, // iOS and Android
 					torchOn: true, // Android, launch with the torch switched on (if available)
@@ -262,7 +262,7 @@ function initScan() {
 					resultDisplayDuration: 500, // Android, display scanned text for X ms. 0 suppresses it entirely, default 1500
 					formats : "QR_CODE,PDF_417", // default: all but PDF_417 and RSS_EXPANDED
 					orientation : "portrait", // Android only (portrait|landscape), default unset so it rotates with the device
-					disableAnimations : true, // iOS
+					disableAnimations : false, // iOS
 					disableSuccessBeep: false // iOS and Android
 				}
         );
