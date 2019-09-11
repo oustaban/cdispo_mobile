@@ -156,13 +156,15 @@
     
 
     <platform name="ios">
-        <config-file platform="ios" parent="CFBundleDevelopmentRegion" overwrite="true">
-            <string>French</string>
-        </config-file>
         <!-- Replace existing values -->
         <custom-config-file platform="ios" target="*-Info.plist" parent="CFBundleDevelopmentRegion" mode="replace">
             <array>
-                <string>fr-FR</string>
+                <string>fr</string>
+            </array>
+        </custom-config-file>
+        <custom-config-file platform="ios" target="*-Info.plist" parent="CFBundleLocalizations" mode="replace">
+            <array>
+                <string>fr</string>
             </array>
         </custom-config-file>
     </platform>
