@@ -130,6 +130,8 @@
         <param name="ios-package" value="CDVWKWebViewEngine" />
     </feature>
  
+    <preference name="UseSwiftLanguageVersion" value="5" />
+    
     <preference name="CordovaWebViewEngine" value="CDVWKWebViewEngine" />
     
     <preference name="InterceptRemoteRequests" value="all" />
