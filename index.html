@@ -53,16 +53,18 @@
 		
 		$(document).bind('deviceready', function() {
             screen.lockOrientation('portrait');
-			console.log(StatusBar);
 			//StatusBar.overlaysWebView(true);
 			//StatusBar.backgroundColorByName("red"); 
-            StatusBar.hide();
+            //StatusBar.hide();
 			//openBrowser();
 			//clickSubmit();
+			console.log(StatusBar);
+			
 			var fe_typo_user = window.localStorage.getItem("fe_typo_user");
 			
 			getTranslation();
 			//alert(fe_typo_user);
+			
 			
 			
 			document.addEventListener("offline", function(e){
