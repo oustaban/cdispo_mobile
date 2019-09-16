@@ -251,8 +251,8 @@ function initScan() {
 					$('.loader2').hide();
                     console.log("Barcode/QR code data\n" + "Result: " + result.text + "\n" + "Format: " + result.format + "\n" + "Cancelled: " + result.cancelled);
 					if (!result.cancelled) {
-						//var url = window.location.href;
-						//url = url.substring(0, url.lastIndexOf("/") + 1);
+						var url = window.location.href;
+						url = url.substring(0, url.lastIndexOf("/") + 1);
                         fe_typo_user = window.localStorage.getItem("fe_typo_user");
 						result.text.replace('/\//gi', '_');
 						cordova.InAppBrowser.open(url+'scan.html?uid=1'+result.text, '_self');
