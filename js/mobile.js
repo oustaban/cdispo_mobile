@@ -254,8 +254,10 @@ function initScan() {
 						var url = window.location.href;
 						url = url.substring(0, url.lastIndexOf("/") + 1);
                         fe_typo_user = window.localStorage.getItem("fe_typo_user");
-						result.text.replace('/\//gi', '_');
-						cordova.InAppBrowser.open(url+'scan.html?uid=1'+result.text, '_self');
+						var params = result.text;
+						params.replace('/\//gi', '_');
+						console.log('params:'+params);
+						cordova.InAppBrowser.open(url+'scan.html?uid=1'+params, '_self');
 					}
 				},
                 function (error) {
