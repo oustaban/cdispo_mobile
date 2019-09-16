@@ -1517,7 +1517,7 @@ select:focus {
 }
 
 .bg0 {
-	background-color:rgba(26,240,132,1);
+	background-color:rgba(20,163,76,1);
 	color:black;
 	font-weight:bold;
 }
@@ -1613,6 +1613,7 @@ select:focus {
 	-webkit-box-pack: justify;
 	-ms-flex-pack: justify;
 	justify-content: space-between;
+	height:100%;
 }
 
 .main-slider .btn {
@@ -1623,6 +1624,7 @@ select:focus {
 
 .main-slider .btn.onebtn {
 	padding: 6px 15px 6px 15px;
+	width:100%;
 }
 
 .main-slider .time {
@@ -1703,6 +1705,7 @@ select:focus {
 .main-slider .location-info {
 	line-height: 6px;
 	margin-top: 0px;
+	margin-bottom: 0px;
 }
 
 .main-slider .location-info i {
