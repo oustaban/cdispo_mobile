@@ -219,7 +219,7 @@ function getTranslation() {
 function initNav() {
 	var url = window.location.href;
 	url = url.substring(0, url.lastIndexOf("/") + 1);
-	
+	console.log('initnav:'+url);
 					
     jQuery('#nav_title1').click(function() {
 		console.log(url);
