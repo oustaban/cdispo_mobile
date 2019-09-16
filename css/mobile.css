@@ -1587,6 +1587,7 @@ select:focus {
 
 .main-slider .status {
 	text-transform: uppercase;
+	color:white;
 }
 
 .main-slider .bureau {
