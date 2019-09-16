@@ -255,7 +255,7 @@ function initScan() {
 						url = url.substring(0, url.lastIndexOf("/") + 1);
                         fe_typo_user = window.localStorage.getItem("fe_typo_user");
 						var params = result.text;
-						params = params.replace('/\//gi', '_');
+						params = params.replace(/\//gi, '_');
 						console.log('params:'+params);
 						cordova.InAppBrowser.open(url+'scan.html?uid=1'+params, '_self');
 					}
