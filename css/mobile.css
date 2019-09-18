@@ -2228,6 +2228,8 @@ a.tooltip4 {
 	z-index:5;
 }
 
+
+
 @media (min-width: 480px) {
 	.container {
 		max-width: 490px;
