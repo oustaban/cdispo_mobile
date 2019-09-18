@@ -1480,6 +1480,12 @@ select:focus {
 	width: 40%;
 }
 
+.main-slider .col2 {
+	width: 100%;
+	margin-right: 0px;
+	margin-top:6px;
+}
+
 .main-slider .light-block {
 	margin-bottom: 6px;
 	padding: 5px 5px 3px;
