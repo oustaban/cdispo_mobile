@@ -57,30 +57,18 @@
 		
 		$(document).bind('deviceready', function() {
 		   
-		    console.log('etape1');
 		    getTranslation();
-			console.log('etape2');
+			
 			document.addEventListener("offline", function(e){
 				var url = window.location.href;
 				url = url.substring(0, url.lastIndexOf("/") + 1);
 				cordova.InAppBrowser.open(url+'noconnexion.html', '_self');
 			}, false);
 			
-			console.log('etape3');
-		    var fe_typo_user = window.localStorage.getItem("fe_typo_user");
-			console.log('etape4');
+			var fe_typo_user = window.localStorage.getItem("fe_typo_user");
+			
 			getBooking(fe_typo_user,'init');
-			console.log('etape5');
-			/*
-			cookieMaster.getCookieValue('http://cdispo', 'fe_typo_user', function(data) {
-				console.log(data.cookieValue);
-				getBooking(data.cookieValue,'init'); 
-			}, function(error) {
-				if (error) {
-					console.log('error: ' + error);
-				}
-			});
-			*/
+			
 			
         });
 		
@@ -97,16 +85,6 @@
 			var fe_typo_user = window.localStorage.getItem("fe_typo_user");
 			getBooking(fe_typo_user,'refresh');
 			
-			/*
-			cookieMaster.getCookieValue('http://cdispo', 'fe_typo_user', function(data) {
-				console.log(data.cookieValue);
-				getBooking(data.cookieValue,'refresh'); 
-			}, function(error) {
-				if (error) {
-					console.log('error: ' + error);
-				}
-			});
-			*/
 			
         });
     </script>
