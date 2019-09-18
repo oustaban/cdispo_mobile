@@ -2228,7 +2228,10 @@ a.tooltip4 {
 	z-index:5;
 }
 
-
+span#autre_motif {
+	font-size:10px;
+	font-style:italic;
+}
 
 @media (min-width: 480px) {
 	.container {
