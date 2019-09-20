@@ -2237,7 +2237,7 @@ span#autre_motif {
 
 @media (min-width: 480px) {
 	.container {
-		max-width: 490px;
+		max-width: 590px;
 		margin: 0 auto;
 	}
 
@@ -2328,6 +2328,11 @@ span#autre_motif {
 	
 	.main-slider .organizator-info {
 		margin-bottom:0px;
+	}
+	
+	span#autre_motif {
+		font-size:20px;
+		font-style:normal;
 	}
 
 	.main-slider .bureau strong {
