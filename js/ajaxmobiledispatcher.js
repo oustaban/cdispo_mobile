@@ -1145,7 +1145,7 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
 
 
 
-function checkBooking(idBooking,dateStart,dateEnd,fe_typo_user,action,ressourceId,category) {
+function checkBooking(idBooking,dateStart,dateEnd,fe_typo_user,action,ressourceId,category2) {
     
     var L = window.localStorage.getItem("language");
     var lang = window.localStorage.getItem("lang");
