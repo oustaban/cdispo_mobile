@@ -159,7 +159,8 @@ function initMobileConnect() {
 function initSlickCarousel() {
 	jQuery('.main-slider').each(function() {
 		var slider = jQuery(this);
-		var dotsHolder = slider.find('.nav-holder');
+		//var dotsHolder = slider.find('.nav-holder');
+		var dotsHolder = $('.nav-holder');
 
 		slider.slick({
 			slidesToScroll: 1,
