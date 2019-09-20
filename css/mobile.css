@@ -1631,8 +1631,8 @@ select:focus {
 }
 
 .main-slider .btn.onebtn {
-	padding: 10px 15px 6px 15px;
 	width:100%;
+	padding:20px 15px;
 }
 
 .main-slider .time {
