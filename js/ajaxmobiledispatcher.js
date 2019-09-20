@@ -815,7 +815,7 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                 $('#modification_lien1').text(domain);
                 $('#modification_lien1').attr('href',url);
                 $('#btn_back').attr('onclick','$(\'.modification-block\').hide();$(\'.main-slider\').show();$(\'.nav-holder\').show();');
-                $('#btn_modifynow').attr('onclick','checkBooking('+booking_id+','+$('#modif_datestart').val()+','+$('#modif_dateend').val()+',\''+fe_typo_user+'\',\''+action+'\','+ressourceId+',\''+category2+'\')');
+                $('#btn_modifynow').attr('onclick','checkBooking('+booking_id+','+result.dateStartBooking+','+result.dateEndBooking+',\''+fe_typo_user+'\',\''+action+'\','+ressourceId+',\''+category2+'\')');
                 
                 //$('.modification-info').html(result.info);
                 
