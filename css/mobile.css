@@ -1801,7 +1801,7 @@ select:focus {
 
 .nav-holder {
 	position: absolute;
-	bottom: 0;
+	bottom: 60px;
 	left: 0;
 	right: 0;
 	display: -webkit-box;
@@ -2624,7 +2624,7 @@ span#autre_motif {
 	}
 
 	.nav-holder {
-		bottom: 45px;
+		bottom: 149px;
 	}
 
 	#header {
@@ -2716,7 +2716,7 @@ span#autre_motif {
 	}
 
 	.nav-holder {
-		bottom: 0;
+		bottom: 136px;
 	}
 }
 
