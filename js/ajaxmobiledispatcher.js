@@ -1349,6 +1349,7 @@ function checkBooking(idBooking,dateStart,dateEnd,fe_typo_user,action,ressourceI
                 if (result.bookinginprogress) {
                     
                     initPopin();
+                    console.log('bookinginprogress:'+result.bookinginprogress)
                     $('.prewiewsharing_header').hide();
                     $('.previewsharing_content').html('<p></p><p>'+result.bookinginprogress+'</p>');
                     if (action == "getBooking")
