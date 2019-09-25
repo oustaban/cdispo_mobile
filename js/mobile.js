@@ -294,6 +294,25 @@ function getUrlVars()
     }
     return vars;
 }
+
+//function de réécriture de setinterval et clearinterval
+(function(originalSetInterval, originalClearInterval){
+    var intervals = [];
+    window.setInterval = function(func, timeout) {
+        var newInterval = originalSetInterval(func, timeout);
+        intervals.push(newInterval);
+        return newInterval;
+    }
+
+    window.clearInterval = function(interval) {
+        originalClearInterval(interval);
+        intervals.splice(intervals.indexOf(interval), 1)
+    }
+
+    window.clearAllIntervals = function() {
+        intervals.forEach(clearInterval);
+    }
+})(window.setInterval, window.clearInterval)
 /*
      _ _      _       _
  ___| (_) ___| | __  (_)___
