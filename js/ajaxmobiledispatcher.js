@@ -3523,10 +3523,12 @@ function unlockBooking(fe_typo_user,bookingId) {
                 } else {
                     console.log('unlockBooking error');
                 }
+                $('.loader2').hide();
                 
           },  
           error: function(error) {
-                console.log('unlockBooking error');    
+                console.log('unlockBooking error');
+                $('.loader2').hide();
           }   
     }); 
 }
