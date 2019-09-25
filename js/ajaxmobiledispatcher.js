@@ -1492,7 +1492,9 @@ function checkBooking(idBooking,dateStart,dateEnd,fe_typo_user,action,ressourceI
                     }, 500);
                     
                     
-                } else {
+                }
+                
+                if (result.error) {
                     
                     initPopin();
                     $('.prewiewsharing_header').hide();
