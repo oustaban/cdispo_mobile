@@ -809,7 +809,7 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                 
                 var timecode = result.timecode;
                 
-                
+                $('#modification_title').html(result.title);
                 $('#date_start').text(result.firstDate);
                 $('#date_end').text(result.lastDate);
                 $('#modification_lien1').text(domain);
