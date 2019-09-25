@@ -2928,13 +2928,14 @@ function getBookingToConfirm(fe_typo_user,action) {
                     console.log('success getBookingToConfirm 1 '+action);
                     if (action == "refresh") {
                          console.log('countslide:'+countslide);
-                         window.clearAllIntervals();
-                         /*
+                         //window.clearAllIntervals();
+                         
                          for (var i = 0; i < 1000; i++) {
                             var varInterval = "x"+i;
-                            window.clearInterval(varInterval);
+                            //window.clearInterval(varInterval);
+                            window.clearInterval(i);
                          }
-                         */
+                         
                          $("div.slick-slide").each(function() {
                             var i = $(this).attr("data-slick-index");
                             $('.main-slider').slick('slickRemove',i);
