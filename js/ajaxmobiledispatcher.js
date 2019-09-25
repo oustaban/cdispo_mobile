@@ -809,6 +809,7 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                 
                 var timecode = result.timecode;
                 
+                $('#modif_booking').val(booking_id);
                 $('#modification_title').html(result.title);
                 $('#date_start').text(result.firstDate);
                 $('#date_end').text(result.lastDate);
@@ -1175,6 +1176,7 @@ function checkBooking(idBooking,dateStart,dateEnd,fe_typo_user,action,ressourceI
                     
                     $('.main-slider').hide();$('.nav-holder').hide();
                     $('.nav-holder').hide();
+                    $('.modification-block').hide();
                     $('.info-block').show();
                 
                 }
@@ -2399,12 +2401,16 @@ function checkConfirmBooking(bookingId,fe_typo_user,action,eventressourceId,cate
                     initPopin();
                     $('.prewiewsharing_header').hide();
                     $('.previewsharing_content').html('<p></p><p>'+result.deconnexion+'</p>');
-                    $('#btn_close').attr('onclick','$(\'.info-block\').hide();$(\'.main-slider\').show();$(\'.nav-holder\').show();');
-                
+                    
+                    var url = window.location.href;
+					url = url.substring(0, url.lastIndexOf("/") + 1);
+                    window.localStorage.clear();
+                    $('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
+                    
                     $('.main-slider').hide();$('.nav-holder').hide();
                     $('.modification-block').hide();
                     $('.info-block').show();
-                    
+                
                 }
                 
                 if (result.bookingnotexist) {
@@ -2569,12 +2575,16 @@ function confirmBooking(bookingId,fe_typo_user,action,eventressourceId,category)
                     initPopin();
                     $('.prewiewsharing_header').hide();
                     $('.previewsharing_content').html('<p></p><p>'+result.deconnexion+'</p>');
-                    $('#btn_close').attr('onclick','$(\'.info-block\').hide();$(\'.main-slider\').show();$(\'.nav-holder\').show();');
-                
+                    
+                    var url = window.location.href;
+					url = url.substring(0, url.lastIndexOf("/") + 1);
+                    window.localStorage.clear();
+                    $('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
+                    
                     $('.main-slider').hide();$('.nav-holder').hide();
                     $('.modification-block').hide();
                     $('.info-block').show();
-                    
+                
                 }
                 
                 if (result.bookingnotexist) {
@@ -2917,9 +2927,14 @@ function getBookingToConfirm(fe_typo_user,action) {
                     initPopin();
                     $('.prewiewsharing_header').hide();
                     $('.previewsharing_content').html('<p></p><p>'+result.deconnexion+'</p>');
-                    $('#btn_close').attr('onclick','$(\'.info-block\').hide();$(\'.main-slider\').show();$(\'.nav-holder\').show();');
+                    
+                    var url = window.location.href;
+					url = url.substring(0, url.lastIndexOf("/") + 1);
+                    window.localStorage.clear();
+                    $('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
                     
                     $('.main-slider').hide();$('.nav-holder').hide();
+                    $('.modification-block').hide();
                     $('.info-block').show();
                 
                 }
@@ -3003,9 +3018,14 @@ function getInvitations(fe_typo_user,action) {
                     initPopin();
                     $('.prewiewsharing_header').hide();
                     $('.previewsharing_content').html('<p></p><p>'+result.deconnexion+'</p>');
-                    $('#btn_close').attr('onclick','$(\'.info-block\').hide();$(\'.main-slider\').show();$(\'.nav-holder\').show();');
+                    
+                    var url = window.location.href;
+					url = url.substring(0, url.lastIndexOf("/") + 1);
+                    window.localStorage.clear();
+                    $('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
                     
                     $('.main-slider').hide();$('.nav-holder').hide();
+                    $('.modification-block').hide();
                     $('.info-block').show();
                 
                 }
@@ -3083,9 +3103,14 @@ function guestAccept(bookingId,guestId,fe_typo_user,index) {
                     initPopin();
                     $('.prewiewsharing_header').hide();
                     $('.previewsharing_content').html('<p></p><p>'+result.deconnexion+'</p>');
-                    $('#btn_close').attr('onclick','$(\'.info-block\').hide();$(\'.main-slider\').show();$(\'.nav-holder\').show();');
+                    
+                    var url = window.location.href;
+					url = url.substring(0, url.lastIndexOf("/") + 1);
+                    window.localStorage.clear();
+                    $('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
                     
                     $('.main-slider').hide();$('.nav-holder').hide();
+                    $('.modification-block').hide();
                     $('.info-block').show();
                 
                 }
@@ -3190,9 +3215,14 @@ function guestRefuse(bookingId,guestId,fe_typo_user,index) {
                     initPopin();
                     $('.prewiewsharing_header').hide();
                     $('.previewsharing_content').html('<p></p><p>'+result.deconnexion+'</p>');
-                    $('#btn_close').attr('onclick','$(\'.info-block\').hide();$(\'.main-slider\').show();$(\'.nav-holder\').show();');
+                    
+                    var url = window.location.href;
+					url = url.substring(0, url.lastIndexOf("/") + 1);
+                    window.localStorage.clear();
+                    $('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
                     
                     $('.main-slider').hide();$('.nav-holder').hide();
+                    $('.modification-block').hide();
                     $('.info-block').show();
                 
                 }
@@ -3298,9 +3328,14 @@ function getScan(fe_typo_user,ressourceId,category,action) {
                     initPopin();
                     $('.prewiewsharing_header').hide();
                     $('.previewsharing_content').html('<p></p><p>'+result.deconnexion+'</p>');
-                    $('#btn_close').attr('onclick','$(\'.info-block\').hide();$(\'.main-slider\').show();$(\'.nav-holder\').show();');
+                    
+                    var url = window.location.href;
+					url = url.substring(0, url.lastIndexOf("/") + 1);
+                    window.localStorage.clear();
+                    $('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
                     
                     $('.main-slider').hide();$('.nav-holder').hide();
+                    $('.modification-block').hide();
                     $('.info-block').show();
                 
                 }
@@ -3447,6 +3482,54 @@ function getScan(fe_typo_user,ressourceId,category,action) {
     }); 
 }
 
+
+
+            
+function unlockBooking(fe_typo_user,bookingId) {
+    var L = window.localStorage.getItem("language");
+    var lang = window.localStorage.getItem("lang");
+    $('.loader2').show();
+    var domain = window.localStorage.getItem("domain");
+    var url = "http://"+domain+"/?type=476&tx_cdispofrontend_fcdispofrontend[controller]=Mobile&tx_cdispofrontend_fcdispofrontend[action]=dispatcher&tx_cdispofrontend_fcdispofrontend[uid]=1&L="+L;
+    $.ajax({
+          type: 'GET',
+          url:url,
+          dataType: "jsonp",
+          jsonp: 'callback',
+          jsonpCallback: 'cdispoToken',
+          data: {action:"unlockBooking",fe_typo_user:fe_typo_user,bookingId:bookingId},
+          
+          success: function(result) {
+                
+                if (result.deconnexion) {
+                    
+                    initPopin();
+                    $('.prewiewsharing_header').hide();
+                    $('.previewsharing_content').html('<p></p><p>'+result.deconnexion+'</p>');
+                    
+                    var url = window.location.href;
+					url = url.substring(0, url.lastIndexOf("/") + 1);
+                    window.localStorage.clear();
+                    $('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
+                    
+                    $('.main-slider').hide();$('.nav-holder').hide();
+                    $('.modification-block').hide();
+                    $('.info-block').show();
+                
+                }
+                    
+                if (result.result) {
+                    console.log('unlockBooking success');
+                } else {
+                    console.log('unlockBooking error');
+                }
+                
+          },  
+          error: function(error) {
+                console.log('unlockBooking error');    
+          }   
+    }); 
+}
 
 
 function loadSharing(fe_typo_user,indexSlide) {

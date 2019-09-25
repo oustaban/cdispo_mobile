@@ -10,7 +10,6 @@ jQuery(function(){
     initPassword();
 	initChangePassword();
 	initNav();
-	initScan();
 	//getTranslation();
 });
 
@@ -222,32 +221,44 @@ function initNav() {
 	var url = window.location.href;
 	url = url.substring(0, url.lastIndexOf("/") + 1);
 	console.log('initnav:'+url);
+	var fe_typo_user = window.localStorage.getItem("fe_typo_user");
 					
     jQuery('#nav_title1').click(function() {
 		console.log(url);
+		if ($(".modification-block").is(":visible")) {
+			unlockBooking(fe_typo_user,$('#modif_booking').val());
+        }
 		cordova.InAppBrowser.open(url+'mesreservations.html', '_self');
+		
 	});
 	jQuery('#nav_title2').click(function() {
 		console.log(url);
+		if ($(".modification-block").is(":visible")) {
+			unlockBooking(fe_typo_user,$('#modif_booking').val());
+        }
 		cordova.InAppBrowser.open(url+'mesinvitations.html', '_self');
 	});
 	jQuery('#nav_title3').click(function() {
 		console.log(url);
+		if ($(".modification-block").is(":visible")) {
+			unlockBooking(fe_typo_user,$('#modif_booking').val());
+        }
 		cordova.InAppBrowser.open(url+'mespartages.html', '_self');
 	});
 	
 	jQuery('#nav_title4').click(function() {
 		console.log(url);
+		if ($(".modification-block").is(":visible")) {
+			unlockBooking(fe_typo_user,$('#modif_booking').val());
+        }
 		cordova.InAppBrowser.open(url+'mesconfirmations.html', '_self');
 	});
 	
-}
-
-
-function initScan() {
-	
 	jQuery('#btn_scan').click(function() {
 		$('.loader2').show();
+		if ($(".modification-block").is(":visible")) {
+			unlockBooking(fe_typo_user,$('#modif_booking').val());
+        }
 		cordova.plugins.barcodeScanner.scan(
                 function (result) {
 					$('.loader2').hide();
@@ -281,6 +292,8 @@ function initScan() {
 	});
 	
 }
+
+
 
 function getUrlVars()
 {
