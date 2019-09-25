@@ -2851,7 +2851,7 @@ function getBookingEvent(fe_typo_user,eventId,action) {
                          console.log('countslide:'+countslide);
                          for (var i = 0; i < 1000; i++) {
                             var varInterval = "x"+i;
-                            window.clearInterval(varInterval);
+                            window.clearInterval(i);
                          }
                          $("div.slick-slide").each(function() {
                             var i = $(this).attr("data-slick-index");
@@ -3015,7 +3015,7 @@ function getInvitations(fe_typo_user,action) {
                          console.log('countslide:'+countslide);
                          for (var i = 0; i < 1000; i++) {
                             var varInterval = "x"+i;
-                            window.clearInterval(varInterval);
+                            window.clearInterval(i);
                          }
                          $("div.slick-slide").each(function() {
                             var i = $(this).attr("data-slick-index");
