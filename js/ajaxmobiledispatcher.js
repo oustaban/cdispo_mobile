@@ -3528,6 +3528,7 @@ function getScan(fe_typo_user,ressourceId,category,action) {
                     }
                     
                     if (result.newsharings) {
+                        
                         if (action == "refresh") {
                              console.log('countslide:'+countslide);
                              for (var i = 0; i < 1000; i++) {
@@ -3561,7 +3562,9 @@ function getScan(fe_typo_user,ressourceId,category,action) {
                         }
                         
                     }
+                    
                     console.log('success getScan:'+result.ressourceId+"/"+result.category);
+                    
                 } else {
                     
                 }

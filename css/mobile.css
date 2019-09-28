@@ -1957,7 +1957,7 @@ select:focus {
 }
 
 .active-position {
-	font-size: 20px;
+	font-size: 17px;
 	color: #fff;
 	text-align: center;
 }
@@ -2726,6 +2726,10 @@ span#autre_motif {
 
 	.nav-holder {
 		bottom: 136px;
+	}
+	
+	.active-position {
+		font-size: 20px;
 	}
 }
 
