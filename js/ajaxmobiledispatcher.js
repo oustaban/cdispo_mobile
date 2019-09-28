@@ -3526,6 +3526,41 @@ function getScan(fe_typo_user,ressourceId,category,action) {
                         }
                         
                     }
+                    
+                    if (result.newsharings) {
+                        if (action == "refresh") {
+                             console.log('countslide:'+countslide);
+                             for (var i = 0; i < 1000; i++) {
+                                var varInterval = "x"+i;
+                                window.clearInterval(i);
+                             }
+                             $("div.slick-slide").each(function() {
+                                var i = $(this).attr("data-slick-index");
+                                $('.main-slider').slick('slickRemove',i);
+                             });
+                             $('.main-slider').show();$('.nav-holder').show();
+                             $('.modification-block').hide();
+                             $('.info-block').hide();
+                             if (countslide > 0) 
+                                $('.main-slider').slick('unslick');
+                        }
+                        
+                        countslide = result.countslide;
+                        
+                        if (countslide > 0) {
+                            $('.main-slider').html(result.slide);
+                            initSlickCarousel();
+                        } else {
+                            $('.prewiewsharing_header').hide();
+                            $('.previewsharing_content').html(result.content);
+                            $('#btn_close').attr('onclick','getBooking(\''+fe_typo_user+'\',\'refresh\')');
+                        
+                            $('.main-slider').hide();$('.nav-holder').hide();
+                            $('.modification-block').hide();
+                            $('.info-block').show();    
+                        }
+                        
+                    }
                     console.log('success getScan:'+result.ressourceId+"/"+result.category);
                 } else {
                     
