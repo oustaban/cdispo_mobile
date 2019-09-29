@@ -3751,7 +3751,7 @@ function getBookingToGo(fe_typo_user,ressourceId,category,action) {
                 
                 console.log('success getBookingToConfirm');
                 
-                
+                $('#scan_title').html(result.title);
                 $('.loader2').hide();
           },  
           error: function(error) {
