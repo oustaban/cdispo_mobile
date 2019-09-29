@@ -3517,7 +3517,7 @@ function getScan(fe_typo_user,ressourceId,category,action) {
                             initSlickCarousel();
                             $('#backtoshare').show();
                             $('#backtosharelink').html(result.linktitle);
-                            $('#backtosharelink').attr('onclick','getDispo(\''+fe_typo_user+'\','+ressourceId+',\''+category+\'',\'refresh\')');
+                            $('#backtosharelink').attr('onclick','getDispo(\''+fe_typo_user+'\','+ressourceId+',\''+category+'\',\'refresh\')');
                             
                             
                         } else {
@@ -3559,7 +3559,7 @@ function getScan(fe_typo_user,ressourceId,category,action) {
                             initSlickCarousel();
                             $('#backtoshare').show();
                             $('#backtosharelink').html(result.linktitle);
-                            $('#backtosharelink').attr('onclick','getDispo(\''+fe_typo_user+'\','+ressourceId+',\''+category+\'',\'refresh\')');
+                            $('#backtosharelink').attr('onclick','getDispo(\''+fe_typo_user+'\','+ressourceId+',\''+category+'\',\'refresh\')');
                             
                         } else {
                             $('#backtoshare').hide();
@@ -3718,12 +3718,12 @@ function getBookingToGo(fe_typo_user,ressourceId,category,action) {
                         initSlickCarousel();
                         $('#backtoshare').show();
                         $('#backtosharelink').html(result.linktitle);
-                        $('#backtosharelink').attr('onclick','getDispo(\''+fe_typo_user+'\','+ressourceId+',\''+category+\'',\'refresh\')');
+                        $('#backtosharelink').attr('onclick','getDispo(\''+fe_typo_user+'\','+ressourceId+',\''+category+'\',\'refresh\')');
                         
                     } else {
                         $('#backtoshare').show();
                         $('#backtosharelink').html(result.linktitle);
-                        $('#backtosharelink').attr('onclick','getDispo(\''+fe_typo_user+'\','+ressourceId+',\''+category+\'',\'refresh\')');
+                        $('#backtosharelink').attr('onclick','getDispo(\''+fe_typo_user+'\','+ressourceId+',\''+category+'\',\'refresh\')');
                         $('.prewiewsharing_header').hide();
                         $('.previewsharing_content').html(result.content);
                         $('#btn_close').attr('onclick','getBookingToGo(\''+fe_typo_user+'\','+ressourceId+',\''+category+'\',\'refresh\')');
@@ -3734,7 +3734,7 @@ function getBookingToGo(fe_typo_user,ressourceId,category,action) {
                 } else {
                     $('#backtoshare').show();
                     $('#backtosharelink').html(result.linktitle);
-                    $('#backtosharelink').attr('onclick','getDispo(\''+fe_typo_user+'\','+ressourceId+',\''+category+\'',\'refresh\')');
+                    $('#backtosharelink').attr('onclick','getDispo(\''+fe_typo_user+'\','+ressourceId+',\''+category+'\',\'refresh\')');
                     $('.prewiewsharing_header').hide();
                     $('.previewsharing_content').html(result.content);
                     $('#btn_close').attr('onclick','getBookingToGo(\''+fe_typo_user+'\','+ressourceId+',\''+category+'\',\'refresh\')');
@@ -3821,11 +3821,11 @@ function getDispo(fe_typo_user,ressourceId,category,action) {
                         initSlickCarousel();
                         $('#backtoshare').show();
                         $('#backtosharelink').html(result.linktitle);
-                        $('#backtosharelink').attr('onclick','getBookingToGo(\''+fe_typo_user+'\','+ressourceId+',\''+category+\'',\'refresh\')');
+                        $('#backtosharelink').attr('onclick','getBookingToGo(\''+fe_typo_user+'\','+ressourceId+',\''+category+'\',\'refresh\')');
                     } else {
                         $('#backtoshare').show();
                         $('#backtosharelink').html(result.linktitle);
-                        $('#backtosharelink').attr('onclick','getBookingToGo(\''+fe_typo_user+'\','+ressourceId+',\''+category+\'',\'refresh\')');
+                        $('#backtosharelink').attr('onclick','getBookingToGo(\''+fe_typo_user+'\','+ressourceId+',\''+category+'\',\'refresh\')');
                         $('.prewiewsharing_header').hide();
                         $('.previewsharing_content').html(result.content);
                         $('#btn_close').attr('onclick','getDispo(\''+fe_typo_user+'\','+ressourceId+',\''+category+'\',\'refresh\')');
@@ -3836,7 +3836,7 @@ function getDispo(fe_typo_user,ressourceId,category,action) {
                 } else {
                     $('#backtoshare').show();
                     $('#backtosharelink').html(result.linktitle);
-                    $('#backtosharelink').attr('onclick','getBookingToGo(\''+fe_typo_user+'\','+ressourceId+',\''+category+\'',\'refresh\')');
+                    $('#backtosharelink').attr('onclick','getBookingToGo(\''+fe_typo_user+'\','+ressourceId+',\''+category+'\',\'refresh\')');
                     $('.prewiewsharing_header').hide();
                     $('.previewsharing_content').html(result.content);
                     $('#btn_close').attr('onclick','getDispo(\''+fe_typo_user+'\','+ressourceId+',\''+category+'\',\'refresh\')');
