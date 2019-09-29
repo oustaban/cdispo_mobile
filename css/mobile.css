@@ -2226,8 +2226,12 @@ a.tooltip4 {
 }
 
 #wrapper #main #backtoshare {
-	position:relative;
-	z-index:5;
+	position: absolute;
+	z-index: 5;
+	display: flex;
+	left: 0;
+	right: 0;
+	justify-content: center;
 }
 
 span#autre_motif {
