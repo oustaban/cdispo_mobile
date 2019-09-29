@@ -1134,6 +1134,7 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
             console.log('editBooking success');
             
             $('.loader2').hide();
+            $('#backtoshare').hide();
         },  
           error: function(error) {
                 console.log('deleteMyBooking error');
@@ -3593,7 +3594,7 @@ function getScan(fe_typo_user,ressourceId,category,action) {
                 
                 $('#scan_title').html(result.title);
                 $('.loader2').hide();
-                $('#backtoshare').hide();
+                
           },  
           error: function(error) {
                 console.log('getScan error');
