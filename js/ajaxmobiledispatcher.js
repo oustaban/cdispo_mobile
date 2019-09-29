@@ -3737,7 +3737,16 @@ function getBookingToGo(fe_typo_user,ressourceId,category,action) {
                     }
                     
                 } else {
-                    
+                    $('#backtoshare').show();
+                    $('#backtosharelink').html(result.linktitle);
+                    $('#backtosharelink').click(function() {
+                        getDispo(''+fe_typo_user+'',ressourceId,category,'refresh');
+                    });
+                    $('.prewiewsharing_header').hide();
+                    $('.previewsharing_content').html(result.content);
+                    $('#btn_close').attr('onclick','getBookingToConfirm(\''+fe_typo_user+'\',\'refresh\')');
+                    $('.main-slider').hide();$('.nav-holder').hide();
+                    $('.info-block').show();    
                 }
                 
                 console.log('success getBookingToConfirm');
