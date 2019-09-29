@@ -3558,6 +3558,7 @@ function getScan(fe_typo_user,ressourceId,category,action) {
                         if (countslide > 0) {
                             $('.main-slider').html(result.slide);
                             initSlickCarousel();
+                            $('#backtoshare').show();
                             $('#backtosharelink').html(result.linktitle);
                             $('#backtosharelink').click(function() {
                                 getBookingToGo(''+fe_typo_user+'',ressourceId,category,'refresh');
@@ -3717,11 +3718,13 @@ function getBookingToGo(fe_typo_user,ressourceId,category,action) {
                     if (countslide > 0) {
                         $('.main-slider').html(result.slide);
                         initSlickCarousel();
+                        $('#backtoshare').show();
                         $('#backtosharelink').html(result.linktitle);
                         $('#backtosharelink').click(function() {
                             getDispo(''+fe_typo_user+'',ressourceId,category,'refresh');
                         });
                     } else {
+                        $('#backtoshare').show();
                         $('#backtosharelink').html(result.linktitle);
                         $('#backtosharelink').click(function() {
                             getDispo(''+fe_typo_user+'',ressourceId,category,'refresh');
