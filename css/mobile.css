@@ -1629,6 +1629,10 @@ select:focus {
 	min-width: 82px;
 	padding: 12px 15px;
 }
+.main-slider .btn:nth-child(2) {
+	margin-left: 5px;
+	padding-left: 12px;
+}
 
 .main-slider .btn.onebtn {
 	width:100%;
