@@ -3485,8 +3485,8 @@ function getScan(fe_typo_user,ressourceId,category,action) {
                         } else {
                             $('.prewiewsharing_header').hide();
                             $('.previewsharing_content').html(result.content);
-                            $('#btn_close').attr('onclick','getBooking(\''+fe_typo_user+'\',\'refresh\')');
-                        
+                            $('#btn_close').attr('onclick','getScan(\''+fe_typo_user+'\',\''+ressourceId+'\',\''+category+'\',\'refresh\')');
+                            
                             $('.main-slider').hide();$('.nav-holder').hide();
                             $('.modification-block').hide();
                             $('.info-block').show();    
@@ -3526,7 +3526,7 @@ function getScan(fe_typo_user,ressourceId,category,action) {
                             $('#backtoshare').hide();
                             $('.prewiewsharing_header').hide();
                             $('.previewsharing_content').html(result.content);
-                            $('#btn_close').attr('onclick','getBooking(\''+fe_typo_user+'\',\'refresh\')');
+                            $('#btn_close').attr('onclick','getBookingToGo(\''+fe_typo_user+'\','+ressourceId+',\''+category+'\',\'refresh\')');
                         
                             $('.main-slider').hide();$('.nav-holder').hide();
                             $('.modification-block').hide();
@@ -3561,14 +3561,14 @@ function getScan(fe_typo_user,ressourceId,category,action) {
                             initSlickCarousel();
                             $('#backtoshare').show();
                             $('#backtosharelink').html(result.linktitle);
-                            $('#backtosharelink').attr('onclick','getDispo(\''+fe_typo_user+'\','+ressourceId+',\''+category+'\',\'refresh\')');
+                            $('#backtosharelink').attr('onclick','getBookingToGo(\''+fe_typo_user+'\','+ressourceId+',\''+category+'\',\'refresh\')');
                             
                         } else {
                             $('#backtoshare').hide();
                             $('.prewiewsharing_header').hide();
                             $('.previewsharing_content').html(result.content);
-                            $('#btn_close').attr('onclick','getBooking(\''+fe_typo_user+'\',\'refresh\')');
-                        
+                            $('#btn_close').attr('onclick','getDispo(\''+fe_typo_user+'\','+ressourceId+',\''+category+'\',\'refresh\')');
+                            
                             $('.main-slider').hide();$('.nav-holder').hide();
                             $('.modification-block').hide();
                             $('.info-block').show();    
