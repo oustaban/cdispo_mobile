@@ -3440,7 +3440,7 @@ function getScan(fe_typo_user,ressourceId,category,action) {
                         $('.info-block').show(); 
                     }
                     if (result.bookingtostartfinished) {
-                       initPopin();
+                        initPopin();
                         $('.prewiewsharing_header').hide();
                         $('.previewsharing_content').html('<p></p><p>'+result.bookingtostartfinished+'</p>');
                         $('#btn_close').attr('onclick','getScan(\''+fe_typo_user+'\',\''+ressourceId+'\',\''+category+'\',\'refresh\')');
@@ -3567,6 +3567,16 @@ function getScan(fe_typo_user,ressourceId,category,action) {
                     
                 } else {
                     
+                    initPopin();
+                    $('.prewiewsharing_header').hide();
+                    $('.previewsharing_content').html('<p></p><p>'+result.content+'</p>');
+                    var url = window.location.href;
+					url = url.substring(0, url.lastIndexOf("/") + 1);
+                    $('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'mesreservations.html\', \'_self\')');
+                    
+                    $('.main-slider').hide();$('.nav-holder').hide();
+                    $('.modification-block').hide();
+                    $('.info-block').show();
                 }
                 
                 $('#scan_title').html(result.title);
