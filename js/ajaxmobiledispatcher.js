@@ -3515,7 +3515,14 @@ function getScan(fe_typo_user,ressourceId,category,action) {
                         if (countslide > 0) {
                             $('.main-slider').html(result.slide);
                             initSlickCarousel();
+                            $('#backtoshare').show();
+                            $('#backtosharelink').html(result.linktitle);
+                            $('#backtosharelink').click(function() {
+                                getDispo(''+fe_typo_user+'',ressourceId,category);
+                            });
+                            
                         } else {
+                            $('#backtoshare').hide();
                             $('.prewiewsharing_header').hide();
                             $('.previewsharing_content').html(result.content);
                             $('#btn_close').attr('onclick','getBooking(\''+fe_typo_user+'\',\'refresh\')');
@@ -3551,7 +3558,12 @@ function getScan(fe_typo_user,ressourceId,category,action) {
                         if (countslide > 0) {
                             $('.main-slider').html(result.slide);
                             initSlickCarousel();
+                            $('#backtosharelink').html(result.linktitle);
+                            $('#backtosharelink').click(function() {
+                                getBookingToGo(''+fe_typo_user+'',ressourceId,category);
+                            });
                         } else {
+                            $('#backtoshare').hide();
                             $('.prewiewsharing_header').hide();
                             $('.previewsharing_content').html(result.content);
                             $('#btn_close').attr('onclick','getBooking(\''+fe_typo_user+'\',\'refresh\')');
