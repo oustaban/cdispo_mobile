@@ -364,10 +364,11 @@ function checkDeleteMyBooking(booking_id,category,ressourceid,fe_typo_user,index
     $('#btn_close').text(trad['validate']);
     $('#btn_close').attr('onclick','deleteMyBooking('+booking_id+',\''+category+'\','+ressourceid+',\''+fe_typo_user+'\','+index+',\''+action+'\','+eventressourceId+',\''+category2+'\')');
     $('#btn_cancel').text(trad['cancel']);
-    $('#btn_cancel').attr('onclick','$(\'.info-block\').hide();$(\'.main-slider\').show();$(\'.nav-holder\').show();');
+    $('#btn_cancel').attr('onclick','$(\'.info-block\').hide();$(\'.main-slider\').show();$(\'.nav-holder\').show();$(\'#backtoshare\').show()');
                     
     $('.main-slider').hide();$('.nav-holder').hide();
     $('.info-block').show();
+    $('#backtoshare').hide();
     
 }
 
@@ -3592,6 +3593,7 @@ function getScan(fe_typo_user,ressourceId,category,action) {
                 
                 $('#scan_title').html(result.title);
                 $('.loader2').hide();
+                $('#backtoshare').hide();
           },  
           error: function(error) {
                 console.log('getScan error');
