@@ -1217,7 +1217,7 @@ select:focus {
 	-webkit-box-align: start;
 	-ms-flex-align: start;
 	align-items: flex-start;
-	height: calc(100vh - 155px);
+	height: calc(100vh - 130px);
 	overflow-x: hidden;
 	overflow-y: auto;
 	-webkit-overflow-scrolling: touch;
@@ -1425,6 +1425,10 @@ select:focus {
 	font-size: 16px;
 	line-height: 1.6;
 	border:none;
+}
+
+.main-holder > div.info-block {
+	margin-top:42px;
 }
 
 .info-block .text-holder {
