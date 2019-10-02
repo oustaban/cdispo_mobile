@@ -1334,11 +1334,11 @@ select:focus {
 .modification-block #slider_holder4 .label {
 	width: calc(100% - 204px);
 	text-align:center;
-	line-height: 30px;
+	line-height: 38px;
 }
 
 .modification-block .input-col {
-	width: 184px;
+	width: 100%;
 }
 
 .modification-block #slider_holder4 .input-col {
@@ -1371,6 +1371,12 @@ select:focus {
 .modification-block .input-col textarea
 {
 	width: 100%;
+}
+.modification-block #slider_holder4 .input-col textarea
+{
+	width: 100%;
+	line-height:15px;
+	height:auto;
 }
 
 .modification-block h2 {
