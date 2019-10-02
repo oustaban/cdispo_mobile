@@ -1006,6 +1006,10 @@ select:focus {
 	margin-bottom: 5px;
 }
 
+#slider_holder4 .label-row {
+	display:block;
+}
+
 .label-row input,
 .label-row select {
 	height: 31px;
@@ -1329,8 +1333,7 @@ select:focus {
 
 .modification-block #slider_holder4 .label {
 	width: calc(100% - 204px);
-	text-align:right;
-	padding-right:10px;
+	text-align:center;
 	line-height: 30px;
 }
 

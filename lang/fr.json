@@ -30,6 +30,6 @@
 	"scan_title":"SCAN",
 	"modifinputtitre":"Titre :",
 	"modifinputdescription":"Description :",
-	"modifinputinvites":"Inviter un utilisateur inscrit :",
-	"modifinputinvitesemail":"Inviter un utilisateur extérieur :"
+	"modifinputinvites":"<img src=\"images/utilisateur.png\">Inviter un utilisateur inscrit :",
+	"modifinputinvitesemail":"<img src=\"images/utilisateur.png\">Inviter un utilisateur extérieur :"
 }
