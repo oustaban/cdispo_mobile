@@ -1327,8 +1327,19 @@ select:focus {
 	width: calc(100% - 184px);
 }
 
+.modification-block #slider_holder4 .label {
+	width: calc(100% - 204px);
+	text-align:right;
+	padding-right:10px;
+	line-height: 30px;
+}
+
 .modification-block .input-col {
 	width: 184px;
+}
+
+.modification-block #slider_holder4 .input-col {
+	width: 204px;
 }
 
 .modification-block .input-col .select-wrap,
