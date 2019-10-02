@@ -1519,6 +1519,400 @@ function checkBooking(idBooking,dateStart,dateEnd,fe_typo_user,action,ressourceI
 }
 
 
+						
+function createMyBooking(event_id,category,ressourceid,datestart,dateend,udatestart,udateend,fe_typo_user,domain,url,action,ressourceId,category2,user_id) {
+    
+    var L = window.localStorage.getItem("language");
+    var lang = window.localStorage.getItem("lang");
+    $('.loader2').show();
+    var domain = window.localStorage.getItem("domain");
+    var url = "http://"+domain+"/?type=476&tx_cdispofrontend_fcdispofrontend[controller]=Mobile&tx_cdispofrontend_fcdispofrontend[action]=dispatcher&tx_cdispofrontend_fcdispofrontend[uid]=1&L="+L;
+    $.ajax({
+        type: 'GET',
+        url:url,
+        dataType: "jsonp",
+		jsonp: 'callback',
+        jsonpCallback: 'cdispoToken',
+        data:{action:"createBooking",event_id:event_id,fe_typo_user:fe_typo_user,ressourceid:ressourceid,category:category,datestart:datestart,dateend:dateend},
+          
+        success: function(result) {
+            
+            if (result.deconnexion) {
+                    
+                initPopin();
+                $('.prewiewsharing_header').hide();
+                $('.previewsharing_content').html('<p></p><p>'+result.deconnexion+'</p>');
+                
+                var url = window.location.href;
+                url = url.substring(0, url.lastIndexOf("/") + 1);
+                window.localStorage.clear();
+                $('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
+                
+                $('.main-slider').hide();$('.nav-holder').hide();
+                $('.info-block').show();
+            
+            }
+            
+           
+            
+            
+            if (result.result) {
+                
+                if (my_range1) {
+                    my_range1.reset();
+                    my_range1.destroy();
+                }
+                if (my_range2) {
+                    my_range2.reset();
+                    my_range2.destroy();
+                }
+                if (my_range3) {
+                    my_range3.reset();
+                    my_range3.destroy();
+                }
+                
+                if (timecode) {
+                    timecode = [];
+                }
+                
+                var timecode = result.timecode;
+                
+                $('#modification_title').html(result.title);
+                $('#date_start').text(result.firstDate);
+                $('#date_end').text(result.lastDate);
+                $('#modification_lien1').text(domain);
+                $('#modification_lien1').attr('href',url);
+                $('#btn_back').attr('onclick','$(\'.modification-block\').hide();$(\'.main-slider\').show();$(\'.nav-holder\').show();$(\'#backtoshare\').show();');
+                $('#btn_modifynow').attr('onclick','checkCreateBooking('+event_id+','+result.dateStartBooking+','+result.dateEndBooking+',\''+fe_typo_user+'\',\''+action+'\','+ressourceId+',\''+category2+'\')');
+                
+                //$('.modification-info').html(result.info);
+                
+                if (result.infosup) {
+                    $('#modification_texte2').html(result.infosup);
+                    $('.warning-block').show();
+                } else {
+                    $('.warning-block').hide();
+                }
+                
+                if (!result.firstEditable && !result.lastEditable) {
+                    
+                    $('.main-slider').hide();$('.nav-holder').hide();
+                    $('.nav-holder').hide();
+                    $('#slider_holder1').hide();
+                    $('#slider_holder2').hide();
+                    $('#slider_holder3').hide();
+                    $('.modification-block').show();        
+                
+                } else {
+                
+                    var step = 5 * 60;
+                    moment.locale(lang);
+                    
+                    $('#modif_datestart').val(result.dateStartBooking);
+                    $('#modif_dateend').val(result.dateEndBooking);
+                    
+                    //Dans le cas ou la plage est sur 1 jour => 1 slider (jour/heure)
+                    if (timecode.length <= 2) {
+                        
+                        var myvalues = [];
+                        $('#slider_holder1').show();
+                        $('#slider_holder2').hide();
+                        $('#slider_holder3').hide();
+                        
+                        
+                        for(var index in timecode) {
+                            for(var index2 in timecode[index]) {
+                                myvalues.push(timecode[index][index2]);
+                            }
+                        }
+                        
+                        var my_from1 = myvalues.indexOf(result.dateStartBooking);
+                        var my_to1 = myvalues.indexOf(result.dateEndBooking);
+                        
+                        
+                        $(".js-range-slider1").ionRangeSlider({
+                            onUpdate: function (data) {
+                                $('.main-slider').hide();$('.nav-holder').hide();
+                                $('.nav-holder').hide();
+                                $('.modification-block').show();
+                            },
+                            onFinish: function (data) {
+                                $('#modif_datestart').val(data.from_value);
+                                $('#modif_dateend').val(data.to_value);
+                                $('#btn_modifynow').attr('onclick','checkCreateBooking('+event_id+','+$('#modif_datestart').val()+','+$('#modif_dateend').val()+',\''+fe_typo_user+'\',\''+action+'\','+ressourceId+',\''+category2+'\')');
+                
+                            }
+                        });
+                        
+                        my_range1 = $(".js-range-slider1").data("ionRangeSlider");
+                        
+                        my_range1.update({
+                            type: "double",
+                            grid: false,
+                            grid_snap: true,
+                            grid_num: 4,
+                            min: timecode[0][0],
+                            max: timecode[index][index2],
+                            from: my_from1,
+                            to: my_to1,
+                            step: step,
+                            skin: "big",
+                            decorate_both: true,
+                            drag_interval: true,
+                            prettify: my_prettify1,
+                            values: myvalues
+                        });
+                        
+                        if (!result.firstEditable) {
+                            my_range1.update({from_fixed: true});
+                        }
+                    
+                    //Dans le cas ou la plage est sur plus  d'1 jour => 3 slider (jours,heure debut, heure fin)
+                    } else {
+                        
+                        var myvalues1 = [];
+                        var myvalues2 = [];
+                        var myvalues3 = [];
+                        var indexStart1 = 0;
+                        var indexEnd1 = 0;
+                        var indexStart2 = 0;
+                        var indexEnd2 = 0;
+                        var indexEnd3 = 0;
+                        $('#slider_holder1').show();
+                        $('#slider_holder2').show();
+                        $('#slider_holder3').show();
+                        
+                        for(var index in timecode) {
+                            for(var index2 in timecode[index]) {
+                                if (index2 == 0)
+                                    myvalues1.push(timecode[index][index2]);
+                                if (timecode[index][index2] ==  result.dateStartBooking) {
+                                    indexStart1 = index;
+                                    indexStart2 = index2;
+                                }
+                                if (timecode[index][index2] ==  result.dateEndBooking) {
+                                    indexEnd1 = index;
+                                    indexEnd2 = index2;
+                                }
+                            }
+                        }
+                        
+                        
+                        
+                        var my_from1 = myvalues1.indexOf(timecode[indexStart1][0]);
+                        var my_to1 = myvalues1.indexOf(timecode[indexEnd1][0]);
+                        
+    
+                        
+                        
+                        $(".js-range-slider1").ionRangeSlider({
+                            onUpdate: function (data) {
+                                $('.main-slider').hide();$('.nav-holder').hide();
+                                $('.nav-holder').hide();
+                                $('.modification-block').show();
+                            },
+                            
+                            onFinish: function (data) {
+                                
+                                myvalues2 = [];
+                                myvalues3 = [];
+                                
+                                for(let index3 in timecode) {
+                                    for(let index4 in timecode[index3]) {
+                                        //console.log('Timecode:'+index3+'/'+index4+'/'+timecode[index3][index4]);
+                                        if (timecode[index3][index4] ==  data.from_value) {
+                                            console.log('from found');
+                                            indexStart1 = index3;
+                                            indexStart2 = index4;
+                                        }
+                                        if (timecode[index3][index4] ==  data.to_value) {
+                                            //console.log('to found');
+                                            indexEnd1 = index3;
+                                            indexEnd2 = index4;
+                                        }
+                                    }
+                                }
+                                
+                                //console.log('Index:'+data.from_value+'/'+data.to_value+':'+indexStart1+'/'+indexStart2+':'+indexEnd1+'/'+indexEnd2);
+                                
+                                for(var index5 in timecode[indexStart1]) {
+                                    myvalues2.push(timecode[indexStart1][index5]);
+                                }
+                                
+                                my_from2 = myvalues2.indexOf(timecode[indexStart1][indexStart2]);
+                                var end2 = timecode[indexStart1].length-1;
+                                
+                                my_range2.update({
+                                    grid: false,
+                                    grid_snap: true,
+                                    grid_num: 4,
+                                    min: timecode[indexStart1][0],
+                                    max: timecode[indexStart1][end2],
+                                    from: my_from2,
+                                    step: step,
+                                    skin: "big",
+                                    decorate_both: true,
+                                    drag_interval: true,
+                                    prettify: my_prettify3,
+                                    values: myvalues2
+                                });
+                                
+                                $('#modif_datestart').val(timecode[indexStart1][indexStart2]);
+                                $('#btn_modifynow').attr('onclick','checkCreateBooking('+event_id+','+$('#modif_datestart').val()+','+$('#modif_dateend').val()+',\''+fe_typo_user+'\',\''+action+'\','+ressourceId+',\''+category2+'\')');
+                
+                                //console.log(timecode[indexStart1][indexStart2]);
+                                
+                                for(var index6 in timecode[indexEnd1]) {
+                                    myvalues3.push(timecode[indexEnd1][index6]);
+                                }
+                                
+                                var my_from3 = myvalues3.indexOf(timecode[indexEnd1][indexEnd2]);
+                                var end3 = timecode[indexEnd1].length-1;
+                                
+                                my_range3.update({
+                                    grid: false,
+                                    grid_snap: true,
+                                    grid_num: 4,
+                                    min: timecode[indexEnd1][0],
+                                    max: timecode[indexEnd1][end3],
+                                    from: my_from3,
+                                    step: step,
+                                    skin: "big",
+                                    decorate_both: true,
+                                    drag_interval: true,
+                                    prettify: my_prettify3,
+                                    values: myvalues3
+                                });
+                                
+                                $('#modif_dateend').val(timecode[indexEnd1][indexEnd2]);
+                                $('#btn_modifynow').attr('onclick','checkCreateBooking('+event_id+','+$('#modif_datestart').val()+','+$('#modif_dateend').val()+',\''+fe_typo_user+'\',\''+action+'\','+ressourceId+',\''+category2+'\')');
+                
+                            }
+                        });
+                        
+                        my_range1 = $(".js-range-slider1").data("ionRangeSlider");
+                        
+                        my_range1.update({
+                            type: "double",
+                            grid: false,
+                            grid_snap: true,
+                            grid_num: 4,
+                            min: timecode[0][0],
+                            max: timecode[index][0],
+                            from: my_from1,
+                            to: my_to1,
+                            step: step,
+                            skin: "big",
+                            decorate_both: true,
+                            drag_interval: true,
+                            prettify: my_prettify2,
+                            values: myvalues1
+                        });
+                        
+                        if (!result.firstEditable) {
+                            my_range1.update({from_fixed: true});
+                        }
+                        
+                        for(var index7 in timecode[indexStart1]) {
+                            myvalues2.push(timecode[indexStart1][index7]);
+                        }
+                        
+                        var my_from2 = myvalues2.indexOf(timecode[indexStart1][indexStart2]);
+                        
+                       $(".js-range-slider2").ionRangeSlider({
+                            onUpdate: function (data) {
+                                $('.main-slider').hide();$('.nav-holder').hide();
+                                $('.nav-holder').hide();
+                                $('.modification-block').show();
+                            },
+                            onFinish: function (data) {
+                                $('#modif_datestart').val(data.from_value);
+                                $('#btn_modifynow').attr('onclick','checkCreateBooking('+booking_id+','+$('#modif_datestart').val()+','+$('#modif_dateend').val()+',\''+fe_typo_user+'\',\''+action+'\','+ressourceId+',\''+category2+'\')');
+                
+                            }
+                        });
+                        
+                        my_range2 = $(".js-range-slider2").data("ionRangeSlider");
+                        var end2 = timecode[indexStart1].length-1;
+                        
+                        my_range2.update({
+                            grid: false,
+                            grid_snap: true,
+                            grid_num: 4,
+                            min: timecode[indexStart1][0],
+                            max: timecode[indexStart1][end2],
+                            from: my_from2,
+                            step: step,
+                            skin: "big",
+                            decorate_both: true,
+                            drag_interval: true,
+                            prettify: my_prettify3,
+                            values: myvalues2
+                        });
+                        
+                        if (!result.firstEditable) {
+                            my_range2.update({from_fixed: true});
+                        }
+                        
+                        for(var index8 in timecode[indexEnd1]) {
+                            myvalues3.push(timecode[indexEnd1][index8]);
+                        }
+                        
+                        var my_from3 = myvalues3.indexOf(timecode[indexEnd1][indexEnd2]);
+                        
+                       $(".js-range-slider3").ionRangeSlider({
+                            onUpdate: function (data) {
+                                $('.main-slider').hide();$('.nav-holder').hide();
+                                $('.nav-holder').hide();
+                                $('.modification-block').show();
+                            },
+                            onFinish: function (data) {
+                                $('#modif_dateend').val(data.from_value);
+                                $('#btn_modifynow').attr('onclick','checkCreateBooking('+event_id+','+$('#modif_datestart').val()+','+$('#modif_dateend').val()+',\''+fe_typo_user+'\',\''+action+'\','+ressourceId+',\''+category2+'\')');
+                
+                            }
+                        });
+                        
+                        my_range3 = $(".js-range-slider3").data("ionRangeSlider");
+                        var end3 = timecode[indexEnd1].length-1;
+                        
+                        
+                        my_range3.update({
+                            grid: false,
+                            grid_snap: true,
+                            grid_num: 4,
+                            min: timecode[indexEnd1][0],
+                            max: timecode[indexEnd1][end3],
+                            from: my_from3,
+                            step: step,
+                            skin: "big",
+                            decorate_both: true,
+                            drag_interval: true,
+                            prettify: my_prettify3,
+                            values: myvalues3
+                        });
+                        
+                    }
+                }
+    
+            }  
+                
+            console.log('createBooking success');
+            
+            $('.loader2').hide();
+            $('#backtoshare').hide();
+        },  
+          error: function(error) {
+                console.log('createBooking error');
+                $('.loader2').hide();
+          }   
+    
+    });
+    
+}
+
+
+
 function checkStartMyBooking(bookingId,fe_typo_user,action,ressourceId,category) {
     var L = window.localStorage.getItem("language");
     var lang = window.localStorage.getItem("lang");
