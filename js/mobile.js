@@ -207,8 +207,10 @@ function getTranslation() {
 			//if (key.startsWith('placeholder')) {
 				//$('input').attr('placeholder',value);
 			//}
-			if ($('#'+key))
+			if ($('#'+key)) {
 				$('#'+key).html(val);
+				console.log('trad:'+key+'/'+val);
+			}
 			
 			trad[key] = val;
 			

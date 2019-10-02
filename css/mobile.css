@@ -941,7 +941,8 @@ form .link {
 input[type="text"],
 input[type="email"],
 input[type="password"],
-select {
+select,
+textarea {
 	-webkit-transition: background-color .3s ease-in-out;
 	transition: background-color .3s ease-in-out;
 	height: 42px;
@@ -1352,7 +1353,9 @@ select:focus {
 }
 
 .modification-block .input-col input,
-.modification-block .input-col select {
+.modification-block .input-col select,
+.modification-block .input-col textarea
+{
 	width: 100%;
 }
 
@@ -1419,6 +1422,12 @@ select:focus {
 	border-top: 1px solid white;
 	padding: 25px 51px 8px;
 	margin: 0 -13px;
+}
+
+#slider_holder4 {
+	padding: 25px 10px 8px;
+	font-size: 13px;
+	font-weight: bold;
 }
 
 .info-block {
