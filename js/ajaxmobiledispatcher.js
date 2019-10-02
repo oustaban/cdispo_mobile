@@ -1533,7 +1533,7 @@ function createMyBooking(event_id,category,ressourceid,datestart,dateend,udatest
         dataType: "jsonp",
 		jsonp: 'callback',
         jsonpCallback: 'cdispoToken',
-        data:{action:"createBooking",event_id:event_id,fe_typo_user:fe_typo_user,ressourceid:ressourceid,category:category,datestart:datestart,dateend:dateend,udatestart:udatestart,udateend:udateend},
+        data:{action:"createBooking",event_id:event_id,fe_typo_user:fe_typo_user,ressourceid:ressourceid,category:category,datestart:udatestart,dateend:udateend},
           
         success: function(result) {
             
