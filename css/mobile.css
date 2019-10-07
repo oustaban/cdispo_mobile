@@ -820,10 +820,7 @@ select {
 	-webkit-border-radius: 0;
 }
 
-textarea {
-	resize: vertical;
-	vertical-align: top;
-}
+
 
 button,
 input[type="button"],
