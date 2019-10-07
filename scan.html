@@ -51,7 +51,6 @@
 	<script src="js/ajaxmobiledispatcher.js"></script>
 	<script src="js/ion.rangeSlider.min.js"></script>
 	<script src="js/moment.min.js"></script>
-	<script src="js/jquery.autocomplete.js"></script>
 	<script>
 		
 		var url = window.location.href;
@@ -63,7 +62,6 @@
 		   
 		    
 		    getTranslation();
-			initInvites();
 			
 			document.addEventListener("offline", function(e){
 				var url = window.location.href;
@@ -85,7 +83,6 @@
 		$(document).bind('resume', function() {
 			
 			getTranslation();
-			initInvites();
 			
 			document.addEventListener("offline", function(e){
 				var url = window.location.href;
