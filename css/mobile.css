@@ -1376,7 +1376,7 @@ select:focus {
 .modification-block #slider_holder4 .input-col textarea
 {
 	width: 100%;
-	height:84px;
+	height:auto;
 }
 
 .modification-block h2 {
