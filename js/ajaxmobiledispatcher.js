@@ -791,7 +791,12 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
             
             if (result.result) {
                 
-                
+                $('#titre').val('');
+                $('#description').val('');
+                $('#invites').val('');
+                $('#invitesemail').val('');
+	
+	
                 
                 if (my_range1) {
                     my_range1.reset();
