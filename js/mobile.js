@@ -311,6 +311,7 @@ function initInvites() {
 	});
 	
 	$('#invites').each(function() {
+		
 		var c = $(this).autocomplete({
 			minChars:0,
 			autoFocus:true,
@@ -328,13 +329,14 @@ function initInvites() {
 				}
 			},
 			onInvalidateSelection : function() {
-				$('#invites').val("")
+				$('#invites').val("");
 			},
 			noCache: true //default is false, set to true to disable caching
 			//lookup:[{value:'test',data:'tes1'}]
 			
 	
 		});
+		
 	});
 		
 	
