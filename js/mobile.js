@@ -305,7 +305,7 @@ function initInvites(fe_typo_user) {
         $(document).on('mousedown', '.autocomplete-suggestion', e => {
 			$(e.target).click();	
 		});
-		console.log('initInvites:'+domain);
+		console.log('initInvites:'+fe_typo_user);
 		
 		$('#invites').autocomplete({
 			lookup: function (query, done) {
