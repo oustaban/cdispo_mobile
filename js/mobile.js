@@ -298,8 +298,9 @@ function initNav() {
 
 function initInvites() {
 	
-	console.log('initInvites');
+	
 	var domain = window.localStorage.getItem("domain");
+	console.log('initInvites:'+domain);
 	$('#titre').val('');
 	$('#description').val('');
 	$('#invites').val('');
@@ -322,7 +323,7 @@ function initInvites() {
 			}
 		},
 		onInvalidateSelection : function() {
-			$('#booking_useradd').val("")
+			$('#invites').val("")
 		},
 		noCache: true //default is false, set to true to disable caching
 		//lookup:[{value:'test',data:'tes1'}]

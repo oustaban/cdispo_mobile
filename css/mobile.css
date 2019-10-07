@@ -953,6 +953,7 @@ textarea {
 	border: 1px solid #fff;
 	padding: 0 6px;
 	transform: translateZ(0px);
+	cursor: pointer;
 }
 
 input[type="text"]::-webkit-input-placeholder,
