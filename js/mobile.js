@@ -1,7 +1,7 @@
 var trad = [];
 	
 jQuery(function(){
-	FastClick.attach(document.body);
+	//FastClick.attach(document.body);
 	initMobileNav();
 	//initActiveClone();
 	initConnect();
