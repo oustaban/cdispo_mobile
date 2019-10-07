@@ -990,6 +990,7 @@ select.placeholder {
 input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="password"]:focus,
+textarea:focus,
 select:focus {
 	outline: none;
 	background-color: rgba(255, 255, 255, .7);
@@ -1338,11 +1339,11 @@ select:focus {
 }
 
 .modification-block .input-col {
-	width: 100%;
+	width: 204px;
 }
 
 .modification-block #slider_holder4 .input-col {
-	width: 204px;
+	width: 100%;
 }
 
 .modification-block .input-col .select-wrap,
@@ -1375,8 +1376,8 @@ select:focus {
 .modification-block #slider_holder4 .input-col textarea
 {
 	width: 100%;
-	line-height:15px;
-	height:auto;
+	line-height:normal;
+	height:155px;
 }
 
 .modification-block h2 {
