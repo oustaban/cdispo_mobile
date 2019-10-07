@@ -297,10 +297,7 @@ function initNav() {
 }
 
 
-function initInvites() {
-	
-	
-	var domain = window.localStorage.getItem("domain");
+function initInvites(fe_typo_user) {
 	
 	
 	if ($('#invites')) {
@@ -311,7 +308,29 @@ function initInvites() {
 		console.log('initInvites:'+domain);
 		
 		$('#invites').autocomplete({
-			serviceUrl: 'http://'+domain+'/?type=476&tx_cdispofrontend_fcdispofrontend[controller]=Ajax&tx_cdispofrontend_fcdispofrontend[action]=getUsersActifs&tx_cdispofrontend_fcdispofrontend[uid]=1&L=0',
+			lookup: function (query, done) {
+				var L = window.localStorage.getItem("language");
+				var lang = window.localStorage.getItem("lang");
+				$('.loader2').show();
+				var domain = window.localStorage.getItem("domain");
+				var url = "http://"+domain+"/?type=476&tx_cdispofrontend_fcdispofrontend[controller]=Mobile&tx_cdispofrontend_fcdispofrontend[action]=dispatcher&tx_cdispofrontend_fcdispofrontend[uid]=1&L="+L;
+				$.ajax({
+					type: 'GET',
+					url:url,
+					dataType: "jsonp",
+					jsonp: 'callback',
+					jsonpCallback: 'cdispoToken',
+					data: {action:"guestRefuse",bookingId:1,guestId:1,fe_typo_user:fe_typo_user},
+					  
+						success: function(result) {
+							done(result.result);
+						},  
+						error: function(error) {
+							console.log('guestRefuse error');
+						}
+				});
+					
+			},
 			onSelect: function (suggestion) {
 				console.log('You selected: ' + suggestion.value + ', ' + suggestion.data);
 			}

@@ -57,9 +57,7 @@
 		var url = window.location.href;
 		url = url.substring(0, url.lastIndexOf("/") + 1);
 		
-		$(document).ready(function() {
-			initInvites();
-		});
+		
 		
 		
 		$(document).bind('deviceready', function() {
@@ -80,6 +78,8 @@
 			console.log('ready:'+fe_typo_user+'/'+ressourceId+'/'+category);
 			
 			getScan(fe_typo_user,ressourceId,category,"init");
+			
+			initInvites(fe_typo_user);
 			
 			
 			
@@ -104,6 +104,7 @@
 			
 			getScan(fe_typo_user,ressourceId,category,"refresh");
 			
+			initInvites(fe_typo_user);
 			
 			
         });
