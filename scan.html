@@ -61,7 +61,7 @@
 		
 		$(document).bind('deviceready', function() {
 		   
-		    
+		    initInvites();
 		    getTranslation();
 			
 			document.addEventListener("offline", function(e){
@@ -83,6 +83,7 @@
 		
 		$(document).bind('resume', function() {
 			
+			initInvites();
 			getTranslation();
 			
 			document.addEventListener("offline", function(e){

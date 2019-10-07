@@ -10,7 +10,6 @@ jQuery(function(){
     initPassword();
 	initChangePassword();
 	initNav();
-	initInvites();
 	//getTranslation();
 });
 
