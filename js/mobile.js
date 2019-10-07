@@ -305,6 +305,10 @@ function initInvites() {
 	$('#description').val('');
 	$('#invites').val('');
 	$('#invitesemail').val('');
+	$(document).on('mousedown', '.autocomplete-suggestion', e => {
+		$(e.target).click();	
+	});
+	
 	
 	var c = $('#invites').autocomplete({
 		minChars:0,
