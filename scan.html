@@ -74,6 +74,8 @@
 			var ressourceId = getUrlVars()["ressourceId"];
             var category = getUrlVars()["category"];
 			
+			console.log('ready:'+fe_typo_user+'/'+ressourceId+'/'+category);
+			
 			getScan(fe_typo_user,ressourceId,category,"init");
 			
 			
@@ -95,6 +97,8 @@
 			var fe_typo_user = window.localStorage.getItem("fe_typo_user");
 			var ressourceId = getUrlVars()["ressourceId"];
             var category = getUrlVars()["category"];
+			
+			console.log('resume:'+fe_typo_user+'/'+ressourceId+'/'+category);
 			
 			getScan(fe_typo_user,ressourceId,category,"refresh");
 			

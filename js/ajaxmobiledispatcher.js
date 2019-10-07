@@ -4193,6 +4193,7 @@ function guestRefuse(bookingId,guestId,fe_typo_user,index) {
 
 
 function getScan(fe_typo_user,ressourceId,category,action) {
+    
     var L = window.localStorage.getItem("language");
     var lang = window.localStorage.getItem("lang");
     $('.loader2').show();
