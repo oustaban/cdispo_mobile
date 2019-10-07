@@ -309,9 +309,8 @@ function initInvites() {
 		});
 	
 		$('#invites').autocomplete({
-			serviceUrl: 'http://'+domain+'/?type=476&tx_cdispofrontend_fcdispofrontend[controller]=Ajax&tx_cdispofrontend_fcdispofrontend[action]=getUsersActifs&tx_cdispofrontend_fcdispofrontend[uid]=1&L=0',
-			onSelect: function (suggestion) {
-				console.log('You selected: ' + suggestion.value + ', ' + suggestion.data);
+			onSearchStart: function() {
+				console.log('YEP');	
 			}
 		});
 		
