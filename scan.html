@@ -63,6 +63,7 @@
 		   
 		    
 		    getTranslation();
+			initInvites();
 			
 			document.addEventListener("offline", function(e){
 				var url = window.location.href;
@@ -84,6 +85,7 @@
 		$(document).bind('resume', function() {
 			
 			getTranslation();
+			initInvites();
 			
 			document.addEventListener("offline", function(e){
 				var url = window.location.href;
