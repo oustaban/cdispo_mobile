@@ -308,6 +308,14 @@ function initInvites(fe_typo_user) {
 		console.log('initInvites:'+fe_typo_user);
 		
 		$('#invites').autocomplete({
+			minChars:0,
+			autoFocus:true,
+			deferRequestBy: 0, //miliseconds
+			delimiter: /(,|;)\s*/, // regex or character
+			maxHeight:100,
+			width:260,
+			lookupLimit:5,
+			triggerSelectOnValidInput:false,
 			lookup: function (query, done) {
 				var L = window.localStorage.getItem("language");
 				var lang = window.localStorage.getItem("lang");
@@ -320,10 +328,11 @@ function initInvites(fe_typo_user) {
 					dataType: "jsonp",
 					jsonp: 'callback',
 					jsonpCallback: 'cdispoToken',
-					data: {action:"guestRefuse",bookingId:1,guestId:1,fe_typo_user:fe_typo_user},
+					data: {action:"guestRefuse",bookingId:1,guestId:1,fe_typo_user:fe_typo_user,query:query},
 					  
 						success: function(result) {
-							done(result.result);
+							var resultat = { suggestions: result.suggestions };
+							done(resultat);
 						},  
 						error: function(error) {
 							console.log('guestRefuse error');
@@ -332,8 +341,15 @@ function initInvites(fe_typo_user) {
 					
 			},
 			onSelect: function (suggestion) {
-				console.log('You selected: ' + suggestion.value + ', ' + suggestion.data);
-			}
+				if (!$('li#user'+suggestion.data).length && suggestion.data != '') {
+					$('#booking_adduser').prepend('<li id="user'+suggestion.data+'"><img actif="1" user="'+suggestion.data+'" class="useraddactif" src="/typo3conf/ext/cdispo_frontend/Resources/Public/Icons/utilisateur2.png"><input id="hidden" class="users" type="hidden" name="tx_cdispofrontend_page[users[]]" value="'+suggestion.data+'"><span class="libelle">'+suggestion.value+'</span><span class="numberUser">&nbsp;</span><span class="hiearchie">&nbsp;</span><span class="delete"><a href="javascript:void(0)" onclick="$(\'li#user'+suggestion.data+'\').remove()"><img src="/typo3conf/ext/cdispo_frontend/Resources/Public/Icons/trash.png"></a></span></li>');
+					$('#invites').val('');
+				}
+			},
+			onInvalidateSelection : function() {
+				$('#invites').val("")
+			},
+			noCache: true
 		});
 		
 	}
