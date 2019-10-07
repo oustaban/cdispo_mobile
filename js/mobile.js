@@ -310,30 +310,31 @@ function initInvites() {
 		$(e.target).click();	
 	});
 	
+	$('#invites').each(function() {
+		var c = $(this).autocomplete({
+			minChars:0,
+			autoFocus:true,
+			deferRequestBy: 0, //miliseconds
+			delimiter: /(,|;)\s*/, // regex or character
+			maxHeight:100,
+			width:260,
+			lookupLimit:5,
+			triggerSelectOnValidInput:false,
+			serviceUrl: 'http://'+domain+'/?type=476&tx_cdispofrontend_fcdispofrontend[controller]=Ajax&tx_cdispofrontend_fcdispofrontend[action]=getUsersActifs&tx_cdispofrontend_fcdispofrontend[uid]=1&L=0',
+			onSelect: function (suggestion) {
+				if (!$('li#user'+suggestion.data).length && suggestion.data != '') {
+					$('#booking_adduser').prepend('<li id="user'+suggestion.data+'"><img actif="1" user="'+suggestion.data+'" class="useraddactif" src="images/utilisateur2.png"><input id="hidden" class="users" type="hidden" name="tx_cdispofrontend_page[users[]]" value="'+suggestion.data+'"><span class="libelle">'+suggestion.value+'</span><span class="numberUser">&nbsp;</span><span class="hiearchie">&nbsp;</span><span class="delete"><a href="javascript:void(0)" onclick="$(\'li#user'+suggestion.data+'\').remove()"><img src="images/trash.png"></a></span></li>');
+					$('#invites').val('');
+				}
+			},
+			onInvalidateSelection : function() {
+				$('#invites').val("")
+			},
+			noCache: true //default is false, set to true to disable caching
+			//lookup:[{value:'test',data:'tes1'}]
+			
 	
-	var c = $('#invites').autocomplete({
-		minChars:0,
-		autoFocus:true,
-		deferRequestBy: 0, //miliseconds
-		delimiter: /(,|;)\s*/, // regex or character
-		maxHeight:100,
-		width:260,
-		lookupLimit:5,
-		triggerSelectOnValidInput:false,
-		serviceUrl: 'http://'+domain+'/?type=476&tx_cdispofrontend_fcdispofrontend[controller]=Ajax&tx_cdispofrontend_fcdispofrontend[action]=getUsersActifs&tx_cdispofrontend_fcdispofrontend[uid]=1&L=0',
-		onSelect: function (suggestion) {
-			if (!$('li#user'+suggestion.data).length && suggestion.data != '') {
-				$('#booking_adduser').prepend('<li id="user'+suggestion.data+'"><img actif="1" user="'+suggestion.data+'" class="useraddactif" src="images/utilisateur2.png"><input id="hidden" class="users" type="hidden" name="tx_cdispofrontend_page[users[]]" value="'+suggestion.data+'"><span class="libelle">'+suggestion.value+'</span><span class="numberUser">&nbsp;</span><span class="hiearchie">&nbsp;</span><span class="delete"><a href="javascript:void(0)" onclick="$(\'li#user'+suggestion.data+'\').remove()"><img src="images/trash.png"></a></span></li>');
-				$('#invites').val('');
-			}
-		},
-		onInvalidateSelection : function() {
-			$('#invites').val("")
-		},
-		noCache: true //default is false, set to true to disable caching
-		//lookup:[{value:'test',data:'tes1'}]
-		
-
+		});
 	});
 		
 	
