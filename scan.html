@@ -57,11 +57,14 @@
 		var url = window.location.href;
 		url = url.substring(0, url.lastIndexOf("/") + 1);
 		
+		$(document).ready(function() {
+			initInvites();
+		});
 		
 		
 		$(document).bind('deviceready', function() {
 		   
-		    initInvites();
+		    
 		    getTranslation();
 			
 			document.addEventListener("offline", function(e){
@@ -85,7 +88,6 @@
 		
 		$(document).bind('resume', function() {
 			
-			initInvites();
 			getTranslation();
 			
 			document.addEventListener("offline", function(e){

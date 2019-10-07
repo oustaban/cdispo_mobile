@@ -301,14 +301,16 @@ function initInvites() {
 	
 	
 	var domain = window.localStorage.getItem("domain");
-	console.log('initInvites:'+domain);
+	
 	
 	if ($('#invites')) {
 		
         $(document).on('mousedown', '.autocomplete-suggestion', e => {
 			$(e.target).click();	
 		});
-	
+		
+		console.log('initInvites:'+domain);
+		
 		$('#invites').autocomplete({
 			serviceUrl: 'http://'+domain+'/?type=476&tx_cdispofrontend_fcdispofrontend[controller]=Ajax&tx_cdispofrontend_fcdispofrontend[action]=getUsersActifs&tx_cdispofrontend_fcdispofrontend[uid]=1&L=0',
 			transformResult: function (response) {
