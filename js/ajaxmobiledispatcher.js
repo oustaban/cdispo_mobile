@@ -791,6 +791,8 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
             
             if (result.result) {
                 
+                initInvites();
+                
                 if (my_range1) {
                     my_range1.reset();
                     my_range1.destroy();
