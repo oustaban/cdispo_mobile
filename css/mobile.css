@@ -8,7 +8,7 @@
 
 html {
 	font-family: sans-serif; /* 1 */
-	-ms-text-size-adjust: 100%; /* 2 */
+	-ms-text-size-adjust: 100%; /* 2 */ 
 	-webkit-text-size-adjust: 100%; /* 2 */
 }
 
@@ -393,9 +393,7 @@ legend {
  * Remove default vertical scrollbar in IE 8/9/10/11.
  */
 
-textarea {
-	overflow: auto;
-}
+
 
 /**
  * Don't inherit the `font-weight` (applied by a rule above).
@@ -1373,7 +1371,6 @@ select:focus {
 .modification-block #slider_holder4 .input-col textarea
 {
 	width: 100%;
-	height:auto;
 }
 
 .modification-block h2 {
