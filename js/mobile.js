@@ -343,7 +343,7 @@ function initInvites(fe_typo_user) {
 			},
 			onSelect: function (suggestion) {
 				if (!$('li#user'+suggestion.data).length && suggestion.data != '') {
-					$('#booking_adduser').prepend('<li id="user'+suggestion.data+'"><img actif="1" user="'+suggestion.data+'" class="useraddactif" src="/typo3conf/ext/cdispo_frontend/Resources/Public/Icons/utilisateur2.png"><input id="hidden" class="users" type="hidden" name="tx_cdispofrontend_page[users[]]" value="'+suggestion.data+'"><span class="libelle">'+suggestion.value+'</span><span class="numberUser">&nbsp;</span><span class="hiearchie">&nbsp;</span><span class="delete"><a href="javascript:void(0)" onclick="$(\'li#user'+suggestion.data+'\').remove()"><img src="/typo3conf/ext/cdispo_frontend/Resources/Public/Icons/trash.png"></a></span></li>');
+					$('#booking_adduser').prepend('<li id="user'+suggestion.data+'"><img actif="1" user="'+suggestion.data+'" class="useraddactif" src="images/utilisateur2.png"><input id="hidden" class="users" type="hidden" name="tx_cdispofrontend_page[users[]]" value="'+suggestion.data+'"><span class="libelle">'+suggestion.value+'</span><span class="numberUser">&nbsp;</span><span class="hiearchie">&nbsp;</span><span class="delete"><a href="javascript:void(0)" onclick="$(\'li#user'+suggestion.data+'\').remove()"><img src="images/trash.png"></a></span></li>');
 					$('#invites').val('');
 				}
 			},
