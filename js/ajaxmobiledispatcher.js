@@ -795,14 +795,15 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                 $('#description').val(result.description);
                 $('#booking_adduser').html(result.guests);
                 $('#booking_adduseremail').html(result.guestsemail);
-                var invites=$('.users').map(function(){
-                    return $(this).val()
-                }).get();
-                var invitesemail=$('.usersemail').map(function(){
-                    return $(this).val()
-                }).get();
+                
                 
                 $('#btn_modifynow').unbind().click(function() {
+                    var invites=$('.users').map(function(){
+                        return $(this).val()
+                    }).get();
+                    var invitesemail=$('.usersemail').map(function(){
+                        return $(this).val()
+                    }).get();
                     checkBooking(booking_id,$('#modif_datestart').val(),$('#modif_dateend').val(),''+fe_typo_user+'',''+action+'',ressourceId,''+category2+'',''+$('#titre').val()+'',''+$('#description').val()+'',''+invites+'',''+invitesemail+'');
                 });
                 
