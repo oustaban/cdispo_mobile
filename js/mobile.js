@@ -308,7 +308,7 @@ function initInvites(fe_typo_user) {
 		console.log('initInvites:'+fe_typo_user);
 		
 		$('#invites').autocomplete({
-			minChars:0,
+			minChars:1,
 			autoFocus:true,
 			deferRequestBy: 0, //miliseconds
 			delimiter: /(,|;)\s*/, // regex or character
