@@ -362,7 +362,9 @@ function initInvites(fe_typo_user) {
 					$('#invitesemail').val("")
 				}
 			}
-		});  
+		});
+		
+		
 	
 		
 	}

@@ -2321,7 +2321,7 @@ span.delete {
 	float:right;
 }
 span.numberUser {
-	color:rgba(28, 173, 214, 1);
+	color:#007978;
 }
 ul#booking_adduser li, ul#booking_adduseremail li {
 	text-align:center;
