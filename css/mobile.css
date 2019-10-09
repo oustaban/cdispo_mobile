@@ -2320,7 +2320,7 @@ img.useraddactif {
 span.delete {
 	float:right;
 }
-ul#booking_adduser li {
+ul#booking_adduser li, ul#booking_adduseremail li {
 	text-align:center;
 	list-style-type:none;
 	padding-top:10px;

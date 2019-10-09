@@ -305,7 +305,6 @@ function initInvites(fe_typo_user) {
         $(document).on('mousedown', '.autocomplete-suggestion', e => {
 			$(e.target).click();	
 		});
-		console.log('initInvites:'+fe_typo_user);
 		
 		$('#invites').autocomplete({
 			minChars:1,
@@ -355,8 +354,20 @@ function initInvites(fe_typo_user) {
 			noCache: true
 		});
 		
-	}
+		$('#booking_useraddemail').each(function() {
+					
+		$('#invitesemail').bind('blur keypress',function(e) {  
+			if (e.type === 'blur' || e.keyCode === 13)  {
+				var emailTransformed = replaceEmail($(this).val());
+				if ($(this).val() != '' && validateEmail($(this).val()) && !$('li#useremail'+emailTransformed).length) {
+					$('#booking_adduseremail').prepend('<li id="useremail'+emailTransformed+'"><img actif="1" useremail="'+$(this).val() +'" class="useraddactif" src="images/utilisateur2.png"><input id="hidden" class="usersemail" type="hidden" name="tx_cdispofrontend_page[usersemail[]]" value="'+$(this).val()+'"><span class="libelle">'+$(this).val()+'</span><span class="numberUser">&nbsp;</span><span class="hiearchie">&nbsp;</span><span class="delete"><a href="javascript:void(0)" onclick="$(\'li#useremail'+emailTransformed +'\').remove()"><img src="images/trash.png"></a></span></li>');
+					$('#invitesemail').val("")
+				}
+			}
+		});  
 	
+		
+	}
 }
 
 function getUrlVars()
@@ -372,7 +383,19 @@ function getUrlVars()
     return vars;
 }
 
-
+function validateEmail(email) {
+	var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+	return re.test(email);
+}
+  
+function replaceEmail(email) {
+	var replaceArray = ["@","."];
+	var replaceArrayValue = ["_","_"];
+	for (var i = replaceArray.length - 1; i >= 0; i--) {
+		email = email.replace(RegExp("\\b" + replaceArray[i].replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&') + "\\b", "g"), replaceArrayValue[i]);
+	}
+	return email;
+}
 /*
      _ _      _       _
  ___| (_) ___| | __  (_)___
