@@ -333,11 +333,13 @@ function initInvites(fe_typo_user) {
 						success: function(result) {
 							var resultat = { suggestions: result.suggestions };
 							done(resultat);
+							$('.loader2').hide();
 						},  
 						error: function(error) {
 							console.log('guestRefuse error');
+							$('.loader2').hide();
 						}
-						$('.loader2').hide();
+						
 				});
 					
 			},
