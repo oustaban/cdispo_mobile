@@ -2314,6 +2314,16 @@ span#autre_motif {
     background: none repeat scroll 0 0 #f1f6df;
 }
 
+img.useraddactif {
+	float:left;
+}
+span.delete {
+	float:right;
+}
+ul#booking_adduser li {
+	text-align:center;
+	list-style-type:none;
+}
 @media (min-width: 480px) {
 	.container {
 		max-width: 590px;
