@@ -1675,8 +1675,14 @@ function createMyBooking(event_id,category,ressourceid,datestart,dateend,udatest
                             }
                         }
                         
-                        var my_from1 = myvalues.indexOf(result.dateStartBooking);
-                        var my_to1 = myvalues.indexOf(result.dateEndBooking);
+                        if (parseInt(result.dateStartBooking) < timecode[0][0]) {
+                            var my_from1 = 0;
+                        
+                        } else {
+                            var my_from1 = myvalues.indexOf(parseInt(result.dateStartBooking));
+                        }
+                        
+                        var my_to1 = myvalues.indexOf(parseInt(result.dateEndBooking));
                         
                         
                         $(".js-range-slider1").ionRangeSlider({
