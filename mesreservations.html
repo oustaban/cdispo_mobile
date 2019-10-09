@@ -70,6 +70,7 @@
 			
 			getBooking(fe_typo_user,'init');
 			
+			initInvites(fe_typo_user);
 			
         });
 		
@@ -86,6 +87,7 @@
 			var fe_typo_user = window.localStorage.getItem("fe_typo_user");
 			getBooking(fe_typo_user,'refresh');
 			
+			initInvites(fe_typo_user);
 			
         });
     </script>

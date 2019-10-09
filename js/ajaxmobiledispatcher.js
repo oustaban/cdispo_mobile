@@ -1695,6 +1695,8 @@ function createMyBooking(event_id,category,ressourceid,datestart,dateend,udatest
                         
                         my_range1 = $(".js-range-slider1").data("ionRangeSlider");
                         
+                        console.log('Range:'+my_from1+'/'+my_to1+'/'+timecode[0][0]+'/'+timecode[index][index2]);
+                        
                         my_range1.update({
                             type: "double",
                             grid: false,
