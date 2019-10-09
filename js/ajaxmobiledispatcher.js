@@ -791,10 +791,10 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
             
             if (result.result) {
                 
-                $('#titre').val('');
-                $('#description').val('');
-                $('#invites').val('');
-                $('#invitesemail').val('');
+                $('#titre').val(result.titre);
+                $('#description').val(result.description);
+                $('#booking_adduser').html(result.guests);
+                $('#booking_adduseremail').html(result.guestsemail);
 	
 	
                 
@@ -817,6 +817,13 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                 
                 var timecode = result.timecode;
                 
+                var invites=$('.users').map(function(){
+                    return $(this).val()
+                }).get();
+                var invitesemail=$('.usersemail').map(function(){
+                    return $(this).val()
+                }).get();
+                
                 $('#modif_booking').val(booking_id);
                 $('#modification_title').html(result.title);
                 $('#date_start').text(result.firstDate);
@@ -824,7 +831,7 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                 $('#modification_lien1').text(domain);
                 $('#modification_lien1').attr('href',url);
                 $('#btn_back').attr('onclick','unlockBooking(\''+fe_typo_user+'\','+booking_id+');$(\'.modification-block\').hide();$(\'.main-slider\').show();$(\'.nav-holder\').show();$(\'#backtoshare\').show();');
-                $('#btn_modifynow').attr('onclick','checkBooking('+booking_id+','+result.dateStartBooking+','+result.dateEndBooking+',\''+fe_typo_user+'\',\''+action+'\','+ressourceId+',\''+category2+'\')');
+                $('#btn_modifynow').attr('onclick','checkBooking('+booking_id+','+result.dateStartBooking+','+result.dateEndBooking+',\''+fe_typo_user+'\',\''+action+'\','+ressourceId+',\''+category2+'\',\''+$('#titre').val()+'\',\''+$('#description').val()+'\',\''+invites+'\',\''+invitesemail+'\')');
                 $('#btn_modifynow').html(result.submittitle);
                 
                 //$('.modification-info').html(result.info);
@@ -879,9 +886,15 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                                 $('.modification-block').show();
                             },
                             onFinish: function (data) {
+                                var invites=$('.users').map(function(){
+                                    return $(this).val()
+                                }).get();
+                                var invitesemail=$('.usersemail').map(function(){
+                                    return $(this).val()
+                                }).get();
                                 $('#modif_datestart').val(data.from_value);
                                 $('#modif_dateend').val(data.to_value);
-                                $('#btn_modifynow').attr('onclick','checkBooking('+booking_id+','+$('#modif_datestart').val()+','+$('#modif_dateend').val()+',\''+fe_typo_user+'\',\''+action+'\','+ressourceId+',\''+category2+'\')');
+                                $('#btn_modifynow').attr('onclick','checkBooking('+booking_id+','+$('#modif_datestart').val()+','+$('#modif_dateend').val()+',\''+fe_typo_user+'\',\''+action+'\','+ressourceId+',\''+category2+'\',\''+$('#titre').val()+'\',\''+$('#description').val()+'\',\''+invites+'\',\''+invitesemail+'\')');
                 
                             }
                         });
@@ -999,8 +1012,15 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                                     values: myvalues2
                                 });
                                 
+                                var invites=$('.users').map(function(){
+                                    return $(this).val()
+                                }).get();
+                                var invitesemail=$('.usersemail').map(function(){
+                                    return $(this).val()
+                                }).get();
+                                
                                 $('#modif_datestart').val(timecode[indexStart1][indexStart2]);
-                                $('#btn_modifynow').attr('onclick','checkBooking('+booking_id+','+$('#modif_datestart').val()+','+$('#modif_dateend').val()+',\''+fe_typo_user+'\',\''+action+'\','+ressourceId+',\''+category2+'\')');
+                                $('#btn_modifynow').attr('onclick','checkBooking('+booking_id+','+$('#modif_datestart').val()+','+$('#modif_dateend').val()+',\''+fe_typo_user+'\',\''+action+'\','+ressourceId+',\''+category2+'\',\''+$('#titre').val()+'\',\''+$('#description').val()+'\',\''+invites+'\',\''+invitesemail+'\')');
                 
                                 //console.log(timecode[indexStart1][indexStart2]);
                                 
@@ -1026,8 +1046,15 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                                     values: myvalues3
                                 });
                                 
+                                var invites=$('.users').map(function(){
+                                    return $(this).val()
+                                }).get();
+                                var invitesemail=$('.usersemail').map(function(){
+                                    return $(this).val()
+                                }).get();
+                                
                                 $('#modif_dateend').val(timecode[indexEnd1][indexEnd2]);
-                                $('#btn_modifynow').attr('onclick','checkBooking('+booking_id+','+$('#modif_datestart').val()+','+$('#modif_dateend').val()+',\''+fe_typo_user+'\',\''+action+'\','+ressourceId+',\''+category2+'\')');
+                                $('#btn_modifynow').attr('onclick','checkBooking('+booking_id+','+$('#modif_datestart').val()+','+$('#modif_dateend').val()+',\''+fe_typo_user+'\',\''+action+'\','+ressourceId+',\''+category2+'\',\''+$('#titre').val()+'\',\''+$('#description').val()+'\',\''+invites+'\',\''+invitesemail+'\')');
                 
                             }
                         });
@@ -1068,8 +1095,14 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                                 $('.modification-block').show();
                             },
                             onFinish: function (data) {
+                                var invites=$('.users').map(function(){
+                                    return $(this).val()
+                                }).get();
+                                var invitesemail=$('.usersemail').map(function(){
+                                    return $(this).val()
+                                }).get();
                                 $('#modif_datestart').val(data.from_value);
-                                $('#btn_modifynow').attr('onclick','checkBooking('+booking_id+','+$('#modif_datestart').val()+','+$('#modif_dateend').val()+',\''+fe_typo_user+'\',\''+action+'\','+ressourceId+',\''+category2+'\')');
+                                $('#btn_modifynow').attr('onclick','checkBooking('+booking_id+','+$('#modif_datestart').val()+','+$('#modif_dateend').val()+',\''+fe_typo_user+'\',\''+action+'\','+ressourceId+',\''+category2+'\',\''+$('#titre').val()+'\',\''+$('#description').val()+'\',\''+invites+'\',\''+invitesemail+'\')');
                 
                             }
                         });
@@ -1109,8 +1142,14 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                                 $('.modification-block').show();
                             },
                             onFinish: function (data) {
+                                var invites=$('.users').map(function(){
+                                    return $(this).val()
+                                }).get();
+                                var invitesemail=$('.usersemail').map(function(){
+                                    return $(this).val()
+                                }).get();
                                 $('#modif_dateend').val(data.from_value);
-                                $('#btn_modifynow').attr('onclick','checkBooking('+booking_id+','+$('#modif_datestart').val()+','+$('#modif_dateend').val()+',\''+fe_typo_user+'\',\''+action+'\','+ressourceId+',\''+category2+'\')');
+                                $('#btn_modifynow').attr('onclick','checkBooking('+booking_id+','+$('#modif_datestart').val()+','+$('#modif_dateend').val()+',\''+fe_typo_user+'\',\''+action+'\','+ressourceId+',\''+category2+'\',\''+$('#titre').val()+'\',\''+$('#description').val()+'\',\''+invites+'\',\''+invitesemail+'\')');
                 
                             }
                         });
@@ -1156,7 +1195,7 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
 
 
 
-function checkBooking(idBooking,dateStart,dateEnd,fe_typo_user,action,ressourceId,category2) {
+function checkBooking(idBooking,dateStart,dateEnd,fe_typo_user,action,ressourceId,category2,titre,description,invites,invitesemail) {
     
     var L = window.localStorage.getItem("language");
     var lang = window.localStorage.getItem("lang");
@@ -1169,7 +1208,7 @@ function checkBooking(idBooking,dateStart,dateEnd,fe_typo_user,action,ressourceI
         dataType: "jsonp",
 		jsonp: 'callback',
         jsonpCallback: 'cdispoToken',
-        data:{action:"checkBooking",idBooking:idBooking,dateStart:dateStart,dateEnd:dateEnd,fe_typo_user:fe_typo_user},
+        data:{action:"checkBooking",idBooking:idBooking,dateStart:dateStart,dateEnd:dateEnd,fe_typo_user:fe_typo_user,titre:titre,description:description,invites:invites,invitesemail:invitesemail},
     
           success: function(result) {
                 
