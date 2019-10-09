@@ -802,7 +802,7 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                     return $(this).val()
                 }).get();
                 
-                $('#btn_modifynow').click(function() {
+                $('#btn_modifynow').unbind().click(function() {
                     checkBooking(booking_id,$('#modif_datestart').val(),$('#modif_dateend').val(),''+fe_typo_user+'',''+action+'',ressourceId,''+category2+'',''+$('#titre').val()+'',''+$('#description').val()+'',''+invites+'',''+invitesemail+'');
                 });
                 
