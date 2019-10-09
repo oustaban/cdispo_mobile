@@ -2314,11 +2314,14 @@ span#autre_motif {
     background: none repeat scroll 0 0 #f1f6df;
 }
 
-img.useraddactif {
+img.useraddactif,img.useraddactif2 {
 	float:left;
 }
 span.delete {
 	float:right;
+}
+span.numberUser {
+	color:rgba(28, 173, 214, 1);
 }
 ul#booking_adduser li, ul#booking_adduseremail li {
 	text-align:center;
