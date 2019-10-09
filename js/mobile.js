@@ -354,8 +354,6 @@ function initInvites(fe_typo_user) {
 			noCache: true
 		});
 		
-		$('#booking_useraddemail').each(function() {
-					
 		$('#invitesemail').bind('blur keypress',function(e) {  
 			if (e.type === 'blur' || e.keyCode === 13)  {
 				var emailTransformed = replaceEmail($(this).val());
