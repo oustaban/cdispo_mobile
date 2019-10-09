@@ -2323,6 +2323,7 @@ span.delete {
 ul#booking_adduser li {
 	text-align:center;
 	list-style-type:none;
+	padding-top:10px;
 }
 @media (min-width: 480px) {
 	.container {
