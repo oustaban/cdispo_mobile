@@ -2283,12 +2283,36 @@ span#autre_motif {
 	font-style:italic;
 }
 
-.autocomplete-suggestions { border: 1px solid #999; background: #FFF; overflow: auto; }
-.autocomplete-suggestion { padding: 2px 5px; white-space: nowrap; overflow: hidden; cursor: pointer;}
-.autocomplete-selected { background: #F0F0F0; }
-.autocomplete-suggestions strong { font-weight: normal; color: #3399FF; }
-.autocomplete-group { padding: 2px 5px; }
-.autocomplete-group strong { display: block; border-bottom: 1px solid #000; }
+
+
+.autocomplete-suggestions {
+    background: none repeat scroll 0 0 rgba(0,0,0,0.75);
+    border: 1px solid #ffffff;
+    overflow: auto;
+	max-width:273px;
+    color:#fff;
+}
+.autocomplete-suggestion {
+    overflow: hidden;
+    padding: 5px;
+    white-space: normal;
+    text-align:left;
+    cursor:pointer;
+}
+.autocomplete-suggestion:hover {
+    background: none repeat scroll 0 0 rgba(255,255,255,1);
+    border: 1px solid #000;
+    overflow: auto;
+	max-width:273px;
+    color:#000;
+}
+.autocomplete-suggestions strong {
+    color: #24b8a8;
+    font-weight: bold;
+}
+.autocomplete-selected {
+    background: none repeat scroll 0 0 #f1f6df;
+}
 
 @media (min-width: 480px) {
 	.container {

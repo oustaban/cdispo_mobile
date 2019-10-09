@@ -337,6 +337,7 @@ function initInvites(fe_typo_user) {
 						error: function(error) {
 							console.log('guestRefuse error');
 						}
+						$('.loader2').hide();
 				});
 					
 			},
