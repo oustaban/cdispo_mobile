@@ -328,7 +328,7 @@ function initInvites(fe_typo_user) {
 					dataType: "jsonp",
 					jsonp: 'callback',
 					jsonpCallback: 'cdispoToken',
-					data: {action:"guestRefuse",bookingId:1,guestId:1,fe_typo_user:fe_typo_user,query:query},
+					data: {action:"getUsersActifs",fe_typo_user:fe_typo_user,query:query},
 					  
 						success: function(result) {
 							var resultat = { suggestions: result.suggestions };
