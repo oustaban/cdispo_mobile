@@ -879,8 +879,13 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                             }
                         }
                         
-                        var my_from1 = myvalues.indexOf(result.dateStartBooking);
-                        var my_to1 = myvalues.indexOf(result.dateEndBooking);
+                        if (parseInt(result.dateStartBooking) < timecode[0][0]) {
+                            var my_from1 = 0;
+                        } else {
+                            var my_from1 = myvalues.indexOf(parseInt(result.dateStartBooking));
+                        }
+                        
+                        var my_to1 = myvalues.indexOf(pareseInt(result.dateEndBooking));
                         
                         
                         $(".js-range-slider1").ionRangeSlider({
@@ -944,11 +949,11 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                             for(var index2 in timecode[index]) {
                                 if (index2 == 0)
                                     myvalues1.push(timecode[index][index2]);
-                                if (timecode[index][index2] ==  result.dateStartBooking) {
+                                if (timecode[index][index2] ==  pareseInt(result.dateStartBooking)) {
                                     indexStart1 = index;
                                     indexStart2 = index2;
                                 }
-                                if (timecode[index][index2] ==  result.dateEndBooking) {
+                                if (timecode[index][index2] ==  pareseInt(result.dateEndBooking)) {
                                     indexEnd1 = index;
                                     indexEnd2 = index2;
                                 }
@@ -1677,7 +1682,6 @@ function createMyBooking(event_id,category,ressourceid,datestart,dateend,udatest
                         
                         if (parseInt(result.dateStartBooking) < timecode[0][0]) {
                             var my_from1 = 0;
-                        
                         } else {
                             var my_from1 = myvalues.indexOf(parseInt(result.dateStartBooking));
                         }
@@ -1701,7 +1705,6 @@ function createMyBooking(event_id,category,ressourceid,datestart,dateend,udatest
                         
                         my_range1 = $(".js-range-slider1").data("ionRangeSlider");
                         
-                        console.log('Range:'+myvalues+'/'+result.dateStartBooking+'/'+result.dateEndBooking+'/'+my_from1+'/'+my_to1+'/'+timecode[0][0]+'/'+timecode[index][index2]);
                         
                         my_range1.update({
                             type: "double",
@@ -1743,11 +1746,11 @@ function createMyBooking(event_id,category,ressourceid,datestart,dateend,udatest
                             for(var index2 in timecode[index]) {
                                 if (index2 == 0)
                                     myvalues1.push(timecode[index][index2]);
-                                if (timecode[index][index2] ==  result.dateStartBooking) {
+                                if (timecode[index][index2] ==  parseInt(result.dateStartBooking)) {
                                     indexStart1 = index;
                                     indexStart2 = index2;
                                 }
-                                if (timecode[index][index2] ==  result.dateEndBooking) {
+                                if (timecode[index][index2] ==  parseInt(result.dateEndBooking)) {
                                     indexEnd1 = index;
                                     indexEnd2 = index2;
                                 }
@@ -4722,6 +4725,55 @@ function getDispo(fe_typo_user,ressourceId,category,action) {
 }
 
 
+function SearchForm(fe_typo_user) {
+    
+    var L = window.localStorage.getItem("language");
+    var lang = window.localStorage.getItem("lang");
+    $('.loader2').show();
+    var domain = window.localStorage.getItem("domain");
+    var url = "http://"+domain+"/?type=476&tx_cdispofrontend_fcdispofrontend[controller]=Mobile&tx_cdispofrontend_fcdispofrontend[action]=dispatcher&tx_cdispofrontend_fcdispofrontend[uid]=1&L="+L;
+    $.ajax({
+          type: 'GET',
+          url:url,
+          dataType: "jsonp",
+          jsonp: 'callback',
+          jsonpCallback: 'cdispoToken',
+          data: {action:"searchForm",fe_typo_user:fe_typo_user},
+          
+          success: function(result) {
+            
+                if (result.deconnexion) {
+                    
+                    initPopin();
+                    $('.prewiewsharing_header').hide();
+                    $('.previewsharing_content').html('<p></p><p>'+result.deconnexion+'</p>');
+                    
+                    var url = window.location.href;
+					url = url.substring(0, url.lastIndexOf("/") + 1);
+                    window.localStorage.clear();
+                    $('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
+                    
+                    $('.main-slider').hide();$('.nav-holder').hide();
+                    $('.modification-block').hide();
+                    $('.info-block').show();
+                
+                }
+                
+                if (result.result) {
+                    $('.modification-block').html(result.searchform);
+                    $('.nav-holder').hide();
+                    $('.modification-block').show();
+                    
+                }
+          },  
+          error: function(error) {
+            console.log('nok getBookingToConfirm');
+            console.log(error);
+            $('.loader2').hide();
+          }   
+    });
+}     
+            
 function loadSharing(fe_typo_user,indexSlide) {
     var url = window.location.href;
     url = url.substring(0, url.lastIndexOf("/") + 1);

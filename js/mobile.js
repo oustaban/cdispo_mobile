@@ -294,6 +294,14 @@ function initNav() {
         );
 	});
 	
+	jQuery('#btn_book').click(function() {
+		var url = window.location.href;
+		url = url.substring(0, url.lastIndexOf("/") + 1);
+		fe_typo_user = window.localStorage.getItem("fe_typo_user");
+		cordova.InAppBrowser.open(url+'reserver.html', '_self');
+	});
+	
+	
 }
 
 
