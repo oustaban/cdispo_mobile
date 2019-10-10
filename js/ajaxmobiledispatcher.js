@@ -4756,13 +4756,15 @@ function SearchForm(fe_typo_user) {
                     $('.main-slider').hide();$('.nav-holder').hide();
                     $('.modification-block').hide();
                     $('.info-block').show();
-                
+                    $('.loader2').hide();
+                    
                 }
                 
                 if (result.result) {
                     $('.modification-block').html(result.searchform);
                     $('.nav-holder').hide();
                     $('.modification-block').show();
+                    $('.loader2').hide();
                     
                 }
           },  
