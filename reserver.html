@@ -65,7 +65,7 @@
 		
 		$(document).bind('deviceready', function() {
 		   
-		    
+		    Keyboard.hideFormAccessoryBar(false);
 		    getTranslation();
 			
 			document.addEventListener("offline", function(e){
@@ -86,6 +86,7 @@
 		
 		$(document).bind('resume', function() {
 			
+			Keyboard.hideFormAccessoryBar(false);
 			getTranslation();
 			
 			document.addEventListener("offline", function(e){

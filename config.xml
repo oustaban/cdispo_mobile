@@ -121,6 +121,7 @@
     <!--<plugin name="cordova-plugin-ionic-webview" source="npm" spec="4.1.1" />-->
     <plugin name="phonegap-plugin-barcodescanner" source="npm" spec="8.1.0" />
     <plugin name="cordova-plugin-settings-hook" source="npm" spec="0.3.1" />
+    <plugin name="cordova-plugin-keyboard" source="npm" spec="1.2.0" />
     
     <gap:config-file platform="android" parent="/manifest">
          <application android:debuggable="true" />
