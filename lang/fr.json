@@ -31,5 +31,6 @@
 	"modifinputtitre":"Titre :",
 	"modifinputdescription":"Description :",
 	"modifinputinvites":"<img src=\"images/utilisateur.png\">Inviter un utilisateur inscrit :",
-	"modifinputinvitesemail":"<img src=\"images/utilisateur.png\">Inviter un utilisateur extérieur :"
+	"modifinputinvitesemail":"<img src=\"images/utilisateur.png\">Inviter un utilisateur extérieur :",
+	"reserver_title":"RÉSERVER"
 }
