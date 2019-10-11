@@ -27,3 +27,6 @@ $.validator.addMethod( "timeNL", function( value, element ) {
 $.validator.addMethod('le', function (value, element, param) {
 		return this.optional(element) || parseInt(value) >= parseInt($(param).val());
 }, 'La date / heure de fin doit être postérieure ou égale à la date / heure du  jour.');
+$.validator.addMethod( "datetimeNL", function( value, element ) {
+	return this.optional( element ) || /^(0?[1-9]|[12]\d|3[01])[\.\/\-](0?[1-9]|1[012])[\.\/\-]([12]\d)?(\d\d)[\.\/\-]([01]\d|2[0-3]|[0-9])(:[0-5]\d){1,2}$/.test( value );
+}, $.validator.messages.date );

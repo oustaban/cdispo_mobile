@@ -27,3 +27,6 @@ $.validator.addMethod( "timeNL", function( value, element ) {
 $.validator.addMethod('le', function (value, element, param) {
 		return this.optional(element) || parseInt(value) >= parseInt($(param).val());
 }, 'The end date / time must be greater than or equal to the date / time of the day.');
+$.validator.addMethod( "datetimeNL", function( value, element ) {
+	return this.optional( element ) || /^(0?[1-9]|1[012])[\.\/\-](0?[1-9]|[12]\d|3[01])[\.\/\-]([12]\d)?(\d\d)[\.\/\-]((0?[1-9]|1[012])(:[0-5]\d){1,2}(\ ?[AP]M))$/.test( value );
+}, $.validator.messages.date );
