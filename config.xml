@@ -122,7 +122,8 @@
     <plugin name="phonegap-plugin-barcodescanner" source="npm" spec="8.1.0" />
     <plugin name="cordova-plugin-settings-hook" source="npm" spec="0.3.1" />
     <plugin name="cordova-plugin-keyboard" source="npm" spec="1.2.0" />
-    <plugin name="skwas-cordova-plugin-datetimepicker" source="npm" spec="2.0.1" />
+    <!--<plugin name="skwas-cordova-plugin-datetimepicker" source="npm" spec="2.0.1" />-->
+    <plugin name="skwas-cordova-plugin-datetimepicker" spec="https://github.com/skwasjer/skwas-cordova-plugin-datetimepicker.git#develop" />
     
     <gap:config-file platform="android" parent="/manifest">
          <application android:debuggable="true" />
