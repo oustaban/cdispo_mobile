@@ -2333,6 +2333,13 @@ ul#booking_adduser li, ul#booking_adduseremail li {
     display:none;
 }
 
+label.error {
+	color: red;
+	margin: 5px;
+	/* margin-top: 5px; */
+	display: block;
+}
+
 @media (min-width: 480px) {
 	.container {
 		max-width: 590px;
