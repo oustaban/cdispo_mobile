@@ -1641,12 +1641,13 @@ textarea:focus {
 	font-size: 16px;
 	display: block;
 	height: 100%;
-	background-color: rgba(255, 255, 255,0);
+	background-color: rgba(255, 255, 255, 0.28);
 }
 
 .main-slider .bureau strong {
 	font-size: 18px;
 	display: block;
+	word-wrap: break-word;
 }
 
 .main-slider .bureau p {

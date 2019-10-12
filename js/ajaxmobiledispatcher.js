@@ -4847,14 +4847,16 @@ function SearchResult(fe_typo_user,args) {
                         $('.main-slider').show();
                         $('#backtoshare').show();
                         $('#backtosharelink').html(result.linktitle);
-                        $('#backtosharelink').attr('onclick','getBookingToGo(\''+fe_typo_user+'\','+ressourceId+',\''+category+'\',\'refresh\')');
+                        $('#backtosharelink').attr('onclick','$(\'.main-slider\').hide();$(\'.info-block\').hide();$(\'.nav-holder\').hide();$(\'.modification-block\').show()');
                     } else {
                         $('#backtoshare').show();
                         $('#backtosharelink').html(result.linktitle);
-                        $('#backtosharelink').attr('onclick','getBookingToGo(\''+fe_typo_user+'\','+ressourceId+',\''+category+'\',\'refresh\')');
+                        getDispo(fe_typo_user,ressourceId,category,action) 
+                    
+                        $('#backtosharelink').attr('onclick','getDispo2(\''+fe_typo_user+'\','+result.ressourceId+',\''+result.category+'\',\'refresh\')');
                         $('.prewiewsharing_header').hide();
                         $('.previewsharing_content').html(result.content);
-                        $('#btn_close').attr('onclick','getDispo(\''+fe_typo_user+'\','+ressourceId+',\''+category+'\',\'refresh\')');
+                        $('#btn_close').attr('onclick','$(\'.main-slider\').hide();$(\'.info-block\').hide();$(\'.nav-holder\').hide();$(\'.modification-block\').show()');
                         $('.main-slider').hide();
                         $('.nav-holder').hide();
                         $('.modification-block').hide();
@@ -4864,10 +4866,10 @@ function SearchResult(fe_typo_user,args) {
                 } else {
                     $('#backtoshare').show();
                     $('#backtosharelink').html(result.linktitle);
-                    $('#backtosharelink').attr('onclick','getBookingToGo(\''+fe_typo_user+'\','+ressourceId+',\''+category+'\',\'refresh\')');
+                    $('#backtosharelink').attr('onclick','getDispo2(\''+fe_typo_user+'\','+result.ressourceId+',\''+result.category+'\',\'refresh\')');
                     $('.prewiewsharing_header').hide();
                     $('.previewsharing_content').html(result.content);
-                    $('#btn_close').attr('onclick','getDispo(\''+fe_typo_user+'\','+ressourceId+',\''+category+'\',\'refresh\')');
+                    $('#btn_close').attr('onclick','$(\'.main-slider\').hide();$(\'.info-block\').hide();$(\'.nav-holder\').hide();$(\'.modification-block\').show()');
                     $('.main-slider').hide();
                     $('.nav-holder').hide();
                     $('.info-block').show();    
