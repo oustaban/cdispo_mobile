@@ -4815,27 +4815,25 @@ function SearchResult(fe_typo_user,args) {
                 }
                 
                 if (result.result) {
-                    if (action == "refresh") {
-                         console.log('countslide:'+countslide);
-                         //window.clearAllIntervals();
-                         
-                         for (var i = 0; i < 1000; i++) {
-                            var varInterval = "x"+i;
-                            //window.clearInterval(varInterval);
-                            window.clearInterval(i);
-                         }
-                         
-                         $("div.slick-slide").each(function() {
-                            var i = $(this).attr("data-slick-index");
-                            $('.main-slider').slick('slickRemove',i);
-                         });
-                         
-                         
-                         $('.main-slider').show();$('.nav-holder').show();
-                         $('.info-block').hide();
-                         if (countslide > 0) 
-                            $('.main-slider').slick('unslick');
-                    }
+                    console.log('countslide:'+countslide);
+                     //window.clearAllIntervals();
+                     
+                     for (var i = 0; i < 1000; i++) {
+                        var varInterval = "x"+i;
+                        //window.clearInterval(varInterval);
+                        window.clearInterval(i);
+                     }
+                     
+                     $("div.slick-slide").each(function() {
+                        var i = $(this).attr("data-slick-index");
+                        $('.main-slider').slick('slickRemove',i);
+                     });
+                     
+                     
+                     $('.main-slider').show();$('.nav-holder').show();
+                     $('.info-block').hide();
+                     if (countslide > 0) 
+                        $('.main-slider').slick('unslick');
                     
                     countslide = result.countslide;
                     //console.log(countslide);
