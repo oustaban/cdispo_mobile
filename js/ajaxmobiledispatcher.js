@@ -4811,17 +4811,74 @@ function SearchResult(fe_typo_user,args) {
                     $('.nav-holder').hide();
                     $('.modification-block').hide();
                     $('.info-block').show();
-                    $('.loader2').hide();
-                    
+                
                 }
                 
                 if (result.result) {
-                    $('.modification-block').html(result.searchform);
-                    $('.nav-holder').hide();
-                    $('.modification-block').show();
-                    $('.loader2').hide();
+                    if (action == "refresh") {
+                         console.log('countslide:'+countslide);
+                         //window.clearAllIntervals();
+                         
+                         for (var i = 0; i < 1000; i++) {
+                            var varInterval = "x"+i;
+                            //window.clearInterval(varInterval);
+                            window.clearInterval(i);
+                         }
+                         
+                         $("div.slick-slide").each(function() {
+                            var i = $(this).attr("data-slick-index");
+                            $('.main-slider').slick('slickRemove',i);
+                         });
+                         
+                         
+                         $('.main-slider').show();$('.nav-holder').show();
+                         $('.info-block').hide();
+                         if (countslide > 0) 
+                            $('.main-slider').slick('unslick');
+                    }
                     
+                    countslide = result.countslide;
+                    //console.log(countslide);
+                    //console.log(result.slide);
+                    if (countslide > 0) {
+                        $('.nav-holder').hide();
+                        $('.modification-block').hide();
+                        $('.info-block').hide();
+                        $('.main-slider').html(result.slide);
+                        initSlickCarousel();
+                        $('.main-slider').show();
+                        $('#backtoshare').show();
+                        $('#backtosharelink').html(result.linktitle);
+                        $('#backtosharelink').attr('onclick','getBookingToGo(\''+fe_typo_user+'\','+ressourceId+',\''+category+'\',\'refresh\')');
+                    } else {
+                        $('#backtoshare').show();
+                        $('#backtosharelink').html(result.linktitle);
+                        $('#backtosharelink').attr('onclick','getBookingToGo(\''+fe_typo_user+'\','+ressourceId+',\''+category+'\',\'refresh\')');
+                        $('.prewiewsharing_header').hide();
+                        $('.previewsharing_content').html(result.content);
+                        $('#btn_close').attr('onclick','getDispo(\''+fe_typo_user+'\','+ressourceId+',\''+category+'\',\'refresh\')');
+                        $('.main-slider').hide();
+                        $('.nav-holder').hide();
+                        $('.modification-block').hide();
+                        $('.info-block').show();    
+                    }
+                    
+                } else {
+                    $('#backtoshare').show();
+                    $('#backtosharelink').html(result.linktitle);
+                    $('#backtosharelink').attr('onclick','getBookingToGo(\''+fe_typo_user+'\','+ressourceId+',\''+category+'\',\'refresh\')');
+                    $('.prewiewsharing_header').hide();
+                    $('.previewsharing_content').html(result.content);
+                    $('#btn_close').attr('onclick','getDispo(\''+fe_typo_user+'\','+ressourceId+',\''+category+'\',\'refresh\')');
+                    $('.main-slider').hide();
+                    $('.nav-holder').hide();
+                    $('.info-block').show();    
                 }
+                
+                console.log('success getBookingToConfirm');
+                
+                $('#scan_title').html(result.title);
+                $('.loader2').hide();
           },  
           error: function(error) {
             console.log('nok getBookingToConfirm');
