@@ -4753,7 +4753,62 @@ function SearchForm(fe_typo_user) {
                     window.localStorage.clear();
                     $('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
                     
-                    $('.main-slider').hide();$('.nav-holder').hide();
+                    $('.main-slider').hide();
+                    $('.nav-holder').hide();
+                    $('.modification-block').hide();
+                    $('.info-block').show();
+                    $('.loader2').hide();
+                    
+                }
+                
+                if (result.result) {
+                    $('.modification-block').html(result.searchform);
+                    $('.main-slider').hide();
+                    $('.nav-holder').hide();
+                    $('.modification-block').show();
+                    $('.loader2').hide();
+                    
+                }
+          },  
+          error: function(error) {
+            console.log('nok getBookingToConfirm');
+            console.log(error);
+            $('.loader2').hide();
+          }   
+    });
+}
+
+
+SearchResults(fe_typo_user,args) {
+    
+    var L = window.localStorage.getItem("language");
+    var lang = window.localStorage.getItem("lang");
+    $('.loader2').show();
+    var domain = window.localStorage.getItem("domain");
+    var url = "http://"+domain+"/?type=476&tx_cdispofrontend_fcdispofrontend[controller]=Mobile&tx_cdispofrontend_fcdispofrontend[action]=dispatcher&tx_cdispofrontend_fcdispofrontend[uid]=1&L="+L;
+    $.ajax({
+          type: 'GET',
+          url:url,
+          dataType: "jsonp",
+          jsonp: 'callback',
+          jsonpCallback: 'cdispoToken',
+          data: {action:"searchResult",fe_typo_user:fe_typo_user,parameters:args},
+          
+          success: function(result) {
+            
+                if (result.deconnexion) {
+                    
+                    initPopin();
+                    $('.prewiewsharing_header').hide();
+                    $('.previewsharing_content').html('<p></p><p>'+result.deconnexion+'</p>');
+                    
+                    var url = window.location.href;
+					url = url.substring(0, url.lastIndexOf("/") + 1);
+                    window.localStorage.clear();
+                    $('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
+                    
+                    $('.main-slider').hide();
+                    $('.nav-holder').hide();
                     $('.modification-block').hide();
                     $('.info-block').show();
                     $('.loader2').hide();
@@ -4774,7 +4829,7 @@ function SearchForm(fe_typo_user) {
             $('.loader2').hide();
           }   
     });
-}     
+} 
             
 function loadSharing(fe_typo_user,indexSlide) {
     var url = window.location.href;
