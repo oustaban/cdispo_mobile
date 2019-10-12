@@ -4830,7 +4830,8 @@ function SearchResult(fe_typo_user,args) {
                      });
                      
                      
-                     $('.main-slider').show();$('.nav-holder').show();
+                     $('.main-slider').show();
+                     $('.nav-holder').show();
                      $('.info-block').hide();
                      if (countslide > 0) 
                         $('.main-slider').slick('unslick');
@@ -4839,7 +4840,7 @@ function SearchResult(fe_typo_user,args) {
                     //console.log(countslide);
                     //console.log(result.slide);
                     if (countslide > 0) {
-                        $('.nav-holder').hide();
+                        $('.nav-holder').show();
                         $('.modification-block').hide();
                         $('.info-block').hide();
                         $('.main-slider').html(result.slide);
