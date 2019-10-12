@@ -4779,7 +4779,7 @@ function SearchForm(fe_typo_user) {
 }
 
 
-SearchResults(fe_typo_user,args) {
+function SearchResults(fe_typo_user,args) {
     
     var L = window.localStorage.getItem("language");
     var lang = window.localStorage.getItem("lang");
