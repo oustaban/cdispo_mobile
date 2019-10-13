@@ -4850,7 +4850,7 @@ function SearchResult(fe_typo_user,args) {
                         $('.main-slider').show();
                         $('#backtoshare').show();
                         $('#backtosharelink').html(result.linktitle);
-                        $('#backtosharelink').attr('onclick','searchForm(\''+fe_typo_user+'\',\''+args+'\')');
+                        $('#backtosharelink').attr('onclick','SearchForm(\''+fe_typo_user+'\',\''+args+'\')');
                     } else {
                         $('#backtoshare').hide();
                         $('.prewiewsharing_header').hide();
