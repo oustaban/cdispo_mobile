@@ -4792,7 +4792,7 @@ function SearchForm(fe_typo_user,args) {
 }
 
 
-function SearchResult(fe_typo_user,args) {
+function SearchResult(fe_typo_user,args,indexSlide) {
     
     var L = window.localStorage.getItem("language");
     var lang = window.localStorage.getItem("lang");
@@ -4859,6 +4859,8 @@ function SearchResult(fe_typo_user,args) {
                         $('.main-slider').html(result.slide);
                         initSlickCarousel();
                         $('.main-slider').show();
+                        if (indexSlide)
+                            $('.main-slider').slick('slickGoTo', indexSlide);
                         $('#backtoshare').show();
                         $('#backtosharelink').html(result.linktitle);
                         $('#backtosharelink').attr('onclick','SearchForm(\''+fe_typo_user+'\',\''+args+'\')');
@@ -4968,11 +4970,11 @@ function getDispo2(fe_typo_user,ressourceId,category,action,index,args) {
                         $('.main-slider').show();
                         $('#backtoshare').show();
                         $('#backtosharelink').html(result.linktitle);
-                        $('#backtosharelink').attr('onclick','SearchResult(\''+fe_typo_user+'\',\''+args+'\')');
+                        $('#backtosharelink').attr('onclick','SearchResult(\''+fe_typo_user+'\',\''+args+'\','+index+')');
                     } else {
                         $('#backtoshare').show();
                         $('#backtosharelink').html(result.linktitle);
-                        $('#backtosharelink').attr('onclick','SearchResult(\''+fe_typo_user+'\',\''+args+'\')');
+                        $('#backtosharelink').attr('onclick','SearchResult(\''+fe_typo_user+'\',\''+args+'\','+index+')');
                         $('.prewiewsharing_header').hide();
                         $('.previewsharing_content').html(result.content);
                         $('#btn_close').attr('onclick','getDispo2(\''+fe_typo_user+'\','+ressourceId+',\''+category+'\',\'refresh\','+index+',\''+args+'\')');
@@ -4985,7 +4987,7 @@ function getDispo2(fe_typo_user,ressourceId,category,action,index,args) {
                 } else {
                     $('#backtoshare').show();
                     $('#backtosharelink').html(result.linktitle);
-                    $('#backtosharelink').attr('onclick','SearchResult(\''+fe_typo_user+'\',\''+args+'\')');
+                    $('#backtosharelink').attr('onclick','SearchResult(\''+fe_typo_user+'\',\''+args+'\','+index+')');
                     $('.prewiewsharing_header').hide();
                     $('.previewsharing_content').html(result.content);
                     $('#btn_close').attr('onclick','getDispo2(\''+fe_typo_user+'\','+ressourceId+',\''+category+'\',\'refresh\','+index+',\''+args+'\')');
