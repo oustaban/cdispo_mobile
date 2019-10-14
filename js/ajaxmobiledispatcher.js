@@ -4977,7 +4977,7 @@ function SearchResult(fe_typo_user,args,indexSlide) {
 } 
 
 
-function getDispo2(fe_typo_user,ressourceId,category,action,indexSlide,args) {
+function getDispo2(fe_typo_user,ressourceId,category,action,index,args) {
     var L = window.localStorage.getItem("language");
     var lang = window.localStorage.getItem("lang");
     $('.loader2').show();
@@ -4989,7 +4989,7 @@ function getDispo2(fe_typo_user,ressourceId,category,action,indexSlide,args) {
           dataType: "jsonp",
           jsonp: 'callback',
           jsonpCallback: 'cdispoToken',
-          data: {action:"getDispo",fe_typo_user:fe_typo_user,ressourceId:ressourceId,category:category,from:'search',indexSlide:indexSlide,args:args},
+          data: {action:"getDispo",fe_typo_user:fe_typo_user,ressourceId:ressourceId,category:category,from:'search',indexSlide:index,args:args},
           
           success: function(result) {
                 
