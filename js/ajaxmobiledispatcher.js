@@ -1982,7 +1982,7 @@ function createMyBooking(event_id,category,ressourceid,datestart,dateend,udatest
 }
 
 
-function checkCreateBooking(idEvent,dateStart,dateEnd,fe_typo_user,action,ressourceId,category2,indexSlide,args) {
+function checkCreateBooking(idEvent,dateStart,dateEnd,fe_typo_user,action,ressourceId,category2,titre,description,invites,invitesemail,indexSlide,args) {
     
     var L = window.localStorage.getItem("language");
     var lang = window.localStorage.getItem("lang");
@@ -1995,7 +1995,7 @@ function checkCreateBooking(idEvent,dateStart,dateEnd,fe_typo_user,action,ressou
         dataType: "jsonp",
 		jsonp: 'callback',
         jsonpCallback: 'cdispoToken',
-        data:{action:"checkCreateBooking",idEvent:idEvent,dateStart:dateStart,dateEnd:dateEnd,fe_typo_user:fe_typo_user},
+        data:{action:"checkCreateBooking",idEvent:idEvent,dateStart:dateStart,dateEnd:dateEnd,fe_typo_user:fe_typo_user,titre:titre,description:description,invites:invites,invitesemail:invitesemail},
     
           success: function(result) {
                 
