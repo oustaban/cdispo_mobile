@@ -1556,7 +1556,7 @@ function checkBooking(idBooking,dateStart,dateEnd,fe_typo_user,action,ressourceI
 
 
 						
-function createMyBooking(event_id,category,ressourceid,datestart,dateend,udatestart,udateend,fe_typo_user,domain,url,action,ressourceId,category2,user_id) {
+function createMyBooking(event_id,category,ressourceid,datestart,dateend,udatestart,udateend,fe_typo_user,domain,url,action,ressourceId,category2,user_id,indexSlide,args) {
     
     var L = window.localStorage.getItem("language");
     var lang = window.localStorage.getItem("lang");
@@ -1610,7 +1610,7 @@ function createMyBooking(event_id,category,ressourceid,datestart,dateend,udatest
                     var invitesemail=$('.usersemail').map(function(){
                         return $(this).val()
                     }).get();
-                    checkCreateBooking(event_id,$('#modif_datestart').val(),$('#modif_dateend').val(),''+fe_typo_user+'',''+action+'',ressourceId,''+category2+'',''+$('#titre').val()+'',''+$('#description').val()+'',''+invites+'',''+invitesemail+'');
+                    checkCreateBooking(event_id,$('#modif_datestart').val(),$('#modif_dateend').val(),''+fe_typo_user+'',''+action+'',ressourceId,''+category2+'',''+$('#titre').val()+'',''+$('#description').val()+'',''+invites+'',''+invitesemail+'',indexSlide,''+args+'');
                 });
                 
                 if (my_range1) {
@@ -1982,7 +1982,7 @@ function createMyBooking(event_id,category,ressourceid,datestart,dateend,udatest
 }
 
 
-function checkCreateBooking(idEvent,dateStart,dateEnd,fe_typo_user,action,ressourceId,category2) {
+function checkCreateBooking(idEvent,dateStart,dateEnd,fe_typo_user,action,ressourceId,category2,indexSlide,args) {
     
     var L = window.localStorage.getItem("language");
     var lang = window.localStorage.getItem("lang");
@@ -2030,7 +2030,7 @@ function checkCreateBooking(idEvent,dateStart,dateEnd,fe_typo_user,action,ressou
                     if (action == "getDispo")
                         $('#btn_close').attr('onclick','getDispo(\''+fe_typo_user+'\','+ressourceId+',\''+category2+'\',\'refresh\')');
                     if (action == "getDispo2")
-                        $('#btn_close').attr('onclick','getDispo(\''+fe_typo_user+'\','+ressourceId+',\''+category2+'\',\'refresh\')');
+                        $('#btn_close').attr('onclick','getDispo2(\''+fe_typo_user+'\','+ressourceId+',\''+category2+'\',\'refresh\','+indexSlide+',\''+args+'\')');
                 
                 
                     $('.main-slider').hide();
@@ -2053,6 +2053,9 @@ function checkCreateBooking(idEvent,dateStart,dateEnd,fe_typo_user,action,ressou
                         $('#btn_close').attr('onclick','getScan(\''+fe_typo_user+'\','+ressourceId+',\''+category2+'\',\'refresh\')');
                     if (action == "getDispo")
                         $('#btn_close').attr('onclick','getDispo(\''+fe_typo_user+'\','+ressourceId+',\''+category2+'\',\'refresh\')');
+                    if (action == "getDispo2")
+                        $('#btn_close').attr('onclick','getDispo2(\''+fe_typo_user+'\','+ressourceId+',\''+category2+'\',\'refresh\','+indexSlide+',\''+args+'\')');
+                
                 
                     $('.main-slider').hide();$('.nav-holder').hide();
                     $('.nav-holder').hide();
@@ -2073,6 +2076,9 @@ function checkCreateBooking(idEvent,dateStart,dateEnd,fe_typo_user,action,ressou
                         $('#btn_close').attr('onclick','getScan(\''+fe_typo_user+'\','+ressourceId+',\''+category2+'\',\'refresh\')');
                     if (action == "getDispo")
                         $('#btn_close').attr('onclick','getDispo(\''+fe_typo_user+'\','+ressourceId+',\''+category2+'\',\'refresh\')');
+                    if (action == "getDispo2")
+                        $('#btn_close').attr('onclick','getDispo2(\''+fe_typo_user+'\','+ressourceId+',\''+category2+'\',\'refresh\','+indexSlide+',\''+args+'\')');
+                
                 
                     $('.main-slider').hide();$('.nav-holder').hide();
                     $('.nav-holder').hide();
@@ -2093,6 +2099,9 @@ function checkCreateBooking(idEvent,dateStart,dateEnd,fe_typo_user,action,ressou
                         $('#btn_close').attr('onclick','getScan(\''+fe_typo_user+'\','+ressourceId+',\''+category2+'\',\'refresh\')');
                     if (action == "getDispo")
                         $('#btn_close').attr('onclick','getDispo(\''+fe_typo_user+'\','+ressourceId+',\''+category2+'\',\'refresh\')');
+                    if (action == "getDispo2")
+                        $('#btn_close').attr('onclick','getDispo2(\''+fe_typo_user+'\','+ressourceId+',\''+category2+'\',\'refresh\','+indexSlide+',\''+args+'\')');
+                
                 
                     $('.main-slider').hide();$('.nav-holder').hide();
                     $('.nav-holder').hide();
@@ -2113,6 +2122,9 @@ function checkCreateBooking(idEvent,dateStart,dateEnd,fe_typo_user,action,ressou
                         $('#btn_close').attr('onclick','getScan(\''+fe_typo_user+'\','+ressourceId+',\''+category2+'\',\'refresh\')');
                     if (action == "getDispo")
                         $('#btn_close').attr('onclick','getDispo(\''+fe_typo_user+'\','+ressourceId+',\''+category2+'\',\'refresh\')');
+                    if (action == "getDispo2")
+                        $('#btn_close').attr('onclick','getDispo2(\''+fe_typo_user+'\','+ressourceId+',\''+category2+'\',\'refresh\','+indexSlide+',\''+args+'\')');
+                
                 
                     $('.main-slider').hide();$('.nav-holder').hide();
                     $('.nav-holder').hide();
@@ -2133,6 +2145,9 @@ function checkCreateBooking(idEvent,dateStart,dateEnd,fe_typo_user,action,ressou
                         $('#btn_close').attr('onclick','getScan(\''+fe_typo_user+'\','+ressourceId+',\''+category2+'\',\'refresh\')');
                     if (action == "getDispo")
                         $('#btn_close').attr('onclick','getDispo(\''+fe_typo_user+'\','+ressourceId+',\''+category2+'\',\'refresh\')');
+                    if (action == "getDispo2")
+                        $('#btn_close').attr('onclick','getDispo2(\''+fe_typo_user+'\','+ressourceId+',\''+category2+'\',\'refresh\','+indexSlide+',\''+args+'\')');
+                
                 
                     $('.main-slider').hide();$('.nav-holder').hide();
                     $('.nav-holder').hide();
@@ -2153,6 +2168,9 @@ function checkCreateBooking(idEvent,dateStart,dateEnd,fe_typo_user,action,ressou
                         $('#btn_close').attr('onclick','getScan(\''+fe_typo_user+'\','+ressourceId+',\''+category2+'\',\'refresh\')');
                     if (action == "getDispo")
                         $('#btn_close').attr('onclick','getDispo(\''+fe_typo_user+'\','+ressourceId+',\''+category2+'\',\'refresh\')');
+                    if (action == "getDispo2")
+                        $('#btn_close').attr('onclick','getDispo2(\''+fe_typo_user+'\','+ressourceId+',\''+category2+'\',\'refresh\','+indexSlide+',\''+args+'\')');
+                
                 
                     $('.main-slider').hide();$('.nav-holder').hide();
                     $('.nav-holder').hide();
@@ -2172,6 +2190,9 @@ function checkCreateBooking(idEvent,dateStart,dateEnd,fe_typo_user,action,ressou
                         $('#btn_close').attr('onclick','getScan(\''+fe_typo_user+'\','+ressourceId+',\''+category2+'\',\'refresh\')');
                     if (action == "getDispo")
                         $('#btn_close').attr('onclick','getDispo(\''+fe_typo_user+'\','+ressourceId+',\''+category2+'\',\'refresh\')');
+                    if (action == "getDispo2")
+                        $('#btn_close').attr('onclick','getDispo2(\''+fe_typo_user+'\','+ressourceId+',\''+category2+'\',\'refresh\','+indexSlide+',\''+args+'\')');
+                
                 
                     $('.main-slider').hide();$('.nav-holder').hide();
                     $('.nav-holder').hide();
@@ -2222,6 +2243,9 @@ function checkCreateBooking(idEvent,dateStart,dateEnd,fe_typo_user,action,ressou
                         $('#btn_close').attr('onclick','getScan(\''+fe_typo_user+'\','+ressourceId+',\''+category2+'\',\'refresh\')');
                     if (action == "getDispo")
                         $('#btn_close').attr('onclick','getDispo(\''+fe_typo_user+'\','+ressourceId+',\''+category2+'\',\'refresh\')');
+                    if (action == "getDispo2")
+                        $('#btn_close').attr('onclick','getDispo2(\''+fe_typo_user+'\','+ressourceId+',\''+category2+'\',\'refresh\','+indexSlide+',\''+args+'\')');
+                
                 
                     $('.main-slider').hide();$('.nav-holder').hide();
                     $('.nav-holder').hide();
@@ -2242,6 +2266,9 @@ function checkCreateBooking(idEvent,dateStart,dateEnd,fe_typo_user,action,ressou
                         $('#btn_close').attr('onclick','getScan(\''+fe_typo_user+'\','+ressourceId+',\''+category2+'\',\'refresh\')');
                     if (action == "getDispo")
                         $('#btn_close').attr('onclick','getDispo(\''+fe_typo_user+'\','+ressourceId+',\''+category2+'\',\'refresh\')');
+                    if (action == "getDispo2")
+                        $('#btn_close').attr('onclick','getDispo2(\''+fe_typo_user+'\','+ressourceId+',\''+category2+'\',\'refresh\','+indexSlide+',\''+args+'\')');
+                
                 
                     $('.main-slider').hide();$('.nav-holder').hide();
                     $('.nav-holder').hide();
@@ -2261,6 +2288,9 @@ function checkCreateBooking(idEvent,dateStart,dateEnd,fe_typo_user,action,ressou
                         $('#btn_close').attr('onclick','getScan(\''+fe_typo_user+'\','+ressourceId+',\''+category2+'\',\'refresh\')');
                     if (action == "getDispo")
                         $('#btn_close').attr('onclick','getDispo(\''+fe_typo_user+'\','+ressourceId+',\''+category2+'\',\'refresh\')');
+                    if (action == "getDispo2")
+                        $('#btn_close').attr('onclick','getDispo2(\''+fe_typo_user+'\','+ressourceId+',\''+category2+'\',\'refresh\','+indexSlide+',\''+args+'\')');
+                
                 
                     $('.main-slider').hide();$('.nav-holder').hide();
                     $('.nav-holder').hide();
@@ -2339,7 +2369,10 @@ function checkCreateBooking(idEvent,dateStart,dateEnd,fe_typo_user,action,ressou
                         $('#btn_close').attr('onclick','getScan(\''+fe_typo_user+'\','+ressourceId+',\''+category2+'\',\'refresh\')');
                     if (action == "getDispo")
                         $('#btn_close').attr('onclick','getDispo(\''+fe_typo_user+'\','+ressourceId+',\''+category2+'\',\'refresh\')');
-                    
+                    if (action == "getDispo2")
+                        $('#btn_close').attr('onclick','getDispo2(\''+fe_typo_user+'\','+ressourceId+',\''+category2+'\',\'refresh\','+indexSlide+',\''+args+'\')');
+                
+                
                     $('.main-slider').hide();$('.nav-holder').hide();$('.nav-holder').hide();
                     $('.modification-block').hide();
                     $('.modification-block2').hide();
@@ -2358,7 +2391,10 @@ function checkCreateBooking(idEvent,dateStart,dateEnd,fe_typo_user,action,ressou
                         $('#btn_close').attr('onclick','getScan(\''+fe_typo_user+'\','+ressourceId+',\''+category2+'\',\'refresh\')');
                     if (action == "getDispo")
                         $('#btn_close').attr('onclick','getDispo(\''+fe_typo_user+'\','+ressourceId+',\''+category2+'\',\'refresh\')');
-                    
+                    if (action == "getDispo2")
+                        $('#btn_close').attr('onclick','getDispo2(\''+fe_typo_user+'\','+ressourceId+',\''+category2+'\',\'refresh\','+indexSlide+',\''+args+'\')');
+                
+                
                     $('.main-slider').hide();$('.nav-holder').hide();$('.nav-holder').hide();
                     $('.modification-block').hide();
                     $('.modification-block2').hide();
@@ -2378,7 +2414,10 @@ function checkCreateBooking(idEvent,dateStart,dateEnd,fe_typo_user,action,ressou
                         $('#btn_close').attr('onclick','getScan(\''+fe_typo_user+'\','+ressourceId+',\''+category2+'\',\'refresh\')');
                     if (action == "getDispo")
                         $('#btn_close').attr('onclick','getDispo(\''+fe_typo_user+'\','+ressourceId+',\''+category2+'\',\'refresh\')');
-                    
+                    if (action == "getDispo2")
+                        $('#btn_close').attr('onclick','getDispo2(\''+fe_typo_user+'\','+ressourceId+',\''+category2+'\',\'refresh\','+indexSlide+',\''+args+'\')');
+                
+                
                     $('.main-slider').hide();
                     $('.nav-holder').hide();
                     $('.modification-block').hide();
@@ -4950,7 +4989,7 @@ function getDispo2(fe_typo_user,ressourceId,category,action,index,args) {
           dataType: "jsonp",
           jsonp: 'callback',
           jsonpCallback: 'cdispoToken',
-          data: {action:"getDispo",fe_typo_user:fe_typo_user,ressourceId:ressourceId,category:category,from:'search'},
+          data: {action:"getDispo",fe_typo_user:fe_typo_user,ressourceId:ressourceId,category:category,from:'search',index:index,args:args},
           
           success: function(result) {
                 
