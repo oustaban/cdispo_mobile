@@ -1603,7 +1603,7 @@ function createMyBooking(event_id,category,ressourceid,datestart,dateend,udatest
                 $('#booking_adduseremail').html('');
                 
                 
-                $('#btn_modifynow').unbind().click(function() {
+                $('.modification-block #btn_modifynow').unbind().click(function() {
                     var invites=$('.users').map(function(){
                         return $(this).val()
                     }).get();
@@ -1639,8 +1639,8 @@ function createMyBooking(event_id,category,ressourceid,datestart,dateend,udatest
                 $('#date_end').text(result.lastDate);
                 $('#modification_lien1').text(domain);
                 $('#modification_lien1').attr('href',url);
-                $('#btn_back').attr('onclick','$(\'.modification-block\').hide();$(\'.main-slider\').show();$(\'.nav-holder\').show();$(\'#backtoshare\').show();');
-                $('#btn_modifynow').html(result.submittitle);
+                $('.modification-block #btn_back').attr('onclick','$(\'.modification-block\').hide();$(\'.main-slider\').show();$(\'.nav-holder\').show();$(\'#backtoshare\').show();');
+                $('.modification-block #btn_modifynow').html(result.submittitle);
                 
                 //$('.modification-info').html(result.info);
                 
