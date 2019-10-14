@@ -4977,7 +4977,7 @@ function SearchResult(fe_typo_user,args,indexSlide) {
 } 
 
 
-function getDispo2(fe_typo_user,ressourceId,category,action,index,args) {
+function getDispo2(fe_typo_user,ressourceId,category,action,indexSlide,args) {
     var L = window.localStorage.getItem("language");
     var lang = window.localStorage.getItem("lang");
     $('.loader2').show();
