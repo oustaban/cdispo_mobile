@@ -4811,7 +4811,7 @@ function SearchForm(fe_typo_user,args) {
                     $('.main-slider').hide();
                     $('.nav-holder').hide();
                     $('.modification-block').hide();
-                    $('.modification2-block').show();
+                    $('.modification-block2').show();
                     $('#backtoshare').hide();
                     $('.loader2').hide();
                     
