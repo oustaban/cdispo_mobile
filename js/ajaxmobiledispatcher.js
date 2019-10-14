@@ -4810,7 +4810,7 @@ function SearchForm(fe_typo_user,args) {
                     $('.modification-block2').html(result.searchform);
                     $('.main-slider').hide();
                     $('.nav-holder').hide();
-                    $('.modification-block').show();
+                    $('.modification-block').hide();
                     $('.modification2-block').show();
                     $('#backtoshare').hide();
                     $('.loader2').hide();
