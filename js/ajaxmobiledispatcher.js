@@ -1584,7 +1584,10 @@ function createMyBooking(event_id,category,ressourceid,datestart,dateend,udatest
                 window.localStorage.clear();
                 $('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
                 
-                $('.main-slider').hide();$('.nav-holder').hide();
+                $('.main-slider').hide();
+                $('.nav-holder').hide();
+                $('.modification-block').hide();
+                $('.modification-block2').hide();
                 $('.info-block').show();
             
             }
@@ -1655,7 +1658,9 @@ function createMyBooking(event_id,category,ressourceid,datestart,dateend,udatest
                     $('#slider_holder1').hide();
                     $('#slider_holder2').hide();
                     $('#slider_holder3').hide();
-                    $('.modification-block').show();        
+                    $('.modification-block2').hide();
+                    $('.modification-block').show();
+                    
                 
                 } else {
                 
@@ -1691,8 +1696,10 @@ function createMyBooking(event_id,category,ressourceid,datestart,dateend,udatest
                         
                         $(".js-range-slider1").ionRangeSlider({
                             onUpdate: function (data) {
-                                $('.main-slider').hide();$('.nav-holder').hide();
+                                $('.main-slider').hide();
                                 $('.nav-holder').hide();
+                                $('.nav-holder').hide();
+                                $('.modification-block2').hide();
                                 $('.modification-block').show();
                             },
                             onFinish: function (data) {
@@ -1769,6 +1776,7 @@ function createMyBooking(event_id,category,ressourceid,datestart,dateend,udatest
                             onUpdate: function (data) {
                                 $('.main-slider').hide();$('.nav-holder').hide();
                                 $('.nav-holder').hide();
+                                $('.modification-block2').hide();
                                 $('.modification-block').show();
                             },
                             
@@ -1883,6 +1891,7 @@ function createMyBooking(event_id,category,ressourceid,datestart,dateend,udatest
                             onUpdate: function (data) {
                                 $('.main-slider').hide();$('.nav-holder').hide();
                                 $('.nav-holder').hide();
+                                $('.modification-block2').hide();
                                 $('.modification-block').show();
                             },
                             onFinish: function (data) {
@@ -1924,6 +1933,7 @@ function createMyBooking(event_id,category,ressourceid,datestart,dateend,udatest
                             onUpdate: function (data) {
                                 $('.main-slider').hide();$('.nav-holder').hide();
                                 $('.nav-holder').hide();
+                                $('.modification-block2').hide();
                                 $('.modification-block').show();
                             },
                             onFinish: function (data) {
@@ -2000,8 +2010,9 @@ function checkCreateBooking(idEvent,dateStart,dateEnd,fe_typo_user,action,ressou
                     window.localStorage.clear();
                     $('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
                     
-                    $('.main-slider').hide();$('.nav-holder').hide();
+                    $('.main-slider').hide();
                     $('.nav-holder').hide();
+                    $('.modification-block2').hide();
                     $('.modification-block').hide();
                     $('.info-block').show();
                 
@@ -2018,11 +2029,14 @@ function checkCreateBooking(idEvent,dateStart,dateEnd,fe_typo_user,action,ressou
                         $('#btn_close').attr('onclick','getScan(\''+fe_typo_user+'\','+ressourceId+',\''+category2+'\',\'refresh\')');
                     if (action == "getDispo")
                         $('#btn_close').attr('onclick','getDispo(\''+fe_typo_user+'\','+ressourceId+',\''+category2+'\',\'refresh\')');
+                    if (action == "getDispo2")
+                        $('#btn_close').attr('onclick','getDispo(\''+fe_typo_user+'\','+ressourceId+',\''+category2+'\',\'refresh\')');
                 
                 
                     $('.main-slider').hide();$('.nav-holder').hide();
                     $('.nav-holder').hide();
                     $('.modification-block').hide();
+                    $('.modification-block2').hide();
                     $('.info-block').show();
                     
                 }
@@ -2042,6 +2056,7 @@ function checkCreateBooking(idEvent,dateStart,dateEnd,fe_typo_user,action,ressou
                     $('.main-slider').hide();$('.nav-holder').hide();
                     $('.nav-holder').hide();
                     $('.modification-block').hide();
+                    $('.modification-block2').hide();
                     $('.info-block').show();
                     
                 }
@@ -2061,6 +2076,7 @@ function checkCreateBooking(idEvent,dateStart,dateEnd,fe_typo_user,action,ressou
                     $('.main-slider').hide();$('.nav-holder').hide();
                     $('.nav-holder').hide();
                     $('.modification-block').hide();
+                    $('.modification-block2').hide();
                     $('.info-block').show();
                     
                 }
@@ -2080,6 +2096,7 @@ function checkCreateBooking(idEvent,dateStart,dateEnd,fe_typo_user,action,ressou
                     $('.main-slider').hide();$('.nav-holder').hide();
                     $('.nav-holder').hide();
                     $('.modification-block').hide();
+                    $('.modification-block2').hide();
                     $('.info-block').show();
                     
                 }
@@ -2099,6 +2116,7 @@ function checkCreateBooking(idEvent,dateStart,dateEnd,fe_typo_user,action,ressou
                     $('.main-slider').hide();$('.nav-holder').hide();
                     $('.nav-holder').hide();
                     $('.modification-block').hide();
+                    $('.modification-block2').hide();
                     $('.info-block').show();
                     
                 }
@@ -2118,6 +2136,7 @@ function checkCreateBooking(idEvent,dateStart,dateEnd,fe_typo_user,action,ressou
                     $('.main-slider').hide();$('.nav-holder').hide();
                     $('.nav-holder').hide();
                     $('.modification-block').hide();
+                    $('.modification-block2').hide();
                     $('.info-block').show();
                     
                 }
@@ -2156,6 +2175,7 @@ function checkCreateBooking(idEvent,dateStart,dateEnd,fe_typo_user,action,ressou
                     $('.main-slider').hide();$('.nav-holder').hide();
                     $('.nav-holder').hide();
                     $('.modification-block').hide();
+                    $('.modification-block2').hide();
                     $('.info-block').show();
                     
                 }
@@ -2170,6 +2190,7 @@ function checkCreateBooking(idEvent,dateStart,dateEnd,fe_typo_user,action,ressou
                     $('.main-slider').hide();$('.nav-holder').hide();
                     $('.nav-holder').hide();
                     $('.modification-block').hide();
+                    $('.modification-block2').hide();
                     $('.info-block').show();
                     
                 }
@@ -2204,6 +2225,7 @@ function checkCreateBooking(idEvent,dateStart,dateEnd,fe_typo_user,action,ressou
                     $('.main-slider').hide();$('.nav-holder').hide();
                     $('.nav-holder').hide();
                     $('.modification-block').hide();
+                    $('.modification-block2').hide();
                     $('.info-block').show();
                     
                 }
@@ -2242,6 +2264,7 @@ function checkCreateBooking(idEvent,dateStart,dateEnd,fe_typo_user,action,ressou
                     $('.main-slider').hide();$('.nav-holder').hide();
                     $('.nav-holder').hide();
                     $('.modification-block').hide();
+                    $('.modification-block2').hide();
                     $('.info-block').show();
                     
                 }
@@ -2256,6 +2279,7 @@ function checkCreateBooking(idEvent,dateStart,dateEnd,fe_typo_user,action,ressou
                     $('.main-slider').hide();$('.nav-holder').hide();
                     $('.nav-holder').hide();
                     $('.modification-block').hide();
+                    $('.modification-block2').hide();
                     $('.info-block').show();
                     
                 }
@@ -2271,6 +2295,7 @@ function checkCreateBooking(idEvent,dateStart,dateEnd,fe_typo_user,action,ressou
                     $('.main-slider').hide();$('.nav-holder').hide();
                     $('.nav-holder').hide();
                     $('.modification-block').hide();
+                    $('.modification-block2').hide();
                     $('.info-block').show();
                     
                 }
@@ -2297,6 +2322,7 @@ function checkCreateBooking(idEvent,dateStart,dateEnd,fe_typo_user,action,ressou
                 
                     $('.main-slider').hide();$('.nav-holder').hide();$('.nav-holder').hide();
                     $('.modification-block').hide();
+                    $('.modification-block2').hide();
                     $('.info-block').show();
                     
                 }
@@ -2315,6 +2341,7 @@ function checkCreateBooking(idEvent,dateStart,dateEnd,fe_typo_user,action,ressou
                     
                     $('.main-slider').hide();$('.nav-holder').hide();$('.nav-holder').hide();
                     $('.modification-block').hide();
+                    $('.modification-block2').hide();
                     $('.info-block').show();
                     
                 }
@@ -2333,6 +2360,7 @@ function checkCreateBooking(idEvent,dateStart,dateEnd,fe_typo_user,action,ressou
                     
                     $('.main-slider').hide();$('.nav-holder').hide();$('.nav-holder').hide();
                     $('.modification-block').hide();
+                    $('.modification-block2').hide();
                     $('.info-block').show();
                 }
                 
@@ -2350,8 +2378,10 @@ function checkCreateBooking(idEvent,dateStart,dateEnd,fe_typo_user,action,ressou
                     if (action == "getDispo")
                         $('#btn_close').attr('onclick','getDispo(\''+fe_typo_user+'\','+ressourceId+',\''+category2+'\',\'refresh\')');
                     
-                    $('.main-slider').hide();$('.nav-holder').hide();
+                    $('.main-slider').hide();
+                    $('.nav-holder').hide();
                     $('.modification-block').hide();
+                    $('.modification-block2').hide();
                     
                     setTimeout(function(){
                         $('.info-block').show();
@@ -2369,6 +2399,7 @@ function checkCreateBooking(idEvent,dateStart,dateEnd,fe_typo_user,action,ressou
                 
                     $('.main-slider').hide();$('.nav-holder').hide();
                     $('.modification-block').hide();
+                    $('.modification-block2').hide();
                     $('.info-block').show();
                 }
                 
@@ -4766,6 +4797,7 @@ function SearchForm(fe_typo_user,args) {
                     
                     $('.main-slider').hide();
                     $('.nav-holder').hide();
+                    $('.modification-block2').hide();
                     $('.modification-block').hide();
                     $('.info-block').show();
                     $('#backtoshare').hide();
@@ -4774,10 +4806,11 @@ function SearchForm(fe_typo_user,args) {
                 }
                 
                 if (result.result) {
-                    $('.modification-block').html(result.searchform);
+                    $('.modification-block2').html(result.searchform);
                     $('.main-slider').hide();
                     $('.nav-holder').hide();
                     $('.modification-block').show();
+                    $('.modification2-block').show();
                     $('#backtoshare').hide();
                     $('.loader2').hide();
                     
@@ -4823,6 +4856,7 @@ function SearchResult(fe_typo_user,args,indexSlide) {
                     $('.main-slider').hide();
                     $('.nav-holder').hide();
                     $('.modification-block').hide();
+                    $('.modification-block2').hide();
                     $('.info-block').show();
                 
                 }
@@ -4855,6 +4889,7 @@ function SearchResult(fe_typo_user,args,indexSlide) {
                     if (countslide > 0) {
                         $('.nav-holder').show();
                         $('.modification-block').hide();
+                        $('.modification-block2').hide();
                         $('.info-block').hide();
                         $('.main-slider').html(result.slide);
                         initSlickCarousel();
@@ -4872,6 +4907,7 @@ function SearchResult(fe_typo_user,args,indexSlide) {
                         $('.main-slider').hide();
                         $('.nav-holder').hide();
                         $('.modification-block').hide();
+                        $('.modification-block2').hide();
                         $('.info-block').show();    
                     }
                     
@@ -4883,6 +4919,7 @@ function SearchResult(fe_typo_user,args,indexSlide) {
                     $('.main-slider').hide();
                     $('.nav-holder').hide();
                     $('.modification-block').hide();
+                    $('.modification-block2').hide();
                     $('.info-block').show();    
                 }
                 
@@ -4930,6 +4967,7 @@ function getDispo2(fe_typo_user,ressourceId,category,action,index,args) {
                     $('.main-slider').hide();
                     $('.nav-holder').hide();
                     $('.modification-block').hide();
+                    $('.modification-block2').hide();
                     $('.info-block').show();
                 
                 }
@@ -4952,7 +4990,8 @@ function getDispo2(fe_typo_user,ressourceId,category,action,index,args) {
                          });
                          
                          
-                         $('.main-slider').show();$('.nav-holder').show();
+                         $('.main-slider').show();
+                         $('.nav-holder').show();
                          $('.info-block').hide();
                          if (countslide > 0) 
                             $('.main-slider').slick('unslick');
@@ -4964,6 +5003,7 @@ function getDispo2(fe_typo_user,ressourceId,category,action,index,args) {
                     if (countslide > 0) {
                         $('.nav-holder').show();
                         $('.modification-block').hide();
+                        $('.modification-block2').hide();
                         $('.info-block').hide();
                         $('.main-slider').html(result.slide);
                         initSlickCarousel();
@@ -4981,6 +5021,7 @@ function getDispo2(fe_typo_user,ressourceId,category,action,index,args) {
                         $('.main-slider').hide();
                         $('.nav-holder').hide();
                         $('.modification-block').hide();
+                        $('.modification-block2').hide();
                         $('.info-block').show();      
                     }
                     
@@ -4994,6 +5035,7 @@ function getDispo2(fe_typo_user,ressourceId,category,action,index,args) {
                     $('.main-slider').hide();
                     $('.nav-holder').hide();
                     $('.modification-block').hide();
+                    $('.modification-block2').hide();
                     $('.info-block').show();    
                 }
                 

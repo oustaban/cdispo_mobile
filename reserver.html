@@ -152,7 +152,7 @@
 					
 				</div>
 				
-				<div class="modification-block light-block">
+				<div class="modification-block2 light-block">
 					
 				</div>
 				
@@ -174,6 +174,72 @@
 						<a href="javascript:void(0)" onclick="" class="btn btn-teal" id="btn_close">Fermer</a>
 						<a href="javascript:void(0)" onclick="" class="btn btn-light" id="btn_cancel">&nbsp;</a>
 					</div>
+				</div>
+				
+				<div class="modification-block light-block">
+					<h2 id="modification_title">LA MODIFICATION EST POSSIBLE <span>UNIQUEMENT AU SEIN DU CRENEAU DE PARTAGE</span></h2>
+					<strong class="title"><time id="date_start" datetime="2019-01-28T12:30">Lun., 28 Janvier, 12:30</time> – <time id="date_end" datetime="2019-01-29T15:30">Lun. 29 Janvier, 15h30</time></strong>
+					<p id="modification_texte1">Pour une modification avancée, veuillez vous connecter à votre site internet </p>
+					<p><a href="#" target="_blank" id="modification_lien1">www.cdispo.com</a></p>
+					<div class="warning-block">
+						<i class="icon-warning"></i>
+						<p id="modification_texte2">Une fois modifiée, la réservation ne sera confirmée qu’après validation par le titulaire du partage. Vous serez tenu informé par email de la confirmation. En l’absence d’email de confirmation, la réservation est réputée non confirmée.</p>
+					</div>
+					<div class="slider-holder" id="slider_holder1">
+						<h2>date de début / date de fin</h2>
+						<input type="text" class="js-range-slider1" name="my_range1" value="" />
+					</div>
+					<div class="slider-holder" id="slider_holder2">
+						<h2>heure de début</h2>
+						<input type="text" class="js-range-slider2" name="my_range2" value="" />
+					</div>
+					<div class="slider-holder" id="slider_holder3">
+						<h2>heure de fin</h2>
+						<input type="text" class="js-range-slider3" name="my_range3" value="" />
+					</div>
+					<div class="slider-holder" id="slider_holder4">
+						<div class="label-row">
+							<label for="titre" class="label" id="modifinputtitre">Titre</label>
+							<div class="input-col">
+								<input type="text" id="titre" placeholder="">
+							</div>
+						</div>
+						<div class="label-row">
+							<label class="label" id="modifinputdescription">Description</label>
+							<div class="input-col">
+								<textarea rows="5" cols="30" id="description"></textarea>
+							</div>
+						</div>
+						
+						<div class="label-row">
+							<label for="invites" class="label" id="modifinputinvites">
+								<img src="images/utilisateur.png">invites
+							</label>
+							<div class="input-col">
+								<input type="text" id="invites" placeholder="Veuillez saisir un nom d'utilisateur">
+							</div>
+							<div class="input-col">
+								<ul id="booking_adduser"></ul>
+							</div>
+						</div>
+						<div class="label-row">
+							<label for="invitesemaik" class="label" id="modifinputinvitesemail">
+								<img src="images/utilisateur.png">invites
+							</label>
+							<div class="input-col">
+								<input type="text" id="invitesemail" placeholder="Veuillez saisir un email">
+							</div>
+							<div class="input-col">
+								<ul id="booking_adduseremail"></ul>
+							</div>
+						</div>
+					</div>
+					<div class="btn-block">
+						<a href="#" class="btn btn-blue" id="btn_modifynow">MODIFIER MAINTENANT</a>
+						<a href="#" class="btn btn-light" id="btn_back">RETOUR</a>
+					</div>
+					<input type="hidden" name="datestart" id="modif_datestart" value="">
+					<input type="hidden" name="dateend" id="modif_dateend" value="">
 				</div>
 				
 			</div>

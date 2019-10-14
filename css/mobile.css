@@ -632,7 +632,7 @@ th {
 }
 
 .clearfix:after,
-.modification-block .input-col:after {
+.modification-block .input-col:after, .modification-block2 .input-col:after {
 	content: "";
 	display: block;
 	clear: both;
@@ -1332,14 +1332,14 @@ textarea:focus {
 	color: #303030;
 }
 
-.modification-block {
+.modification-block, .modification-block2 {
 	text-align: center;
 	padding: 9px 13px 0;
 	font-size: 10px;
 	line-height: 1.05;
 }
 
-.modification-block .label {
+.modification-block .label, .modification-block2 .label {
 	width: calc(100% - 184px);
 }
 
@@ -1349,7 +1349,7 @@ textarea:focus {
 	line-height: 38px;
 }
 
-.modification-block .input-col {
+.modification-block .input-col, .modification-block2 .input-col {
 	width: 204px;
 }
 
@@ -1358,29 +1358,41 @@ textarea:focus {
 }
 
 .modification-block .input-col .select-wrap,
-.modification-block .input-col .datapicker-wrap {
+.modification-block .input-col .datapicker-wrap,
+.modification-block2 .input-col .select-wrap,
+.modification-block2 .input-col .datapicker-wrap {
 	float: left;
 }
 
 .modification-block .input-col .select-wrap:first-child,
-.modification-block .input-col .datapicker-wrap:first-child {
+.modification-block .input-col .datapicker-wrap:first-child,
+.modification-block2 .input-col .select-wrap:first-child,
+.modification-block2 .input-col .datapicker-wrap:first-child {
 	width: calc(60% - 4px);
 	margin-right: 4px;
 }
 
 .modification-block .input-col .select-wrap:last-child,
-.modification-block .input-col .datapicker-wrap:last-child {
+.modification-block .input-col .datapicker-wrap:last-child,
+.modification-block2 .input-col .select-wrap:last-child,
+.modification-block2 .input-col .datapicker-wrap:last-child {
 	width: 40%;
 }
 
 .modification-block .input-col .select-wrap:only-child,
-.modification-block .input-col .datapicker-wrap:only-child {
+.modification-block .input-col .datapicker-wrap:only-child,
+.modification-block2 .input-col .select-wrap:only-child,
+.modification-block2 .input-col .datapicker-wrap:only-child
+{
 	width: 100%;
 }
 
 .modification-block .input-col input,
 .modification-block .input-col select,
-.modification-block .input-col textarea
+.modification-block .input-col textarea,
+.modification-block2 .input-col input,
+.modification-block2 .input-col select,
+.modification-block2 .input-col textarea
 {
 	width: 100%;
 }
@@ -1389,42 +1401,42 @@ textarea:focus {
 	width: 100%;
 }
 
-.modification-block h2 {
+.modification-block h2, .modification-block2 h2 {
 	font-size: 13px;
 	display: block;
 	margin-bottom: 5px;
 }
 
-.modification-block h2 span {
+.modification-block h2 span, .modification-block2 h2 span {
 	font-size: 10px;
 	display: block;
 	margin: 0 -2px;
 }
 
-.modification-block p {
+.modification-block p, .modification-block2 p {
 	margin-bottom: 4px;
 }
 
-.modification-block p:last-of-type {
+.modification-block p:last-of-type, .modification-block2 p:last-of-type {
 	margin-bottom: 10px;
 }
 
-.modification-block p a {
+.modification-block p a, .modification-block2 p a {
 	font-size: 12px;
 	color: #007978;
 	text-decoration: underline;
 }
 
-.modification-block form {
+.modification-block form, .modification-block2 form {
 	text-align: left;
 	font-size: 12px;
 }
 
-.modification-block .btn-block {
+.modification-block .btn-block, .modification-block2 .btn-block {
 	margin: 0 -14px;
 }
 
-.modification-block .warning-block {
+.modification-block .warning-block, .modification-block2 .warning-block {
 	border-top: 1px solid #fff;
 	border-bottom: 1px solid #fff;
 	background-color: rgba(0, 231, 230, .28);
@@ -1434,7 +1446,7 @@ textarea:focus {
 	line-height: 1.2;
 }
 
-.modification-block .warning-block .icon-warning {
+.modification-block .warning-block .icon-warning, .modification-block2 .waring-block .icon-warning {
 	text-align: center;
 	color: #ed1d25;
 	font-size: 22px;
@@ -1442,13 +1454,13 @@ textarea:focus {
 	margin: 0 0 5px;
 }
 
-.modification-block .title {
+.modification-block .title, .modification-block2 .title {
 	font-size: 11px;
 	display: block;
 	margin: 0 -5px 4px;
 }
 
-.modification-block .slider-holder {
+.modification-block .slider-holder, .modification-block2 .slider-holder {
 	border-top: 1px solid white;
 	padding: 25px 51px 8px;
 	margin: 0 -13px;
@@ -2032,7 +2044,7 @@ textarea:focus {
 	display:none;
 }
 
-.modification-block {
+.modification-block, .modification-block2 {
 	display:none;
 }
 
@@ -2355,41 +2367,45 @@ label.error {
 		min-height: 46px;
 	}
 
-	.modification-block {
+	.modification-block, .modification-block2 {
 		margin: 0 auto;
 		padding: 16px 20px 0;
 		font-size: 17px;
 	}
 
-	.modification-block .label {
+	.modification-block .label, .modification-block2 .label {
 		width: calc(100% - 318px);
 	}
 
-	.modification-block .input-col {
+	.modification-block .input-col, .modification-block2 .input-col {
 		width: 318px;
 	}
 
 	.modification-block .input-col .select-wrap:first-child,
-	.modification-block .input-col .datapicker-wrap:first-child {
+	.modification-block .input-col .datapicker-wrap:first-child,
+	.modification-block2 .input-col .select-wrap:first-child,
+	.modification-block2 .input-col .datapicker-wrap:first-child {
 		width: calc(60% - 8px);
 		margin-right: 8px;
 	}
 
 	.modification-block .input-col .select-wrap:only-child,
-	.modification-block .input-col .datapicker-wrap:only-child {
+	.modification-block .input-col .datapicker-wrap:only-child,
+	.modification-block2 .input-col .select-wrap:only-child,
+	.modification-block2 .input-col .datapicker-wrap:only-child {
 		width: 100%;
 	}
 
-	.modification-block .btn-block {
+	.modification-block .btn-block, .modification-block2 .btn-block {
 		margin: 0 -21px;
 	}
 
-	.modification-block .warning-block {
+	.modification-block .warning-block, .modification-block2 .warning-block {
 		margin: 0 -21px;
 		line-height: 1.25;
 	}
 
-	.modification-block .slider-holder {
+	.modification-block .slider-holder, .modification-block2 .slider-holder {
 		border-top: 1px solid white;
 		margin: 0 -23px;
 		padding: 45px 51px 27px;
@@ -2623,38 +2639,38 @@ label.error {
 		padding: 0 37px;
 	}
 
-	.modification-block h2 {
+	.modification-block h2, .modification-block2 h2 {
 		margin-bottom: 10px;
 		font-size: 22px;
 	}
 
-	.modification-block h2 span {
+	.modification-block h2 span, .modification-block2 h2 span {
 		font-size: 18px;
 		margin: 0 -20px;
 	}
 
-	.modification-block p:last-of-type {
+	.modification-block p:last-of-type, .modification-block2 p:last-of-type {
 		margin-bottom: 15px;
 	}
 
-	.modification-block p a {
+	.modification-block p a, .modification-block2 p a {
 		font-size: 21px;
 	}
 
-	.modification-block form {
+	.modification-block form, .modification-block2 form {
 		font-size: 21px;
 	}
 
-	.modification-block .warning-block {
+	.modification-block .warning-block, .modification-block2 .warning-block {
 		padding: 13px 26px 0;
 	}
 
-	.modification-block .warning-block .icon-warning {
+	.modification-block .warning-block .icon-warning, .modification-block2 .warning-block .icon-warning {
 		font-size: 40px;
 		margin: 0 0 10px;
 	}
 
-	.modification-block .title {
+	.modification-block .title, .modification-block2 .title {
 		font-size: 19px;
 		margin-bottom: 7px;
 	}
