@@ -4989,7 +4989,7 @@ function getDispo2(fe_typo_user,ressourceId,category,action,index,args) {
           dataType: "jsonp",
           jsonp: 'callback',
           jsonpCallback: 'cdispoToken',
-          data: {action:"getDispo",fe_typo_user:fe_typo_user,ressourceId:ressourceId,category:category,from:'search',index:index,args:args},
+          data: {action:"getDispo",fe_typo_user:fe_typo_user,ressourceId:ressourceId,category:category,from:'search',indexSlide:indindexSlideex,args:args},
           
           success: function(result) {
                 
