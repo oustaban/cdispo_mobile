@@ -4943,7 +4943,7 @@ function SearchResult(fe_typo_user,args,indexSlide) {
                         $('#backtoshare').hide();
                         $('.prewiewsharing_header').hide();
                         $('.previewsharing_content').html(result.content);
-                        $('#btn_close').attr('onclick','$(\'.main-slider\').hide();$(\'.info-block\').hide();$(\'.nav-holder\').hide();$(\'.modification-block\').show()');
+                        $('#btn_close').attr('onclick','$(\'.main-slider\').hide();$(\'.info-block\').hide();$(\'.nav-holder\').hide();$(\'.modification-block\').hide();$(\'.modification-block2\').show()');
                         $('.main-slider').hide();
                         $('.nav-holder').hide();
                         $('.modification-block').hide();
@@ -4955,7 +4955,7 @@ function SearchResult(fe_typo_user,args,indexSlide) {
                     $('#backtoshare').hide();
                     $('.prewiewsharing_header').hide();
                     $('.previewsharing_content').html(result.content);
-                    $('#btn_close').attr('onclick','$(\'.main-slider\').hide();$(\'.info-block\').hide();$(\'.nav-holder\').hide();$(\'.modification-block\').show()');
+                    $('#btn_close').attr('onclick','$(\'.main-slider\').hide();$(\'.info-block\').hide();$(\'.nav-holder\').hide();$(\'.modification-block\').hide();$(\'.modification-block2\').show()');
                     $('.main-slider').hide();
                     $('.nav-holder').hide();
                     $('.modification-block').hide();
@@ -5079,13 +5079,13 @@ function getDispo2(fe_typo_user,ressourceId,category,action,index,args) {
                     $('.info-block').show();    
                 }
                 
-                console.log('success getBookingToConfirm');
+                console.log('success getDispo2');
                 
                 $('#scan_title').html(result.title);
                 $('.loader2').hide();
           },  
           error: function(error) {
-            console.log('nok getBookingToConfirm');
+            console.log('nok getDispo2');
             console.log(error);
             $('.loader2').hide();
           }   
