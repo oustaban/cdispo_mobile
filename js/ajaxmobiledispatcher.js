@@ -1768,8 +1768,12 @@ function createMyBooking(event_id,category,ressourceid,datestart,dateend,udatest
                         
                         
                         var my_from1 = myvalues1.indexOf(timecode[indexStart1][indexStart2]);
-                        var my_to1 = myvalues1.indexOf(timecode[indexEnd1][indexEnd2]);
+                        //var my_to1 = myvalues1.indexOf(timecode[indexEnd1][indexEnd2]);
+                        
+                        var my_to1 = myvalues.length-1;
                         //var my_to1 = myvalues.length-1;
+                        
+                        
                         
     
                         
