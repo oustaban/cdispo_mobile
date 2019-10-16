@@ -1691,7 +1691,8 @@ function createMyBooking(event_id,category,ressourceid,datestart,dateend,udatest
                             var my_from1 = myvalues.indexOf(parseInt(result.dateStartBooking));
                         }
                         
-                        var my_to1 = myvalues.indexOf(parseInt(result.dateEndBooking));
+                        var my_to1 = myvalues.length-1;
+                        //var my_to1 = myvalues.indexOf(parseInt(result.dateEndBooking));
                         
                         
                         $(".js-range-slider1").ionRangeSlider({
@@ -1741,9 +1742,9 @@ function createMyBooking(event_id,category,ressourceid,datestart,dateend,udatest
                         var myvalues2 = [];
                         var myvalues3 = [];
                         var indexStart1 = 0;
-                        var indexEnd1 = 0;
+                        var indexEnd1 = timecode.length-1;
                         var indexStart2 = 0;
-                        var indexEnd2 = 0;
+                        var indexEnd2 = timecode[timecode.length-1].length - 1;
                         var indexEnd3 = 0;
                         $('#slider_holder1').show();
                         $('#slider_holder2').show();
@@ -1766,8 +1767,9 @@ function createMyBooking(event_id,category,ressourceid,datestart,dateend,udatest
                         
                         
                         
-                        var my_from1 = myvalues1.indexOf(timecode[indexStart1][0]);
-                        var my_to1 = myvalues1.indexOf(timecode[indexEnd1][0]);
+                        var my_from1 = myvalues1.indexOf(timecode[indexStart1][indexStart2]);
+                        var my_to1 = myvalues1.indexOf(timecode[indexEnd1][indexEnd2]);
+                        //var my_to1 = myvalues.length-1;
                         
     
                         
@@ -5013,7 +5015,7 @@ function getDispo2(fe_typo_user,ressourceId,category,action,index,args) {
                 }
                 
                 if (result.result) {
-                    console.log('success getBookingToConfirm 1 '+action);
+                    console.log('success getDispo2 '+action);
                     if (action == "refresh") {
                          console.log('countslide:'+countslide);
                          //window.clearAllIntervals();
