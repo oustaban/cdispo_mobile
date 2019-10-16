@@ -885,8 +885,8 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                             var my_from1 = myvalues.indexOf(parseInt(result.dateStartBooking));
                         }
                         
-                        var my_to1 = myvalues.indexOf(parseInt(result.dateEndBooking));
-                        
+                        //var my_to1 = myvalues.indexOf(parseInt(result.dateEndBooking));
+                        var my_to1 = myvalues.length-1;
                         
                         $(".js-range-slider1").ionRangeSlider({
                             onUpdate: function (data) {
@@ -962,10 +962,12 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                         
                         
                         
-                        var my_from1 = myvalues1.indexOf(timecode[indexStart1][0]);
-                        var my_to1 = myvalues1.indexOf(timecode[indexEnd1][0]);
+                        //var my_from1 = myvalues1.indexOf(timecode[indexStart1][0]);
+                        var my_from1 = myvalues1.indexOf(timecode[indexStart1][indexStart2]);
                         
-    
+                        //var my_to1 = myvalues1.indexOf(timecode[indexEnd1][0]);
+                        //var my_to1 = myvalues.length-1;
+                        var my_to1 = myvalues1.indexOf(timecode[indexEnd1][indexEnd2]);
                         
                         
                         $(".js-range-slider1").ionRangeSlider({
