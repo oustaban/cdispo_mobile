@@ -4800,10 +4800,10 @@ function getDispo(fe_typo_user,ressourceId,category,action) {
                 
                 console.log('success getBookingToConfirm');
                 
-                if (from == "scan")
+                //if (from == "scan")
                     $('#scan_title').html(result.title);
-                if (from == "search")
-                    $('#reserver_title').html(result.title);
+                //if (from == "search")
+                    //$('#reserver_title').html(result.title);
                 $('.loader2').hide();
           },  
           error: function(error) {
