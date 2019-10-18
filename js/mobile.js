@@ -257,6 +257,15 @@ function initNav() {
 		cordova.InAppBrowser.open(url+'mesconfirmations.html', '_self');
 	});
 	
+	jQuery('#nav_title5').click(function() {
+		console.log(url);
+		if ($(".modification-block").is(":visible")) {
+			unlockBooking(fe_typo_user,$('#modif_booking').val());
+        }
+		window.localStorage.clear()
+		cordova.InAppBrowser.open(url+'index.html', '_self');
+	});
+	
 	jQuery('#btn_scan').click(function() {
 		$('.loader2').show();
 		if ($(".modification-block").is(":visible")) {
