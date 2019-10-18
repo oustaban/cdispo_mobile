@@ -4370,8 +4370,13 @@ function getScan(fe_typo_user,ressourceId,category,action) {
                     window.localStorage.clear();
                     $('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
                     
-                    $('.main-slider').hide();$('.nav-holder').hide();
+                    $('#btn_close').text(trad['btn_close']);
+                    $('#btn_cancel').text('');
+                    $('.main-slider').hide();
+                    $('.nav-holder').hide();
                     $('.modification-block').hide();
+                    $('.modification-block2').hide();
+                    $('.message-block').hide();
                     $('.info-block').show();
                 
                 }
@@ -4385,8 +4390,13 @@ function getScan(fe_typo_user,ressourceId,category,action) {
 					url = url.substring(0, url.lastIndexOf("/") + 1);
                     $('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'mesreservations.html\', \'_self\')');
                     
-                    $('.main-slider').hide();$('.nav-holder').hide();
+                    $('#btn_close').text(trad['btn_close']);
+                    $('#btn_cancel').text('');
+                    $('.main-slider').hide();
+                    $('.nav-holder').hide();
                     $('.modification-block').hide();
+                    $('.modification-block2').hide();
+                    $('.message-block').hide();
                     $('.info-block').show();
                     
                 }
@@ -4400,8 +4410,13 @@ function getScan(fe_typo_user,ressourceId,category,action) {
 					url = url.substring(0, url.lastIndexOf("/") + 1);
                     $('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'mesreservations.html\', \'_self\')');
                     
-                    $('.main-slider').hide();$('.nav-holder').hide();
+                    $('#btn_close').text(trad['btn_close']);
+                    $('#btn_cancel').text('');
+                    $('.main-slider').hide();
+                    $('.nav-holder').hide();
                     $('.modification-block').hide();
+                    $('.modification-block2').hide();
+                    $('.message-block').hide();
                     $('.info-block').show();
                     
                 }
@@ -4412,27 +4427,45 @@ function getScan(fe_typo_user,ressourceId,category,action) {
                         $('.prewiewsharing_header').hide();
                         $('.previewsharing_content').html('<p></p><p>'+result.bookingtostartcancelled+'</p>');
                         $('#btn_close').attr('onclick','getScan(\''+fe_typo_user+'\',\''+ressourceId+'\',\''+category+'\',\'refresh\')');
-                        $('.main-slider').hide();$('.nav-holder').hide();
+                        
+                        $('#btn_close').text(trad['btn_close']);
+                        $('#btn_cancel').text('');
+                        $('.main-slider').hide();
+                        $('.nav-holder').hide();
                         $('.modification-block').hide();
-                        $('.info-block').show(); 
+                        $('.modification-block2').hide();
+                        $('.message-block').hide();
+                        $('.info-block').show();
                     }
                     if (result.bookingtostartfinished) {
                         initPopin();
                         $('.prewiewsharing_header').hide();
                         $('.previewsharing_content').html('<p></p><p>'+result.bookingtostartfinished+'</p>');
                         $('#btn_close').attr('onclick','getScan(\''+fe_typo_user+'\',\''+ressourceId+'\',\''+category+'\',\'refresh\')');
-                        $('.main-slider').hide();$('.nav-holder').hide();
+                        
+                        $('#btn_close').text(trad['btn_close']);
+                        $('#btn_cancel').text('');
+                        $('.main-slider').hide();
+                        $('.nav-holder').hide();
                         $('.modification-block').hide();
-                        $('.info-block').show(); 
+                        $('.modification-block2').hide();
+                        $('.message-block').hide();
+                        $('.info-block').show();
                     }
                     if (result.nobookingstostart) {
                        initPopin();
                         $('.prewiewsharing_header').hide();
                         $('.previewsharing_content').html('<p></p><p>'+result.nobookingstostart+'</p>');
                         $('#btn_close').attr('onclick','getScan(\''+fe_typo_user+'\',\''+ressourceId+'\',\''+category+'\',\'refresh\')');
-                        $('.main-slider').hide();$('.nav-holder').hide();
+                        
+                        $('#btn_close').text(trad['btn_close']);
+                        $('#btn_cancel').text('');
+                        $('.main-slider').hide();
+                        $('.nav-holder').hide();
                         $('.modification-block').hide();
-                        $('.info-block').show(); 
+                        $('.modification-block2').hide();
+                        $('.message-block').hide();
+                        $('.info-block').show();
                     }
                     if (result.bookingtostart) {
                         if (action == "refresh") {
@@ -4445,9 +4478,15 @@ function getScan(fe_typo_user,ressourceId,category,action) {
                                 var i = $(this).attr("data-slick-index");
                                 $('.main-slider').slick('slickRemove',i);
                              });
-                             $('.main-slider').show();$('.nav-holder').show();
-                             $('.modification-block').hide();
-                             $('.info-block').hide();
+                             
+                            $('#btn_close').text(trad['btn_close']);
+                            $('#btn_cancel').text('');
+                            $('.main-slider').show();
+                            $('.nav-holder').show();
+                            $('.modification-block').hide();
+                            $('.modification-block2').hide();
+                            $('.message-block').hide();
+                            $('.info-block').hide();
                              if (countslide > 0) 
                                 $('.main-slider').slick('unslick');
                         }
@@ -4462,9 +4501,15 @@ function getScan(fe_typo_user,ressourceId,category,action) {
                             $('.previewsharing_content').html(result.content);
                             $('#btn_close').attr('onclick','getScan(\''+fe_typo_user+'\',\''+ressourceId+'\',\''+category+'\',\'refresh\')');
                             
-                            $('.main-slider').hide();$('.nav-holder').hide();
+                            
+                            $('#btn_close').text(trad['btn_close']);
+                            $('#btn_cancel').text('');
+                            $('.main-slider').hide();
+                            $('.nav-holder').hide();
                             $('.modification-block').hide();
-                            $('.info-block').show();    
+                            $('.modification-block2').hide();
+                            $('.message-block').hide();
+                            $('.info-block').show();  
                         }
                         
                     }
@@ -4480,9 +4525,14 @@ function getScan(fe_typo_user,ressourceId,category,action) {
                                 var i = $(this).attr("data-slick-index");
                                 $('.main-slider').slick('slickRemove',i);
                              });
-                             $('.main-slider').show();$('.nav-holder').show();
-                             $('.modification-block').hide();
-                             $('.info-block').hide();
+                             $('#btn_close').text(trad['btn_close']);
+                            $('#btn_cancel').text('');
+                            $('.main-slider').show();
+                            $('.nav-holder').show();
+                            $('.modification-block').hide();
+                            $('.modification-block2').hide();
+                            $('.message-block').hide();
+                            $('.info-block').hide();
                              if (countslide > 0) 
                                 $('.main-slider').slick('unslick');
                         }
@@ -4503,9 +4553,14 @@ function getScan(fe_typo_user,ressourceId,category,action) {
                             $('.previewsharing_content').html(result.content);
                             $('#btn_close').attr('onclick','getBookingToGo(\''+fe_typo_user+'\','+ressourceId+',\''+category+'\',\'refresh\')');
                         
-                            $('.main-slider').hide();$('.nav-holder').hide();
+                            $('#btn_close').text(trad['btn_close']);
+                            $('#btn_cancel').text('');
+                            $('.main-slider').hide();
+                            $('.nav-holder').hide();
                             $('.modification-block').hide();
-                            $('.info-block').show();    
+                            $('.modification-block2').hide();
+                            $('.message-block').hide();
+                            $('.info-block').show();  
                         }
                         
                     }
@@ -4522,9 +4577,14 @@ function getScan(fe_typo_user,ressourceId,category,action) {
                                 var i = $(this).attr("data-slick-index");
                                 $('.main-slider').slick('slickRemove',i);
                              });
-                             $('.main-slider').show();$('.nav-holder').show();
-                             $('.modification-block').hide();
-                             $('.info-block').hide();
+                             $('#btn_close').text(trad['btn_close']);
+                            $('#btn_cancel').text('');
+                            $('.main-slider').show();
+                            $('.nav-holder').show();
+                            $('.modification-block').hide();
+                            $('.modification-block2').hide();
+                            $('.message-block').hide();
+                            $('.info-block').hide();
                              if (countslide > 0) 
                                 $('.main-slider').slick('unslick');
                         }
@@ -4544,8 +4604,13 @@ function getScan(fe_typo_user,ressourceId,category,action) {
                             $('.previewsharing_content').html(result.content);
                             $('#btn_close').attr('onclick','getDispo(\''+fe_typo_user+'\','+ressourceId+',\''+category+'\',\'refresh\')');
                             
-                            $('.main-slider').hide();$('.nav-holder').hide();
+                            $('#btn_close').text(trad['btn_close']);
+                            $('#btn_cancel').text('');
+                            $('.main-slider').hide();
+                            $('.nav-holder').hide();
                             $('.modification-block').hide();
+                            $('.modification-block2').hide();
+                            $('.message-block').hide();
                             $('.info-block').show();    
                         }
                         
@@ -4562,8 +4627,13 @@ function getScan(fe_typo_user,ressourceId,category,action) {
 					url = url.substring(0, url.lastIndexOf("/") + 1);
                     $('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'mesreservations.html\', \'_self\')');
                     
-                    $('.main-slider').hide();$('.nav-holder').hide();
+                    $('#btn_close').text(trad['btn_close']);
+                    $('#btn_cancel').text('');
+                    $('.main-slider').hide();
+                    $('.nav-holder').hide();
                     $('.modification-block').hide();
+                    $('.modification-block2').hide();
+                    $('.message-block').hide();
                     $('.info-block').show();
                 }
                 

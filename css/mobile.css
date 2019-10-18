@@ -1393,6 +1393,7 @@ textarea:focus {
 .modification-block2 .input-col input,
 .modification-block2 .input-col select,
 .modification-block2 .input-col textarea
+.message-block .input-col textarea
 {
 	width: 100%;
 }
@@ -1400,7 +1401,10 @@ textarea:focus {
 {
 	width: 100%;
 }
-
+.message-block .input-col {
+	width:100%;
+	padding-top:10px;
+}
 .modification-block h2, .modification-block2 h2 {
 	font-size: 13px;
 	display: block;
@@ -2143,7 +2147,7 @@ span.prewiewsharing_edit,span.prewiewbooking_edit,span.prewiewguest_edit {
 	float:right;
 }
 
-div.previewsharing_content,div.previewbooking_content,div.previewguest_content,,div.previewmessage_content {
+div.previewsharing_content,div.previewbooking_content,div.previewguest_content,div.previewmessage_content {
 	display:block;
 	width:100%;
 	padding-left:10px;
