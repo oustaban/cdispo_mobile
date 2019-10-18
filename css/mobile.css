@@ -1472,28 +1472,28 @@ textarea:focus {
 	font-weight: bold;
 }
 
-.info-block {
+.info-block, .message-block {
 	font-size: 16px;
 	line-height: 1.6;
 	border:none;
 }
 
-.info-block .text-holder {
+.info-block .text-holder, .message-block .text-holder {
 	text-align: center;
 }
 
-.info-block .title {
+.info-block .title, .message-block .title {
 	font-size: 21px;
 	font-weight: 400;
 	display: block;
 	padding: 0 15px;
 }
 
-.info-block .btn-block {
+.info-block .btn-block, .message-block .btn-block {
 	margin: 0 -1px;
 }
 
-.info-block .btn {
+.info-block .btn, .message-block .btn {
 	padding: 5px;
 }
 
@@ -2040,7 +2040,7 @@ textarea:focus {
 	font-weight:bold;
 }
 
-.info-block {
+.info-block, .message-block {
 	display:none;
 }
 
@@ -2051,7 +2051,7 @@ textarea:focus {
 /****** PREVIEW SHARING ****/
 
 
-div.prewiewsharing_header {
+div.prewiewsharing_header, div.previewmessage_header {
 	display:block;
 	width:100%;
 	padding-left:10px;
@@ -2065,7 +2065,7 @@ div.prewiewsharing_header {
 	
 }
 
-div.prewiewsharing_header h1 {
+div.prewiewsharing_header h1, div.previewmessage_header h1 {
 	text-align:center;
 	color:#fff;
 	margin:0;
@@ -2096,7 +2096,7 @@ div.prewiewsharing_row3 {
 	width:100%;
 	float:left;
 }
-span.prewiewsharing_title,span.prewiewbooking_title,span.prewiewguest_title {
+span.prewiewsharing_title,span.prewiewbooking_title,span.prewiewguest_title,span.previewmessage_title {
 	color:#000;
 	text-align:center;
 	width:100%;
@@ -2109,7 +2109,7 @@ div.prewiewsharing_mandatories,div.prewiewbooking_mandatories,div.prewiewguest_m
 	display:block;
 	font-style:italic;
 }
-span.prewiewsharing_mandatory,span.prewiewbooking_mandatory,span.prewiewguest_mandatory {
+span.prewiewsharing_mandatory,span.prewiewbooking_mandatory,span.prewiewguest_mandatory,span.previewmessage_mandatory {
 	color:#000;
 	text-align:left;
 	width:100%;
@@ -2143,7 +2143,7 @@ span.prewiewsharing_edit,span.prewiewbooking_edit,span.prewiewguest_edit {
 	float:right;
 }
 
-div.previewsharing_content,div.previewbooking_content,div.previewguest_content {
+div.previewsharing_content,div.previewbooking_content,div.previewguest_content,,div.previewmessage_content {
 	display:block;
 	width:100%;
 	padding-left:10px;
@@ -2411,15 +2411,15 @@ label.error {
 		padding: 45px 51px 27px;
 	}
 
-	.info-block {
+	.info-block, .message-block {
 		font-size: 22px;
 	}
 
-	.info-block .title {
+	.info-block .title, .message-block .title {
 		font-size: 36px;
 	}
 
-	.info-block .btn {
+	.info-block .btn, .message-block .btn {
 		padding: 10px 5px;
 	}
 
@@ -2675,12 +2675,12 @@ label.error {
 		margin-bottom: 7px;
 	}
 
-	.info-block .text-holder {
+	.info-block .text-holder, .message-block .text-holder {
 		white-space: nowrap;
 		text-align: center;
 	}
 
-	.info-block .text-holder:after {
+	.info-block .text-holder:after, .message-block .text-holder:after {
 		content: "";
 		display: inline-block;
 		vertical-align: middle;
@@ -2688,7 +2688,7 @@ label.error {
 		min-height: calc(100vh - 490px);
 	}
 
-	.info-block .text-holder > * {
+	.info-block .text-holder > *, .message-block .text-holder > * {
 		white-space: normal;
 		display: inline-block;
 		vertical-align: middle;
