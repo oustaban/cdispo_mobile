@@ -283,7 +283,7 @@ function getUserInfo(fe_typo_user,owner_id,from,booking_id,ressourceId,category)
                         
                     if (from == "getBookingToStart" || from == "getBookingToEnd") {
                          $('#btn_close').text(trad['sendmessageto']+' '+result.owner);
-                         $('.previewmessage_title').text(trad['sendmessagetitle']+booking_id);
+                         $('.previewmessage_title').text(trad['sendmessagetitle']+result.owner);
                          $('#btn_close').attr('onclick','$(\'.info-block\').hide();$(\'.main-slider\').hide();$(\'.nav-holder\').hide();$(\'#backtoshare\').hide();$(\'.modification_block\').hide();$(\'.message-block\').show()');
                          $('#btn_send').attr('onclick','sendMessageToSharing('+booking_id+',\''+$('#message').val()+'\',\''+fe_typo_user+'\',\''+from+'\','+ressourceId+',\''+category+'\')');
                          $('#btn_back2').attr('onclick','$(\'.info-block\').show();$(\'.main-slider\').hide();$(\'.nav-holder\').hide();$(\'#backtoshare\').hide();$(\'.modification_block\').hide();$(\'.message-block\').hide()');
