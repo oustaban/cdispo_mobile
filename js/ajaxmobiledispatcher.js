@@ -278,7 +278,7 @@ function getUserInfo(fe_typo_user,owner_id,from,booking_id,ressourceId,category)
                     console.log('From:'+from);
                     
                     $('#btn_close').text(trad['btn_close']);
-                    $('#btn_close').attr('onclick','$(\'.info-block\').hide();$(\'.main-slider\').show();$(\'.nav-holder\').show();');
+                    $('#btn_close').attr('onclick','$(\'.modification-block2\').hide();$(\'.modification-block\').hide();$(\'.message-block\').hide();$(\'.info-block\').hide();$(\'.main-slider\').show();$(\'.nav-holder\').show();');
                     $('#btn_cancel').text('');
                         
                     if (from == "getBookingToStart" || from == "getBookingToEnd") {
@@ -299,10 +299,7 @@ function getUserInfo(fe_typo_user,owner_id,from,booking_id,ressourceId,category)
                          $('#btn_cancel').text(trad['btn_back']);
                          $('#btn_cancel').attr('onclick','$(\'.modification-block2\').hide();$(\'.info-block\').hide();$(\'.main-slider\').show();$(\'.nav-holder\').show();$(\'#backtoshare\').show();$(\'.modification_block\').hide()');
                     }
-                    else {
-                        $('#btn_close').attr('onclick','$(\'.info-block\').hide();$(\'.main-slider\').show();$(\'.nav-holder\').show();');
-                        $('#btn_cancel').text('');
-                    }
+                    
                     
                     $('.main-slider').hide();
                     $('.nav-holder').hide();
