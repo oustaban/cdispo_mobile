@@ -5235,6 +5235,7 @@ function sendMessageToSharing(booking_id,message,fe_typo_user,from,ressourceId,c
                     $('.main-slider').hide();
                     $('.nav-holder').hide();
                     $('.modification-block').hide();
+                    $('.message-block').hide();
                     $('.modification-block2').hide();
                     $('#backtoshare').hide();
                     $('.info-block').show();
@@ -5253,6 +5254,7 @@ function sendMessageToSharing(booking_id,message,fe_typo_user,from,ressourceId,c
                     
                     $('.main-slider').hide();
                     $('.nav-holder').hide();
+                    $('.message-block').hide();
                     $('.modification-block').hide();
                     $('.modification-block2').hide();
                     $('#backtoshare').hide();
@@ -5272,6 +5274,7 @@ function sendMessageToSharing(booking_id,message,fe_typo_user,from,ressourceId,c
                     
                     $('.main-slider').hide();
                     $('.nav-holder').hide();
+                    $('.message-block').hide();
                     $('.modification-block').hide();
                     $('.modification-block2').hide();
                     $('#backtoshare').hide();
@@ -5291,6 +5294,7 @@ function sendMessageToSharing(booking_id,message,fe_typo_user,from,ressourceId,c
                     
                     $('.main-slider').hide();
                     $('.nav-holder').hide();
+                    $('.message-block').hide();
                     $('.modification-block').hide();
                     $('.modification-block2').hide();
                     $('#backtoshare').hide();
@@ -5310,6 +5314,7 @@ function sendMessageToSharing(booking_id,message,fe_typo_user,from,ressourceId,c
                     
                     $('.main-slider').hide();
                     $('.nav-holder').hide();
+                    $('.message-block').hide();
                     $('.modification-block').hide();
                     $('.modification-block2').hide();
                     $('#backtoshare').hide();
@@ -5329,6 +5334,7 @@ function sendMessageToSharing(booking_id,message,fe_typo_user,from,ressourceId,c
                     
                     $('.main-slider').hide();
                     $('.nav-holder').hide();
+                    $('.message-block').hide();
                     $('.modification-block').hide();
                     $('.modification-block2').hide();
                     $('#backtoshare').hide();
@@ -5348,6 +5354,7 @@ function sendMessageToSharing(booking_id,message,fe_typo_user,from,ressourceId,c
                     
                     $('.main-slider').hide();
                     $('.nav-holder').hide();
+                    $('.message-block').hide();
                     $('.modification-block').hide();
                     $('.modification-block2').hide();
                     $('#backtoshare').hide();
@@ -5372,6 +5379,7 @@ function sendMessageToSharing(booking_id,message,fe_typo_user,from,ressourceId,c
                         
                     $('.main-slider').hide();
                     $('.nav-holder').hide();
+                    $('.message-block').hide();
                     $('.modification-block').hide();
                     $('.modification-block2').hide();
                     $('#backtoshare').hide();
