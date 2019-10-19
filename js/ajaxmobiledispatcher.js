@@ -1779,9 +1779,12 @@ function createMyBooking(event_id,category,ressourceid,datestart,dateend,udatest
                         var myvalues2 = [];
                         var myvalues3 = [];
                         var indexStart1 = 0;
-                        var indexEnd1 = timecode.length-1;
+                        for(var index in timecode) {
+                            console.log(index);
+                        }
+                        var indexEnd1 = index;
                         var indexStart2 = 0;
-                        var indexEnd2 = timecode[timecode.length-1].length - 1;
+                        var indexEnd2 = timecode[indexEnd1].length - 1;
                         var indexEnd3 = 0;
                         $('#slider_holder1').show();
                         $('#slider_holder2').show();
