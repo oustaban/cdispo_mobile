@@ -5253,7 +5253,9 @@ function sendMessageToSharing(booking_id,message,fe_typo_user,from,ressourceId,c
                     
                     if (from == "getBookingToStart" || from == "getBookingToEnd" || from == "getBookingToGo")
                         $('#btn_close').attr('onclick','getScan(\''+fe_typo_user+'\','+ressourceId+',\''+category+'\',\'refresh\')');
-                    
+                    if (from == "getBooking")
+                        $('#btn_close').attr('onclick','getBooking(\''+fe_typo_user+'\',\'refresh\')');
+                        
                     $('.main-slider').hide();
                     $('.nav-holder').hide();
                     $('.message-block').hide();
@@ -5273,7 +5275,9 @@ function sendMessageToSharing(booking_id,message,fe_typo_user,from,ressourceId,c
                     
                     if (from == "getBookingToStart" || from == "getBookingToEnd" || from == "getBookingToGo")
                         $('#btn_close').attr('onclick','getScan(\''+fe_typo_user+'\','+ressourceId+',\''+category+'\',\'refresh\')');
-                    
+                    if (from == "getBooking")
+                        $('#btn_close').attr('onclick','getBooking(\''+fe_typo_user+'\',\'refresh\')');
+                        
                     $('.main-slider').hide();
                     $('.nav-holder').hide();
                     $('.message-block').hide();
@@ -5293,7 +5297,9 @@ function sendMessageToSharing(booking_id,message,fe_typo_user,from,ressourceId,c
                     
                     if (from == "getBookingToStart" || from == "getBookingToEnd" || from == "getBookingToGo")
                         $('#btn_close').attr('onclick','getScan(\''+fe_typo_user+'\','+ressourceId+',\''+category+'\',\'refresh\')');
-                    
+                    if (from == "getBooking")
+                        $('#btn_close').attr('onclick','getBooking(\''+fe_typo_user+'\',\'refresh\')');
+                        
                     $('.main-slider').hide();
                     $('.nav-holder').hide();
                     $('.message-block').hide();
@@ -5313,7 +5319,9 @@ function sendMessageToSharing(booking_id,message,fe_typo_user,from,ressourceId,c
                     
                     if (from == "getBookingToStart" || from == "getBookingToEnd" || from == "getBookingToGo")
                         $('#btn_close').attr('onclick','getScan(\''+fe_typo_user+'\','+ressourceId+',\''+category+'\',\'refresh\')');
-                    
+                    if (from == "getBooking")
+                        $('#btn_close').attr('onclick','getBooking(\''+fe_typo_user+'\',\'refresh\')');
+                        
                     $('.main-slider').hide();
                     $('.nav-holder').hide();
                     $('.message-block').hide();
@@ -5333,7 +5341,9 @@ function sendMessageToSharing(booking_id,message,fe_typo_user,from,ressourceId,c
                     
                     if (from == "getBookingToStart" || from == "getBookingToEnd" || from == "getBookingToGo")
                         $('#btn_close').attr('onclick','getScan(\''+fe_typo_user+'\','+ressourceId+',\''+category+'\',\'refresh\')');
-                    
+                    if (from == "getBooking")
+                        $('#btn_close').attr('onclick','getBooking(\''+fe_typo_user+'\',\'refresh\')');
+                        
                     $('.main-slider').hide();
                     $('.nav-holder').hide();
                     $('.message-block').hide();
@@ -5353,7 +5363,9 @@ function sendMessageToSharing(booking_id,message,fe_typo_user,from,ressourceId,c
                     
                     if (from == "getBookingToStart" || from == "getBookingToEnd" || from == "getBookingToGo")
                         $('#btn_close').attr('onclick','getScan(\''+fe_typo_user+'\','+ressourceId+',\''+category+'\',\'refresh\')');
-                    
+                    if (from == "getBooking")
+                        $('#btn_close').attr('onclick','getBooking(\''+fe_typo_user+'\',\'refresh\')');
+                        
                     $('.main-slider').hide();
                     $('.nav-holder').hide();
                     $('.message-block').hide();
@@ -5376,9 +5388,11 @@ function sendMessageToSharing(booking_id,message,fe_typo_user,from,ressourceId,c
                     $('.previewsharing_content').html('<p></p><p>'+result.content+'</p>');
                     $('#btn_cancel').text('');
                     
-                    if (from == "getBookingToStart" || from == "getBookingToEnd" || from == "getBookingToGo")
-                        $('#btn_close').attr('onclick','getScan(\''+fe_typo_user+'\','+ressourceId+',\''+category+'\',\'refresh\')');
-                        
+                    if (from == "getBookingToGo")
+                        $('#btn_close').attr('onclick','$(\'.main-slider\').show();$(\'.info-block\').hide();$(\'.nav-holder\').show();$(\'.modification-block\').hide();$(\'.modification-block2\').show();$(\'.message-block\').show();$(\'#backtoshare\').show()');
+                    if (from == "getBookingToStart" || from == "getBookingToEnd" || from == "getBooking")
+                        $('#btn_close').attr('onclick','$(\'.main-slider\').show();$(\'.info-block\').hide();$(\'.nav-holder\').show();$(\'.modification-block\').hide();$(\'.modification-block2\').show();$(\'.message-block\').show();$(\'#backtoshare\').hide()');
+                          
                     $('.main-slider').hide();
                     $('.nav-holder').hide();
                     $('.message-block').hide();
