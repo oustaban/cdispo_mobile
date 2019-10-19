@@ -281,7 +281,7 @@ function getUserInfo(fe_typo_user,owner_id,from,booking_id,ressourceId,category)
                     $('#btn_close').attr('onclick','$(\'.modification-block2\').hide();$(\'.modification-block\').hide();$(\'.message-block\').hide();$(\'.info-block\').hide();$(\'.main-slider\').show();$(\'.nav-holder\').show();');
                     $('#btn_cancel').text('');
                         
-                    if (from == "getBookingToStart" || from == "getBookingToEnd") {
+                    if (from == "getBookingToStart" || from == "getBookingToEnd" || from == "getBooking") {
                          $('#btn_close').text(trad['sendmessageto']+' '+result.owner);
                          $('.previewmessage_mandatories').html(trad['sendmessagetitle']+'<b>'+result.owner+'</b>');
                          $('#message').val('');
