@@ -5221,7 +5221,7 @@ function sendMessageToSharing(booking_id,message,fe_typo_user,from,ressourceId,c
           dataType: "jsonp",
 		  jsonp: 'callback',
 		  jsonpCallback: 'cdispoToken',
-          data:{action:'sendMessageToSharing',booking_id:booking_id,message:message,fe_typo_user:fe_typo_user},
+          data:{action:'sendMessageToSharing',booking_id:booking_id,message:message,fe_typo_user:fe_typo_user,from:from},
           
           success: function(result) {
             
