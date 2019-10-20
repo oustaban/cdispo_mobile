@@ -170,6 +170,8 @@ function initSlickCarousel() {
 			prevArrow: '<button class="slick-prev">Previous</button>',
 			nextArrow: '<button class="slick-next">Next</button>',
 			dots: true,
+			swipe: true,
+			touchThreshold: 3,
 			dotsClass: 'slick-dots',
 			appendArrows: dotsHolder,
 			appendDots: dotsHolder
