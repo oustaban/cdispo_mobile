@@ -281,7 +281,7 @@ function getUserInfo(fe_typo_user,owner_id,from,booking_id,ressourceId,category)
                     $('#btn_close').attr('onclick','$(\'.modification-block2\').hide();$(\'.modification-block\').hide();$(\'.message-block\').hide();$(\'.info-block\').hide();$(\'.main-slider\').show();$(\'.nav-holder\').show();');
                     $('#btn_cancel').text('');
                         
-                    if (from == "getBookingToStart" || from == "getBookingToEnd" || from == "getBooking") {
+                    if (from == "getBookingToStart" || from == "getBookingToEnd" || from == "getBooking" || from == "getBookingToConfirm") {
                          $('#btn_close').text(trad['sendmessageto']+' '+result.owner);
                          $('.previewmessage_mandatories').html(trad['sendmessagetitle']+'<b>'+result.owner+'</b>');
                          $('#message').val('');
@@ -5258,6 +5258,8 @@ function sendMessageToSharing(booking_id,message,fe_typo_user,from,ressourceId,c
                         $('#btn_close').attr('onclick','getScan(\''+fe_typo_user+'\','+ressourceId+',\''+category+'\',\'refresh\')');
                     if (from == "getBooking")
                         $('#btn_close').attr('onclick','getBooking(\''+fe_typo_user+'\',\'refresh\')');
+                    if (from == "getBookingToConfirm")
+                        $('#btn_close').attr('onclick','getBookingToConfirm(\''+fe_typo_user+'\',\'refresh\')');
                     if (from == "getBookingEvent")
                         $('#btn_close').attr('onclick','getBookingEvent(\''+fe_typo_user+'\','+ressourceId+',\'refresh\')');
                         
@@ -5282,6 +5284,8 @@ function sendMessageToSharing(booking_id,message,fe_typo_user,from,ressourceId,c
                         $('#btn_close').attr('onclick','getScan(\''+fe_typo_user+'\','+ressourceId+',\''+category+'\',\'refresh\')');
                     if (from == "getBooking")
                         $('#btn_close').attr('onclick','getBooking(\''+fe_typo_user+'\',\'refresh\')');
+                    if (from == "getBookingToConfirm")
+                        $('#btn_close').attr('onclick','getBookingToConfirm(\''+fe_typo_user+'\',\'refresh\')');
                     if (from == "getBookingEvent")
                         $('#btn_close').attr('onclick','getBookingEvent(\''+fe_typo_user+'\','+ressourceId+',\'refresh\')');
                         
@@ -5308,6 +5312,8 @@ function sendMessageToSharing(booking_id,message,fe_typo_user,from,ressourceId,c
                         $('#btn_close').attr('onclick','getBooking(\''+fe_typo_user+'\',\'refresh\')');
                     if (from == "getBookingEvent")
                         $('#btn_close').attr('onclick','getBookingEvent(\''+fe_typo_user+'\','+ressourceId+',\'refresh\')');
+                    if (from == "getBookingToConfirm")
+                        $('#btn_close').attr('onclick','getBookingToConfirm(\''+fe_typo_user+'\',\'refresh\')');
                         
                     $('.main-slider').hide();
                     $('.nav-holder').hide();
@@ -5332,6 +5338,8 @@ function sendMessageToSharing(booking_id,message,fe_typo_user,from,ressourceId,c
                         $('#btn_close').attr('onclick','getBooking(\''+fe_typo_user+'\',\'refresh\')');
                     if (from == "getBookingEvent")
                         $('#btn_close').attr('onclick','getBookingEvent(\''+fe_typo_user+'\','+ressourceId+',\'refresh\')');
+                    if (from == "getBookingToConfirm")
+                        $('#btn_close').attr('onclick','getBookingToConfirm(\''+fe_typo_user+'\',\'refresh\')');
                         
                     $('.main-slider').hide();
                     $('.nav-holder').hide();
@@ -5356,6 +5364,8 @@ function sendMessageToSharing(booking_id,message,fe_typo_user,from,ressourceId,c
                         $('#btn_close').attr('onclick','getBooking(\''+fe_typo_user+'\',\'refresh\')');
                     if (from == "getBookingEvent")
                         $('#btn_close').attr('onclick','getBookingEvent(\''+fe_typo_user+'\','+ressourceId+',\'refresh\')');
+                    if (from == "getBookingToConfirm")
+                        $('#btn_close').attr('onclick','getBookingToConfirm(\''+fe_typo_user+'\',\'refresh\')');
                         
                     $('.main-slider').hide();
                     $('.nav-holder').hide();
@@ -5380,6 +5390,8 @@ function sendMessageToSharing(booking_id,message,fe_typo_user,from,ressourceId,c
                         $('#btn_close').attr('onclick','getBooking(\''+fe_typo_user+'\',\'refresh\')');
                     if (from == "getBookingEvent")
                         $('#btn_close').attr('onclick','getBookingEvent(\''+fe_typo_user+'\','+ressourceId+',\'refresh\')');
+                    if (from == "getBookingToConfirm")
+                        $('#btn_close').attr('onclick','getBookingToConfirm(\''+fe_typo_user+'\',\'refresh\')');
                         
                     $('.main-slider').hide();
                     $('.nav-holder').hide();
@@ -5405,7 +5417,7 @@ function sendMessageToSharing(booking_id,message,fe_typo_user,from,ressourceId,c
                     
                     if (from == "getBookingToGo" || from == "getBookingEvent")
                         $('#btn_close').attr('onclick','$(\'.main-slider\').show();$(\'.info-block\').hide();$(\'.nav-holder\').show();$(\'.modification-block\').hide();$(\'.modification-block2\').show();$(\'.message-block\').show();$(\'#backtoshare\').show()');
-                    if (from == "getBookingToStart" || from == "getBookingToEnd" || from == "getBooking")
+                    if (from == "getBookingToStart" || from == "getBookingToEnd" || from == "getBooking" || from == "getBookingToConfirm")
                         $('#btn_close').attr('onclick','$(\'.main-slider\').show();$(\'.info-block\').hide();$(\'.nav-holder\').show();$(\'.modification-block\').hide();$(\'.modification-block2\').show();$(\'.message-block\').show();$(\'#backtoshare\').hide()');
                           
                     $('.main-slider').hide();
