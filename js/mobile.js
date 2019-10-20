@@ -333,6 +333,7 @@ function initInvites(fe_typo_user) {
 			lookupLimit:5,
 			triggerSelectOnValidInput:false,
 			lookup: function (query, done) {
+				$('#invites').blur();
 				var L = window.localStorage.getItem("language");
 				var lang = window.localStorage.getItem("lang");
 				$('.loader2').show();
@@ -350,10 +351,12 @@ function initInvites(fe_typo_user) {
 							var resultat = { suggestions: result.suggestions };
 							done(resultat);
 							$('.loader2').hide();
+							$('#invites').show();
 						},  
 						error: function(error) {
 							console.log('guestRefuse error');
 							$('.loader2').hide();
+							$('#invites').show();
 						}
 						
 				});
