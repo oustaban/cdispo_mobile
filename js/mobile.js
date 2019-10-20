@@ -351,12 +351,12 @@ function initInvites(fe_typo_user) {
 							var resultat = { suggestions: result.suggestions };
 							done(resultat);
 							$('.loader2').hide();
-							$('#invites').show();
+							$('#invites').focus();
 						},  
 						error: function(error) {
 							console.log('guestRefuse error');
 							$('.loader2').hide();
-							$('#invites').show();
+							$('#invites').focus();
 						}
 						
 				});
