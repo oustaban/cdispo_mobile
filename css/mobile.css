@@ -2364,9 +2364,16 @@ ul#edit_addorga {
 ul#edit_addorga li {
 	text-align: center;
 	list-style-type: none;
-	padding-top: 30px;
 }
-
+ul#edit_addorga li.ligroup {
+	padding-bottom:30px;
+}
+ul#edit_addorga li.liorga {
+	padding-bottom:50px;
+}
+ul#edit_addorga li.liuser {
+	padding-bottom:30px;
+}
 img.imgorga, img.imggroup, img.imguser {
 	float:left;
 }
