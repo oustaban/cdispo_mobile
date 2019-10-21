@@ -2357,6 +2357,30 @@ label.error {
 	display: block;
 }
 
+ul#edit_addorga {
+	padding:0;
+}
+
+ul#edit_addorga li {
+	text-align: center;
+	list-style-type: none;
+	padding-top: 10px;
+}
+
+img.imgorga, img.imggroup, img.imguser {
+	float:left;
+}
+
+ul#edit_addorga li span.libelle {
+	float: left;
+	padding-left: 10px;
+}
+img.numberuser {
+	vertical-align: unset;
+}
+span.numberUser {
+	float:right;
+}
 @media (min-width: 480px) {
 	.container {
 		max-width: 590px;
