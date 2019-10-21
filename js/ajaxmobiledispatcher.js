@@ -435,11 +435,11 @@ function getVisibilityInfo(fe_typo_user,event_id) {
                     $('#btn_close').attr('onclick','$(\'.modification-block2\').hide();$(\'.modification-block\').hide();$(\'.message-block\').hide();$(\'.info-block\').hide();$(\'.main-slider\').show();$(\'.nav-holder\').show();');
                     $('#btn_cancel').text('');
                         
-                    $('#btn_close').text(trad['sendmessageto']+' '+result.owner);
-                    $('.previewmessage_mandatories').html(trad['sendmessagetitle']+'<b>'+result.owner+'</b>');
+                    $('#btn_close').text(trad['sendmessagesharing']);
+                    $('.previewmessage_mandatories').html(trad['sendmessagesharingmessage']+result.sharingId+'.<br/>'+trad['sendmessagesharingmessage2']);
                     $('#message').val('');
                     $('#btn_close').attr('onclick','$(\'.info-block\').hide();$(\'.main-slider\').hide();$(\'.nav-holder\').hide();$(\'#backtoshare\').hide();$(\'.modification_block\').hide();$(\'.message-block\').show()');
-                    $('#btn_send').attr('onclick','sendMessageToSharing('+booking_id+',$(\'#message\').val(),\''+fe_typo_user+'\',\''+from+'\','+ressourceId+',\''+category+'\')');
+                    $('#btn_send').attr('onclick','sendMessageSharing('+result.sharingId+',$(\'#message\').val(),\''+fe_typo_user+'\')');
                     $('#btn_back2').attr('onclick','$(\'.info-block\').show();$(\'.main-slider\').hide();$(\'.nav-holder\').hide();$(\'#backtoshare\').hide();$(\'.modification_block\').hide();$(\'.message-block\').hide()');
                     $('#btn_cancel').text(trad['btn_back']);
                     $('#btn_cancel').attr('onclick','$(\'.modification-block2\').hide();$(\'.info-block\').hide();$(\'.main-slider\').show();$(\'.nav-holder\').show();$(\'#backtoshare\').hide();$(\'.modification_block\').hide()');
