@@ -389,6 +389,85 @@ function getSiteInfo(site_id,referentiel_id,fe_typo_user) {
 }
 
 
+function getVisibility(fe_typo_user,event_id) {
+    $('.loader2').show();
+    var domain = window.localStorage.getItem("domain");
+    var L = window.localStorage.getItem("language");
+    var url = "http://"+domain+"/?type=476&tx_cdispofrontend_fcdispofrontend[controller]=Mobile&tx_cdispofrontend_fcdispofrontend[action]=dispatcher&tx_cdispofrontend_fcdispofrontend[uid]=1&L="+L;
+    $.ajax({
+          type: 'GET',
+          url:url,
+          dataType: "jsonp",
+		  jsonp: 'callback',
+		  jsonpCallback: 'cdispoToken',
+          data:{action:'getVisibility',fe_typo_user:fe_typo_user,event_id:event_id},
+          
+          success: function(result) {
+            
+                if (result.deconnexion) {
+                    
+                    initPopin();
+                    $('.prewiewsharing_header').hide();
+                    $('.previewsharing_content').html('<p></p><p>'+result.deconnexion+'</p>');
+                    
+                    var url = window.location.href;
+					url = url.substring(0, url.lastIndexOf("/") + 1);
+                    window.localStorage.clear();
+                    $('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
+                    
+                    $('.main-slider').hide();
+                    $('.nav-holder').hide();
+                    $('.modification-block').hide();
+                    $('.modification-block2').hide();
+                    $('#backtoshare').hide();
+                    $('.info-block').show();
+                
+                }
+            
+                
+                if (result.ok) {
+                    
+                    initPopin();
+                    $('.prewiewsharing_header').hide();
+                    $('.previewsharing_content').html(result.content);
+                    
+                    $('#btn_close').text(trad['btn_close']);
+                    $('#btn_close').attr('onclick','$(\'.modification-block2\').hide();$(\'.modification-block\').hide();$(\'.message-block\').hide();$(\'.info-block\').hide();$(\'.main-slider\').show();$(\'.nav-holder\').show();');
+                    $('#btn_cancel').text('');
+                        
+                    $('#btn_close').text(trad['sendmessageto']+' '+result.owner);
+                    $('.previewmessage_mandatories').html(trad['sendmessagetitle']+'<b>'+result.owner+'</b>');
+                    $('#message').val('');
+                    $('#btn_close').attr('onclick','$(\'.info-block\').hide();$(\'.main-slider\').hide();$(\'.nav-holder\').hide();$(\'#backtoshare\').hide();$(\'.modification_block\').hide();$(\'.message-block\').show()');
+                    $('#btn_send').attr('onclick','sendMessageToSharing('+booking_id+',$(\'#message\').val(),\''+fe_typo_user+'\',\''+from+'\','+ressourceId+',\''+category+'\')');
+                    $('#btn_back2').attr('onclick','$(\'.info-block\').show();$(\'.main-slider\').hide();$(\'.nav-holder\').hide();$(\'#backtoshare\').hide();$(\'.modification_block\').hide();$(\'.message-block\').hide()');
+                    $('#btn_cancel').text(trad['btn_back']);
+                    $('#btn_cancel').attr('onclick','$(\'.modification-block2\').hide();$(\'.info-block\').hide();$(\'.main-slider\').show();$(\'.nav-holder\').show();$(\'#backtoshare\').hide();$(\'.modification_block\').hide()');
+                    
+                    
+                    
+                    $('.main-slider').hide();
+                    $('.nav-holder').hide();
+                    $('.modification-block').hide();
+                    $('.modification-block2').hide();
+                    $('#backtoshare').hide();
+                    $('.info-block').show();
+                    
+                   
+                    console.log('getUserInfo success');
+                } else {
+                    console.log('getUserInfo error');
+                }
+                
+                $('.loader2').hide();
+                
+          },  
+          error: function(error) {
+                console.log('getUserInfo error');
+                $('.loader2').hide();
+          }   
+    }); 
+}
 
 
 function checkDeleteMyBooking(booking_id,category,ressourceid,fe_typo_user,index,action,eventressourceId,category2) {
