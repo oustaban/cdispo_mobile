@@ -5508,9 +5508,9 @@ function sendMessageToSharing(booking_id,message,fe_typo_user,from,ressourceId,c
                     $('#btn_cancel').text('');
                     
                     if (from == "getBookingToGo" || from == "getBookingEvent")
-                        $('#btn_close').attr('onclick','$(\'.main-slider\').show();$(\'.info-block\').hide();$(\'.nav-holder\').show();$(\'.modification-block\').hide();$(\'.modification-block2\').show();$(\'.message-block\').show();$(\'#backtoshare\').show()');
+                        $('#btn_close').attr('onclick','$(\'.main-slider\').show();$(\'.info-block\').hide();$(\'.nav-holder\').show();$(\'.modification-block\').hide();$(\'.modification-block2\').hide();$(\'.message-block\').hide();$(\'#backtoshare\').show()');
                     if (from == "getBookingToStart" || from == "getBookingToEnd" || from == "getBooking" || from == "getBookingToConfirm" || from == "getInvitations")
-                        $('#btn_close').attr('onclick','$(\'.main-slider\').show();$(\'.info-block\').hide();$(\'.nav-holder\').show();$(\'.modification-block\').hide();$(\'.modification-block2\').show();$(\'.message-block\').show();$(\'#backtoshare\').hide()');
+                        $('#btn_close').attr('onclick','$(\'.main-slider\').show();$(\'.info-block\').hide();$(\'.nav-holder\').show();$(\'.modification-block\').hide();$(\'.modification-block2\').hide();$(\'.message-block\').hide();$(\'#backtoshare\').hide()');
                           
                     $('.main-slider').hide();
                     $('.nav-holder').hide();
@@ -5661,7 +5661,7 @@ function sendMessageSharing(sharing_id,message,fe_typo_user) {
                     $('.previewsharing_content').html('<p></p><p>'+result.content+'</p>');
                     $('#btn_cancel').text('');
                     
-                    $('#btn_close').attr('onclick','$(\'.main-slider\').show();$(\'.info-block\').hide();$(\'.nav-holder\').show();$(\'.modification-block\').hide();$(\'.modification-block2\').show();$(\'.message-block\').show();$(\'#backtoshare\').hide()');
+                    $('#btn_close').attr('onclick','$(\'.main-slider\').show();$(\'.info-block\').hide();$(\'.nav-holder\').show();$(\'.modification-block\').hide();$(\'.modification-block2\').show();$(\'.message-block\').hide();$(\'#backtoshare\').hide()');
                           
                     $('.main-slider').hide();
                     $('.nav-holder').hide();
