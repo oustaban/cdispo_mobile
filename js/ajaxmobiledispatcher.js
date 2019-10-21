@@ -389,7 +389,7 @@ function getSiteInfo(site_id,referentiel_id,fe_typo_user) {
 }
 
 
-function getVisibility(fe_typo_user,event_id) {
+function getVisibilityInfo(fe_typo_user,event_id) {
     $('.loader2').show();
     var domain = window.localStorage.getItem("domain");
     var L = window.localStorage.getItem("language");
