@@ -428,7 +428,8 @@ function getVisibilityInfo(fe_typo_user,event_id) {
                 if (result.ok) {
                     
                     initPopin();
-                    $('.prewiewsharing_header').hide();
+                    $('.prewiewsharing_header').show();
+                    $('.previewsharing_title').html(trad['guests']);
                     $('.previewsharing_content').html(result.content);
                     
                     $('#btn_close').text(trad['btn_close']);
