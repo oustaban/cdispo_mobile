@@ -5538,6 +5538,157 @@ function sendMessageToSharing(booking_id,message,fe_typo_user,from,ressourceId,c
     
 }
 
+
+function sendMessageSharing(sharing_id,message,fe_typo_user) {
+    
+    $('.loader2').show();
+    var domain = window.localStorage.getItem("domain");
+    var L = window.localStorage.getItem("language");
+    var url = "http://"+domain+"/?type=476&tx_cdispofrontend_fcdispofrontend[controller]=Mobile&tx_cdispofrontend_fcdispofrontend[action]=dispatcher&tx_cdispofrontend_fcdispofrontend[uid]=1&L="+L;
+    $.ajax({
+          type: 'GET',
+          url:url,
+          dataType: "jsonp",
+		  jsonp: 'callback',
+		  jsonpCallback: 'cdispoToken',
+          data:{action:'sendMessageSharing',sharing_id:sharing_id,message:message,fe_typo_user:fe_typo_user},
+          
+          success: function(result) {
+            
+                if (result.deconnexion) {
+                    
+                    initPopin();
+                    $('.prewiewsharing_header').hide();
+                    $('.previewsharing_content').html('<p></p><p>'+result.deconnexion+'</p>');
+                    $('#btn_cancel').text('');
+                    
+                    var url = window.location.href;
+					url = url.substring(0, url.lastIndexOf("/") + 1);
+                    window.localStorage.clear();
+                    $('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
+                    
+                    $('.main-slider').hide();
+                    $('.nav-holder').hide();
+                    $('.modification-block').hide();
+                    $('.message-block').hide();
+                    $('.modification-block2').hide();
+                    $('#backtoshare').hide();
+                    $('.info-block').show();
+                
+                }
+                
+                if (result.sharingnotexist) {
+                    
+                    initPopin();
+                    $('.prewiewsharing_header').hide();
+                    $('.previewsharing_content').html('<p></p><p>'+result.sharingnotexist+'</p>');
+                    $('#btn_cancel').text('');
+                    $('#btn_close').attr('onclick','getSharing(\''+fe_typo_user+'\',\'refresh\',0)');
+                    
+                    $('.main-slider').hide();
+                    $('.nav-holder').hide();
+                    $('.message-block').hide();
+                    $('.modification-block').hide();
+                    $('.modification-block2').hide();
+                    $('#backtoshare').hide();
+                    $('.info-block').show();
+                    
+                }
+                
+                if (result.sharingfinished) {
+                    
+                    initPopin();
+                    $('.prewiewsharing_header').hide();
+                    $('.previewsharing_content').html('<p></p><p>'+result.sharingfinished+'</p>');
+                    $('#btn_cancel').text('');
+                    
+                    $('#btn_close').attr('onclick','getSharing(\''+fe_typo_user+'\',\'refresh\',0)');     
+                    $('.main-slider').hide();
+                    $('.nav-holder').hide();
+                    $('.message-block').hide();
+                    $('.modification-block').hide();
+                    $('.modification-block2').hide();
+                    $('#backtoshare').hide();
+                    $('.info-block').show();
+                    
+                }
+                
+                if (result.sharingcancelled) {
+                    
+                    initPopin();
+                    $('.prewiewsharing_header').hide();
+                    $('.previewsharing_content').html('<p></p><p>'+result.sharingcancelled+'</p>');
+                    $('#btn_cancel').text('');
+                    $('#btn_close').attr('onclick','getSharing(\''+fe_typo_user+'\',\'refresh\',0)');
+                    
+                    $('.main-slider').hide();
+                    $('.nav-holder').hide();
+                    $('.message-block').hide();
+                    $('.modification-block').hide();
+                    $('.modification-block2').hide();
+                    $('#backtoshare').hide();
+                    $('.info-block').show();
+                    
+                }
+                
+                if (result.ressourcedeleted) {
+                    
+                    initPopin();
+                    $('.prewiewsharing_header').hide();
+                    $('.previewsharing_content').html('<p></p><p>'+result.ressourcedeleted+'</p>');
+                    $('#btn_cancel').text('');
+                    
+                    $('#btn_close').attr('onclick','getSharing(\''+fe_typo_user+'\',\'refresh\',0)');     
+                    $('.main-slider').hide();
+                    $('.nav-holder').hide();
+                    $('.message-block').hide();
+                    $('.modification-block').hide();
+                    $('.modification-block2').hide();
+                    $('#backtoshare').hide();
+                    $('.info-block').show();
+                    
+                }
+                
+                
+            
+                if (result.result) {
+                    
+                    initPopin();
+                    
+                    //clearInterval('x'+index);
+                         
+                    $('.prewiewsharing_header').hide();
+                    $('.previewsharing_content').html('<p></p><p>'+result.content+'</p>');
+                    $('#btn_cancel').text('');
+                    
+                    $('#btn_close').attr('onclick','$(\'.main-slider\').show();$(\'.info-block\').hide();$(\'.nav-holder\').show();$(\'.modification-block\').hide();$(\'.modification-block2\').show();$(\'.message-block\').show();$(\'#backtoshare\').hide()');
+                          
+                    $('.main-slider').hide();
+                    $('.nav-holder').hide();
+                    $('.message-block').hide();
+                    $('.modification-block').hide();
+                    $('.modification-block2').hide();
+                    $('#backtoshare').hide();
+                    $('.info-block').show();
+                    
+                    console.log('sendMessageToSharing success');
+                
+                } else {
+                    console.log('sendMessageToSharing error');
+                }
+                
+                $('.loader2').hide();
+                
+          },  
+          error: function(error) {
+                console.log('deleteMyBooking error');
+                $('.loader2').hide();
+          }   
+    
+    });
+    
+}
+
 function loadSharing(fe_typo_user,indexSlide) {
     var url = window.location.href;
     url = url.substring(0, url.lastIndexOf("/") + 1);
