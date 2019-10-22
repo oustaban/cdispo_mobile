@@ -10,6 +10,7 @@ jQuery(function(){
     initPassword();
 	initChangePassword();
 	initNav();
+	tooltiphover();
 	//initInvites();
 	//getTranslation();
 });
@@ -391,6 +392,18 @@ function initInvites(fe_typo_user) {
 		
 	}
 }
+
+function tooltiphover() {
+	$('.tooltip3').each(function( index ) {
+		$(this).on("mouseover", function () {
+			$(this).next(".tooltiptext3").css("visibility", 'visible');
+		});
+		$(this).on("mouseout", function () {
+			$(this).next(".tooltiptext3").css("visibility", 'hidden');
+		});
+	});
+}
+
 
 function getUrlVars()
 {
