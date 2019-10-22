@@ -395,10 +395,10 @@ function initInvites(fe_typo_user) {
 
 function tooltiphover() {
 	$('.tooltip3').each(function( index ) {
-		$(this).bind("touchstart", function () {
+		$(this).on("mouseover touchstart", function () {
 			$(this).next(".tooltiptext3").css("visibility", 'visible');
 		});
-		$(this).bind("touchend", function () {
+		$(this).on("mouseout touchend", function () {
 			$(this).next(".tooltiptext3").css("visibility", 'hidden');
 		});
 	});
