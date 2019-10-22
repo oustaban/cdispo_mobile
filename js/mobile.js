@@ -395,13 +395,21 @@ function initInvites(fe_typo_user) {
 
 function tooltiphover() {
 	$('.tooltip3').each(function( index ) {
-		$(this).on("mouseover touchstart", function () {
-			$(this).next(".tooltiptext3").css("visibility", 'visible');
-		});
-		$(this).on("mouseout touchend", function () {
-			$(this).next(".tooltiptext3").css("visibility", 'hidden');
+		$(this).click(function () {
+			if ($(this).next(".tooltiptext3").attr("data-close") === "false") {
+				$(this).next(".tooltiptext3").css("visibility", 'visible');
+				$(this).next(".tooltiptext3").attr("data-close",true);
+			}
 		});
 	});
+	$(".tooltiptext3").click(function () {
+        $(this).attr("data-close",true);
+    });
+	 
+	$(document).mouseup(function () {
+        $(".tooltiptext3").css("visibility", 'hidden');
+    });
+	
 }
 
 
