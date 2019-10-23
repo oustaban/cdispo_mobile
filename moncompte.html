@@ -68,7 +68,7 @@
 			}, false);
 			
 		    var fe_typo_user = window.localStorage.getItem("fe_typo_user");
-			getInvitations(fe_typo_user,'init'); 
+			getMyAccount(fe_typo_user,'init'); 
 			/*
 			cookieMaster.getCookieValue('http://cdispo', 'fe_typo_user', function(data) {
 				console.log(data.cookieValue);
@@ -93,7 +93,7 @@
 			}, false);
 			
 			var fe_typo_user = window.localStorage.getItem("fe_typo_user");
-			getInvitations(fe_typo_user,'refresh');
+			getMyAccount(fe_typo_user,'refresh');
 			
 			/*
 			cookieMaster.getCookieValue('http://cdispo', 'fe_typo_user', function(data) {
@@ -123,15 +123,15 @@
 					<div class="user-icon">
 						<img src="images/user-pic.png" srcset="images/user-pic-2x.png 2x" alt="image description">
 					</div>
-					<span class="active-position" id="mesinvitations_title">MES INVITATIONS</span>
+					<span class="active-position" id="moncompte_title">MON COMPTE</span>
 					<a href="#" class="nav-opener"><span id="menu_title">Menu</span></a>
 					<!-- main navigation of the page -->
 					<ul class="menu">
 						<li><a href="javascript:void(0)" id="nav_title1">MES RESERVATIONS</a></li>
-						<li class="active"><a href="javascript:void(0)" id="nav_title2">MES INVITATIONS</a></li>
+						<li><a href="javascript:void(0)" id="nav_title2">MES INVIT</a></li>
 						<li><a href="javascript:void(0)" id="nav_title3">MES PARTAGES</a></li>
 						<li><a href="javascript:void(0)" id="nav_title4">LES RESERVATIONS A CONFIRMER</a></li>
-						<li><a href="javascript:void(0)" id="nav_title5">MON COMPTE</a></li>
+						<li class="active"><a href="javascript:void(0)" id="nav_title5">MON COMPTE</a></li>
 						<li><a href="javascript:void(0)" id="nav_title6">SE DECONNECTER</a></li>
 					</ul>
 				</nav>
@@ -173,29 +173,7 @@
 					</div>
 				</div>
 				
-				<div class="message-block light-block">
-					<div class="text-holder">
-						<div class="previewmessage_header">
-							<div class="prewiewsharing_row1">
-								<div class="prewiewsharing_col1">
-									<span class="previewmessage_title title"></span>
-									<div class="previewmessage_mandatories"></div>
-								</div>
-							</div>
-						</div>
-						<div class="previewmessage_content">
-							<div class="label-row">
-								<div class="input-col">
-									<textarea rows="5" cols="30" id="message" placeholder="Saisissez votre message ici..."></textarea>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="btn-block">
-						<a href="javascript:void(0)" onclick="" class="btn btn-teal" id="btn_send">Fermer</a>
-						<a href="javascript:void(0)" onclick="" class="btn btn-light" id="btn_back2">&nbsp;</a>
-					</div>
-				</div>
+				
 				
 			</div>
 			<div class="nav-holder"></div>

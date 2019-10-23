@@ -265,6 +265,14 @@ function initNav() {
 		if ($(".modification-block").is(":visible")) {
 			unlockBooking(fe_typo_user,$('#modif_booking').val());
         }
+		cordova.InAppBrowser.open(url+'moncompte.html', '_self');
+	});
+	
+	jQuery('#nav_title6').click(function() {
+		console.log(url);
+		if ($(".modification-block").is(":visible")) {
+			unlockBooking(fe_typo_user,$('#modif_booking').val());
+        }
 		window.localStorage.clear()
 		cordova.InAppBrowser.open(url+'index.html', '_self');
 	});
