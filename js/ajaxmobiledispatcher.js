@@ -5724,55 +5724,24 @@ function getMyAccount(fe_typo_user,action) {
                 }
                 
                 if (result.result) {
-                    console.log('success getBookingToConfirm 1 '+action);
-                    if (action == "refresh") {
-                         console.log('countslide:'+countslide);
-                         //window.clearAllIntervals();
-                         
-                         for (var i = 0; i < 1000; i++) {
-                            var varInterval = "x"+i;
-                            //window.clearInterval(varInterval);
-                            window.clearInterval(i);
-                         }
-                         
-                         $("div.slick-slide").each(function() {
-                            var i = $(this).attr("data-slick-index");
-                            $('.main-slider').slick('slickRemove',i);
-                         });
-                         
-                         
-                         $('.main-slider').show();$('.nav-holder').show();
-                         $('.info-block').hide();
-                         if (countslide > 0) 
-                            $('.main-slider').slick('unslick');
-                    }
-                    
-                    countslide = result.countslide;
-                    //console.log(countslide);
-                    //console.log(result.slide);
-                    if (countslide > 0) {
-                        $('.main-slider').html(result.slide);
-                        initSlickCarousel();
-                    } else {
-                        
-                        $('.prewiewsharing_header').hide();
-                        $('.previewsharing_content').html(result.content);
-                        $('#btn_close').attr('onclick','getBookingToConfirm(\''+fe_typo_user+'\',\'refresh\')');
-                        $('.main-slider').hide();$('.nav-holder').hide();
-                        $('.info-block').show();    
-                    }
+                    $('.prewiewsharing_header').show();
+                    $('.prewiewsharing_title').text(result.title);
+                    $('.previewsharing_content').html(result.content);
+                    $('.main-slider').hide();
+                    $('.nav-holder').hide();
+                    $('.info-block').show();    
                     
                 } else {
                     
                 }
                 
-                console.log('success getBookingToConfirm');
+                console.log('success getMyAccount');
                 
                 
                 $('.loader2').hide();
           },  
           error: function(error) {
-            console.log('nok getBookingToConfirm');
+            console.log('nok getMyAccount');
             console.log(error);
             $('.loader2').hide();
           }   
