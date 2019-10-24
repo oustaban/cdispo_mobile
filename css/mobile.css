@@ -1954,8 +1954,8 @@ textarea:focus {
 	left: 0;
 	right: 0;
 	height: 50%;
-	background-image: -webkit-linear-gradient(top, #004743, rgba(0, 0, 0, .001));
-	background-image: linear-gradient(to bottom, #004743, rgba(0, 0, 0, .001));
+	/*background-image: -webkit-linear-gradient(top, #004743, rgba(0, 0, 0, .001));*/
+	/*background-image: linear-gradient(to bottom, #004743, rgba(0, 0, 0, .001));*/
 }
 
 .nav-active .menu {
@@ -2946,7 +2946,7 @@ span.myaccounttitle {
 		top: 0;
 		left: 0;
 		right: 0;
-		background-color: rgba(255, 255, 255, .75);
+		background-color: rgba(255, 255, 255, 1);
 	}
 }
 
