@@ -2410,6 +2410,16 @@ span.numberUser {
     margin-left: -140px;	
 }
 
+ul.myaccount {
+	list-style:none;
+	padding-left:10px;
+}
+
+span.myaccountlabel {
+	float:left;
+	width:50%;
+}
+
 @media (min-width: 480px) {
 	.container {
 		max-width: 590px;
