@@ -5727,7 +5727,7 @@ function getMyAccount(fe_typo_user,action) {
                     $('.prewiewsharing_header').show();
                     $('.prewiewsharing_title').html(result.title);
                     $('.previewsharing_content').html(result.content);
-                    $('#btn_close').attr('onclick','getMyAccountg(\''+fe_typo_user+'\',\'refresh\')');   
+                    $('#btn_close').attr('onclick','getMyAccount(\''+fe_typo_user+'\',\'refresh\')');   
                     $('.main-slider').hide();
                     $('.nav-holder').hide();
                     $('.info-block').show();    
