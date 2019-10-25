@@ -4,7 +4,8 @@
 	"nav_title3":"MES PARTAGES",
 	"nav_title4":"LES RÉSERVATIONS À CONFIRMER",
 	"nav_title5":"MON COMPTE",
-	"nav_title6":"SE DÉCONNECTER",
+	"nav_title6":"MENTIONS LÉGALES ET CGU",
+	"nav_title7":"SE DÉCONNECTER",
 	"menu_title":"Menu",
 	"booking_title":"MES RÉSERVATIONS",
 	"index_stayconnected":"Rester connecté",
@@ -42,5 +43,236 @@
 	"modifinputdescription":"Description :",
 	"modifinputinvites":"<img src=\"images/utilisateur.png\">Inviter un utilisateur inscrit :",
 	"modifinputinvitesemail":"<img src=\"images/utilisateur.png\">Inviter un utilisateur extérieur :",
-	"reserver_title":"RÉSERVER"
+	"reserver_title":"RÉSERVER",
+	"moncompte_title":"MON COMPTE",
+	"cgu_title":"MENTIONS LÉGALES ET CGU",
+	"cgu_content":"<p><strong>La société Ugreen,</strong> SAS au capital de 10000&nbsp;€,&nbsp;dont le siège social est situé 125 rue saint dominique - 75007 - Paris, immatriculée au registre du commerce et des sociétés de Paris sous le n°….., édite la Solution « <strong>CDISPO</strong> », accessible en mode SaaS sur la plateforme « <strong>www.cdispo.fr&nbsp;</strong>».</p>
+<p>Les présentes Conditions Générales d’Utilisation ont pour objet de définir les termes et conditions contractuelles qui s’imposent à tout client de CDispo. qui souhaite utiliser la Solution pour un nombre prédéfini d’utilisateurs. Les Parties se réservent le droit de conclure, par accord séparé, un contrat de licence qui aura vocation à compléter les présentes CGU et qui primera sur les présentes CGU en cas de contradiction. &nbsp;</p>
+<p>&nbsp;</p>
+<p>Tout accès et/ou utilisation de la Solution suppose l’acceptation et le respect de l’ensemble des termes des présentes CGU.</p>
+<p>&nbsp;</p>
+<p>Le Client déclare avoir la capacité d’accepter les présentes CGU et il déclare&nbsp;avoir pris connaissance des fonctionnalités offertes par la Solution, et avoir vérifié que celles-ci correspondent à ses besoins et à leur évolution prévisible.</p>
+<p><strong><u>&nbsp;</u></strong></p>
+<p><strong><u>ARTICLE 1 ACCES A LA SOLUTION</u></strong></p>
+<p><strong><u>&nbsp;</u></strong></p>
+<p><strong>1.1</strong> Le Client doit créer un compte client (le « <strong>Compte Client</strong> ») incluant toutes ses données personnelles demandées pour pouvoir utiliser la Solution.</p>
+<p>&nbsp;</p>
+<p>La Solution est accessible dès que les conditions techniques et contractuelles sont remplies et que le Compte Client est agréé par le Prestataire.&nbsp;</p>
+<p>&nbsp;</p>
+<p>L’accès à la Solution par les Utilisateurs nécessite que chaque Utilisateur se connecte sur la Plateforme via son identifiant (ci-après «&nbsp;Identifiant&nbsp;»).</p>
+<p>&nbsp;</p>
+<p>Le Client peut, s’il le désire, créer des identifiants additionnels pour d’autres Utilisateurs qui désireraient accéder à la Solution. L’utilisation de la Solution par d’autres Utilisateurs ajoutés par le Client donnera lieu à une rémunération supplémentaire du Prestataire selon les conditions tarifaires en vigueur.</p>
+<p>&nbsp;</p>
+<p>Le Client reconnait être parfaitement informé du fait que l’accès à la Solution par l’ensemble des Utilisateurs autorisés n’est possible que dans la limite d’un nombre maximum d’accès simultanés.</p>
+<p>&nbsp;</p>
+<p><strong>1.2</strong> Les Utilisateurs pourront se connecter à tout moment à la Solution – à l’exception des périodes de maintenance –, à savoir:</p>
+<p>&nbsp;</p>
+<p>-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;24 heures sur 24,</p>
+<p>&nbsp;</p>
+<p>-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;7 jours sur 7,</p>
+<p>&nbsp;</p>
+<p>-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;y compris les dimanche et jours fériés.</p>
+<p>&nbsp;</p>
+<p>L'accès à la Plateforme s'effectue :</p>
+<p>&nbsp;</p>
+<p>-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;à partir des ordinateurs du Client; et ou téléphones mobiles</p>
+<p>&nbsp;</p>
+<p>-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;au moyen des Identifiants fournis par le Prestataire.</p>
+<p>&nbsp;</p>
+<p>Les Identifiants sont personnels et confidentiels. Ils ne peuvent être changés que sur demande du Client ou à l'initiative du Prestataire, sous réserve d’en informer préalablement le Client.</p>
+<p>&nbsp;</p>
+<p><strong>1.3</strong> La recette de mise en production de la Solution s’effectue de la façon suivante :</p>
+<p>&nbsp;</p>
+<p>Le Client dispose d’un délai de sept &nbsp;(7) jours ouvrés à compter de son enregistrement sur la Plateforme, pour formuler par écrit ses observations (et notamment mentionner les éventuelles anomalies à corriger). Passé ce délai, la réception sera prononcée d’office.</p>
+<p>&nbsp;</p>
+<p>En tout état de cause, la réception résulte également, de plein droit, de l’utilisation, même partielle, de la Solution.</p>
+<p><strong><u>ARTICLE 2&nbsp;: OBLIGATIONS DU PRESTATAIRE</u></strong></p>
+<p><strong>&nbsp;</strong></p>
+<p>Le Prestataire fournira un accès à la Solution conformément aux règles de l'art et de la réglementation en vigueur.</p>
+<p>En sa qualité de professionnel, le Prestataire est tenu à une obligation de conseil et de mise en garde à l’égard du Client, sous réserve de l’étroite collaboration de ce dernier.</p>
+<p>&nbsp;</p>
+<p><strong><u>ARTICLE 3 : OBLIGATIONS DU CLIENT&nbsp;</u></strong></p>
+<p>&nbsp;</p>
+<p>Le Client s'engage à communiquer, à la demande du Prestataire, les documents ou informations nécessaires à la réalisation par le Prestataire de ses obligations.&nbsp;</p>
+<p>&nbsp;</p>
+<p>Le Client s'engage à collaborer avec le Prestataire pour lui permettre de réaliser ses obligations, et plus particulièrement, le Client s’engage à&nbsp;:</p>
+<p>&nbsp;</p>
+<ol>
+  <li>collaborer activement et régulièrement afin de permettre le bon déroulement de l’utilisation de la Solution&nbsp;;</li>
+</ol>
+<p>&nbsp;</p>
+<ol>
+  <li>procéder, le cas échéant, aux formalités et démarches nécessaires auprès de la Commission Nationale Informatique et Libertés&nbsp;;</li>
+</ol>
+<p>&nbsp;</p>
+<ol>
+  <li>désigner un interlocuteur privilégié ayant les compétences requises pour apporter son assistance au Prestataire&nbsp;;</li>
+</ol>
+<p>&nbsp;</p>
+<ol>
+  <li>respecter les conditions de paiement&nbsp;;</li>
+</ol>
+<p>&nbsp;</p>
+<ol>
+  <li>assurer la maintenance et la sécurité de ses propres matériels informatiques&nbsp;;</li>
+</ol>
+<p>&nbsp;</p>
+<ol>
+  <li>diffuser toutes les informations liées à son activité et susceptibles d’avoir une incidence sur l’exécution des prestations effectuées par le Prestataire&nbsp;;</li>
+  <li>informer dans les plus brefs délais le Prestataire de tout événement pouvant engendrer une perturbation dans l’utilisation de la Solution et/ou tout événement de nature à entraîner des évolutions prévisibles des volumes de connexions.</li>
+</ol>
+<p>&nbsp;</p>
+<p><strong><u>ARTICLE 4&nbsp;: LICENCE</u></strong></p>
+<p><strong><u>&nbsp;</u></strong></p>
+<p>Le Prestataire concède par les présentes au Client, pour la durée de la relation contractuelle qui lie les Parties au titre des présentes CGU, une licence non-exclusive et non-transférable d’utilisation de la Solution accessible sur la Plateforme dans le monde entier, en mode SaaS via une connexion à un réseau de communications électroniques.</p>
+<p>&nbsp;</p>
+<p>Cette licence comprend également tous les droits requis pour le nombre d’Utilisateurs défini par le Client.</p>
+<p>&nbsp;</p>
+<p>Le Client a le droit d’utiliser la Solution conformément à sa destination. Toute autre utilisation est prohibée, telle que notamment la sous-licence, le prêt, la location et la cession de la Solution.</p>
+<p>&nbsp;</p>
+<p>En tout état de cause, le Prestataire détient la propriété exclusive de l’ensemble des droits de propriété portant sur la Solution, ceci incluant notamment ses évolutions et mises à jour.</p>
+<p>&nbsp;</p>
+<p><strong><u>ARTICLE 5&nbsp;: HEBERGEMENT</u></strong></p>
+<p>&nbsp;</p>
+<p>Le Prestataire fournira l’ensemble des moyens nécessaires à l’hébergement de la Solution.&nbsp;</p>
+<p>&nbsp;</p>
+<p>A ce titre, le Prestataire fournira au Client:</p>
+<p>&nbsp;</p>
+<ol>
+  <li>l’interconnexion entre le réseau du Client et le réseau du Prestataire ou, le cas échéant, du tiers hébergeur désigné par lui et dont il demeure solidairement responsable.</li>
+</ol>
+<p>&nbsp;</p>
+<p><strong><u>ARTICLE 6&nbsp;: MAINTENANCE ET SUPPORT</u></strong></p>
+<p>&nbsp;</p>
+<p>Le Prestataire s’engage à assurer la maintenance de la Solution pendant toute la durée de la relation contractuelle qui lie les Parties au titre des présentes CGU. Il s’engage à ce titre à effectuer à ses frais toutes interventions ou réparations nécessaires pour maintenir la Solution en parfait état de fonctionnement.</p>
+<p>&nbsp;</p>
+<p><strong>- Maintenance préventive</strong></p>
+<p><strong>&nbsp;</strong></p>
+<p>Afin de maintenir la qualité du service fourni, le Prestataire pourra réaliser des opérations de maintenance préventive, sur les composantes de la Solution. Le Prestataire notifiera la maintenance préventive au Client par e-mail à ses contacts techniques au moins 10 jours calendaires à l'avance.</p>
+<p>&nbsp;</p>
+<p>Une fois la maintenance réalisée, le Prestataire communiquera sur demande du Client les résultats de cette dernière.</p>
+<p>&nbsp;</p>
+<p><strong>- Maintenance corrective</strong></p>
+<p><strong>&nbsp;</strong></p>
+<p>Le Prestataire fera ses meilleurs efforts pour corriger, éliminer ou contourner les anomalies rencontrées, dès lors que ces anomalies sont détectées par le Prestataire ou notifiées au Prestataire par le Client.&nbsp;</p>
+<p>&nbsp;</p>
+<p>Le Prestataire contactera le Client si le problème persiste et nécessite l'attention et/ou l'intervention du Client.&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>- Modalités de la maintenance</strong></p>
+<p>&nbsp;</p>
+<p>Les opérations de maintenance induisant une interruption de services ou une dégradation des performances seront notifiées à l’avance au Client.</p>
+<p>&nbsp;</p>
+<p>La durée d'indisponibilité de la Solution dans le cas d'opérations de maintenance induisant nécessairement une interruption de la Solution ne sera pas prise en compte dans le calcul de la disponibilité.</p>
+<p>&nbsp;</p>
+<p><strong>- Support technique</strong></p>
+<p><strong>&nbsp;</strong></p>
+<p>Le Prestataire met à la disposition du Client un service de support technique accessible en ouvrant un ticket à l’adresse électronique suivante&nbsp;:</p>
+<p>Ou par téléphone, pendant les heures ouvrées (de 9 h à 12 h et de 14 h à 18 h), au : ….</p>
+<p>&nbsp;</p>
+<p><strong><u>ARTICLE 7&nbsp;: CONDITIONS FINANCIERES</u></strong></p>
+<p><strong><u>&nbsp;</u></strong></p>
+<p><strong>7.1&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;Prix</strong></p>
+<p><strong>&nbsp;</strong></p>
+<p>Le prix convenu en contrepartie de la licence objet des présentes CGU est un montant annuel facturé sur la forme d’une redevance mensuelle, par prélèvement automatique.</p>
+<p>&nbsp;</p>
+<p>Toute modification, extensions ou diminution des prestations (et notamment du nombre d’Utilisateurs), et donc du prix, demandées par le Client, ne seront prise en compte qu’après accord mutuel des deux Parties.</p>
+<p>&nbsp;</p>
+<p><strong>7.2&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;Retard de paiement&nbsp;</strong></p>
+<p>&nbsp;</p>
+<p>Tout retard de paiement par le Client pourra entrainer, l’application de pénalités d’un montant égal à trois (3) fois le taux d'intérêt légal en vigueur au jour de la constatation du défaut de paiement, nonobstant le paiement d’une indemnité légale forfaitaire de quarante (40) euros pour frais de recouvrement (conformément à l’article L.441-6 du Code de commerce).</p>
+<p>&nbsp;</p>
+<p>Dans le cas où le Client ne règlerait pas tout ou partie des factures émises par le Prestataire, après mise en demeure de payer, restée infructueuse pendant huit (8) jours, le Prestataire sera en droit de ne pas exécuter ou de suspendre sans préavis l’accès à la Solution.</p>
+<p>&nbsp;</p>
+<p><strong><u>ARTICLE 8 &nbsp;DUREE – RESILIATION</u></strong></p>
+<p><strong><u>&nbsp;</u></strong></p>
+<p>La durée contractuelle de l’utilisation de la Solution au titre des présentes CGU prend effet à compter de la mise à disposition de la Solution au Client et restera en vigueur pour une période initiale d’un (1) an &nbsp;(ci-après la « Période Initiale »).</p>
+<p>&nbsp;</p>
+<p>A l’expiration de cette Période Initiale et à défaut de dénonciation des présentes CGU par l’une des deux Parties, par lettre recommandée avec accusé de réception, dans un délai de trois (3) mois avant le terme de la Période Initiale, la durée contractuelle d’utilisation de la Solution sera tacitement reconduite d’année en année dans les mêmes termes par période d’un an.</p>
+<p>&nbsp;</p>
+<p>A l’issue de la Période Initiale, l’utilisation de la Solution pourra être dénoncée à tout moment par lettre recommandée avec avis de réception adressée dans un délai de trois (3) mois avant le terme de la période de renouvellement en cours.</p>
+<p>&nbsp;</p>
+<p>En cas de manquement par l’une ou l’autre des Parties à l’une de ses obligations au titre des présentes CGU, ce dernier, pourra être résilié de plein droit par la Partie lésée, après mise en demeure envoyée par lettre recommandée avec avis de réception restée infructueuse dans un délai de quinze (15) jours.&nbsp;</p>
+<p><strong><u>ARTICLE 9 DONNEES PERSONNELLES</u></strong></p>
+<p>&nbsp;</p>
+<p>Les Parties s’engagent à respecter les réglementations applicables et à collaborer de bonne foi dans la mise en œuvre de mesures opérationnelles et/ou juridiques requises dans le cadre du traitement en France de données personnelles et de flux transfrontières de données personnelles.</p>
+<p>&nbsp;</p>
+<p>Les fichiers de données et tout document ou toute information remis par le Client au Prestataire pour être traités par la Solution ainsi que ceux résultant des traitements effectués par le Prestataire via la Solution, restent en toute circonstance la propriété exclusive du Client, qui en est le seul responsable du traitement au sens de la loi informatique et libertés du 6 janvier 1978 modifiée. Le Client déclare en être informé et s’engage à cet égard à respecter l’ensemble des obligations qui lui incombent en cette qualité, et à prendre toutes mesures appropriées afin de se conformer aux dispositions légales applicables.&nbsp;</p>
+<p>&nbsp;</p>
+<p>Le Prestataire a la qualité de sous-traitant, au sens de l’article 35 de la loi de du 6 janvier 1978 précitée, dès lors qu’il est amené à traiter des données à caractère personnel pour le compte du responsable de traitement.</p>
+<p>&nbsp;</p>
+<p>A l’expiration des présentes CGU pour quelque raison que ce soit, le Client pourra solliciter du Prestataire le retour ou la suppression de l’ensemble des données personnelles lui appartenant et fourni au Prestataire dans le cadre de l’accès et/ou de l’utilisation de la Solution.&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+<p><u>ARTICLE 10 RESPONSABILITE</u></p>
+<p>&nbsp;</p>
+<p>Le Prestataire sera responsable des dommages directs subis par le Client pouvant survenir de son fait dans le cadre des présentes CGU, à l’exclusion de tout dommage indirect.</p>
+<p>&nbsp;</p>
+<p>La responsabilité du Prestataire ne pourra être engagée en cas d'inaccessibilité à la Solution due à une défaillance non exclusivement imputable au Prestataire, notamment (i) en cas de coupure du réseau Internet du Client&nbsp;; (ii) en cas de saturation du réseau ou des serveurs du Client&nbsp;; (iii) en cas d’erreur de manipulation et/ou une négligence du Client (notamment si ce dernier n’a pas suivi les recommandations techniques du Prestataires)&nbsp;; (iv) ou en cas de survenance d’un événement de force majeure&nbsp;; (v) ou en cas d’utilisation frauduleuse des Identifiants.</p>
+<p>&nbsp;</p>
+<p>Il est expressément convenu entre les Parties qu’en cas de mise en cause de la responsabilité du &nbsp;Prestataire au titre des présentes CGU (quel qu’en soit le fondement), le Prestataire ne saurait être tenu vis-à-vis du Client de verser une indemnité d’un montant supérieur au montant des redevances jusqu’alors perçues par le Prestataire&nbsp;pendant l’année au cours de laquelle sa responsabilité aura été invoquée.</p>
+<p><u>ARTICLE 11&nbsp;: FORCE MAJEURE</u></p>
+<p>&nbsp;</p>
+<p>Dans un premier temps, les cas de force majeure, telle que définie par l’article 1218 du Code civil, suspendront l’exécution des obligations au titre des présentes CGU. Néanmoins, dans ce cas, les Parties s’engagent à rechercher dans les meilleurs délais, les solutions qui permettraient d’assurer la continuité des Prestations.</p>
+<p>&nbsp;</p>
+<p>Si les cas de force majeure ont une durée d’existence supérieure à un (1) mois, la relation contractuelle qui lie les Partie au titre des présentes CGU pourra être résiliée automatiquement par l’une ou l’autre des Parties.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><u>ARTICLE 12&nbsp;: REFERENCE COMMERCIALE</u></p>
+<p>&nbsp;</p>
+<p>Le Client autorise le Prestataire à faire figurer dans sa communication et quel que soit le support utilisé, son nom, le logo et/ou les produits réalisés pour le compte du Client, ce à titre de référence commerciale.</p>
+<p>&nbsp;</p>
+<p>Le Prestataire s'engage à utiliser le logo conformément à la Charte graphique du Client.</p>
+<p><u>ARTICLE 13&nbsp;: INCESSIBILITE ET SOUS-TRAITANCE</u></p>
+<p>&nbsp;</p>
+<p>La mise à disposition de la Solution est établie en considération de la personne du Client et ne peut par conséquent faire l'objet d'une cession par ce dernier sauf autorisation préalable et écrite du Prestataire.</p>
+<p>&nbsp;</p>
+<p>Le Prestataire se réserve le droit de céder ses obligations au titre des présentes CGU. En cas de cession, l'établissement cessionnaire sera substitué au Prestataire à compter de la date de la cession.</p>
+<p>&nbsp;</p>
+<p>Le Client reconnaît expressément que l'établissement cessionnaire deviendra son cocontractant et s'engage à lui verser directement les rémunérations dues.</p>
+<p>&nbsp;</p>
+<p>Le Prestataire pourra sous-traiter tout ou partie de ses obligations au titre des présentes CGU, à tout prestataire de son choix, ce que le Client reconnait.</p>
+<p>&nbsp;</p>
+<p>Le Prestataire demeurera responsable vis-à-vis du Client de toutes les prestations confiées à ses sous-traitants.</p>
+<p><u>ARTICLE 14&nbsp;: CONFIDENTIALITE</u></p>
+<p>&nbsp;</p>
+<p>Chacune des Parties s'engage à ne pas divulguer, ni communiquer, ni laisser divulguer ou laisser communiquer, ni utiliser directement ou indirectement, à moins qu'il n'y ait été autorisé préalablement et par écrit par l'autre Partie, les informations, renseignements, données, applications, méthodes et savoir-faire ainsi que tout document de quelque nature que ce soit appartenant à l’autre Partie et dont elle a connaissance à l'occasion de l’utilisation de la Solution.</p>
+<p>&nbsp;</p>
+<p>Chacune des Parties s'engage à faire respecter cette obligation de confidentialité par ses salariés et collaborateurs.</p>
+<p>&nbsp;</p>
+<p>Les obligations des Parties aux termes du présent article resteront en vigueur après la cessation des relations contractuelles pendant une durée de cinq ans.</p>
+<p><u>ARTICLE 15&nbsp;: MODIFICATIONS</u></p>
+<p>&nbsp;</p>
+<p>Le Prestataire se réserve le droit de modifier librement les présentes CGU. Si le Client ne souhaite pas que les relations contractuelles soient régies par la nouvelle version des CGU, il doit notifier au Prestataire sa volonté de ne plus utiliser la Solution dans le respect de l’article 8 ci-avant.</p>
+<p>&nbsp;</p>
+<p><strong><u>ARTICLE 16&nbsp;: CONVENTION DE PREUVE</u></strong></p>
+<p><strong><u>&nbsp;</u></strong></p>
+<p>Sauf stipulations contraires visées aux présentes, les Parties déclarent qu’elles pourront procéder à l’échange des informations nécessaires à l’exécution des prestations par télécopie ou par courrier électronique.</p>
+<p>&nbsp;</p>
+<p>Les Parties déclarent expressément que les télécopies ou courriers électroniques, ou échanges via l’outil REDMINE, auront entre elles la valeur d’une preuve écrite et renoncent à exiger toute confirmation par lettre.</p>
+<p>Les courriers électroniques et télécopie devront présenter les mêmes qualités d’identification et d’horodatage que les télécopies.</p>
+<p><u>ARTICLE 17&nbsp;: LITIGE – DROIT APPLICABLE</u></p>
+<p><strong>&nbsp;</strong></p>
+<p><strong>17.1</strong> Les présentes CGU est soumises au droit français, à l'exclusion de tout autre.</p>
+<p><strong>&nbsp;</strong></p>
+<p><strong>17.2</strong> En cas de litige découlant de l'interprétation ou de l'exécution des présentes CGU, les Parties s'engagent à se réunir dans les dix jours ouvrés à compter de la réception d'une lettre recommandée avec accusé de réception notifiée par la Partie la plus diligente dans l'objectif de trouver une solution amiable.&nbsp;</p>
+<p>&nbsp;</p>
+<p>En cas de conciliation, les Parties s’engagent à signer un accord transactionnel confidentiel.</p>
+<p>&nbsp;</p>
+<p>L’accord transactionnel précisera, de manière expresse, si les présentes continueront à s’appliquer.</p>
+<p>&nbsp;</p>
+<p>Si les Parties ne parviennent à trouver un accord amiable, le Tribunal compétent est le tribunal de commerce de Paris, nonobstant pluralité de défendeurs ou appel en garantie même pour les procédures d'urgence ou les procédures conservatoires ou par requête.</p>
+<p><strong>&nbsp;</strong></p>
+<p><strong>&nbsp;</strong></p>
+<p><strong>
+    <br>&nbsp; 
+  </strong></p>
+<p><strong>&nbsp;</strong></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>"
 }
