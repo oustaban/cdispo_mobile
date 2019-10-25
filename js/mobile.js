@@ -104,13 +104,13 @@ function initMobileConnect() {
 					var domainsite = result[1].domainsite;
 					var agregatecookie = cookieValue+";"+domainsite;
 					var cdispo_language = result[1]['cdispo_language'];
-					var image = result[1]['image'];
+					var portrait = result[1]['image'];
 					
 					window.localStorage.setItem(cookieName, cookieValue);
 					window.localStorage.setItem("domain", domainsite);
 					window.localStorage.setItem("language", cdispo_language);
 					window.localStorage.setItem("lang", array_language[cdispo_language]);
-					window.localStorage.setItem("image", image);
+					window.localStorage.setItem("portrait", portrait);
 					
 					var url = window.location.href;
 					url = url.substring(0, url.lastIndexOf("/") + 1);

@@ -60,7 +60,7 @@
 		
 		$(document).bind('deviceready', function() {
 		   
-		    var portrait = window.localStorage.getItem("image");
+		    var portrait = window.localStorage.getItem("portrait");
 			if (portrait != '') {
 				var urlportrait = "http://"+window.localStorage.getItem("domain")+"/uploads/tx_srfeuserregister/"+portrait;
 				$('#portrait').attr('src',urlportrait);
@@ -85,7 +85,7 @@
 		
 		$(document).bind('resume', function() {
 			
-			var portrait = window.localStorage.getItem("image");
+			var portrait = window.localStorage.getItem("portrait");
 			if (portrait != '') {
 				var urlportrait = "http://"+window.localStorage.getItem("domain")+"/uploads/tx_srfeuserregister/"+portrait;
 				console.log('Portrait:'+urlportrait);
