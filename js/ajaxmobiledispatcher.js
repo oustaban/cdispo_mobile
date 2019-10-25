@@ -377,7 +377,7 @@ function getSiteInfo(site_id,referentiel_id,fe_typo_user,from) {
                     if (from == "getBookingToStart" || from == "getBookingToEnd" || from == "getBooking" || from == "getBookingToConfirm" || from == "getInvitations" || from == "getSharing" ) {
                          $('#btn_close').attr('onclick','$(\'.modification-block2\').hide();$(\'.info-block\').hide();$(\'.main-slider\').show();$(\'.nav-holder\').show();$(\'#backtoshare\').hide();$(\'.modification_block\').hide()');
                     }
-                    if (from == "getBookingToGo" || from == "getBookingEvent" || from == "searchResults") {
+                    if (from == "getBookingToGo" || from == "getBookingEvent" || from == "searchResults" || from == "search" || from == "scan") {
                          $('#btn_close').attr('onclick','$(\'.modification-block2\').hide();$(\'.info-block\').hide();$(\'.main-slider\').show();$(\'.nav-holder\').show();$(\'#backtoshare\').show();$(\'.modification_block\').hide()');
                     }
                    
@@ -1002,7 +1002,9 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                     $('#modif_dateend').val(result.dateEndBooking);
                     
                     //Dans le cas ou la plage est sur 1 jour => 1 slider (jour/heure)
-                    if (timecode.length <= 2) {
+                    //if (timecode.length <= 2) {
+                    if (result.counttimecode < 100) {
+                       
                         
                         var myvalues = [];
                         $('#slider_holder1').show();
@@ -1810,7 +1812,8 @@ function createMyBooking(event_id,category,ressourceid,datestart,dateend,udatest
                     $('#modif_dateend').val(result.dateEndBooking);
                     
                     //Dans le cas ou la plage est sur 1 jour => 1 slider (jour/heure)
-                    if (timecode.length <= 2) {
+                    //if (timecode.length <= 2) {
+                    if (result.counttimecode < 100) {
                         
                         var myvalues = [];
                         $('#slider_holder1').show();
