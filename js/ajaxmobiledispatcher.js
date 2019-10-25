@@ -5785,8 +5785,8 @@ function getCgu(fe_typo_user,action) {
                 
                 if (result.result) {
                     $('.prewiewsharing_header').show();
-                    //$('.prewiewsharing_title').html(result.title);
-                    //$('.previewsharing_content').html(result.content);
+                    $('.prewiewsharing_title').html(result.title);
+                    $('.previewsharing_content').html(result.content);
                     $('#btn_close').attr('onclick','getCgu(\''+fe_typo_user+'\',\'refresh\')');   
                     $('.main-slider').hide();
                     $('.nav-holder').hide();
