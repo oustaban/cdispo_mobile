@@ -63,7 +63,6 @@
 		    var portrait = window.localStorage.getItem("image");
 			if (portrait != '') {
 				var urlportrait = "http://"+window.localStorage.getItem("domain")+"/uploads/tx_srfeuserregister/"+portrait;
-				console.log('Portrait:'+urlportrait);
 				$('#portrait').attr('src',urlportrait);
 				$('#portrait').attr('srcset',urlportrait);
 			}

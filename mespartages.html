@@ -55,7 +55,13 @@
 		
 		$(document).bind('deviceready', function() {
 		   
-		    
+		    var portrait = window.localStorage.getItem("image");
+			if (portrait != '') {
+				var urlportrait = "http://"+window.localStorage.getItem("domain")+"/uploads/tx_srfeuserregister/"+portrait;
+				$('#portrait').attr('src',urlportrait);
+				$('#portrait').attr('srcset',urlportrait);
+			}
+			
 		    getTranslation();
 			
 			var indexSlide = getUrlVars()["indexSlide"];
@@ -83,6 +89,13 @@
         });
 		
 		$(document).bind('resume', function() {
+			
+			var portrait = window.localStorage.getItem("image");
+			if (portrait != '') {
+				var urlportrait = "http://"+window.localStorage.getItem("domain")+"/uploads/tx_srfeuserregister/"+portrait;
+				$('#portrait').attr('src',urlportrait);
+				$('#portrait').attr('srcset',urlportrait);
+			}
 			
 			getTranslation();
 			
@@ -123,7 +136,7 @@
 			<div class="container">
 				<nav id="nav">
 					<div class="user-icon">
-						<img src="images/user-pic.png" srcset="images/user-pic-2x.png 2x" alt="image description">
+						<img id="portrait" src="images/user-pic.png" srcset="images/user-pic-2x.png 2x" alt="image description">
 					</div>
 					<span class="active-position" id="sharing_title">MES PARTAGES</span>
 					<a href="#" class="nav-opener"><span id="menu_title">Menu</span></a>
