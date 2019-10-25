@@ -1466,7 +1466,7 @@ textarea:focus {
 
 .modification-block .slider-holder, .modification-block2 .slider-holder {
 	border-top: 1px solid white;
-	padding: 25px 51px 8px;
+	padding: 25px 31px 8px;
 	margin: 0 -13px;
 }
 
@@ -2494,7 +2494,7 @@ span.myaccounttitle {
 	.modification-block .slider-holder, .modification-block2 .slider-holder {
 		border-top: 1px solid white;
 		margin: 0 -23px;
-		padding: 45px 51px 27px;
+		padding: 45px 31px 27px;
 	}
 
 	.info-block, .message-block {
