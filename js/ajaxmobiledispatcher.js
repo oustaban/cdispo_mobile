@@ -232,13 +232,6 @@ function getPreviewRessource(ressourceId,categoryRessource,fe_typo_user,from) {
                     $('.info-block').show();
                     
                     
-                    $('#btn_close').attr('onclick','$(\'.info-block\').hide();$(\'.main-slider\').show();$(\'.nav-holder\').show();');
-                    
-                    $('.prewiewsharing_header').show();
-                    $('.main-slider').hide();
-                    $('.nav-holder').hide();
-                    $('.info-block').show();
-                    
                    
                     console.log('getPreviewRessource success');
                 } else {
