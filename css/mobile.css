@@ -2003,6 +2003,9 @@ textarea:focus {
 	display: inline-block;
 	vertical-align: middle;
 	border-radius: 50%;
+	background: #deecfb;
+	border-radius: 50%;
+	position: relative;
 }
 
 #nav {
