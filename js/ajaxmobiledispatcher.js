@@ -5796,13 +5796,13 @@ function getCgu(fe_typo_user,action) {
                     
                 }
                 
-                console.log('success getMyAccount');
+                console.log('success getCgu');
                 
                 
                 $('.loader2').hide();
           },  
           error: function(error) {
-            console.log('nok getMyAccount');
+            console.log('nok getCgu');
             console.log(error);
             $('.loader2').hide();
           }   
