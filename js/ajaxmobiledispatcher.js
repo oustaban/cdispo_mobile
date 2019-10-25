@@ -291,7 +291,7 @@ function getUserInfo(fe_typo_user,owner_id,from,booking_id,ressourceId,category)
                          $('#btn_cancel').text(trad['btn_back']);
                          $('#btn_cancel').attr('onclick','$(\'.modification-block2\').hide();$(\'.info-block\').hide();$(\'.main-slider\').show();$(\'.nav-holder\').show();$(\'#backtoshare\').hide();$(\'.modification_block\').hide()');
                     }
-                    if (from == "getBookingToGo" || from == "getBookingEvent" || from == "searchResults") {
+                    if (from == "getBookingToGo" || from == "getBookingEvent") {
                          $('#btn_close').text(trad['sendmessageto']+' '+result.owner);
                          $('.previewmessage_mandatories').html(trad['sendmessagetitle']+'<b>'+result.owner+'</b>');
                          $('#message').val('');
@@ -300,6 +300,9 @@ function getUserInfo(fe_typo_user,owner_id,from,booking_id,ressourceId,category)
                          $('#btn_back2').attr('onclick','$(\'.info-block\').show();$(\'.main-slider\').hide();$(\'.nav-holder\').hide();$(\'#backtoshare\').hide();$(\'.modification_block\').hide();$(\'.message-block\').hide()');
                          $('#btn_cancel').text(trad['btn_back']);
                          $('#btn_cancel').attr('onclick','$(\'.modification-block2\').hide();$(\'.info-block\').hide();$(\'.main-slider\').show();$(\'.nav-holder\').show();$(\'#backtoshare\').show();$(\'.modification_block\').hide()');
+                    }
+                    if (from == "searchResults") {
+                         $('#btn_close').attr('onclick','$(\'.modification-block2\').hide();$(\'.info-block\').hide();$(\'.main-slider\').show();$(\'.nav-holder\').show();$(\'#backtoshare\').show();$(\'.modification_block\').hide()');
                     }
                     
                     
@@ -328,7 +331,7 @@ function getUserInfo(fe_typo_user,owner_id,from,booking_id,ressourceId,category)
 
 
 
-function getSiteInfo(site_id,referentiel_id,fe_typo_user) {
+function getSiteInfo(site_id,referentiel_id,fe_typo_user,from) {
     
     $('.loader2').show();
     var domain = window.localStorage.getItem("domain");
@@ -365,10 +368,29 @@ function getSiteInfo(site_id,referentiel_id,fe_typo_user) {
                     initPopin();
                     $('.prewiewsharing_header').hide();
                     $('.previewsharing_content').html(result.content);
-                    $('#btn_close').attr('onclick','$(\'.info-block\').hide();$(\'.main-slider\').show();$(\'.nav-holder\').show();');
+                    console.log('From:'+from);
                     
-                    $('.main-slider').hide();$('.nav-holder').hide();
+                    $('#btn_close').text(trad['btn_close']);
+                    $('#btn_close').attr('onclick','$(\'.modification-block2\').hide();$(\'.modification-block\').hide();$(\'.message-block\').hide();$(\'.info-block\').hide();$(\'.main-slider\').show();$(\'.nav-holder\').show();');
+                    $('#btn_cancel').text('');
+                        
+                    if (from == "getBookingToStart" || from == "getBookingToEnd" || from == "getBooking" || from == "getBookingToConfirm" || from == "getInvitations" || from == "getSharing" ) {
+                         $('#btn_close').attr('onclick','$(\'.modification-block2\').hide();$(\'.info-block\').hide();$(\'.main-slider\').show();$(\'.nav-holder\').show();$(\'#backtoshare\').hide();$(\'.modification_block\').hide()');
+                    }
+                    if (from == "getBookingToGo" || from == "getBookingEvent" || from == "searchResults") {
+                         $('#btn_close').attr('onclick','$(\'.modification-block2\').hide();$(\'.info-block\').hide();$(\'.main-slider\').show();$(\'.nav-holder\').show();$(\'#backtoshare\').show();$(\'.modification_block\').hide()');
+                    }
+                   
+                    
+                    
+                    $('.main-slider').hide();
+                    $('.nav-holder').hide();
+                    $('.modification-block').hide();
+                    $('.modification-block2').hide();
+                    $('#backtoshare').hide();
                     $('.info-block').show();
+                    
+                    
                     
                     console.log('geSiteInfo success');
                 
