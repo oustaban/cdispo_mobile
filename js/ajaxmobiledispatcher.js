@@ -156,7 +156,7 @@ function initPopin() {
     $('#btn_close').attr('onclick','');
 }
 
-function getPreviewRessource(ressourceId,categoryRessource,fe_typo_user) {
+function getPreviewRessource(ressourceId,categoryRessource,fe_typo_user,from) {
     $('.loader2').show();
     var domain = window.localStorage.getItem("domain");
     var L = window.localStorage.getItem("language");
@@ -210,10 +210,33 @@ function getPreviewRessource(ressourceId,categoryRessource,fe_typo_user) {
                         $('.prewiewsharing_mandatories').html('');
                     }
                     $('.previewsharing_content').html(result.content);
+                    $('.prewiewsharing_header').show();
+                    
+                    $('#btn_close').text(trad['btn_close']);
+                    $('#btn_close').attr('onclick','$(\'.modification-block2\').hide();$(\'.modification-block\').hide();$(\'.message-block\').hide();$(\'.info-block\').hide();$(\'.main-slider\').show();$(\'.nav-holder\').show();');
+                    $('#btn_cancel').text('');
+                        
+                    if (from == "getBookingToStart" || from == "getBookingToEnd" || from == "getBooking" || from == "getBookingToConfirm" || from == "getInvitations" || from == "getSharing" ) {
+                         $('#btn_close').attr('onclick','$(\'.modification-block2\').hide();$(\'.info-block\').hide();$(\'.main-slider\').show();$(\'.nav-holder\').show();$(\'#backtoshare\').hide();$(\'.modification_block\').hide()');
+                    }
+                    if (from == "getBookingToGo" || from == "getBookingEvent" || from == "searchResults" || from == "search" || from == "scan") {
+                         $('#btn_close').attr('onclick','$(\'.modification-block2\').hide();$(\'.info-block\').hide();$(\'.main-slider\').show();$(\'.nav-holder\').show();$(\'#backtoshare\').show();$(\'.modification_block\').hide()');
+                    }
+                    
+                    
+                    $('.main-slider').hide();
+                    $('.nav-holder').hide();
+                    $('.modification-block').hide();
+                    $('.modification-block2').hide();
+                    $('#backtoshare').hide();
+                    $('.info-block').show();
+                    
+                    
                     $('#btn_close').attr('onclick','$(\'.info-block\').hide();$(\'.main-slider\').show();$(\'.nav-holder\').show();');
                     
                     $('.prewiewsharing_header').show();
-                    $('.main-slider').hide();$('.nav-holder').hide();
+                    $('.main-slider').hide();
+                    $('.nav-holder').hide();
                     $('.info-block').show();
                     
                    
@@ -368,8 +391,6 @@ function getSiteInfo(site_id,referentiel_id,fe_typo_user,from) {
                     initPopin();
                     $('.prewiewsharing_header').hide();
                     $('.previewsharing_content').html(result.content);
-                    console.log('From:'+from);
-                    
                     $('#btn_close').text(trad['btn_close']);
                     $('#btn_close').attr('onclick','$(\'.modification-block2\').hide();$(\'.modification-block\').hide();$(\'.message-block\').hide();$(\'.info-block\').hide();$(\'.main-slider\').show();$(\'.nav-holder\').show();');
                     $('#btn_cancel').text('');

@@ -2771,7 +2771,6 @@ span.myaccounttitle {
 		display: inline-block;
 		vertical-align: middle;
 		width: 0;
-		min-height: calc(100vh - 490px);
 	}
 
 	.info-block .text-holder > *, .message-block .text-holder > * {
@@ -2899,6 +2898,7 @@ span.myaccounttitle {
 	.menu a {
 		padding: 0;
 		color: #fff;
+		font-size:13px;
 	}
 
 	.menu a:before {
@@ -2916,6 +2916,9 @@ span.myaccounttitle {
 	
 	.loginmessage h4 {
 		font-size:17px;
+	}
+	.prewiewsharing_title a {
+		font-size: 18px;
 	}
 }
 
