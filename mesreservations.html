@@ -13,12 +13,7 @@
     <script language="javascript">
 		
 		var language = window.localStorage.getItem("lang");
-		var portrait = window.localStorage.getItem("image");
-		if (portrait != '') {
-            var urlportrait = window.localStorage.getItem("domain")+"/"+portrait;
-			console.log('Portrait:'+urlportrait);
-			$('#portrait').attr('src',urlportrait);
-        }
+		
 		
         // We use this code for handling unexpected errors.
         // Using alert, we are sure that the user get notified in a Mobile device.
@@ -65,6 +60,13 @@
 		
 		$(document).bind('deviceready', function() {
 		   
+		    var portrait = window.localStorage.getItem("image");
+			if (portrait != '') {
+				var urlportrait = window.localStorage.getItem("domain")+"/"+portrait;
+				console.log('Portrait:'+urlportrait);
+				$('#portrait').attr('src',urlportrait);
+			}
+		
 		    getTranslation();
 			
 			document.addEventListener("offline", function(e){
@@ -82,6 +84,13 @@
         });
 		
 		$(document).bind('resume', function() {
+			
+			var portrait = window.localStorage.getItem("image");
+			if (portrait != '') {
+				var urlportrait = window.localStorage.getItem("domain")+"/"+portrait;
+				console.log('Portrait:'+urlportrait);
+				$('#portrait').attr('src',urlportrait);
+			}
 			
 			getTranslation();
 			
