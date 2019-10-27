@@ -1024,7 +1024,7 @@ textarea:focus {
 
 .label-row input,
 .label-row select {
-	height: 31px;
+	height: 25px;
 }
 
 .light-block {
@@ -1682,7 +1682,7 @@ textarea:focus {
 
 .main-slider .btn {
 	font-size: 10px;
-	min-width: 82px;
+	min-width: 85px;
 	padding: 12px 15px;
 }
 .main-slider .btn:nth-child(2) {
