@@ -105,9 +105,6 @@
         <splash src="img/splash/android/drawable-xxxhdpi/screen.png" platform="android" qualifier="xxxhdpi" />
 
     </platform>
-    
-    <gap:splash gap:platform="winphone" width="1100" height="720" src="img/splash/w8/winphone_xhdpi_landscape.png" />
-    <gap:splash gap:platform="winphone" width="720"  height="960"  src="img/splash/w8/winphone_xhdpi_portrait.png" />
 
     <gap:platform name="ios" />
     <gap:platform name="android" />
