@@ -33,8 +33,7 @@
     <preference name="windows-arch" value="x64" />
     <preference name="windows-identity-name" value="20793Magnetic.coop.com.inhni.inhnov" />
 
-    <preference name="StatusBarOverlaysWebView" value="true" />
-    <preference name="StatusBarStyle" value="lightcontent" />
+    <preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="StatusBarDefaultScrollToTop" value="true" />
 
 
