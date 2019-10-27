@@ -319,7 +319,8 @@ function initNav() {
 					resultDisplayDuration: 500, // Android, display scanned text for X ms. 0 suppresses it entirely, default 1500
 					orientation : "portrait", // Android only (portrait|landscape), default unset so it rotates with the device
 					disableAnimations : false, // iOS
-					disableSuccessBeep: false // iOS and Android
+					disableSuccessBeep: false, // iOS and Android
+					prompt: ""
 				}
         );
 	});
