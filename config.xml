@@ -114,9 +114,6 @@
         <splash src="img/splash/android/drawable-land-xxhdpi/screen.png" platform="android" qualifier="land-xxhdpi" />
         <splash src="img/splash/android/drawable-xxxhdpi/screen.png" platform="android" qualifier="xxxhdpi" />
 
-        
-        
-        
     </platform>
     
      
@@ -195,6 +192,8 @@
     
     
     <allow-navigation href="*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="tel:*" />
     <access origin="*" />
 
     <feature name="CDVWKWebViewEngine">
