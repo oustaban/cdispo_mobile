@@ -21,7 +21,7 @@
                 // Ommit cordova and 3rd party libs errors.
                 if (url.indexOf("cordova") == -1 && url.indexOf("js") == -1 &&
                         url.indexOf("org.apache.cordova") == -1) {
-                    window.alert(error);
+                    console.log(error);
                 }
             } else {
                 var error = msg;
@@ -54,15 +54,16 @@
 		
 		$(document).bind('deviceready', function() {
             screen.lockOrientation('portrait');
+			console.log('init');
 			//StatusBar.overlaysWebView(true);
 			//StatusBar.backgroundColorByName("red"); 
             StatusBar.hide();
 			//openBrowser();
 			//clickSubmit();
-			console.log(StatusBar);
-			
+			//console.log(StatusBar);
+			console.log('init2');
 			var fe_typo_user = window.localStorage.getItem("fe_typo_user");
-			
+			console.log('init3');
 			getTranslation();
 			//alert(fe_typo_user);
 			
@@ -81,42 +82,12 @@
             }
 			
         });
+		
 		$( window ).unload(function() {
 			$('.loader2').show();
 		});
-		function openBrowser() {
-			 inAppBrowserRef = cordova.InAppBrowser.open('http://cdispo_preprod.moonlikestudio.com/mobile/connection/?tx_felogin_pi1[forgot]=1', '_blank', 'location=no,hidden=yes,footer=no,zoom=no,usewkwebview=yes,toolbar=no,fullscreen=yes,disallowoverscroll=yes');
-			 inAppBrowserRef.addEventListener('loadstop', loadStopCallBack);
-		}
-		function loadStopCallBack() {
-			console.log('loadStopCallBack');	
-			if (inAppBrowserRef != undefined && loadpage == 0) {
-				loadpage = 1;
-				console.log('loadpage = 0');
-				//inAppBrowserRef.show();
-				inAppBrowserRef = cordova.InAppBrowser.open('http://cdispo_preprod.moonlikestudio.com/mobile/connection', '_blank', 'location=no,hidden=yes,footer=no,zoom=no,usewkwebview=yes,toolbar=no,fullscreen=yes,disallowoverscroll=yes');
-			}
-			if (inAppBrowserRef != undefined && loadpage == 1) {
-				console.log('loadpage = 1');
-				inAppBrowserRef.show();
-			}
-		}
-		function clickSubmit() {
-			$('#form_seconnecter').submit(function() {
-				var form = document.querySelector('form')
-				console.log(form);
-
-				cordovaFetch('http://cdispo_preprod.moonlikestudio.com/mobile/connection', {
-					method: 'POST',
-					body: new FormData(form)
-				}).then(function(response) {
-					console.log(res.headers['Set-Cookie']);
-				});
-
-				return false;
-
-			});
-		}
+		
+		
     </script>
 </head>
 
