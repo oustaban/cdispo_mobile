@@ -1822,7 +1822,7 @@ function createMyBooking(event_id,category,ressourceid,datestart,dateend,udatest
                     var step = 5 * 60;
                     moment.locale(lang);
                     
-                    $('#modif_datestart').val(result.dateStartBooking);
+                    $('#modif_datestart').val(timecode[0][0]);
                     $('#modif_dateend').val(result.dateEndBooking);
                     
                     //Dans le cas ou la plage est sur 1 jour => 1 slider (jour/heure)
