@@ -4502,6 +4502,7 @@ function getScan(fe_typo_user,ressourceId,category,action) {
                     $('.modification-block').hide();
                     $('.modification-block2').hide();
                     $('.message-block').hide();
+                    $('#backtoshare').hide();
                     $('.info-block').show();
                 
                 }
@@ -4522,6 +4523,7 @@ function getScan(fe_typo_user,ressourceId,category,action) {
                     $('.modification-block').hide();
                     $('.modification-block2').hide();
                     $('.message-block').hide();
+                    $('#backtoshare').hide();
                     $('.info-block').show();
                     
                 }
@@ -4542,6 +4544,7 @@ function getScan(fe_typo_user,ressourceId,category,action) {
                     $('.modification-block').hide();
                     $('.modification-block2').hide();
                     $('.message-block').hide();
+                    $('#backtoshare').hide();
                     $('.info-block').show();
                     
                 }
@@ -4560,6 +4563,7 @@ function getScan(fe_typo_user,ressourceId,category,action) {
                         $('.modification-block').hide();
                         $('.modification-block2').hide();
                         $('.message-block').hide();
+                        $('#backtoshare').hide();
                         $('.info-block').show();
                     }
                     if (result.bookingtostartfinished) {
@@ -4575,6 +4579,7 @@ function getScan(fe_typo_user,ressourceId,category,action) {
                         $('.modification-block').hide();
                         $('.modification-block2').hide();
                         $('.message-block').hide();
+                        $('#backtoshare').hide();
                         $('.info-block').show();
                     }
                     if (result.nobookingstostart) {
@@ -4590,6 +4595,7 @@ function getScan(fe_typo_user,ressourceId,category,action) {
                         $('.modification-block').hide();
                         $('.modification-block2').hide();
                         $('.message-block').hide();
+                        $('#backtoshare').hide();
                         $('.info-block').show();
                     }
                     if (result.bookingtostart) {
@@ -4612,6 +4618,7 @@ function getScan(fe_typo_user,ressourceId,category,action) {
                             $('.modification-block2').hide();
                             $('.message-block').hide();
                             $('.info-block').hide();
+                            $('#backtoshare').hide();
                              if (countslide > 0) 
                                 $('.main-slider').slick('unslick');
                         }
@@ -4759,6 +4766,7 @@ function getScan(fe_typo_user,ressourceId,category,action) {
                     $('.modification-block').hide();
                     $('.modification-block2').hide();
                     $('.message-block').hide();
+                    $('#backtoshare').hide();
                     $('.info-block').show();
                 }
                 
