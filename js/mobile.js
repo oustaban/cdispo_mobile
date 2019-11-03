@@ -342,7 +342,8 @@ function initNav() {
 function loadStopCallBack() {
  
     if (pageRef != undefined) {
-        pageRef.show();
+		console.log('loadStopCallBack');
+        //pageRef.show();
     }
  
 }
