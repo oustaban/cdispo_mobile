@@ -255,12 +255,7 @@ function initNav() {
 		if ($(".modification-block").is(":visible")) {
 			unlockBooking(fe_typo_user,$('#modif_booking').val());
         }
-		$.mobile.changePage('mespartages.html', {
-  transition: "pop",
-  reverse: false,
-  changeHash: false
-});
-		//cordova.InAppBrowser.open(url+'mespartages.html', '_self', 'hidden=yes');
+		cordova.InAppBrowser.open(url+'mespartages.html', '_self', 'hidden=yes');
 		
 	
 	});
