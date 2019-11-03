@@ -258,9 +258,12 @@ function initNav() {
 		if ($(".modification-block").is(":visible")) {
 			unlockBooking(fe_typo_user,$('#modif_booking').val());
         }
+		console.log('BIP1');
 		pageRef = cordova.InAppBrowser.open(url+'mespartages.html', '_self', 'hidden=yes');
+		console.log('BIP2');
 		pageRef.addEventListener('loadstop', loadStopCallBack);
 		pageRef.addEventListener('loadstart', loadStartCallBack);
+		console.log('BIP3');
 	
 	});
 	
