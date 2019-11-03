@@ -119,7 +119,6 @@ function initMobileConnect() {
 					url = url.substring(0, url.lastIndexOf("/") + 1);
 					//console.log(url);
 					pageRef = cordova.InAppBrowser.open(url+'mesreservations.html', '_self');
-					pageRef.addEventListener('loadstop', loadStopCallBack);
 							
 					/*
 					cookieMaster.setCookieValue('http://cdispo', cookieName, agregatecookie	,
@@ -241,8 +240,6 @@ function initNav() {
 			unlockBooking(fe_typo_user,$('#modif_booking').val());
         }
 		pageRef = cordova.InAppBrowser.open(url+'mesreservations.html', '_self', 'hidden=yes');
-		pageRef.addEventListener('loadstop', loadStopCallBack);
-	
 		
 	});
 	jQuery('#nav_title2').click(function() {
@@ -251,8 +248,6 @@ function initNav() {
 			unlockBooking(fe_typo_user,$('#modif_booking').val());
         }
 		pageRef = cordova.InAppBrowser.open(url+'mesinvitations.html', '_self', 'hidden=yes');
-		pageRef.addEventListener('loadstop', loadStopCallBack);
-	
 	});
 	jQuery('#nav_title3').click(function() {
 		console.log(url);
@@ -260,8 +255,6 @@ function initNav() {
 			unlockBooking(fe_typo_user,$('#modif_booking').val());
         }
 		pageRef = cordova.InAppBrowser.open(url+'mespartages.html', '_self', 'hidden=yes');
-		pageRef.addEventListener('loadstop', loadStopCallBack);
-	
 	});
 	
 	jQuery('#nav_title4').click(function() {
@@ -270,8 +263,6 @@ function initNav() {
 			unlockBooking(fe_typo_user,$('#modif_booking').val());
         }
 		pageRef = cordova.InAppBrowser.open(url+'mesconfirmations.html', '_self', 'hidden=yes');
-		pageRef.addEventListener('loadstop', loadStopCallBack);
-	
 	});
 	
 	jQuery('#nav_title5').click(function() {
@@ -280,8 +271,6 @@ function initNav() {
 			unlockBooking(fe_typo_user,$('#modif_booking').val());
         }
 		pageRef = cordova.InAppBrowser.open(url+'moncompte.html', '_self', 'hidden=yes');
-		pageRef.addEventListener('loadstop', loadStopCallBack);
-	
 	});
 	
 	jQuery('#nav_title6').click(function() {
@@ -290,8 +279,6 @@ function initNav() {
 			unlockBooking(fe_typo_user,$('#modif_booking').val());
         }
 		pageRef = cordova.InAppBrowser.open(url+'cgu.html', '_self', 'hidden=yes');
-		pageRef.addEventListener('loadstop', loadStopCallBack);
-	
 	});
 	
 	jQuery('#nav_title7').click(function() {
@@ -301,8 +288,6 @@ function initNav() {
         }
 		window.localStorage.clear()
 		pageRef = cordova.InAppBrowser.open(url+'index.html', '_self', 'hidden=yes');
-		pageRef.addEventListener('loadstop', loadStopCallBack);
-	
 	});
 	
 	jQuery('#btn_scan').click(function() {
@@ -322,8 +307,6 @@ function initNav() {
 						params = params.replace(/\//gi, '_');
 						console.log('params:'+params);
 						pageRef = cordova.InAppBrowser.open(url+'scan.html?uid=1'+params, '_self', 'hidden=yes');
-						pageRef.addEventListener('loadstop', loadStopCallBack);
-	
 					}
 				},
                 function (error) {
@@ -350,10 +333,9 @@ function initNav() {
 		url = url.substring(0, url.lastIndexOf("/") + 1);
 		fe_typo_user = window.localStorage.getItem("fe_typo_user");
 		pageRef = cordova.InAppBrowser.open(url+'reserver.html', '_self', 'hidden=yes');
-		pageRef.addEventListener('loadstop', loadStopCallBack);
-	
 	});
 	
+	pageRef.addEventListener('loadstop', loadStopCallBack);
 	
 }
 
@@ -361,7 +343,7 @@ function loadStopCallBack() {
  
     if (pageRef != undefined) {
 		console.log('loadStopCallBack');
-        pageRef.show();
+        //pageRef.show();
     }
  
 }
