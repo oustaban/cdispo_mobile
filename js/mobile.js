@@ -119,6 +119,7 @@ function initMobileConnect() {
 					url = url.substring(0, url.lastIndexOf("/") + 1);
 					//console.log(url);
 					pageRef = cordova.InAppBrowser.open(url+'mesreservations.html', '_self');
+					pageRef.addEventListener('loadstop', loadStopCallBack);
 							
 					/*
 					cookieMaster.setCookieValue('http://cdispo', cookieName, agregatecookie	,
