@@ -260,6 +260,7 @@ function initNav() {
         }
 		pageRef = cordova.InAppBrowser.open(url+'mespartages.html', '_self', 'hidden=yes');
 		pageRef.addEventListener('loadstop', loadStopCallBack);
+		pageRef.addEventListener('loadstart', loadStartCallBack);
 	
 	});
 	
@@ -356,6 +357,13 @@ function initNav() {
 	
 }
 
+function loadStartCallBack() {
+ 
+    console.log('loadStartCallBack');
+	
+}
+ 
+ 
 function loadStopCallBack() {
  
     if (pageRef != undefined) {
