@@ -255,7 +255,7 @@ function initNav() {
 		if ($(".modification-block").is(":visible")) {
 			unlockBooking(fe_typo_user,$('#modif_booking').val());
         }
-		$.mobile.changePage(url+'mespartages.html', {
+		$.mobile.changePage('mespartages.html', {
   transition: "pop",
   reverse: false,
   changeHash: false
