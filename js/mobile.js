@@ -314,7 +314,8 @@ function initNav() {
 						params = params.replace(/\//gi, '_');
 						console.log('params:'+params);
 						$('#invisible_link').attr('href','scan.html?uid=1'+params);
-						$('#invisible_link').trigger('touchstart');
+						//$('#invisible_link').trigger('touchstart');
+						$("#invisible_link")[0].click();
 						//cordova.InAppBrowser.open(url+'scan.html?uid=1'+params, '_self', 'hidden=yes');
 						
 					}
@@ -344,7 +345,8 @@ function initNav() {
 		fe_typo_user = window.localStorage.getItem("fe_typo_user");
 		$('#invisible_link').attr('href','reserver.html');
 		console.log('btn_book click');
-		$('#invisible_link').trigger('touchstart');
+		//$('#invisible_link').trigger('touchstart');
+		$("#invisible_link")[0].click();
 						
 		//cordova.InAppBrowser.open(url+'reserver.html', '_self', 'hidden=yes');
 		
