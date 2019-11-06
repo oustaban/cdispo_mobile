@@ -117,7 +117,9 @@ function initMobileConnect() {
 					var url = window.location.href;
 					url = url.substring(0, url.lastIndexOf("/") + 1);
 					//console.log(url);
-					cordova.InAppBrowser.open(url+'mesreservations.html', '_self');
+					$('#invisible_link').attr('href','mesreservations.html');
+					$("#invisible_link")[0].click();
+					//cordova.InAppBrowser.open(url+'mesreservations.html', '_self');
 							
 					/*
 					cookieMaster.setCookieValue('http://cdispo', cookieName, agregatecookie	,
@@ -314,7 +316,6 @@ function initNav() {
 						params = params.replace(/\//gi, '_');
 						console.log('params:'+params);
 						$('#invisible_link').attr('href','scan.html?uid=1'+params);
-						//$('#invisible_link').trigger('touchstart');
 						$("#invisible_link")[0].click();
 						//cordova.InAppBrowser.open(url+'scan.html?uid=1'+params, '_self', 'hidden=yes');
 						
@@ -344,8 +345,6 @@ function initNav() {
 		url = url.substring(0, url.lastIndexOf("/") + 1);
 		fe_typo_user = window.localStorage.getItem("fe_typo_user");
 		$('#invisible_link').attr('href','reserver.html');
-		console.log('btn_book click');
-		//$('#invisible_link').trigger('touchstart');
 		$("#invisible_link")[0].click();
 						
 		//cordova.InAppBrowser.open(url+'reserver.html', '_self', 'hidden=yes');
