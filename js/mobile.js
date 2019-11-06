@@ -343,6 +343,7 @@ function initNav() {
 		url = url.substring(0, url.lastIndexOf("/") + 1);
 		fe_typo_user = window.localStorage.getItem("fe_typo_user");
 		$('#invisible_link').attr('href','reserver.html');
+		console.log('btn_book click');
 		$('#invisible_link').trigger('click');
 						
 		//cordova.InAppBrowser.open(url+'reserver.html', '_self', 'hidden=yes');
