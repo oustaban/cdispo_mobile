@@ -2439,6 +2439,14 @@ span.myaccounttitle {
 	text-decoration: underline;
 }
 
+a#invisible_link {
+	padding:0;
+	margin:0;
+	width:0px;
+	height:0px;
+	display:none;
+}
+
 @media (min-width: 480px) {
 	.container {
 		max-width: 590px;
