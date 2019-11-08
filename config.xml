@@ -36,7 +36,10 @@
     <preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="StatusBarDefaultScrollToTop" value="true" />
 
-
+    <config-file platform="android" parent="/manifest" mode="merge">
+        <application android:theme="@android:style/Theme.Translucent.NoTitleBar"></application>
+    </config-file>
+    
     <icon src="icon.png" />
     
     <icon src="img/icon/ios/Icon-29.png" gap:platform="ios" width="29" height="29" />
