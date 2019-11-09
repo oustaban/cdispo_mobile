@@ -53,25 +53,17 @@
 		
 		
 		$(document).bind('deviceready', function() {
-			try {
-				if (cordova.platformId == 'android') {
-					AndroidFullScreen.immersiveMode(false, false);
-					window.addEventListener('native.keyboardshow', function (e) {
-						AndroidFullScreen.showSystemUI(false, false);
-					});
-					window.addEventListener('native.keyboardhide', function (e) {
-						AndroidFullScreen.immersiveMode(false, false);
-					});
-				}
-			} catch (error) {
-				console.log('deviceready - ' + error);
-			}
+			
 	
             screen.lockOrientation('portrait');
 			console.log('init');
 			//StatusBar.overlaysWebView(true);
-			//StatusBar.backgroundColorByName("red"); 
-            StatusBar.hide();
+			//StatusBar.backgroundColorByName("red");
+			if( device.platform=="iOS")
+			{
+				StatusBar.overlaysWebView(true);
+				StatusBar.hide();
+			}
 			//openBrowser();
 			//clickSubmit();
 			//console.log(StatusBar);
