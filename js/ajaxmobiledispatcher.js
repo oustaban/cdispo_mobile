@@ -32,8 +32,11 @@ function getBooking(fe_typo_user,action) {
                     var url = window.location.href;
 					url = url.substring(0, url.lastIndexOf("/") + 1);
                     window.localStorage.clear();
-                    //$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
-                    $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
+                    if (device.platform == "Android") {
+                        $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
+                    } else {
+						$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
+					}
                     
                     $('.main-slider').hide();$('.nav-holder').hide();
                     $('.modification-block').hide();
@@ -181,9 +184,11 @@ function getPreviewRessource(ressourceId,categoryRessource,fe_typo_user,from) {
                     var url = window.location.href;
 					url = url.substring(0, url.lastIndexOf("/") + 1);
                     window.localStorage.clear();
-                    //$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
-                    $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
-                    
+                    if (device.platform == "Android") {
+                        $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
+                    } else {
+						$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
+					}
                     $('.main-slider').hide();$('.nav-holder').hide();
                     $('.info-block').show();
                 
@@ -276,8 +281,11 @@ function getUserInfo(fe_typo_user,owner_id,from,booking_id,ressourceId,category)
                     var url = window.location.href;
 					url = url.substring(0, url.lastIndexOf("/") + 1);
                     window.localStorage.clear();
-                    //$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
-                    $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
+                    if (device.platform == "Android") {
+                        $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
+                    } else {
+						$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
+					}
                     
                     $('.main-slider').hide();
                     $('.nav-holder').hide();
@@ -375,8 +383,11 @@ function getSiteInfo(site_id,referentiel_id,fe_typo_user,from) {
                     var url = window.location.href;
 					url = url.substring(0, url.lastIndexOf("/") + 1);
                     window.localStorage.clear();
-                    //$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
-                    $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
+                    if (device.platform == "Android") {
+                        $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
+                    } else {
+						$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
+					}
                     
                     $('.main-slider').hide();$('.nav-holder').hide();
                     $('.info-block').show();
@@ -453,8 +464,11 @@ function getVisibilityInfo(fe_typo_user,event_id) {
                     var url = window.location.href;
 					url = url.substring(0, url.lastIndexOf("/") + 1);
                     window.localStorage.clear();
-                    //$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
-                    $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
+                    if (device.platform == "Android") {
+                        $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
+                    } else {
+						$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
+					}
                     
                     $('.main-slider').hide();
                     $('.nav-holder').hide();
@@ -553,8 +567,11 @@ function deleteMyBooking(booking_id,category,ressourceid,fe_typo_user,index,acti
                     var url = window.location.href;
 					url = url.substring(0, url.lastIndexOf("/") + 1);
                     window.localStorage.clear();
-                    //$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
-                    $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
+                    if (device.platform == "Android") {
+                        $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
+                    } else {
+						$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
+					}
                     
                     $('.main-slider').hide();$('.nav-holder').hide();
                     $('.info-block').show();
@@ -833,9 +850,12 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                 var url = window.location.href;
                 url = url.substring(0, url.lastIndexOf("/") + 1);
                 window.localStorage.clear();
-                //$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
-                $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
-                
+                if (device.platform == "Android") {
+                    $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
+                } else {
+					$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
+				}
+                    
                 $('.main-slider').hide();$('.nav-holder').hide();
                 $('.info-block').show();
             
@@ -1360,8 +1380,11 @@ function checkBooking(idBooking,dateStart,dateEnd,fe_typo_user,action,ressourceI
                     var url = window.location.href;
                     url = url.substring(0, url.lastIndexOf("/") + 1);
                     window.localStorage.clear();
-                    //$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
-                    $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
+                    if (device.platform == "Android") {
+                        $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
+                    } else {
+						$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
+					}
                     
                     $('.main-slider').hide();$('.nav-holder').hide();
                     $('.nav-holder').hide();
@@ -1745,9 +1768,12 @@ function createMyBooking(event_id,category,ressourceid,datestart,dateend,udatest
                 var url = window.location.href;
                 url = url.substring(0, url.lastIndexOf("/") + 1);
                 window.localStorage.clear();
-                //$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
-                $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
-                
+                if (device.platform == "Android") {
+                    $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
+                } else {
+					$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
+				}
+                    
                 $('.main-slider').hide();
                 $('.nav-holder').hide();
                 $('.modification-block').hide();
@@ -2182,8 +2208,12 @@ function checkCreateBooking(idEvent,dateStart,dateEnd,fe_typo_user,action,ressou
                     var url = window.location.href;
                     url = url.substring(0, url.lastIndexOf("/") + 1);
                     window.localStorage.clear();
-                    //$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
-                    $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
+                    if (device.platform == "Android") {
+                        $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
+                    } else {
+						$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
+					}
+                    
                     
                     $('.main-slider').hide();
                     $('.nav-holder').hide();
@@ -2653,8 +2683,11 @@ function checkStartMyBooking(bookingId,fe_typo_user,action,ressourceId,category)
                     var url = window.location.href;
                     url = url.substring(0, url.lastIndexOf("/") + 1);
                     window.localStorage.clear();
-                    //$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
-                    $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
+                    if (device.platform == "Android") {
+                        $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
+                    } else {
+						$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
+					}
                     
                     $('.main-slider').hide();
                     $('.nav-holder').hide();
@@ -2909,8 +2942,11 @@ function startMyBooking(bookingId,fe_typo_user,action,ressourceId,category) {
                     var url = window.location.href;
                     url = url.substring(0, url.lastIndexOf("/") + 1);
                     window.localStorage.clear();
-                    //$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
-                    $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
+                    if (device.platform == "Android") {
+                        $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
+                    } else {
+						$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
+					}
                     
                     $('.main-slider').hide();$('.nav-holder').hide();
                     $('.info-block').show();
@@ -3147,8 +3183,11 @@ function checkEndMyBooking(bookingId,fe_typo_user,action,ressourceId,category) {
                     var url = window.location.href;
                     url = url.substring(0, url.lastIndexOf("/") + 1);
                     window.localStorage.clear();
-                    //$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
-                    $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
+                    if (device.platform == "Android") {
+                        $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
+                    } else {
+						$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
+					}
                     
                     $('.main-slider').hide();$('.nav-holder').hide();
                     $('.modification-block').hide();
@@ -3377,8 +3416,11 @@ function endMyBooking(bookingId,fe_typo_user,action,ressourceId,category) {
                     var url = window.location.href;
                     url = url.substring(0, url.lastIndexOf("/") + 1);
                     window.localStorage.clear();
-                    //$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
-                    $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
+                    if (device.platform == "Android") {
+                        $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
+                    } else {
+						$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
+					}
                     
                     $('.main-slider').hide();$('.nav-holder').hide();
                     $('.modification-block').hide();
@@ -3601,8 +3643,11 @@ function checkConfirmBooking(bookingId,fe_typo_user,action,eventressourceId,cate
                     var url = window.location.href;
 					url = url.substring(0, url.lastIndexOf("/") + 1);
                     window.localStorage.clear();
-                    //$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
-                    $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
+                    if (device.platform == "Android") {
+                        $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
+                    } else {
+						$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
+					}
                     
                     $('.main-slider').hide();$('.nav-holder').hide();
                     $('.modification-block').hide();
@@ -3776,8 +3821,11 @@ function confirmBooking(bookingId,fe_typo_user,action,eventressourceId,category)
                     var url = window.location.href;
 					url = url.substring(0, url.lastIndexOf("/") + 1);
                     window.localStorage.clear();
-                    //$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
-                    $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
+                    if (device.platform == "Android") {
+                        $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
+                    } else {
+						$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
+					}
                     
                     $('.main-slider').hide();$('.nav-holder').hide();
                     $('.modification-block').hide();
@@ -3952,8 +4000,11 @@ function getSharing(fe_typo_user,action,indexSlide) {
                     var url = window.location.href;
                     url = url.substring(0, url.lastIndexOf("/") + 1);
                     window.localStorage.clear();
-                    //$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
-                    $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
+                    if (device.platform == "Android") {
+                        $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
+                    } else {
+						$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
+					}
                     
                     $('.main-slider').hide();$('.nav-holder').hide();
                     $('.modification-block').hide();
@@ -4017,8 +4068,12 @@ function loadBookingEvent(eventId,fe_typo_user,indexSlide) {
     var url = window.location.href;
     url = url.substring(0, url.lastIndexOf("/") + 1);
     console.log(url);
-    //cordova.InAppBrowser.open(url+'bookingevent.html?eventId='+eventId+'&indexSlide='+indexSlide, '_self');
-    $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'bookingevent.html?eventId='+eventId+'&indexSlide='+indexSlide+'\');$("#invisible_link")[0].click()');
+    if (device.platform == "Android") {
+        $('#invisible_link').attr('href','bookingevent.html?eventId='+eventId+'&indexSlide='+indexSlide);
+		$("#invisible_link")[0].click();
+    } else {
+		cordova.InAppBrowser.open(url+'bookingevent.html?eventId='+eventId+'&indexSlide='+indexSlide, '_self');
+	}
 }
 
 
@@ -4048,9 +4103,11 @@ function getBookingEvent(fe_typo_user,eventId,action) {
                     var url = window.location.href;
                     url = url.substring(0, url.lastIndexOf("/") + 1);
                     window.localStorage.clear();
-                    //$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
-                    $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
-                    
+                    if (device.platform == "Android") {
+                        $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
+                    } else {
+						$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
+					}
                     
                     $('.main-slider').hide();$('.nav-holder').hide();
                     $('.modification-block').hide();
@@ -4133,9 +4190,11 @@ function getBookingToConfirm(fe_typo_user,action) {
                     var url = window.location.href;
 					url = url.substring(0, url.lastIndexOf("/") + 1);
                     window.localStorage.clear();
-                    //$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
-                    $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
-                    
+                    if (device.platform == "Android") {
+                        $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
+                    } else {
+						$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
+					}
                     
                     $('.main-slider').hide();$('.nav-holder').hide();
                     $('.modification-block').hide();
@@ -4226,9 +4285,11 @@ function getInvitations(fe_typo_user,action) {
                     var url = window.location.href;
 					url = url.substring(0, url.lastIndexOf("/") + 1);
                     window.localStorage.clear();
-                    //$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
-                    $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
-                    
+                    if (device.platform == "Android") {
+                        $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
+                    } else {
+						$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
+					}
                     
                     $('.main-slider').hide();$('.nav-holder').hide();
                     $('.modification-block').hide();
@@ -4313,9 +4374,11 @@ function guestAccept(bookingId,guestId,fe_typo_user,index) {
                     var url = window.location.href;
 					url = url.substring(0, url.lastIndexOf("/") + 1);
                     window.localStorage.clear();
-                    //$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
-                    $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
-                    
+                    if (device.platform == "Android") {
+                        $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
+                    } else {
+						$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
+					}
                     
                     $('.main-slider').hide();$('.nav-holder').hide();
                     $('.modification-block').hide();
@@ -4427,9 +4490,11 @@ function guestRefuse(bookingId,guestId,fe_typo_user,index) {
                     var url = window.location.href;
 					url = url.substring(0, url.lastIndexOf("/") + 1);
                     window.localStorage.clear();
-                    //$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
-                    $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
-                    
+                    if (device.platform == "Android") {
+                        $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
+                    } else {
+						$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
+					}
                     
                     $('.main-slider').hide();$('.nav-holder').hide();
                     $('.modification-block').hide();
@@ -4543,9 +4608,11 @@ function getScan(fe_typo_user,ressourceId,category,action) {
                     var url = window.location.href;
 					url = url.substring(0, url.lastIndexOf("/") + 1);
                     window.localStorage.clear();
-                    //$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
-                    $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
-                    
+                    if (device.platform == "Android") {
+                        $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
+                    } else {
+						$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
+					}
                     
                     $('#btn_close').text(trad['btn_close']);
                     $('#btn_cancel').text('');
@@ -4566,9 +4633,11 @@ function getScan(fe_typo_user,ressourceId,category,action) {
                     $('.previewsharing_content').html('<p></p><p>'+result.ressourcenotexist+'</p>');
                     var url = window.location.href;
 					url = url.substring(0, url.lastIndexOf("/") + 1);
-                    //$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'mesreservations.html\', \'_self\')');
-                    $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
-                    
+                    if (device.platform == "Android") {
+                        $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
+                    } else {
+						$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
+					}
                     
                     $('#btn_close').text(trad['btn_close']);
                     $('#btn_cancel').text('');
@@ -4589,9 +4658,11 @@ function getScan(fe_typo_user,ressourceId,category,action) {
                     $('.previewsharing_content').html('<p></p><p>'+result.nobookingstostart+'</p>');
                     var url = window.location.href;
 					url = url.substring(0, url.lastIndexOf("/") + 1);
-                    //$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'mesreservations.html\', \'_self\')');
-                    $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
-                    
+                    if (device.platform == "Android") {
+                        $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
+                    } else {
+						$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
+					}
                     
                     $('#btn_close').text(trad['btn_close']);
                     $('#btn_cancel').text('');
@@ -4813,9 +4884,11 @@ function getScan(fe_typo_user,ressourceId,category,action) {
                     $('.previewsharing_content').html('<p></p><p>'+result.content+'</p>');
                     var url = window.location.href;
 					url = url.substring(0, url.lastIndexOf("/") + 1);
-                    //$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'mesreservations.html\', \'_self\')');
-                    $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
-                    
+                    if (device.platform == "Android") {
+                        $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
+                    } else {
+						$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
+					}
                     
                     $('#btn_close').text(trad['btn_close']);
                     $('#btn_cancel').text('');
@@ -4867,9 +4940,11 @@ function unlockBooking(fe_typo_user,bookingId) {
                     var url = window.location.href;
 					url = url.substring(0, url.lastIndexOf("/") + 1);
                     window.localStorage.clear();
-                    //$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
-                    $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
-                    
+                    if (device.platform == "Android") {
+                        $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
+                    } else {
+						$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
+					}
                     
                     $('.main-slider').hide();$('.nav-holder').hide();
                     $('.modification-block').hide();
@@ -4919,9 +4994,11 @@ function getBookingToGo(fe_typo_user,ressourceId,category,action) {
                     var url = window.location.href;
 					url = url.substring(0, url.lastIndexOf("/") + 1);
                     window.localStorage.clear();
-                    //$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
-                    $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
-                    
+                    if (device.platform == "Android") {
+                        $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
+                    } else {
+						$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
+					}
                     
                     $('.main-slider').hide();$('.nav-holder').hide();
                     $('.modification-block').hide();
@@ -5024,9 +5101,11 @@ function getDispo(fe_typo_user,ressourceId,category,action) {
                     var url = window.location.href;
 					url = url.substring(0, url.lastIndexOf("/") + 1);
                     window.localStorage.clear();
-                    //$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
-                    $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
-                    
+                    if (device.platform == "Android") {
+                        $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
+                    } else {
+						$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
+					}
                     
                     $('.main-slider').hide();$('.nav-holder').hide();
                     $('.modification-block').hide();
@@ -5140,9 +5219,11 @@ function SearchForm(fe_typo_user,args) {
                     var url = window.location.href;
 					url = url.substring(0, url.lastIndexOf("/") + 1);
                     window.localStorage.clear();
-                    //$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
-                    $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
-                    
+                    if (device.platform == "Android") {
+                        $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
+                    } else {
+						$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
+					}
                     
                     $('.main-slider').hide();
                     $('.nav-holder').hide();
@@ -5200,9 +5281,11 @@ function SearchResult(fe_typo_user,args,indexSlide) {
                     var url = window.location.href;
 					url = url.substring(0, url.lastIndexOf("/") + 1);
                     window.localStorage.clear();
-                    //$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
-                    $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
-                    
+                    if (device.platform == "Android") {
+                        $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
+                    } else {
+						$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
+					}
                     
                     $('.main-slider').hide();
                     $('.nav-holder').hide();
@@ -5313,9 +5396,11 @@ function getDispo2(fe_typo_user,ressourceId,category,action,index,args) {
                     var url = window.location.href;
 					url = url.substring(0, url.lastIndexOf("/") + 1);
                     window.localStorage.clear();
-                    //$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
-                    $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
-                    
+                    if (device.platform == "Android") {
+                        $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
+                    } else {
+						$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
+					}
                     
                     $('.main-slider').hide();
                     $('.nav-holder').hide();
@@ -5432,9 +5517,11 @@ function sendMessageToSharing(booking_id,message,fe_typo_user,from,ressourceId,c
                     var url = window.location.href;
 					url = url.substring(0, url.lastIndexOf("/") + 1);
                     window.localStorage.clear();
-                    //$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
-                    $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
-                    
+                    if (device.platform == "Android") {
+                        $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
+                    } else {
+						$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
+					}
                     
                     $('.main-slider').hide();
                     $('.nav-holder').hide();
@@ -5684,9 +5771,11 @@ function sendMessageSharing(sharing_id,message,fe_typo_user) {
                     var url = window.location.href;
 					url = url.substring(0, url.lastIndexOf("/") + 1);
                     window.localStorage.clear();
-                    //$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
-                    $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
-                    
+                    if (device.platform == "Android") {
+                        $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
+                    } else {
+						$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
+					}
                     
                     $('.main-slider').hide();
                     $('.nav-holder').hide();
@@ -5836,9 +5925,11 @@ function getMyAccount(fe_typo_user,action) {
                     var url = window.location.href;
 					url = url.substring(0, url.lastIndexOf("/") + 1);
                     window.localStorage.clear();
-                    //$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
-                    $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
-                    
+                    if (device.platform == "Android") {
+                        $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
+                    } else {
+						$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
+					}
                     
                     $('.main-slider').hide();$('.nav-holder').hide();
                     $('.modification-block').hide();
@@ -5898,9 +5989,11 @@ function getCgu(fe_typo_user,action) {
                     var url = window.location.href;
 					url = url.substring(0, url.lastIndexOf("/") + 1);
                     window.localStorage.clear();
-                    //$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
-                    $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
-                    
+                    if (device.platform == "Android") {
+                        $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
+                    } else {
+						$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
+					}
                     
                     $('.main-slider').hide();$('.nav-holder').hide();
                     $('.modification-block').hide();
@@ -5940,9 +6033,13 @@ function loadSharing(fe_typo_user,indexSlide) {
     var url = window.location.href;
     url = url.substring(0, url.lastIndexOf("/") + 1);
     console.log(url);
-    //cordova.InAppBrowser.open(url+'mespartages.html?indexSlide='+indexSlide, '_self');
-    $('#invisible_link').attr('href','mespartages.html?indexSlide='+indexSlide);
-	$("#invisible_link")[0].click();
+    if (device.platform == "Android") {
+        $('#invisible_link').attr('href','mespartages.html?indexSlide='+indexSlide);
+        $("#invisible_link")[0].click();
+    } else {
+        cordova.InAppBrowser.open(url+'mespartages.html?indexSlide='+indexSlide, '_self');
+    }
+    
                     
 }
 

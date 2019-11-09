@@ -117,11 +117,15 @@ function initMobileConnect() {
 					var url = window.location.href;
 					url = url.substring(0, url.lastIndexOf("/") + 1);
 					//console.log(url);
-					$('#invisible_link').attr('href','mesreservations.html');
-					console.log($("#invisible_link")[0]+'/'+$("#invisible_link"));
-					$("#invisible_link")[0].click();
+					if (device.platform == "Android") {
+                        $('#invisible_link').attr('href','mesreservations.html');
+						$("#invisible_link")[0].click();
+                    } else {
+						cordova.InAppBrowser.open(url+'mesreservations.html', '_self');
+					}
+					
 					//$("#invisible_link").click();
-					//cordova.InAppBrowser.open(url+'mesreservations.html', '_self');
+					//
 							
 					/*
 					cookieMaster.setCookieValue('http://cdispo', cookieName, agregatecookie	,
@@ -317,8 +321,12 @@ function initNav() {
 						var params = result.text;
 						params = params.replace(/\//gi, '_');
 						console.log('params:'+params);
-						$('#invisible_link').attr('href','scan.html?uid=1'+params);
-						$("#invisible_link")[0].click();
+						if (device.platform == "Android") {
+							$('#invisible_link').attr('href','scan.html?uid=1'+params);
+							$("#invisible_link")[0].click();
+						} else {
+							cordova.InAppBrowser.open(url+'scan.html?uid=1'+params, '_self');
+						}
 						//cordova.InAppBrowser.open(url+'scan.html?uid=1'+params, '_self', 'hidden=yes');
 						
 					}
@@ -348,6 +356,12 @@ function initNav() {
 		fe_typo_user = window.localStorage.getItem("fe_typo_user");
 		$('#invisible_link').attr('href','reserver.html');
 		$("#invisible_link")[0].click();
+		if (device.platform == "Android") {
+			$('#invisible_link').attr('href','reserver.html');
+			$("#invisible_link")[0].click();
+		} else {
+			cordova.InAppBrowser.open(url+'reserver.html', '_self');
+		}
 						
 		//cordova.InAppBrowser.open(url+'reserver.html', '_self', 'hidden=yes');
 		
