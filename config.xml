@@ -36,10 +36,6 @@
     <preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="StatusBarDefaultScrollToTop" value="true" />
 
-    <config-file platform="android" parent="/manifest" mode="merge">
-        <application android:theme="@android:style/Theme.Translucent.NoTitleBar"></application>
-    </config-file>
-    
     <icon src="icon.png" />
     
     <icon src="img/icon/ios/Icon-29.png" gap:platform="ios" width="29" height="29" />
@@ -95,18 +91,9 @@
         <splash src="img/splash/android/drawable-land-xxhdpi/screen.png" density="land-xxhdpi" />
         <splash src="img/splash/android/drawable-land-xxxhdpi/screen.png" density="land-xxxhdpi" />
         
-        <preference name="SplashScreenDelay" value="8000" />
-        <preference name="ShowSplashScreenSpinner" value="true"/>
-        <preference name="SplashMaintainAspectRatio" value="true" />
     </platform>
 
-    <!-- use this feature to add command-lines to be used by Crosswalk builds on device -->
-    <!-- see http://peter.sh/experiments/chromium-command-line-switches/ for complete list -->
-    <intelxdk:crosswalk xwalk-command-line="--disable-pull-to-refresh-effect" />
-    <!-- ignore gpu blacklist for larger collection of gpu accelerated devices -->
-    <intelxdk:crosswalk xwalk-command-line="--ignore-gpu-blacklist" />
-
-    
+     
     <gap:platform name="ios" />
     <gap:platform name="android" />
     
