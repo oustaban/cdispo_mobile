@@ -118,7 +118,9 @@ function initMobileConnect() {
 					url = url.substring(0, url.lastIndexOf("/") + 1);
 					//console.log(url);
 					$('#invisible_link').attr('href','mesreservations.html');
+					console.log($("#invisible_link")[0]+'/'+$("#invisible_link"));
 					$("#invisible_link")[0].click();
+					//$("#invisible_link").click();
 					//cordova.InAppBrowser.open(url+'mesreservations.html', '_self');
 							
 					/*
