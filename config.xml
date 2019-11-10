@@ -115,7 +115,7 @@
         <preference name="android-windowSoftInputMode" value="stateVisible|adjustResize"/>
         
         <preference name="SplashScreen" value="screen" />
-        <preference name="SplashScreenDelay" value="8000" />
+        <preference name="SplashScreenDelay" value="3000" />
         <preference name="ShowSplashScreenSpinner" value="true"/>
         <preference name="SplashMaintainAspectRatio" value="true" />
         
