@@ -1889,7 +1889,7 @@ textarea:focus {
 	position: absolute;
 	top: 0;
 	left: 50%;
-	padding: 14px 0 0;
+	padding: 24px 0 0;
 	z-index: 3;
 	width: 100%;
 	max-width: 1024px;
