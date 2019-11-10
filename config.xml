@@ -70,7 +70,8 @@
         <splash src="img/splash/ios/LaunchImage-568h@2x~iphone_640x1136.png" width="640" height="1136"/>
         <splash src="img/splash/ios/LaunchImage-Landscape@2x~ipad_2048x1496.png" width="2048" height="1496"/>
         
-        
+        <config-file parent="UIStatusBarHidden" platform="ios" target="*-Info.plist"><true/></config-file>
+        <config-file parent="UIViewControllerBasedStatusBarAppearance" platform="ios" target="*-Info.plist"><false/></config-file>
         
     </platform>
     
@@ -195,13 +196,7 @@
         </array>
     </config-file>
    
-    <gap:config-file platform="ios" parent="UIStatusBarHidden">
-        <true/>
-    </gap:config-file>
-
-    <gap:config-file platform="ios" parent="UIViewControllerBasedStatusBarAppearance">
-        <false/>
-    </gap:config-file>
+    
     
     <gap:config-file platform="android" parent="/manifest" mode="delete">
         <uses-permission android:name="android.permission.WRITE_CONTACTS" />
