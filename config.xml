@@ -73,6 +73,21 @@
         <config-file parent="UIStatusBarHidden" platform="ios" target="*-Info.plist"><true/></config-file>
         <config-file parent="UIViewControllerBasedStatusBarAppearance" platform="ios" target="*-Info.plist"><false/></config-file>
         
+        <config-file platform="ios" target="*-Info.plist" parent="CFBundleLocalizations" mode="replace">
+            <array>
+                <string>es</string>
+                <string>en</string>
+                <string>fr</string>
+                <string>it</string>
+            </array>
+        </config-file>
+        
+        <config-file platform="ios" parent="UISupportedInterfaceOrientations" overwrite="true">
+            <array>
+                <string>UIInterfaceOrientationLandscapeOmg</string>
+            </array>
+        </config-file>
+    
     </platform>
     
     <platform name="android">
@@ -108,7 +123,19 @@
             <activity android:theme="@android:style/Theme.Translucent.NoTitleBar"></activity>
         </edit-config>
         
-        
+        <config-file platform="android" parent="/manifest" mode="delete">
+            <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+            <uses-permission android:name="android.permission.READ_CONTACTS" />
+            <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+            <uses-permission android:name="android.permission.VIBRATE"/>
+            <uses-permission android:name="android.permission.CAMERA" />
+            <uses-feature android:name="android.hardware.camera" />
+            <uses-feature android:name="android.hardware.camera.autofocus" />
+        </config-file>
+    
+        <config-file platform="android" parent="/manifest">
+            <application android:debuggable="true" />
+        </config-file>
         
     </platform>
 
@@ -146,12 +173,6 @@
     <plugin name="skwas-cordova-plugin-datetimepicker" source="npm" spec="2.0.1" />
     <!--<plugin name="skwas-cordova-plugin-datetimepicker" spec="https://github.com/skwasjer/skwas-cordova-plugin-datetimepicker.git#40957043012325ffca51d6ec4c846ff5f9cb24bd" />-->
     
-    <gap:config-file platform="android" parent="/manifest">
-         <application android:debuggable="true" />
-    </gap:config-file>
-
-    
-    
     <allow-navigation href="*" />
     <access origin="*" />
 
@@ -180,34 +201,8 @@
 
     <preference name="cordova-custom-config-autorestore" value="true" />
     
-
-    <config-file platform="ios" target="*-Info.plist" parent="CFBundleLocalizations" mode="replace">
-            <array>
-                <string>es</string>
-                <string>en</string>
-                <string>fr</string>
-                <string>it</string>
-            </array>
-    </config-file>
-    
-    <config-file platform="ios" parent="UISupportedInterfaceOrientations" overwrite="true">
-        <array>
-            <string>UIInterfaceOrientationLandscapeOmg</string>
-        </array>
-    </config-file>
-   
     
     
-    <gap:config-file platform="android" parent="/manifest" mode="delete">
-        <uses-permission android:name="android.permission.WRITE_CONTACTS" />
-        <uses-permission android:name="android.permission.READ_CONTACTS" />
-        <uses-permission android:name="android.permission.GET_ACCOUNTS" />
-        <uses-permission android:name="android.permission.VIBRATE"/>
-        <uses-permission android:name="android.permission.CAMERA" />
-        <uses-feature android:name="android.hardware.camera" />
-        <uses-feature android:name="android.hardware.camera.autofocus" />
-    </gap:config-file>
-
     <gap:config-file platform="ios" parent="CFBundleDocumentTypes" mode="add">
         <array>
             
