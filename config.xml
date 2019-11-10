@@ -87,6 +87,9 @@
                 <string>UIInterfaceOrientationLandscapeOmg</string>
             </array>
         </config-file>
+        
+        <allow-navigation href="mailto:*" launch-external="yes"/>
+        <allow-navigation href="tel:*" launch-external="yes"/>  
     
     </platform>
     
@@ -174,9 +177,12 @@
     <!--<plugin name="skwas-cordova-plugin-datetimepicker" spec="https://github.com/skwasjer/skwas-cordova-plugin-datetimepicker.git#40957043012325ffca51d6ec4c846ff5f9cb24bd" />-->
     
     <allow-navigation href="*" />
-    <allow-intent href="mailto:*" />
-    <allow-intent href="tel:*" />
+    
     <access origin="*" />
+    <access origin="mailto:*" launch-external="true" />
+    <access origin="tel:*" launch-external="true" />
+    <allow-intent href="mailto:*" launch-external="yes"/>
+    <allow-intent href="tel:*" launch-external="yes"/>
 
     <feature name="CDVWKWebViewEngine">
         <param name="ios-package" value="CDVWKWebViewEngine" />
