@@ -1015,7 +1015,7 @@ textarea:focus {
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
-	margin-bottom: 5px;
+	margin-bottom: 2px;
 }
 
 #slider_holder4 .label-row {
@@ -1024,7 +1024,7 @@ textarea:focus {
 
 .label-row input,
 .label-row select {
-	height: 25px;
+	height: 30px;
 }
 
 .light-block {
