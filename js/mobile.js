@@ -52,7 +52,7 @@ function initConnect() {
 	});
 	
 	jQuery('#form_seconnecter a').click(function() {
-        $('.loader2').show();
+        //$('.loader2').show();
 	});
     jQuery('.tx-felogin-pi1 a').click(function() {
         $('.loader2').show();
