@@ -1626,6 +1626,7 @@ textarea:focus {
 	position: relative;
 	text-align: left;
 	font-size: 14px;
+	font-weight:bold;
 }
 
 .main-slider .reserved-time:before {
@@ -1646,6 +1647,10 @@ textarea:focus {
 	font-size: 12px;
 	margin: 0 0 11px;
 	text-transform: uppercase;
+}
+
+.main-slider .reservation b {
+	font-size:18px;
 }
 
 .main-slider .status {
