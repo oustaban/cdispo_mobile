@@ -80,10 +80,11 @@
 		    var fe_typo_user = window.localStorage.getItem("fe_typo_user");
 			var ressourceId = getUrlVars()["ressourceId"];
             var category = getUrlVars()["category"];
+			 var indexSlide = getUrlVars()["indexSlide"];
 			
 			console.log('ready:'+fe_typo_user+'/'+ressourceId+'/'+category);
 			
-			getScan(fe_typo_user,ressourceId,category,"init");
+			getScan(fe_typo_user,ressourceId,category,"init",indexSlide);
 			
 			initInvites(fe_typo_user);
 			
@@ -112,10 +113,11 @@
 			var fe_typo_user = window.localStorage.getItem("fe_typo_user");
 			var ressourceId = getUrlVars()["ressourceId"];
             var category = getUrlVars()["category"];
+			 var indexSlide = getUrlVars()["indexSlide"];
 			
 			console.log('resume:'+fe_typo_user+'/'+ressourceId+'/'+category);
 			
-			getScan(fe_typo_user,ressourceId,category,"refresh");
+			getScan(fe_typo_user,ressourceId,category,"refresh",indexSlide);
 			
 			initInvites(fe_typo_user);
 			
