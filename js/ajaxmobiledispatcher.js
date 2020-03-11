@@ -67,7 +67,7 @@ function getBooking(fe_typo_user,action) {
                     if (countslide > 0) {
                         $('.main-slider').html(result.slide);
                         initSlickCarousel();
-                        if (result.gotoSlide) {
+                        if (result.gotoSlide>=0) {
                             $('.main-slider').slick('slickGoTo', result.gotoSlide);
                         }
                     } else {
@@ -4044,7 +4044,7 @@ function getSharing(fe_typo_user,action,indexSlide) {
                         if (indexSlide)
                             $('.main-slider').slick('slickGoTo', indexSlide);
                         else {
-                            if (result.gotoSlide) {
+                            if (result.gotoSlide>=0) {
                                 $('.main-slider').slick('slickGoTo', result.gotoSlide);
                             }
                         }
