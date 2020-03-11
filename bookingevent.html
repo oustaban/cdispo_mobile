@@ -75,7 +75,7 @@
             var indexSlide = getUrlVars()["indexSlide"];
             $('#eventid').text(eventId);
             $('#eventid2').text(eventId);
-            getBookingEvent(''+fe_typo_user+'',eventId,"init"); 
+            getBookingEvent(''+fe_typo_user+'',eventId,"init",indexSlide); 
 			
             $('#backtosharelink').click(function() {
                 loadSharing(''+fe_typo_user+'',indexSlide);

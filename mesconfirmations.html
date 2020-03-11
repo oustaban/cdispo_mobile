@@ -74,7 +74,8 @@
 			}, false);
 			
 		    var fe_typo_user = window.localStorage.getItem("fe_typo_user");
-			getBookingToConfirm(fe_typo_user,'init'); 
+			var indexSlide = getUrlVars()["indexSlide"];
+			getBookingToConfirm(fe_typo_user,'init',indexSlide); 
 			/*
 			cookieMaster.getCookieValue('http://cdispo', 'fe_typo_user', function(data) {
 				console.log(data.cookieValue);
@@ -106,7 +107,8 @@
 			}, false);
 			
 			var fe_typo_user = window.localStorage.getItem("fe_typo_user");
-			getBookingToConfirm(fe_typo_user,'refresh');
+			var indexSlide = getUrlVars()["indexSlide"];
+			getBookingToConfirm(fe_typo_user,'refresh',indexSlide);
 			
 			/*
 			cookieMaster.getCookieValue('http://cdispo', 'fe_typo_user', function(data) {
