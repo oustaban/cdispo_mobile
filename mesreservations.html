@@ -101,8 +101,10 @@
 				cordova.InAppBrowser.open(url+'noconnexion.html', '_self');
 			}, false);
 			
+			var indexSlide = getUrlVars()["indexSlide"];
 			var fe_typo_user = window.localStorage.getItem("fe_typo_user");
-			getBooking(fe_typo_user,'refresh');
+			
+			getBooking(fe_typo_user,'refresh',indexSlide);
 			
 			initInvites(fe_typo_user);
 			
