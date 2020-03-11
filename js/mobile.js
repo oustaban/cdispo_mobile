@@ -78,6 +78,7 @@ function initMobileConnect() {
 	
 	jQuery('#mobileconnexion').click(function() {
 		
+		$('.loader2').show();
 		var login = $('#user').val();
 		var password = $('#pass').val();
 		var fe_typo_user = window.localStorage.getItem("fe_typo_user");
