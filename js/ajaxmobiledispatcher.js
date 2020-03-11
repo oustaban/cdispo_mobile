@@ -3956,7 +3956,7 @@ function confirmBooking(bookingId,fe_typo_user,action,eventressourceId,category,
                     $('.prewiewsharing_header').hide();
                     $('.previewsharing_content').html('<p></p><p>'+result.bookingconfirmed+'</p>');
                     if (action == "getBookingToConfirm")
-                        $('#btn_close').attr('onclick','getBookingToConfirm(\''+fe_typo_user+'\',\'refresh\','+indexSlide+')');
+                        $('#btn_close').attr('onclick','getBookingToConfirm(\''+fe_typo_user+'\',\'refresh\',0)');
                     if (action == "getBookingEvent")
                         $('#btn_close').attr('onclick','getBookingEvent(\''+fe_typo_user+'\','+eventressourceId+',\'refresh\','+indexSlide+')');
                     if (action == "getScan")
