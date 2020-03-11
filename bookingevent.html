@@ -103,9 +103,10 @@
 			var fe_typo_user = window.localStorage.getItem("fe_typo_user");
 			var eventId = getUrlVars()["eventId"];
             var indexSlide = getUrlVars()["indexSlide"];
-            $('#eventid').text(eventId);
+            
+			$('#eventid').text(eventId);
             $('#eventid2').text(eventId);
-            getBookingEvent(''+fe_typo_user+'',eventId,"refresh");
+            getBookingEvent(''+fe_typo_user+'',eventId,"refresh",indexSlide);
             
             $('#backtosharelink').click(function() {
                 loadSharing(''+fe_typo_user+'',indexSlide);
