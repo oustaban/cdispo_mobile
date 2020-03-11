@@ -4040,6 +4040,11 @@ function getSharing(fe_typo_user,action,indexSlide) {
                         console.log('indexSlide2:'+indexSlide);
                         if (indexSlide)
                             $('.main-slider').slick('slickGoTo', indexSlide);
+                        else {
+                            if (result.gotoSlide) {
+                                $('.main-slider').slick('slickGoTo', result.gotoSlide);
+                            }
+                        }
                     } else {
                         $('.prewiewsharing_header').hide();
                         $('.previewsharing_content').html(result.content);
