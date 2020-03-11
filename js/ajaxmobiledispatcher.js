@@ -4240,6 +4240,9 @@ function getBookingToConfirm(fe_typo_user,action) {
                     if (countslide > 0) {
                         $('.main-slider').html(result.slide);
                         initSlickCarousel();
+                        if (result.gotoSlide>=0) {
+                            $('.main-slider').slick('slickGoTo', result.gotoSlide);
+                        }
                     } else {
                         
                         $('.prewiewsharing_header').hide();
@@ -4330,6 +4333,9 @@ function getInvitations(fe_typo_user,action) {
                     if (countslide > 0) {
                         $('.main-slider').html(result.slide);
                         initSlickCarousel();
+                        if (result.gotoSlide>=0) {
+                            $('.main-slider').slick('slickGoTo', result.gotoSlide);
+                        }
                     } else {
                         
                         $('.prewiewsharing_header').hide();
