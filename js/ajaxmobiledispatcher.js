@@ -67,6 +67,9 @@ function getBooking(fe_typo_user,action) {
                     if (countslide > 0) {
                         $('.main-slider').html(result.slide);
                         initSlickCarousel();
+                        if (result.gotoSlide) {
+                            $('.main-slider').slick('slickGoTo', result.gotoSlide);
+                        }
                     } else {
                         $('.prewiewsharing_header').hide();
                         $('.previewsharing_content').html(result.content);
