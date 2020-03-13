@@ -38,8 +38,11 @@ function getBooking(fe_typo_user,action,indexSlide) {
 						$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
 					}
                     
-                    $('.main-slider').hide();$('.nav-holder').hide();
+                    $('.main-slider').hide();
+                    $('.nav-holder').hide();
                     $('.modification-block').hide();
+                    $('#btn_close').show();
+                    $('#btn_cancel').hide();
                     $('.info-block').show();
                 
                 }
@@ -55,7 +58,8 @@ function getBooking(fe_typo_user,action,indexSlide) {
                             var i = $(this).attr("data-slick-index");
                             $('.main-slider').slick('slickRemove',i);
                          });
-                         $('.main-slider').show();$('.nav-holder').show();
+                         $('.main-slider').show();
+                         $('.nav-holder').show();
                          $('.modification-block').hide();
                          $('.info-block').hide();
                          if (countslide > 0) 
@@ -79,8 +83,11 @@ function getBooking(fe_typo_user,action,indexSlide) {
                         $('.previewsharing_content').html(result.content);
                         $('#btn_close').attr('onclick','getBooking(\''+fe_typo_user+'\',\'refresh\',0)');
                     
-                        $('.main-slider').hide();$('.nav-holder').hide();
+                        $('.main-slider').hide();
+                        $('.nav-holder').hide();
                         $('.modification-block').hide();
+                        $('#btn_close').hide();
+                        $('#btn_cancel').hide();
                         $('.info-block').show();    
                     }
                     
@@ -4013,8 +4020,11 @@ function getSharing(fe_typo_user,action,indexSlide) {
 						$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
 					}
                     
-                    $('.main-slider').hide();$('.nav-holder').hide();
+                    $('.main-slider').hide();
+                    $('.nav-holder').hide();
                     $('.modification-block').hide();
+                    $('#btn_close').show();
+                    $('#btn_cancel').hide();
                     $('.info-block').show();
                     
                 }
@@ -4031,7 +4041,8 @@ function getSharing(fe_typo_user,action,indexSlide) {
                             $('.main-slider').slick('slickRemove',i);
                          });
                          
-                         $('.main-slider').show();$('.nav-holder').show();
+                         $('.main-slider').show();
+                         $('.nav-holder').show();
                          $('.info-block').hide();
                          if (countslide > 0) 
                             $('.main-slider').slick('unslick');
@@ -4057,7 +4068,10 @@ function getSharing(fe_typo_user,action,indexSlide) {
                         $('.previewsharing_content').html(result.content);
                         $('#btn_close').attr('onclick','getSharing(\''+fe_typo_user+'\',\'refresh\')');
                     
-                        $('.main-slider').hide();$('.nav-holder').hide();
+                        $('.main-slider').hide();
+                        $('.nav-holder').hide();
+                        $('#btn_close').hide();
+                        $('#btn_cancel').hide();
                         $('.info-block').show();    
                     }
                     
@@ -4121,8 +4135,11 @@ function getBookingEvent(fe_typo_user,eventId,action,indexSlide) {
 						$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
 					}
                     
-                    $('.main-slider').hide();$('.nav-holder').hide();
+                    $('.main-slider').hide();
+                    $('.nav-holder').hide();
                     $('.modification-block').hide();
+                    $('#btn_close').show();
+                    $('#btn_cancel').hide();
                     $('.info-block').show();
                     
                 }
@@ -4140,7 +4157,8 @@ function getBookingEvent(fe_typo_user,eventId,action,indexSlide) {
                          });
                          
                          
-                         $('.main-slider').show();$('.nav-holder').show();
+                         $('.main-slider').show();
+                         $('.nav-holder').show();
                          $('.info-block').hide();
                          if (countslide > 0) 
                             $('.main-slider').slick('unslick');
@@ -4165,7 +4183,10 @@ function getBookingEvent(fe_typo_user,eventId,action,indexSlide) {
                         $('.previewsharing_content').html(result.content);
                         $('#btn_close').attr('onclick','getBookingEvent(\''+fe_typo_user+'\','+eventId+',\'refresh\',0)');
                     
-                        $('.main-slider').hide();$('.nav-holder').hide();
+                        $('.main-slider').hide();
+                        $('.nav-holder').hide();
+                        $('#btn_close').hide();
+                        $('#btn_cancel').hide();
                         $('.info-block').show();    
                     }
                     $('#eventid2').text(eventId);
@@ -4215,8 +4236,11 @@ function getBookingToConfirm(fe_typo_user,action,indexSlide) {
 						$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
 					}
                     
-                    $('.main-slider').hide();$('.nav-holder').hide();
+                    $('.main-slider').hide();
+                    $('.nav-holder').hide();
                     $('.modification-block').hide();
+                    $('#btn_close').show();
+                    $('#btn_cancel').hide();
                     $('.info-block').show();
                 
                 }
@@ -4239,7 +4263,8 @@ function getBookingToConfirm(fe_typo_user,action,indexSlide) {
                          });
                          
                          
-                         $('.main-slider').show();$('.nav-holder').show();
+                         $('.main-slider').show();
+                         $('.nav-holder').show();
                          $('.info-block').hide();
                          if (countslide > 0) 
                             $('.main-slider').slick('unslick');
@@ -4264,7 +4289,10 @@ function getBookingToConfirm(fe_typo_user,action,indexSlide) {
                         $('.prewiewsharing_header').hide();
                         $('.previewsharing_content').html(result.content);
                         $('#btn_close').attr('onclick','getBookingToConfirm(\''+fe_typo_user+'\',\'refresh\',0)');
-                        $('.main-slider').hide();$('.nav-holder').hide();
+                        $('.main-slider').hide();
+                        $('.nav-holder').hide();
+                        $('#btn_close').hide();
+                        $('#btn_cancel').hide();
                         $('.info-block').show();    
                     }
                     
@@ -4318,8 +4346,11 @@ function getInvitations(fe_typo_user,action,indexSlide) {
 						$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
 					}
                     
-                    $('.main-slider').hide();$('.nav-holder').hide();
+                    $('.main-slider').hide();
+                    $('.nav-holder').hide();
                     $('.modification-block').hide();
+                    $('#btn_close').show();
+                    $('#btn_cancel').hide();
                     $('.info-block').show();
                 
                 }
@@ -4337,7 +4368,8 @@ function getInvitations(fe_typo_user,action,indexSlide) {
                          });
                          
                          
-                         $('.main-slider').show();$('.nav-holder').show();
+                         $('.main-slider').show();
+                         $('.nav-holder').show();
                          $('.info-block').hide();
                          if (countslide > 0) 
                             $('.main-slider').slick('unslick');
@@ -4361,7 +4393,10 @@ function getInvitations(fe_typo_user,action,indexSlide) {
                         $('.prewiewsharing_header').hide();
                         $('.previewsharing_content').html(result.content);
                         $('#btn_close').attr('onclick','getInvitations(\''+fe_typo_user+'\',\'refresh\',0)');
-                        $('.main-slider').hide();$('.nav-holder').hide();
+                        $('.main-slider').hide();
+                        $('.nav-holder').hide();
+                        $('#btn_close').hide();
+                        $('#btn_cancel').hide();
                         $('.info-block').show();    
                     }
                     
@@ -5972,8 +6007,11 @@ function getMyAccount(fe_typo_user,action) {
 						$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
 					}
                     
-                    $('.main-slider').hide();$('.nav-holder').hide();
+                    $('.main-slider').hide();
+                    $('.nav-holder').hide();
                     $('.modification-block').hide();
+                    $('#btn_close').show();
+                    $('#btn_cancel').hide();
                     $('.info-block').show();
                 
                 }
@@ -5985,6 +6023,8 @@ function getMyAccount(fe_typo_user,action) {
                     $('#btn_close').attr('onclick','getMyAccount(\''+fe_typo_user+'\',\'refresh\')');   
                     $('.main-slider').hide();
                     $('.nav-holder').hide();
+                    $('#btn_close').hide();
+                    $('#btn_cancel').hide();
                     $('.info-block').show();    
                     
                 } else {
@@ -6036,8 +6076,11 @@ function getCgu(fe_typo_user,action) {
 						$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
 					}
                     
-                    $('.main-slider').hide();$('.nav-holder').hide();
+                    $('.main-slider').hide();
+                    $('.nav-holder').hide();
                     $('.modification-block').hide();
+                    $('#btn_close').show();
+                    $('#btn_cancel').hide();
                     $('.info-block').show();
                 
                 }
@@ -6049,6 +6092,8 @@ function getCgu(fe_typo_user,action) {
                     $('#btn_close').attr('onclick','getCgu(\''+fe_typo_user+'\',\'refresh\')');   
                     $('.main-slider').hide();
                     $('.nav-holder').hide();
+                    $('#btn_close').hide();
+                    $('#btn_cancel').hide();
                     $('.info-block').show();    
                     
                 } else {
