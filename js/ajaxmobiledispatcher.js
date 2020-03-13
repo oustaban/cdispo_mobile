@@ -87,7 +87,7 @@ function getBooking(fe_typo_user,action,indexSlide) {
                         $('.nav-holder').hide();
                         $('.modification-block').hide();
                         $('#btn_close').hide();
-                        $('#btn_cancel').hide();
+                        $('#btn_cancel').show();
                         $('.info-block').show();    
                     }
                     
@@ -4071,7 +4071,7 @@ function getSharing(fe_typo_user,action,indexSlide) {
                         $('.main-slider').hide();
                         $('.nav-holder').hide();
                         $('#btn_close').hide();
-                        $('#btn_cancel').hide();
+                        $('#btn_cancel').show();
                         $('.info-block').show();    
                     }
                     
@@ -4186,7 +4186,7 @@ function getBookingEvent(fe_typo_user,eventId,action,indexSlide) {
                         $('.main-slider').hide();
                         $('.nav-holder').hide();
                         $('#btn_close').hide();
-                        $('#btn_cancel').hide();
+                        $('#btn_cancel').show();
                         $('.info-block').show();    
                     }
                     $('#eventid2').text(eventId);
@@ -4292,7 +4292,7 @@ function getBookingToConfirm(fe_typo_user,action,indexSlide) {
                         $('.main-slider').hide();
                         $('.nav-holder').hide();
                         $('#btn_close').hide();
-                        $('#btn_cancel').hide();
+                        $('#btn_cancel').show();
                         $('.info-block').show();    
                     }
                     
@@ -4396,7 +4396,7 @@ function getInvitations(fe_typo_user,action,indexSlide) {
                         $('.main-slider').hide();
                         $('.nav-holder').hide();
                         $('#btn_close').hide();
-                        $('#btn_cancel').hide();
+                        $('#btn_cancel').show();
                         $('.info-block').show();    
                     }
                     
@@ -6024,7 +6024,7 @@ function getMyAccount(fe_typo_user,action) {
                     $('.main-slider').hide();
                     $('.nav-holder').hide();
                     $('#btn_close').hide();
-                    $('#btn_cancel').hide();
+                    $('#btn_cancel').show();
                     $('.info-block').show();    
                     
                 } else {
@@ -6093,7 +6093,7 @@ function getCgu(fe_typo_user,action) {
                     $('.main-slider').hide();
                     $('.nav-holder').hide();
                     $('#btn_close').hide();
-                    $('#btn_cancel').hide();
+                    $('#btn_cancel').show();
                     $('.info-block').show();    
                     
                 } else {
