@@ -1124,6 +1124,8 @@ textarea:focus {
 	padding: 17px 15px;
 	text-align: center;
 	outline: none;
+	border-top: none;
+	min-height: 30px;
 }
 
 .btn.btn-green {
