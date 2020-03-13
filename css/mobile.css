@@ -2169,6 +2169,7 @@ div.previewsharing_content,div.previewbooking_content,div.previewguest_content,d
 	border-top: 1px solid white;
 	border-left: 1px solid white;
 	border-right: 1px solid white;
+	border-bottom: 1px solid white;
 }
 
 div.previewsharing_slider,div.previewbooking_slider,div.previewguest_slider {
@@ -2303,6 +2304,7 @@ a.tooltip4 {
 	left: 0;
 	right: 0;
 	justify-content: center;
+	bottom:120px;
 }
 
 span#autre_motif {
