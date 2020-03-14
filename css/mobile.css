@@ -2048,6 +2048,14 @@ textarea:focus {
 	position:absolute;
 }
 
+.btn-bottom-holder #mobileconnexion{
+	boorder-top:1px solid white;
+}
+
+.connection-page .loginmessage {
+	top:-100px;	
+}
+
 .loginmessage h4 {
 	font-size:16px;
 }
