@@ -4673,6 +4673,7 @@ function getScan(fe_typo_user,ressourceId,category,action,indexSlide) {
                     initPopin();
                     $('.prewiewsharing_header').hide();
                     $('.previewsharing_content').html('<p></p><p>'+result.deconnexion+'</p>');
+                    console.log('Deconnexion Scan:'+result.deconnexion);
                     
                     var url = window.location.href;
 					url = url.substring(0, url.lastIndexOf("/") + 1);

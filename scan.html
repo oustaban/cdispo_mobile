@@ -65,7 +65,7 @@
 			var domain = window.localStorage.getItem("domain");
 			console.log('Domain:'+domain+':'+Boolean(domain));
 			if (Boolean(domain) === false) {
-                
+                console.log('Deconnexion');
 				deconnect();
 				
             } else {
@@ -105,6 +105,7 @@
 			var domain = window.localStorage.getItem("domain");
 			console.log('Domain:'+domain+':'+Boolean(domain));
 			if (Boolean(domain) === false) {
+				console.log('Deconnexion');
                 deconnect();
             } else {
 				var portrait = window.localStorage.getItem("portrait");
