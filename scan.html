@@ -62,32 +62,39 @@
 		
 		$(document).bind('deviceready', function() {
 		   
-		    var portrait = window.localStorage.getItem("portrait");
-			if (portrait != '') {
-				var urlportrait = "http://"+window.localStorage.getItem("domain")+"/uploads/tx_srfeuserregister/"+portrait;
-				$('#portrait').attr('src',urlportrait);
-				$('#portrait').attr('srcset',urlportrait);
+			var domain = window.localStorage.getItem("domain");
+			console.log('Domain:'+domain+':'+Boolean(domain));
+			if (!Boolean(domain)) {
+                
+				deconnect();
+				
+            } else {
+				var portrait = window.localStorage.getItem("portrait");
+				if (portrait != '') {
+					var urlportrait = "http://"+window.localStorage.getItem("domain")+"/uploads/tx_srfeuserregister/"+portrait;
+					$('#portrait').attr('src',urlportrait);
+					$('#portrait').attr('srcset',urlportrait);
+				}
+				
+				getTranslation();
+				
+				document.addEventListener("offline", function(e){
+					var url = window.location.href;
+					url = url.substring(0, url.lastIndexOf("/") + 1);
+					cordova.InAppBrowser.open(url+'noconnexion.html', '_self');
+				}, false);
+				
+				var fe_typo_user = window.localStorage.getItem("fe_typo_user");
+				var ressourceId = getUrlVars()["ressourceId"];
+				var category = getUrlVars()["category"];
+				 var indexSlide = getUrlVars()["indexSlide"];
+				
+				console.log('ready:'+fe_typo_user+'/'+ressourceId+'/'+category);
+				
+				getScan(fe_typo_user,ressourceId,category,"init",indexSlide);
+				
+				initInvites(fe_typo_user);
 			}
-			
-		    getTranslation();
-			
-			document.addEventListener("offline", function(e){
-				var url = window.location.href;
-				url = url.substring(0, url.lastIndexOf("/") + 1);
-				cordova.InAppBrowser.open(url+'noconnexion.html', '_self');
-			}, false);
-			
-		    var fe_typo_user = window.localStorage.getItem("fe_typo_user");
-			var ressourceId = getUrlVars()["ressourceId"];
-            var category = getUrlVars()["category"];
-			 var indexSlide = getUrlVars()["indexSlide"];
-			
-			console.log('ready:'+fe_typo_user+'/'+ressourceId+'/'+category);
-			
-			getScan(fe_typo_user,ressourceId,category,"init",indexSlide);
-			
-			initInvites(fe_typo_user);
-			
 			
 			
 			
@@ -95,32 +102,37 @@
 		
 		$(document).bind('resume', function() {
 			
-			var portrait = window.localStorage.getItem("portrait");
-			if (portrait != '') {
-				var urlportrait = "http://"+window.localStorage.getItem("domain")+"/uploads/tx_srfeuserregister/"+portrait;
-				$('#portrait').attr('src',urlportrait);
-				$('#portrait').attr('srcset',urlportrait);
+			var domain = window.localStorage.getItem("domain");
+			console.log('Domain:'+domain+':'+Boolean(domain));
+			if (!Boolean(domain)) {
+                deconnect();
+            } else {
+				var portrait = window.localStorage.getItem("portrait");
+				if (portrait != '') {
+					var urlportrait = "http://"+window.localStorage.getItem("domain")+"/uploads/tx_srfeuserregister/"+portrait;
+					$('#portrait').attr('src',urlportrait);
+					$('#portrait').attr('srcset',urlportrait);
+				}
+				
+				getTranslation();
+				
+				document.addEventListener("offline", function(e){
+					var url = window.location.href;
+					url = url.substring(0, url.lastIndexOf("/") + 1);
+					cordova.InAppBrowser.open(url+'noconnexion.html', '_self');
+				}, false);
+				
+				var fe_typo_user = window.localStorage.getItem("fe_typo_user");
+				var ressourceId = getUrlVars()["ressourceId"];
+				var category = getUrlVars()["category"];
+				var indexSlide = getUrlVars()["indexSlide"];
+				
+				console.log('resume:'+fe_typo_user+'/'+ressourceId+'/'+category);
+				
+				getScan(fe_typo_user,ressourceId,category,"refresh",indexSlide);
+				
+				initInvites(fe_typo_user);
 			}
-			
-			getTranslation();
-			
-			document.addEventListener("offline", function(e){
-				var url = window.location.href;
-				url = url.substring(0, url.lastIndexOf("/") + 1);
-				cordova.InAppBrowser.open(url+'noconnexion.html', '_self');
-			}, false);
-			
-			var fe_typo_user = window.localStorage.getItem("fe_typo_user");
-			var ressourceId = getUrlVars()["ressourceId"];
-            var category = getUrlVars()["category"];
-			var indexSlide = getUrlVars()["indexSlide"];
-			
-			console.log('resume:'+fe_typo_user+'/'+ressourceId+'/'+category);
-			
-			getScan(fe_typo_user,ressourceId,category,"refresh",indexSlide);
-			
-			initInvites(fe_typo_user);
-			
 			
         });
     </script>
