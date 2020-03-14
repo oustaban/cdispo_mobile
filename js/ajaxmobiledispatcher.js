@@ -4668,6 +4668,8 @@ function getScan(fe_typo_user,ressourceId,category,action,indexSlide) {
           
           success: function(result) {
             
+                result.ok = 1;
+                
                 if (result.deconnexion) {
                     
                     initPopin();
@@ -4693,6 +4695,7 @@ function getScan(fe_typo_user,ressourceId,category,action,indexSlide) {
                     $('.message-block').hide();
                     $('#backtoshare').hide();
                     $('.info-block').show();
+                    result.ok = 0;
                 
                 }
                 
@@ -4718,6 +4721,7 @@ function getScan(fe_typo_user,ressourceId,category,action,indexSlide) {
                     $('.message-block').hide();
                     $('#backtoshare').hide();
                     $('.info-block').show();
+                    result.ok = 0;
                     
                 }
                 
@@ -4743,6 +4747,7 @@ function getScan(fe_typo_user,ressourceId,category,action,indexSlide) {
                     $('.message-block').hide();
                     $('#backtoshare').hide();
                     $('.info-block').show();
+                    result.ok = 0;
                     
                 }
                 
@@ -4956,26 +4961,28 @@ function getScan(fe_typo_user,ressourceId,category,action,indexSlide) {
                     
                 } else {
                     
-                    initPopin();
-                    $('.prewiewsharing_header').hide();
-                    $('.previewsharing_content').html('<p></p><p>'+result.content+'</p>');
-                    var url = window.location.href;
-					url = url.substring(0, url.lastIndexOf("/") + 1);
-                    if (device.platform == "Android") {
-                        $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
-                    } else {
-						$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
-					}
-                    
-                    $('#btn_close').text(trad['btn_close']);
-                    $('#btn_cancel').text('');
-                    $('.main-slider').hide();
-                    $('.nav-holder').hide();
-                    $('.modification-block').hide();
-                    $('.modification-block2').hide();
-                    $('.message-block').hide();
-                    $('#backtoshare').hide();
-                    $('.info-block').show();
+                    if (result.ok) {
+                        initPopin();
+                        $('.prewiewsharing_header').hide();
+                        $('.previewsharing_content').html('<p></p><p>'+result.content+'</p>');
+                        var url = window.location.href;
+                        url = url.substring(0, url.lastIndexOf("/") + 1);
+                        if (device.platform == "Android") {
+                            $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
+                        } else {
+                            $('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
+                        }
+                        
+                        $('#btn_close').text(trad['btn_close']);
+                        $('#btn_cancel').text('');
+                        $('.main-slider').hide();
+                        $('.nav-holder').hide();
+                        $('.modification-block').hide();
+                        $('.modification-block2').hide();
+                        $('.message-block').hide();
+                        $('#backtoshare').hide();
+                        $('.info-block').show();
+                    }
                 }
                 
                 $('#scan_title').html(result.title);
@@ -5062,6 +5069,8 @@ function getBookingToGo(fe_typo_user,ressourceId,category,action) {
           
           success: function(result) {
                 
+                result.ok = 1;
+                
                 if (result.deconnexion) {
                     
                     initPopin();
@@ -5080,6 +5089,7 @@ function getBookingToGo(fe_typo_user,ressourceId,category,action) {
                     $('.main-slider').hide();$('.nav-holder').hide();
                     $('.modification-block').hide();
                     $('.info-block').show();
+                     result.ok = 0;
                 
                 }
                 
@@ -5129,14 +5139,16 @@ function getBookingToGo(fe_typo_user,ressourceId,category,action) {
                     }
                     
                 } else {
-                    $('#backtoshare').show();
-                    $('#backtosharelink').html(result.linktitle);
-                    $('#backtosharelink').attr('onclick','getDispo(\''+fe_typo_user+'\','+ressourceId+',\''+category+'\',\'refresh\')');
-                    $('.prewiewsharing_header').hide();
-                    $('.previewsharing_content').html(result.content);
-                    $('#btn_close').attr('onclick','getBookingToGo(\''+fe_typo_user+'\','+ressourceId+',\''+category+'\',\'refresh\')');
-                    $('.main-slider').hide();$('.nav-holder').hide();
-                    $('.info-block').show();    
+                    if (result.ok) {
+                        $('#backtoshare').show();
+                        $('#backtosharelink').html(result.linktitle);
+                        $('#backtosharelink').attr('onclick','getDispo(\''+fe_typo_user+'\','+ressourceId+',\''+category+'\',\'refresh\')');
+                        $('.prewiewsharing_header').hide();
+                        $('.previewsharing_content').html(result.content);
+                        $('#btn_close').attr('onclick','getBookingToGo(\''+fe_typo_user+'\','+ressourceId+',\''+category+'\',\'refresh\')');
+                        $('.main-slider').hide();$('.nav-holder').hide();
+                        $('.info-block').show();
+                    }
                 }
                 
                 console.log('success getBookingToConfirm');
@@ -5169,6 +5181,7 @@ function getDispo(fe_typo_user,ressourceId,category,action) {
           
           success: function(result) {
                 
+                result.ok = 1;
                 if (result.deconnexion) {
                     
                     initPopin();
@@ -5187,6 +5200,7 @@ function getDispo(fe_typo_user,ressourceId,category,action) {
                     $('.main-slider').hide();$('.nav-holder').hide();
                     $('.modification-block').hide();
                     $('.info-block').show();
+                    result.ok = 0;
                 
                 }
                 
@@ -5241,16 +5255,18 @@ function getDispo(fe_typo_user,ressourceId,category,action) {
                     }
                     
                 } else {
-                    $('#backtoshare').show();
-                    $('#backtosharelink').html(result.linktitle);
-                    $('#backtosharelink').attr('onclick','getBookingToGo(\''+fe_typo_user+'\','+ressourceId+',\''+category+'\',\'refresh\')');
-                    $('.prewiewsharing_header').hide();
-                    $('.previewsharing_content').html(result.content);
-                    $('#btn_close').attr('onclick','getBookingToGo(\''+fe_typo_user+'\','+ressourceId+',\''+category+'\',\'refresh\')');
-                    $('.main-slider').hide();
-                    $('.nav-holder').hide();
-                    $('.modification-block').hide();
-                    $('.info-block').show();       
+                    if (result.ok) {
+                        $('#backtoshare').show();
+                        $('#backtosharelink').html(result.linktitle);
+                        $('#backtosharelink').attr('onclick','getBookingToGo(\''+fe_typo_user+'\','+ressourceId+',\''+category+'\',\'refresh\')');
+                        $('.prewiewsharing_header').hide();
+                        $('.previewsharing_content').html(result.content);
+                        $('#btn_close').attr('onclick','getBookingToGo(\''+fe_typo_user+'\','+ressourceId+',\''+category+'\',\'refresh\')');
+                        $('.main-slider').hide();
+                        $('.nav-holder').hide();
+                        $('.modification-block').hide();
+                        $('.info-block').show();
+                    }
                 }
                 
                 console.log('success getBookingToConfirm');
@@ -5349,6 +5365,7 @@ function SearchResult(fe_typo_user,args,indexSlide) {
           
           success: function(result) {
             
+                result.ok = 1;
                 if (result.deconnexion) {
                     
                     initPopin();
@@ -5369,6 +5386,7 @@ function SearchResult(fe_typo_user,args,indexSlide) {
                     $('.modification-block').hide();
                     $('.modification-block2').hide();
                     $('.info-block').show();
+                    result.ok = 0;
                 
                 }
                 
@@ -5423,15 +5441,17 @@ function SearchResult(fe_typo_user,args,indexSlide) {
                     }
                     
                 } else {
-                    $('#backtoshare').hide();
-                    $('.prewiewsharing_header').hide();
-                    $('.previewsharing_content').html(result.content);
-                    $('#btn_close').attr('onclick','$(\'.main-slider\').hide();$(\'.info-block\').hide();$(\'.nav-holder\').hide();$(\'.modification-block\').hide();$(\'.modification-block2\').show()');
-                    $('.main-slider').hide();
-                    $('.nav-holder').hide();
-                    $('.modification-block').hide();
-                    $('.modification-block2').hide();
-                    $('.info-block').show();    
+                    if (result.ok) {
+                        $('#backtoshare').hide();
+                        $('.prewiewsharing_header').hide();
+                        $('.previewsharing_content').html(result.content);
+                        $('#btn_close').attr('onclick','$(\'.main-slider\').hide();$(\'.info-block\').hide();$(\'.nav-holder\').hide();$(\'.modification-block\').hide();$(\'.modification-block2\').show()');
+                        $('.main-slider').hide();
+                        $('.nav-holder').hide();
+                        $('.modification-block').hide();
+                        $('.modification-block2').hide();
+                        $('.info-block').show();
+                    }
                 }
                 
                 console.log('success getBookingToConfirm');
@@ -5464,6 +5484,7 @@ function getDispo2(fe_typo_user,ressourceId,category,action,index,args) {
           
           success: function(result) {
                 
+                result.ok = 1;
                 if (result.deconnexion) {
                     
                     initPopin();
@@ -5484,6 +5505,7 @@ function getDispo2(fe_typo_user,ressourceId,category,action,index,args) {
                     $('.modification-block').hide();
                     $('.modification-block2').hide();
                     $('.info-block').show();
+                    result.ok = 0;
                 
                 }
                 
@@ -5541,17 +5563,19 @@ function getDispo2(fe_typo_user,ressourceId,category,action,index,args) {
                     }
                     
                 } else {
-                    $('#backtoshare').show();
-                    $('#backtosharelink').html(result.linktitle);
-                    $('#backtosharelink').attr('onclick','SearchResult(\''+fe_typo_user+'\',\''+args+'\','+index+')');
-                    $('.prewiewsharing_header').hide();
-                    $('.previewsharing_content').html(result.content);
-                    $('#btn_close').attr('onclick','SearchResult(\''+fe_typo_user+'\',\''+args+'\','+index+')');
-                    $('.main-slider').hide();
-                    $('.nav-holder').hide();
-                    $('.modification-block').hide();
-                    $('.modification-block2').hide();
-                    $('.info-block').show();    
+                    if (result.ok) {
+                        $('#backtoshare').show();
+                        $('#backtosharelink').html(result.linktitle);
+                        $('#backtosharelink').attr('onclick','SearchResult(\''+fe_typo_user+'\',\''+args+'\','+index+')');
+                        $('.prewiewsharing_header').hide();
+                        $('.previewsharing_content').html(result.content);
+                        $('#btn_close').attr('onclick','SearchResult(\''+fe_typo_user+'\',\''+args+'\','+index+')');
+                        $('.main-slider').hide();
+                        $('.nav-holder').hide();
+                        $('.modification-block').hide();
+                        $('.modification-block2').hide();
+                        $('.info-block').show();
+                    }
                 }
                 
                 console.log('success getDispo2');

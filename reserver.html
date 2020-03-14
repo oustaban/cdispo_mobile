@@ -66,57 +66,68 @@
 		
 		$(document).bind('deviceready', function() {
 		    
-			var portrait = window.localStorage.getItem("portrait");
-			if (portrait != '') {
-				var urlportrait = "http://"+window.localStorage.getItem("domain")+"/uploads/tx_srfeuserregister/"+portrait;
-				$('#portrait').attr('src',urlportrait);
-				$('#portrait').attr('srcset',urlportrait);
+			getTranslation();
+				
+			var domain = window.localStorage.getItem("domain");
+			if (Boolean(domain) === false) {
+				deconnect();
+            } else {
+				var portrait = window.localStorage.getItem("portrait");
+				if (portrait != '') {
+					var urlportrait = "http://"+window.localStorage.getItem("domain")+"/uploads/tx_srfeuserregister/"+portrait;
+					$('#portrait').attr('src',urlportrait);
+					$('#portrait').attr('srcset',urlportrait);
+				}
+				
+				Keyboard.hideFormAccessoryBar(false);
+				
+				document.addEventListener("offline", function(e){
+					var url = window.location.href;
+					url = url.substring(0, url.lastIndexOf("/") + 1);
+					cordova.InAppBrowser.open(url+'noconnexion.html', '_self');
+				}, false);
+				
+				var fe_typo_user = window.localStorage.getItem("fe_typo_user");
+				var ressourceId = getUrlVars()["ressourceId"];
+				var category = getUrlVars()["category"];
+				
+				SearchForm(fe_typo_user,"");
+				
+				initInvites(fe_typo_user);
 			}
-			
-		    Keyboard.hideFormAccessoryBar(false);
-		    getTranslation();
-			
-			document.addEventListener("offline", function(e){
-				var url = window.location.href;
-				url = url.substring(0, url.lastIndexOf("/") + 1);
-				cordova.InAppBrowser.open(url+'noconnexion.html', '_self');
-			}, false);
-			
-		    var fe_typo_user = window.localStorage.getItem("fe_typo_user");
-			var ressourceId = getUrlVars()["ressourceId"];
-            var category = getUrlVars()["category"];
-			
-			SearchForm(fe_typo_user,"");
-			
-			initInvites(fe_typo_user);
 			
         });
 		
 		$(document).bind('resume', function() {
 			
-			var portrait = window.localStorage.getItem("portrait");
-			if (portrait != '') {
-				var urlportrait = "http://"+window.localStorage.getItem("domain")+"/uploads/tx_srfeuserregister/"+portrait;
-				$('#portrait').attr('src',urlportrait);
-				$('#portrait').attr('srcset',urlportrait);
-			}
-			
-			Keyboard.hideFormAccessoryBar(false);
 			getTranslation();
-			
-			document.addEventListener("offline", function(e){
-				var url = window.location.href;
-				url = url.substring(0, url.lastIndexOf("/") + 1);
-				cordova.InAppBrowser.open(url+'noconnexion.html', '_self');
-			}, false);
-			
-			var fe_typo_user = window.localStorage.getItem("fe_typo_user");
-			var ressourceId = getUrlVars()["ressourceId"];
-            var category = getUrlVars()["category"];
-			
-			SearchForm(fe_typo_user,"");
-			
-			initInvites(fe_typo_user);
+				
+			var domain = window.localStorage.getItem("domain");
+			if (Boolean(domain) === false) {
+				deconnect();
+            } else {
+				var portrait = window.localStorage.getItem("portrait");
+				if (portrait != '') {
+					var urlportrait = "http://"+window.localStorage.getItem("domain")+"/uploads/tx_srfeuserregister/"+portrait;
+					$('#portrait').attr('src',urlportrait);
+					$('#portrait').attr('srcset',urlportrait);
+				}
+				
+				Keyboard.hideFormAccessoryBar(false);
+				document.addEventListener("offline", function(e){
+					var url = window.location.href;
+					url = url.substring(0, url.lastIndexOf("/") + 1);
+					cordova.InAppBrowser.open(url+'noconnexion.html', '_self');
+				}, false);
+				
+				var fe_typo_user = window.localStorage.getItem("fe_typo_user");
+				var ressourceId = getUrlVars()["ressourceId"];
+				var category = getUrlVars()["category"];
+				
+				SearchForm(fe_typo_user,"");
+				
+				initInvites(fe_typo_user);
+			}
 			
         });
     </script>

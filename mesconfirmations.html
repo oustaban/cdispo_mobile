@@ -58,6 +58,8 @@
 		
 		$(document).bind('deviceready', function() {
 			
+			getTranslation();
+				
 			var domain = window.localStorage.getItem("domain");
 			
 			if (!Boolean(domain)) {
@@ -69,8 +71,6 @@
 					$('#portrait').attr('src',urlportrait);
 					$('#portrait').attr('srcset',urlportrait);
 				}
-				
-				getTranslation();
 				
 				document.addEventListener("offline", function(e){
 					var url = window.location.href;
@@ -97,6 +97,8 @@
 		
 		$(document).bind('resume', function() {
 			
+			getTranslation();
+				
 			var domain = window.localStorage.getItem("domain");
 			
 			if (!Boolean(domain)) {
@@ -109,8 +111,6 @@
 					$('#portrait').attr('src',urlportrait);
 					$('#portrait').attr('srcset',urlportrait);
 				}
-				
-				getTranslation();
 				
 				document.addEventListener("offline", function(e){
 					var url = window.location.href;

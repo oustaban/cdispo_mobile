@@ -61,13 +61,12 @@
 		
 		
 		$(document).bind('deviceready', function() {
-		   
-			var domain = window.localStorage.getItem("domain");
-			console.log('Domain:'+domain+':'+Boolean(domain));
-			if (Boolean(domain) === false) {
-                console.log('Deconnexion');
-				deconnect();
+		    
+			getTranslation();
 				
+			var domain = window.localStorage.getItem("domain");
+			if (Boolean(domain) === false) {
+                deconnect();
             } else {
 				var portrait = window.localStorage.getItem("portrait");
 				if (portrait != '') {
@@ -75,8 +74,6 @@
 					$('#portrait').attr('src',urlportrait);
 					$('#portrait').attr('srcset',urlportrait);
 				}
-				
-				getTranslation();
 				
 				document.addEventListener("offline", function(e){
 					var url = window.location.href;
@@ -102,11 +99,11 @@
 		
 		$(document).bind('resume', function() {
 			
+			getTranslation();
+				
 			var domain = window.localStorage.getItem("domain");
-			console.log('Domain:'+domain+':'+Boolean(domain));
 			if (Boolean(domain) === false) {
-				console.log('Deconnexion');
-                deconnect();
+				deconnect();
             } else {
 				var portrait = window.localStorage.getItem("portrait");
 				if (portrait != '') {
@@ -114,8 +111,6 @@
 					$('#portrait').attr('src',urlportrait);
 					$('#portrait').attr('srcset',urlportrait);
 				}
-				
-				getTranslation();
 				
 				document.addEventListener("offline", function(e){
 					var url = window.location.href;

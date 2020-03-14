@@ -60,6 +60,8 @@
 		
 		$(document).bind('deviceready', function() {
 		   
+			getTranslation();
+				
 		    var domain = window.localStorage.getItem("domain");
 			
 			if (Boolean(domain) === false) {
@@ -73,8 +75,6 @@
 					$('#portrait').attr('srcset',urlportrait);
 				}
 			
-				getTranslation();
-				
 				document.addEventListener("offline", function(e){
 					var url = window.location.href;
 					url = url.substring(0, url.lastIndexOf("/") + 1);
@@ -93,6 +93,8 @@
 		
 		$(document).bind('resume', function() {
 			
+			getTranslation();
+			
 			var domain = window.localStorage.getItem("domain");
 			
 			if (Boolean(domain) === false) {
@@ -104,8 +106,6 @@
 					$('#portrait').attr('src',urlportrait);
 					$('#portrait').attr('srcset',urlportrait);
 				}
-				
-				getTranslation();
 				
 				document.addEventListener("offline", function(e){
 					var url = window.location.href;
