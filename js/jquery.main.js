@@ -121,6 +121,8 @@ function initChangePassword() {
 		jQuery("#changepasswordsubmit").click();
 	});
 }
+
+
 /*
  * Simple Mobile Navigation
  */

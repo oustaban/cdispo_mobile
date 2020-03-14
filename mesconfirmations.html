@@ -57,25 +57,31 @@
 		url = url.substring(0, url.lastIndexOf("/") + 1);
 		
 		$(document).bind('deviceready', function() {
-		   
-		    var portrait = window.localStorage.getItem("portrait");
-			if (portrait != '') {
-				var urlportrait = "http://"+window.localStorage.getItem("domain")+"/uploads/tx_srfeuserregister/"+portrait;
-				$('#portrait').attr('src',urlportrait);
-				$('#portrait').attr('srcset',urlportrait);
+			
+			var domain = window.localStorage.getItem("domain");
+			
+			if (!Boolean(domain)) {
+                deconnect();
+            } else {
+				var portrait = window.localStorage.getItem("portrait");
+				if (portrait != '') {
+					var urlportrait = "http://"+window.localStorage.getItem("domain")+"/uploads/tx_srfeuserregister/"+portrait;
+					$('#portrait').attr('src',urlportrait);
+					$('#portrait').attr('srcset',urlportrait);
+				}
+				
+				getTranslation();
+				
+				document.addEventListener("offline", function(e){
+					var url = window.location.href;
+					url = url.substring(0, url.lastIndexOf("/") + 1);
+					cordova.InAppBrowser.open(url+'noconnexion.html', '_self');
+				}, false);
+				
+				var fe_typo_user = window.localStorage.getItem("fe_typo_user");
+				var indexSlide = getUrlVars()["indexSlide"];
+				getBookingToConfirm(fe_typo_user,'init',indexSlide);
 			}
-			
-		    getTranslation();
-			
-			document.addEventListener("offline", function(e){
-				var url = window.location.href;
-				url = url.substring(0, url.lastIndexOf("/") + 1);
-				cordova.InAppBrowser.open(url+'noconnexion.html', '_self');
-			}, false);
-			
-		    var fe_typo_user = window.localStorage.getItem("fe_typo_user");
-			var indexSlide = getUrlVars()["indexSlide"];
-			getBookingToConfirm(fe_typo_user,'init',indexSlide); 
 			/*
 			cookieMaster.getCookieValue('http://cdispo', 'fe_typo_user', function(data) {
 				console.log(data.cookieValue);
@@ -91,24 +97,31 @@
 		
 		$(document).bind('resume', function() {
 			
-			var portrait = window.localStorage.getItem("portrait");
-			if (portrait != '') {
-				var urlportrait = "http://"+window.localStorage.getItem("domain")+"/uploads/tx_srfeuserregister/"+portrait;
-				$('#portrait').attr('src',urlportrait);
-				$('#portrait').attr('srcset',urlportrait);
+			var domain = window.localStorage.getItem("domain");
+			
+			if (!Boolean(domain)) {
+                deconnect();
+            } else {
+				
+				var portrait = window.localStorage.getItem("portrait");
+				if (portrait != '') {
+					var urlportrait = "http://"+window.localStorage.getItem("domain")+"/uploads/tx_srfeuserregister/"+portrait;
+					$('#portrait').attr('src',urlportrait);
+					$('#portrait').attr('srcset',urlportrait);
+				}
+				
+				getTranslation();
+				
+				document.addEventListener("offline", function(e){
+					var url = window.location.href;
+					url = url.substring(0, url.lastIndexOf("/") + 1);
+					cordova.InAppBrowser.open(url+'noconnexion.html', '_self');
+				}, false);
+				
+				var fe_typo_user = window.localStorage.getItem("fe_typo_user");
+				var indexSlide = getUrlVars()["indexSlide"];
+				getBookingToConfirm(fe_typo_user,'refresh',indexSlide);
 			}
-			
-			getTranslation();
-			
-			document.addEventListener("offline", function(e){
-				var url = window.location.href;
-				url = url.substring(0, url.lastIndexOf("/") + 1);
-				cordova.InAppBrowser.open(url+'noconnexion.html', '_self');
-			}, false);
-			
-			var fe_typo_user = window.localStorage.getItem("fe_typo_user");
-			var indexSlide = getUrlVars()["indexSlide"];
-			getBookingToConfirm(fe_typo_user,'refresh',indexSlide);
 			
 			/*
 			cookieMaster.getCookieValue('http://cdispo', 'fe_typo_user', function(data) {

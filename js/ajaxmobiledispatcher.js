@@ -785,7 +785,7 @@ function deleteMyBooking(booking_id,category,ressourceid,fe_typo_user,index,acti
                     
                     initPopin();
                     $('.prewiewsharing_header').hide();
-                    $('.previewsharing_content').html('<p></p><p>'+result.ressourcedeleted+'</p>');
+                    $('.previewsharing_content').html('<p></p><p>'+result.sharinglocked+'</p>');
                     if (action == "getBooking")
                         $('#btn_close').attr('onclick','getBooking(\''+fe_typo_user+'\',\'refresh\','+index+')');
                     if (action == "getBookingEvent")

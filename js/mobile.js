@@ -494,6 +494,28 @@ function replaceEmail(email) {
 	}
 	return email;
 }
+
+function deconnect() {
+	initPopin();
+	$('.prewiewsharing_header').hide();
+	$('.previewsharing_content').html('<p></p><p>'+trad['deconnexion']+'</p>');
+	
+	var url = window.location.href;
+	url = url.substring(0, url.lastIndexOf("/") + 1);
+	window.localStorage.clear();
+	if (device.platform == "Android") {
+		$('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
+	} else {
+		$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
+	}
+	
+	$('.main-slider').hide();
+	$('.nav-holder').hide();
+	$('.modification-block').hide();
+	$('#btn_close').show();
+	$('#btn_cancel').hide();
+	$('.info-block').show();
+}
 /*
      _ _      _       _
  ___| (_) ___| | __  (_)___

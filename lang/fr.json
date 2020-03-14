@@ -45,5 +45,6 @@
 	"modifinputinvitesemail":"<img src=\"images/utilisateur.png\">Inviter un utilisateur extérieur :",
 	"reserver_title":"RÉSERVER",
 	"moncompte_title":"MON COMPTE",
-	"cgu_title":"MENTIONS LÉGALES ET CGU"
+	"cgu_title":"MENTIONS LÉGALES ET CGU",
+	"deconnexion":"Vous avez été déconnecté.<br/>Vous allez être redirigé vers la page de connexion."
 }

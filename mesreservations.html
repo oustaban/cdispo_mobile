@@ -60,53 +60,66 @@
 		
 		$(document).bind('deviceready', function() {
 		   
-		    var portrait = window.localStorage.getItem("portrait");
-			if (portrait != '') {
-				var urlportrait = "http://"+window.localStorage.getItem("domain")+"/uploads/tx_srfeuserregister/"+portrait;
-				$('#portrait').attr('src',urlportrait);
-				$('#portrait').attr('srcset',urlportrait);
+		    var domain = window.localStorage.getItem("domain");
+			
+			if (!Boolean(domain)) {
+                deconnect();
+            } else {
+			
+				var portrait = window.localStorage.getItem("portrait");
+				if (portrait != '') {
+					var urlportrait = "http://"+window.localStorage.getItem("domain")+"/uploads/tx_srfeuserregister/"+portrait;
+					$('#portrait').attr('src',urlportrait);
+					$('#portrait').attr('srcset',urlportrait);
+				}
+			
+				getTranslation();
+				
+				document.addEventListener("offline", function(e){
+					var url = window.location.href;
+					url = url.substring(0, url.lastIndexOf("/") + 1);
+					cordova.InAppBrowser.open(url+'noconnexion.html', '_self');
+				}, false);
+				
+				var fe_typo_user = window.localStorage.getItem("fe_typo_user");
+				
+				
+				getBooking(fe_typo_user,'init');
+				
+				initInvites(fe_typo_user);
 			}
-		
-		    getTranslation();
-			
-			document.addEventListener("offline", function(e){
-				var url = window.location.href;
-				url = url.substring(0, url.lastIndexOf("/") + 1);
-				cordova.InAppBrowser.open(url+'noconnexion.html', '_self');
-			}, false);
-			
-			var fe_typo_user = window.localStorage.getItem("fe_typo_user");
-			
-			getBooking(fe_typo_user,'init');
-			
-			initInvites(fe_typo_user);
 			
         });
 		
 		$(document).bind('resume', function() {
 			
-			var portrait = window.localStorage.getItem("portrait");
-			if (portrait != '') {
-				var urlportrait = "http://"+window.localStorage.getItem("domain")+"/uploads/tx_srfeuserregister/"+portrait;
-				console.log('Portrait:'+urlportrait);
-				$('#portrait').attr('src',urlportrait);
-				$('#portrait').attr('srcset',urlportrait);
+			var domain = window.localStorage.getItem("domain");
+			
+			if (!Boolean(domain)) {
+                deconnect();
+            } else {
+				var portrait = window.localStorage.getItem("portrait");
+				if (portrait != '') {
+					var urlportrait = "http://"+window.localStorage.getItem("domain")+"/uploads/tx_srfeuserregister/"+portrait;
+					$('#portrait').attr('src',urlportrait);
+					$('#portrait').attr('srcset',urlportrait);
+				}
+				
+				getTranslation();
+				
+				document.addEventListener("offline", function(e){
+					var url = window.location.href;
+					url = url.substring(0, url.lastIndexOf("/") + 1);
+					cordova.InAppBrowser.open(url+'noconnexion.html', '_self');
+				}, false);
+				
+				var indexSlide = getUrlVars()["indexSlide"];
+				var fe_typo_user = window.localStorage.getItem("fe_typo_user");
+				
+				getBooking(fe_typo_user,'refresh',indexSlide);
+				
+				initInvites(fe_typo_user);
 			}
-			
-			getTranslation();
-			
-			document.addEventListener("offline", function(e){
-				var url = window.location.href;
-				url = url.substring(0, url.lastIndexOf("/") + 1);
-				cordova.InAppBrowser.open(url+'noconnexion.html', '_self');
-			}, false);
-			
-			var indexSlide = getUrlVars()["indexSlide"];
-			var fe_typo_user = window.localStorage.getItem("fe_typo_user");
-			
-			getBooking(fe_typo_user,'refresh',indexSlide);
-			
-			initInvites(fe_typo_user);
 			
         });
     </script>
