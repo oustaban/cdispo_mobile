@@ -1124,7 +1124,6 @@ textarea:focus {
 	padding: 17px 15px;
 	text-align: center;
 	outline: none;
-	border-top: none;
 	min-height: 30px;
 }
 
@@ -2314,7 +2313,7 @@ a.tooltip4 {
 	left: 0;
 	right: 0;
 	justify-content: center;
-	bottom:120px;
+	#bottom:120px;
 }
 
 span#autre_motif {
