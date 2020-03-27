@@ -214,9 +214,20 @@ function getPreviewRessource(ressourceId,categoryRessource,fe_typo_user,from) {
                     initPopin();
                     $('.prewiewsharing_header').hide();
                     $('.previewsharing_content').html('<p></p><p>'+result.ressourcedeleted+'</p>');
-                    $('#btn_close').attr('onclick','getBooking(\''+fe_typo_user+'\',\'refresh\',0)');
                     
-                    $('.main-slider').hide();$('.nav-holder').hide();
+                    if (from == "getBooking" || from == "getBookingToConfirm" || from == "getInvitations" || from == "getSharing" ) {
+                         $('#btn_close').attr('onclick','$(\'.modification-block2\').hide();$(\'.info-block\').hide();$(\'.main-slider\').show();$(\'.nav-holder\').show();$(\'#backtoshare\').hide();$(\'.modification_block\').hide()');
+                    }
+                    
+                    if (from == "getBookingToStart" || from == "getBookingToEnd" || from == "getBookingToGo" || from == "getBookingEvent" || from == "searchResults" || from == "search" || from == "scan") {
+                         $('#btn_close').attr('onclick','$(\'.modification-block2\').hide();$(\'.info-block\').hide();$(\'.main-slider\').show();$(\'.nav-holder\').show();$(\'#backtoshare\').show();$(\'.modification_block\').hide()');
+                    }
+                    
+                    //if (from == "getBooking")
+                        //$('#btn_close').attr('onclick','getBooking(\''+fe_typo_user+'\',\'refresh\',0)');
+                     
+                    $('.main-slider').hide();
+                    $('.nav-holder').hide();
                     $('.info-block').show();
                     
                 }
