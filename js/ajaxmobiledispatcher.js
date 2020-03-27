@@ -4722,9 +4722,9 @@ function getScan(fe_typo_user,ressourceId,category,action,indexSlide) {
                     var url = window.location.href;
 					url = url.substring(0, url.lastIndexOf("/") + 1);
                     if (device.platform == "Android") {
-                        $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
+                        $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'mesreservations.html\');$("#invisible_link")[0].click()');
                     } else {
-						$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
+						$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'mesreservations.html\', \'_self\')');
 					}
                     
                     $('#btn_close').text(trad['btn_close']);
@@ -4748,9 +4748,9 @@ function getScan(fe_typo_user,ressourceId,category,action,indexSlide) {
                     var url = window.location.href;
 					url = url.substring(0, url.lastIndexOf("/") + 1);
                     if (device.platform == "Android") {
-                        $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
+                        $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'mesreservations.html\');$("#invisible_link")[0].click()');
                     } else {
-						$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
+						$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'mesreservations.html\', \'_self\')');
 					}
                     
                     $('#btn_close').text(trad['btn_close']);
@@ -4983,7 +4983,7 @@ function getScan(fe_typo_user,ressourceId,category,action,indexSlide) {
                         var url = window.location.href;
                         url = url.substring(0, url.lastIndexOf("/") + 1);
                         if (device.platform == "Android") {
-                            $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
+                            $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'mesreservations.html\');$("#invisible_link")[0].click()');
                         } else {
                             $('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'mesreservations.html\', \'_self\')');
                         }
