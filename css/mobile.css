@@ -1611,7 +1611,7 @@ textarea:focus {
 }
 
 .sg1 {
-	background-color:rgba(255,0,0,1);
+	background-color:rgba(126, 128, 124,1);
 	color:black;
 	font-weight:bold;
 }
@@ -3019,6 +3019,9 @@ a#invisible_link {
 	display:none;
 }
 
+span.red {
+	color:red;
+}
 
 
 
