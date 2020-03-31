@@ -504,6 +504,20 @@ function getVisibilityInfo(fe_typo_user,event_id,indexSlide) {
                 
                 }
             
+                if (result.sharingnotexist) {
+                    
+                    initPopin();
+                    $('.prewiewsharing_header').hide();
+                    $('.previewsharing_content').html('<p></p><p>'+result.sharingnotexist+'</p>');
+                    
+                    $('#btn_close').attr('onclick','getSharing(\''+fe_typo_user+'\',\'refresh\',0)');
+                    
+                    $('.main-slider').hide();$('.nav-holder').hide();
+                    $('.nav-holder').hide();
+                    $('.modification-block').hide();
+                    $('.info-block').show();
+                    
+                }
                 
                 if (result.ok) {
                     
