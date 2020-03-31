@@ -467,8 +467,8 @@ function tooltiphover() {
         $(this).attr("data-close",true);
     });
 	 
-	//$(document).mouseup(function () {
-	$(document).on('touchend click', function(e) {
+	$(document).mouseup(function () {
+	//$(document).on('touchend click', function(e) {
 		e.stopPropagation();
 		e.preventDefault();
 		$(".tooltiptext3").css("visibility", 'hidden');
