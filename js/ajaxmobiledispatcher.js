@@ -513,9 +513,11 @@ function getVisibilityInfo(fe_typo_user,event_id,indexSlide) {
                     $('.previewsharing_content').html(result.content);
                     
                     if (result.statut != 0) {
+                        
                         $('#btn_close').text(trad['btn_close']);
                         $('#btn_close').attr('onclick','$(\'.modification-block2\').hide();$(\'.modification-block\').hide();$(\'.message-block\').hide();$(\'.info-block\').hide();$(\'.main-slider\').show();$(\'.nav-holder\').show();');
                         $('#btn_cancel').text('');
+                    
                     } else {
                     
                         $('#btn_close').text(trad['sendmessagesharing']);
