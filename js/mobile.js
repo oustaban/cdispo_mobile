@@ -450,23 +450,23 @@ function initInvites(fe_typo_user) {
 
 function tooltiphover() {
 	$('.tooltip3').each(function( index ) {
-		$(this).on('touchstart mousedown', function(e){
-			e.preventDefault();
-		//$(this).click(function () {
+		//$(this).on('touchstart mousedown', function(e){
+			//e.preventDefault();
+		$(this).click(function () {
 			if ($(this).next(".tooltiptext3").attr("data-close") === "false") {
 				$(this).next(".tooltiptext3").css("visibility", 'visible');
 				$(this).next(".tooltiptext3").attr("data-close",true);
 			}
 		});
 	});
-	//$(".tooltiptext3").click(function () {
-	$(".tooltiptext3").on('touchstart click', function(e) {
+	$(".tooltiptext3").click(function () {
+	//$(".tooltiptext3").on('touchstart click', function(e) {
 		e.preventDefault();
         $(this).attr("data-close",true);
     });
 	 
-	//$(document).mouseup(function () {
-	$(document).on('touchend click', function(e) {
+	$(document).mouseup(function () {
+	//$(document).on('touchend click', function(e) {
 		e.preventDefault();
 		$(".tooltiptext3").css("visibility", 'hidden');
     });
