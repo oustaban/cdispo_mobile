@@ -509,7 +509,7 @@ function getVisibilityInfo(fe_typo_user,event_id,indexSlide) {
                     
                     initPopin();
                     $('.prewiewsharing_header').show();
-                    $('.prewiewsharing_title').html(trad['guests']);
+                    $('.prewiewsharing_title').html(result.titleguest);
                     $('.previewsharing_content').html(result.content);
                     
                     if (result.statut != 0) {
