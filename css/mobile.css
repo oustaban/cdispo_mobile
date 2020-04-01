@@ -2184,7 +2184,7 @@ div.previewsharing_content,div.previewbooking_content,div.previewguest_content,d
 div.previewsharing_slider,div.previewbooking_slider,div.previewguest_slider {
 	margin:auto;
 	width:225px;
-	height:175px;
+	height:auto;
 	margin-top:10px;
 	margin-bottom:30px;
 }
