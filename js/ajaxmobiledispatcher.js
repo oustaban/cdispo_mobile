@@ -4188,6 +4188,25 @@ function getBookingEvent(fe_typo_user,eventId,action,indexSlide) {
                     
                 }
                 
+                if (result.sharingnotexist) {
+                    
+                    initPopin();
+                    $('.prewiewsharing_header').hide();
+                    $('.previewsharing_content').html('<p></p><p>'+result.sharingnotexist+'</p>');
+                    $('#btn_cancel').text('');
+                    
+                    $('#btn_close').attr('onclick','loadSharing(\''+fe_typo_user+'\',0)');
+                        
+                    $('.main-slider').hide();
+                    $('.nav-holder').hide();
+                    $('.message-block').hide();
+                    $('.modification-block').hide();
+                    $('.modification-block2').hide();
+                    $('#backtoshare').hide();
+                    $('.info-block').show();
+                    
+                }
+                
                 if (result.result) {
                     if (action == "refresh") {
                          console.log('countslide:'+countslide);
