@@ -176,14 +176,16 @@
     <plugin name="skwas-cordova-plugin-datetimepicker" source="npm" spec="2.0.1" />
     <!--<plugin name="skwas-cordova-plugin-datetimepicker" spec="https://github.com/skwasjer/skwas-cordova-plugin-datetimepicker.git#40957043012325ffca51d6ec4c846ff5f9cb24bd" />-->
     
-    <!--
-    <allow-navigation href="*" />
+    
     <access origin="*" />
     <access origin="mailto:*" launch-external="true" />
     <access origin="tel:*" launch-external="true" />
+    <!--
+    <allow-navigation href="*" />
     <allow-navigation href="tel:*" />
     <allow-navigation href="mailto:*" />
     -->
+    <allow-intent href="*" />
     <allow-intent href="mailto:*" launch-external="yes"/>
     <allow-intent href="tel:*" launch-external="yes"/>
 

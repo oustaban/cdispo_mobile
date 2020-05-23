@@ -1125,6 +1125,9 @@ textarea:focus {
 	text-align: center;
 	outline: none;
 	min-height: 30px;
+	display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .btn.btn-green {
@@ -1648,6 +1651,10 @@ textarea:focus {
 	font-size: 12px;
 	margin: 0 0 11px;
 	text-transform: uppercase;
+}
+
+.main-slider .reservation .starttitle {
+	font-size:9px;
 }
 
 .main-slider .reservation b {
