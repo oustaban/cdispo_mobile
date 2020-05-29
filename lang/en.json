@@ -25,6 +25,7 @@
 	"sendmessagesharingmessage":"Veuillez composer le message que vous souhaitez envoyer aux titulaires des réservations en cours ou à venir associées à ce partage n°",
 	"sendmessagesharingmessage2":"Vous allez recevoir par email une copie du message envoyé.",
 	"sendmessagetitle":"Veuillez composer le message que vous souhaitez envoyer au titulaire du partage ",
+	"sendmessagetitle2":"Veuillez composer le message que vous souhaitez envoyer au titulaire de la réservation ",
 	"guests":"Invités",
 	"modification_title":"LA MODIFICATION EST POSSIBLE <span>UNIQUEMENT AU SEIN DU CRENEAU DE PARTAGE</span>",
 	"modification_texte1":"Pour une modification avancée, veuillez vous connecter depuis votre ordinateur à votre site internet",
