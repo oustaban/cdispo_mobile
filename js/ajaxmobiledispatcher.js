@@ -335,7 +335,7 @@ function getUserInfo(fe_typo_user,owner_id,from,booking_id,ressourceId,category,
                         
                     if (from == "getBooking" || from == "getBookingToConfirm" || from == "getInvitations" ) {
                          $('#btn_close').text(trad['sendmessageto']+' '+result.owner);
-                         if (from == "getInvitation") {
+                         if (from == "getInvitations") {
 							 $('.previewmessage_mandatories').html(trad['sendmessagetitle2']+'<b>'+result.owner+'</b>');
 						 } else {
                              $('.previewmessage_mandatories').html(trad['sendmessagetitle']+'<b>'+result.owner+'</b>');
