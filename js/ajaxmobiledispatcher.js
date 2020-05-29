@@ -1802,6 +1802,29 @@ function createMyBooking(event_id,category,ressourceid,datestart,dateend,udatest
           
         success: function(result) {
             
+            if (result.sharingnotexist) {
+                    
+                    initPopin();
+                    $('.prewiewsharing_header').hide();
+                    $('.previewsharing_content').html('<p></p><p>'+result.sharingnotexist+'</p>');
+                    if (action == "getBooking")
+                        $('#btn_close').attr('onclick','getBooking(\''+fe_typo_user+'\',\'refresh\',0)');
+                    if (action == "getScan")
+                        $('#btn_close').attr('onclick','getScan(\''+fe_typo_user+'\','+ressourceId+',\''+category2+'\',\'refresh\',0)');
+                    if (action == "getDispo")
+                        $('#btn_close').attr('onclick','getDispo(\''+fe_typo_user+'\','+ressourceId+',\''+category2+'\',\'refresh\')');
+                    if (action == "getDispo2")
+                        $('#btn_close').attr('onclick','getDispo2(\''+fe_typo_user+'\','+ressourceId+',\''+category2+'\',\'refresh\','+indexSlide+',\''+args+'\')');
+                
+                
+                    $('.main-slider').hide();
+                    $('.nav-holder').hide();
+                    $('.nav-holder').hide();
+                    $('.modification-block').hide();
+                    $('.info-block').show();
+                    
+            }
+                
             if (result.deconnexion) {
                     
                 initPopin();
@@ -1811,6 +1834,7 @@ function createMyBooking(event_id,category,ressourceid,datestart,dateend,udatest
                 var url = window.location.href;
                 url = url.substring(0, url.lastIndexOf("/") + 1);
                 window.localStorage.clear();
+                
                 if (device.platform == "Android") {
                     $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
                 } else {
