@@ -82,6 +82,14 @@
 				var indexSlide = getUrlVars()["indexSlide"];
 				getInvitations(fe_typo_user,'init',indexSlide);
 			}
+            
+            $("#formmessage").validate({
+                rules: {
+                   'message : {
+                        required:true
+                   }
+                }
+            });
 			/*
 			cookieMaster.getCookieValue('http://cdispo', 'fe_typo_user', function(data) {
 				console.log(data.cookieValue);
@@ -121,6 +129,14 @@
 				getInvitations(fe_typo_user,'refresh',indexSlide);
 			}
 			
+            $("#formmessage").validate({
+                rules: {
+                   'message : {
+                        required:true
+                   }
+                }
+            });
+            
 			/*
 			cookieMaster.getCookieValue('http://cdispo', 'fe_typo_user', function(data) {
 				console.log(data.cookieValue);
@@ -213,7 +229,9 @@
 						<div class="previewmessage_content">
 							<div class="label-row">
 								<div class="input-col">
-									<textarea rows="5" cols="30" id="message" placeholder="Saisissez votre message ici..."></textarea>
+                                    <form name="formmessage" id="formmessage">
+									<textarea rows="5" cols="30" id="message" name="message" placeholder="Saisissez votre message ici..."></textarea>
+                                    </form>
 								</div>
 							</div>
 						</div>
