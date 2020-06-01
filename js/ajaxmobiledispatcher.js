@@ -336,9 +336,9 @@ function getUserInfo(fe_typo_user,owner_id,from,booking_id,ressourceId,category,
                     if (from == "getBooking" || from == "getBookingToConfirm" || from == "getInvitations" ) {
                          $('#btn_close').text(trad['sendmessageto']+' '+result.owner);
                          if (from == "getInvitations") {
-							 $('.previewmessage_mandatories').html(trad['sendmessagetitle2']+'<b>'+result.owner+'</b><br/>'+trad['sendmessagetitle3']);
+							 $('.previewmessage_mandatories').html(trad['sendmessagetitle2']+'<b>'+result.owner+'</b>');
 						 } else {
-                             $('.previewmessage_mandatories').html(trad['sendmessagetitle']+'<b>'+result.owner+'</b><br/>'+trad['sendmessagetitle3']);
+                             $('.previewmessage_mandatories').html(trad['sendmessagetitle']+'<b>'+result.owner+'</b>');
                          }
                         
                          $('#message').val('');
@@ -351,9 +351,9 @@ function getUserInfo(fe_typo_user,owner_id,from,booking_id,ressourceId,category,
                     if (from == "getBookingToStart" || from == "getBookingToEnd" || from == "getBookingToGo" || from == "getBookingEvent") {
                          $('#btn_close').text(trad['sendmessageto']+' '+result.owner);
                          if (from == "getBookingEvent") {
-							 $('.previewmessage_mandatories').html(trad['sendmessagetitle2']+'<b>'+result.owner+'</b><br/>'+trad['sendmessagetitle3']);
+							 $('.previewmessage_mandatories').html(trad['sendmessagetitle2']+'<b>'+result.owner+'</b>');
 						 } else {
-                             $('.previewmessage_mandatories').html(trad['sendmessagetitle']+'<b>'+result.owner+'</b><br/>'+trad['sendmessagetitle3']);
+                             $('.previewmessage_mandatories').html(trad['sendmessagetitle']+'<b>'+result.owner+'</b>');
                          }
                          $('#message').val('');
                          $('#btn_close').attr('onclick','var myvalidate=$("#formmessage").validate();myvalidate.resetForm();$(\'.info-block\').hide();$(\'.main-slider\').hide();$(\'.nav-holder\').hide();$(\'#backtoshare\').show();$(\'.modification_block\').hide();$(\'.message-block\').show()');
