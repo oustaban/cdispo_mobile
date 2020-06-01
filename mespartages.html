@@ -52,6 +52,7 @@
 	<script src="js/ion.rangeSlider.min.js"></script>
 	<script src="js/moment.min.js"></script>
     <script src="js/jquery.validate.min.js"></script>
+    <script src="js/messages_fr.js"></script>
 	<script>
 		
 		$(document).bind('deviceready', function() {
@@ -91,6 +92,14 @@
 				}
 			});
 			*/
+            
+            $("#formmessage").validate({
+                rules: {
+                   'message' : {
+                        required:true
+                   }
+                }
+            });
 			
         });
 		
@@ -131,6 +140,15 @@
 				}
 			});
 			*/
+            
+            
+            $("#formmessage").validate({
+                rules: {
+                   'message' : {
+                        required:true
+                   }
+                }
+            });
 			
         });
     </script>
@@ -214,7 +232,9 @@
 						<div class="previewmessage_content">
 							<div class="label-row">
 								<div class="input-col">
-									<textarea rows="5" cols="30" id="message" placeholder="Saisissez votre message ici..."></textarea>
+									<form name="formmessage" id="formmessage">
+                                        <textarea rows="5" cols="30" id="message" name="message" placeholder="Saisissez votre message ici..."></textarea>
+                                    </form>
 								</div>
 							</div>
 							<div class="loginmessage" id="messageerror" style="display:none"></div>
