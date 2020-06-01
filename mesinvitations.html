@@ -84,7 +84,7 @@
 				getInvitations(fe_typo_user,'init',indexSlide);
 			}
             
-            $("#formmessage").validate({
+            var myvalidate = $("#formmessage").validate({
                 rules: {
                    'message' : {
                         required:true
@@ -130,7 +130,7 @@
 				getInvitations(fe_typo_user,'refresh',indexSlide);
 			}
 			
-            $("#formmessage").validate({
+            var myvalidate = $("#formmessage").validate({
                 rules: {
                    'message' : {
                         required:true
