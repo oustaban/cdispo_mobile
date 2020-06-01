@@ -343,7 +343,7 @@ function getUserInfo(fe_typo_user,owner_id,from,booking_id,ressourceId,category,
                         
                          $('#message').val('');
                          $('#btn_close').attr('onclick','$(\'.info-block\').hide();$(\'.main-slider\').hide();$(\'.nav-holder\').hide();$(\'#backtoshare\').hide();$(\'.modification_block\').hide();$(\'.message-block\').show()');
-                         $('#btn_send').attr('onclick','if ($("#message").valid()) sendMessageToSharing('+booking_id+',$(\'#message\').val(),\''+fe_typo_user+'\',\''+from+'\','+ressourceId+',\''+category+'\','+indexSlide+')');
+                         $('#btn_send').attr('onclick','if ($("#formmessage").valid()) sendMessageToSharing('+booking_id+',$(\'#message\').val(),\''+fe_typo_user+'\',\''+from+'\','+ressourceId+',\''+category+'\','+indexSlide+')');
                          $('#btn_back2').attr('onclick','$(\'.info-block\').show();$(\'.main-slider\').hide();$(\'.nav-holder\').hide();$(\'#backtoshare\').hide();$(\'.modification_block\').hide();$(\'.message-block\').hide()');
                          $('#btn_cancel').text(trad['btn_back']);
                          $('#btn_cancel').attr('onclick','$(\'.modification-block2\').hide();$(\'.info-block\').hide();$(\'.main-slider\').show();$(\'.nav-holder\').show();$(\'#backtoshare\').hide();$(\'.modification_block\').hide()');
@@ -357,7 +357,7 @@ function getUserInfo(fe_typo_user,owner_id,from,booking_id,ressourceId,category,
                          }
                          $('#message').val('');
                          $('#btn_close').attr('onclick','$(\'.info-block\').hide();$(\'.main-slider\').hide();$(\'.nav-holder\').hide();$(\'#backtoshare\').show();$(\'.modification_block\').hide();$(\'.message-block\').show()');
-                         $('#btn_send').attr('onclick','if ($("#message").valid()) sendMessageToSharing('+booking_id+',$(\'#message\').val(),\''+fe_typo_user+'\',\''+from+'\','+ressourceId+',\''+category+'\','+indexSlide+')');
+                         $('#btn_send').attr('onclick','if ($("#formmessage").valid()) sendMessageToSharing('+booking_id+',$(\'#message\').val(),\''+fe_typo_user+'\',\''+from+'\','+ressourceId+',\''+category+'\','+indexSlide+')');
                          $('#btn_back2').attr('onclick','$(\'.info-block\').show();$(\'.main-slider\').hide();$(\'.nav-holder\').hide();$(\'#backtoshare\').show();$(\'.modification_block\').hide();$(\'.message-block\').hide()');
                          $('#btn_cancel').text(trad['btn_back']);
                          $('#btn_cancel').attr('onclick','$(\'.modification-block2\').hide();$(\'.info-block\').hide();$(\'.main-slider\').show();$(\'.nav-holder\').show();$(\'#backtoshare\').show();$(\'.modification_block\').hide()');
