@@ -1596,7 +1596,7 @@ textarea:focus {
 }
 
 .main-slider .light-block4 {
-	margin-top: 6px;
+	margin-top: 0px;
 	padding: 0;
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -1730,6 +1730,7 @@ textarea:focus {
 	font-size: 10px;
 	min-width: 85px;
 	padding: 12px 15px;
+	margin-top:6px;
 }
 .main-slider .btn:nth-child(2) {
 	margin-left: 5px;
