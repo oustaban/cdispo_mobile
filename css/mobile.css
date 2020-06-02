@@ -8,7 +8,7 @@
 
 html {
 	font-family: sans-serif; /* 1 */
-	-ms-text-size-adjust: 100%; /* 2 */ 
+	-ms-text-size-adjust: 100%; /* 2 */
 	-webkit-text-size-adjust: 100%; /* 2 */
 }
 
@@ -1577,6 +1577,38 @@ textarea:focus {
 	flex-direction: column;
 }
 
+.main-slider .light-block3 {
+	display:block;
+	height:100%;
+	margin-bottom: 6px;
+	padding: 5px 5px 3px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+}
+
+.main-slider .light-block4 {
+	margin-bottom: 0px;
+	padding: 0;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+}
+
 .bg3 {
 	background-color:rgba(255,0,0,1);
 	color:white;
@@ -1756,7 +1788,7 @@ textarea:focus {
 .main-slider .organizator-info {
 	display: block;
 	height: 100%;
-	margin-bottom: 0px;
+	margin-bottom: 6px;
 	background-color: rgba(255, 255, 255, 0.28);
 	padding: 13px 5px 12px;
 	-webkit-box-orient: horizontal;
@@ -2059,7 +2091,7 @@ textarea:focus {
 }
 
 .connection-page .loginmessage {
-	top:-100px;	
+	top:-100px;
 }
 
 .loginmessage h4 {
@@ -2092,7 +2124,7 @@ div.prewiewsharing_header, div.previewmessage_header {
 	position: relative;
 	border: 1px solid white;
 	margin-bottom:5px;
-	
+
 }
 
 div.prewiewsharing_header h1, div.previewmessage_header h1 {
@@ -2429,13 +2461,13 @@ span.numberUser {
 	height:auto;
 	padding:5px;
 	margin-top:15px;
- 
+
     /* Position the tooltip text - see examples below! */
     position: absolute;
     z-index: 100;
 	width: 220px;
     left: 50%;
-    margin-left: -140px;	
+    margin-left: -140px;
 }
 
 ul.myaccount {
@@ -2554,7 +2586,11 @@ a#invisible_link {
 		margin-bottom: 10px;
 		padding: 8px 10px 7px;
 	}
-	
+
+	.main-slider .light-block2 {
+		margin-bottom: 10px;
+		padding: 0;
+	}
 	.main-slider .light-block2 {
 		margin-bottom: 10px;
 		padding: 0;
@@ -2565,11 +2601,11 @@ a#invisible_link {
 		padding: 15px 10px 7px;
 		line-height: 1.25;
 	}
-	
+
 	.main-slider .organizator-info {
 		margin-bottom:0px;
 	}
-	
+
 	span#autre_motif {
 		font-size:20px;
 		font-style:normal;
@@ -2591,23 +2627,23 @@ a#invisible_link {
 	.main-slider .organizator-info {
 		padding: 24px 10px 21px;
 	}
-	
+
 	.loginmessage h4 {
 		font-size:16px;
 	}
-	
+
 	div.previewsharing_slider,div.previewbooking_slider,div.previewguest_slider {
 		width:325px;
 		height:275px;
 		margin-top:10px;
 		margin-bottom:30px;
 	}
-	
+
 	.example-edit-photo {
 		display: inline-block;
 		vertical-align: middle;
 		letter-spacing: normal;
-		
+
 	}
 }
 
@@ -2945,7 +2981,7 @@ a#invisible_link {
 	.active-position {
 		display: none;
 	}
-	
+
 	.loginmessage h4 {
 		font-size:17px;
 	}
@@ -2970,7 +3006,7 @@ a#invisible_link {
 	.nav-holder {
 		bottom: 136px;
 	}
-	
+
 	.active-position {
 		font-size: 20px;
 	}
@@ -3029,6 +3065,3 @@ a#invisible_link {
 span.red {
 	color:red;
 }
-
-
-
