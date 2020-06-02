@@ -1580,11 +1580,12 @@ textarea:focus {
 .main-slider .light-block3 {
 	display:block;
 	height:100%;
-	margin-bottom: 6px;
+	background-color: rgba(255, 255, 255, 0.28);
+	border: 1px solid #fff;
+	margin-bottom: 0px;
 	padding: 5px 5px 3px;
 	display: -webkit-box;
 	display: -ms-flexbox;
-	display: flex;
 	-webkit-box-pack: center;
 	-ms-flex-pack: center;
 	justify-content: center;
@@ -1820,6 +1821,8 @@ textarea:focus {
 	line-height: 6px;
 	margin-top: 0px;
 	margin-bottom: 0px;
+	display:block;
+	height:100%;
 }
 
 .main-slider .location-info i {
