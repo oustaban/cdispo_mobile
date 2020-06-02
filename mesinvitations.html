@@ -9,11 +9,11 @@
     <meta name="format-detection" content="date=no">
     <meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" href="css/mobile.css">
-	<link rel="stylesheet" href="css/ion.rangeSlider.min.css">
+	  <link rel="stylesheet" href="css/ion.rangeSlider.min.css">
     <script language="javascript">
-		
+
 		var language = window.localStorage.getItem("lang");
-		
+
         // We use this code for handling unexpected errors.
         // Using alert, we are sure that the user get notified in a Mobile device.
         // We add this code at the begining of the index.html and we use only native javascript functions.
@@ -37,11 +37,11 @@
             // Let default error handler run.
             return false;
         };
-		
-		
+
+
 
     </script>
-	
+
 	<script src="cordova.js"></script>
     <script src="js/jquery-1.11.2.min.js"></script>
     <script src="js/jquery_touchswipe.min.js"></script>
@@ -54,14 +54,14 @@
     <script src="js/jquery.validate.min.js"></script>
     <script src="js/messages_fr.js"></script>
 	<script>
-		
+
 		var url = window.location.href;
 		url = url.substring(0, url.lastIndexOf("/") + 1);
-		
+
 		$(document).bind('deviceready', function() {
-		   
+
 			getTranslation();
-				
+
 			var domain = window.localStorage.getItem("domain");
 			if (Boolean(domain) === false) {
 				deconnect();
@@ -72,42 +72,42 @@
 					$('#portrait').attr('src',urlportrait);
 					$('#portrait').attr('srcset',urlportrait);
 				}
-				
+
 				document.addEventListener("offline", function(e){
 					var url = window.location.href;
 					url = url.substring(0, url.lastIndexOf("/") + 1);
 					cordova.InAppBrowser.open(url+'noconnexion.html', '_self');
 				}, false);
-				
+
 				var fe_typo_user = window.localStorage.getItem("fe_typo_user");
 				var indexSlide = getUrlVars()["indexSlide"];
 				getInvitations(fe_typo_user,'init',indexSlide);
 			}
-            
-            $("#formmessage").validate({
-                rules: {
-                   'message' : {
-                        required:true
-                   }
-                }
-            });
+
+      $("#formmessage").validate({
+          rules: {
+             'message' : {
+                  required:true
+             }
+          }
+      });
 			/*
 			cookieMaster.getCookieValue('http://cdispo', 'fe_typo_user', function(data) {
 				console.log(data.cookieValue);
-				getBooking(data.cookieValue,'init'); 
+				getBooking(data.cookieValue,'init');
 			}, function(error) {
 				if (error) {
 					console.log('error: ' + error);
 				}
 			});
 			*/
-			
+
         });
-		
+
 		$(document).bind('resume', function() {
-			
+
 			getTranslation();
-				
+
 			var domain = window.localStorage.getItem("domain");
 			if (Boolean(domain) === false) {
 				deconnect();
@@ -118,18 +118,18 @@
 					$('#portrait').attr('src',urlportrait);
 					$('#portrait').attr('srcset',urlportrait);
 				}
-				
+
 				document.addEventListener("offline", function(e){
 					var url = window.location.href;
 					url = url.substring(0, url.lastIndexOf("/") + 1);
 					cordova.InAppBrowser.open(url+'noconnexion.html', '_self');
 				}, false);
-				
+
 				var fe_typo_user = window.localStorage.getItem("fe_typo_user");
 				var indexSlide = getUrlVars()["indexSlide"];
 				getInvitations(fe_typo_user,'refresh',indexSlide);
 			}
-			
+
             $("#formmessage").validate({
                 rules: {
                    'message' : {
@@ -137,26 +137,26 @@
                    }
                 }
             });
-            
+
 			/*
 			cookieMaster.getCookieValue('http://cdispo', 'fe_typo_user', function(data) {
 				console.log(data.cookieValue);
-				getBooking(data.cookieValue,'refresh'); 
+				getBooking(data.cookieValue,'refresh');
 			}, function(error) {
 				if (error) {
 					console.log('error: ' + error);
 				}
 			});
 			*/
-			
+
         });
     </script>
 </head>
 
 <body>
-	
+
 	<div class="loader2" id="loader2"></div>
-	
+
 	<!-- main container of all the page elements -->
 	<div id="wrapper">
 		<!-- header of the page -->
@@ -194,9 +194,9 @@
 			<!-- contain the main content of the page -->
 			<div class="container main-holder">
 				<div class="main-slider">
-					
+
 				</div>
-				
+
 				<div class="info-block light-block">
 					<div class="text-holder">
 						<div class="prewiewsharing_header">
@@ -208,7 +208,7 @@
 							</div>
 						</div>
 						<div class="previewsharing_content">
-						
+
 						</div>
 					</div>
 					<div class="btn-block">
@@ -216,7 +216,7 @@
 						<a href="javascript:void(0)" onclick="" class="btn btn-light" id="btn_cancel">&nbsp;</a>
 					</div>
 				</div>
-				
+
 				<div class="message-block light-block">
 					<div class="text-holder">
 						<div class="previewmessage_header">
@@ -242,7 +242,7 @@
 						<a href="javascript:void(0)" onclick="" class="btn btn-light" id="btn_back2">&nbsp;</a>
 					</div>
 				</div>
-				
+
 			</div>
 			<div class="nav-holder"></div>
 			<div class="btn-bottom-holder">
@@ -252,8 +252,8 @@
 		</main>
 		<a href="" data-prefetch id="invisible_link"></a>
 	</div>
-    
-    
-	
+
+
+
 </body>
 </html>
