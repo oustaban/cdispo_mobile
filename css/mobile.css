@@ -1124,7 +1124,7 @@ textarea:focus {
 	padding: 17px 15px;
 	text-align: center;
 	outline: none;
-	min-height: 40px;
+	min-height: 30px;
 	display: flex;
     justify-content: center;
     align-items: center;
