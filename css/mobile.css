@@ -1547,6 +1547,14 @@ textarea:focus {
 	flex-direction: column;
 }
 
+.main-slider .col3 {
+	width: 100%;
+	margin-right: 0px;
+	margin-top:0px;
+	display: flex;
+	flex-direction: column;
+}
+
 .main-slider .light-block {
 	margin-bottom: 6px;
 	padding: 5px 5px 3px;
@@ -1732,6 +1740,14 @@ textarea:focus {
 	padding: 12px 15px;
 	margin-top:6px;
 }
+
+.main-slider .col3 .btn {
+	font-size: 10px;
+	min-width: 85px;
+	padding: 12px 15px;
+	margin-top:0px;
+}
+
 .main-slider .btn:nth-child(2) {
 	margin-left: 5px;
 	padding-left: 12px;
