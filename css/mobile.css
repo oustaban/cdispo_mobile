@@ -2528,6 +2528,34 @@ a#invisible_link {
 	display:none;
 }
 
+span.leftpaddle {
+	display: block;
+	position: relative;
+	width: 20px;
+	height: 20px;
+	line-height: 15px;
+	float: left;
+	left: -25px;
+	top: 30px;
+	font-size: 20px;
+	border-radius: 5px;
+	border: 1px solid black;
+}
+
+span.rightpaddle {
+	display: block;
+	position: relative;
+	width: 20px;
+	height: 20px;
+	line-height: 15px;
+	float: right;
+	left: 25px;
+	top: 30px;
+	font-size: 20px;
+	border-radius: 5px;
+	border: 1px solid black;
+}
+
 @media (min-width: 480px) {
 	.container {
 		max-width: 590px;
