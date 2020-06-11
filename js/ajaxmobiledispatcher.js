@@ -1196,6 +1196,7 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
 
 
                         var my_from1 = myvalues1.indexOf(timecode[indexStart1][0]);
+                        var my_step1 = my_from1;
                         //var my_from1 = myvalues1.indexOf(timecode[indexStart1][indexStart2]);
 
                         var my_to1 = myvalues1.indexOf(timecode[indexEnd1][0]);
@@ -1214,6 +1215,7 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
 
                                 myvalues2 = [];
                                 myvalues3 = [];
+                                my_step1 = data.from_value;
 
                                 for(let index3 in timecode) {
                                     for(let index4 in timecode[index3]) {
@@ -1386,7 +1388,7 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                         });
 
                         $('#leftpaddle1').click(function() {
-                          updateRangeFrom1(-1,my_from1);
+                          updateRangeFrom1(-1);
                         });
 
                         $('#rightpaddle1').click(function() {
@@ -1409,17 +1411,17 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                           updateRangeFrom3(+1);
                         });
 
-                        var updateRangeFrom1 = function (direction,my_from1) {
-                            console.log('updateRangeFrom1:'+my_from1);
-                            my_from1 += direction;
-                            if (my_from1 < 0) {
-                                my_from1 = 0;
-                            } else if (my_from1 > index) {
-                                my_from1 = index;
+                        var updateRangeFrom1 = function (direction) {
+                            console.log('updateRangeFrom1:'+my_step1);
+                            my_step1 += direction;
+                            if (my_step1 < 0) {
+                                my_step1 = 0;
+                            } else if (my_step1 > index) {
+                                my_step1 = index;
                             }
-                            console.log('updateRangeFrom1:'+my_from1);
+                            console.log('updateRangeFrom1:'+my_step1);
                             my_range1.update({
-                                from: my_from1
+                                from: my_step1
                             });
                         };
 
