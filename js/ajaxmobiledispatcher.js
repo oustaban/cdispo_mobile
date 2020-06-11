@@ -1281,6 +1281,30 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
 
                                 $('#modif_dateend').val(timecode[indexEnd1][indexEnd2]);
 
+                                $('#leftpaddle1').click(function() {
+                                  updateRangeFrom1(-1);
+                                });
+
+                                $('#rightpaddle1').click(function() {
+                                  updateRangeTo1(+1);
+                                });
+
+                                $('#leftpaddle2').click(function() {
+                                  updateRangeFrom2(-1);
+                                });
+
+                                $('#rightpaddle2').click(function() {
+                                  updateRangeFrom2(+1);
+                                });
+
+                                $('#leftpaddle3').click(function() {
+                                  updateRangeFrom3(-1);
+                                });
+
+                                $('#rightpaddle3').click(function() {
+                                  updateRangeFrom3(+1);
+                                });
+
                             }
                         });
 
