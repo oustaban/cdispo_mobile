@@ -1224,7 +1224,7 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                                             console.log('from found');
                                             indexStart1 = index3;
                                             indexStart2 = index4;
-                                            my_step1 = indexStart1;
+                                            my_step1 = index3;
                                         }
                                         if (timecode[index3][index4] ==  data.to_value) {
                                             //console.log('to found');
@@ -1414,7 +1414,7 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
 
                         var updateRangeFrom1 = function (direction) {
                             console.log('updateRangeFrom1:'+my_step1);
-                            my_step1 += direction;
+                            my_step1 = my_step1+direction;
                             if (my_step1 < 0) {
                                 my_step1 = 0;
                             } else if (my_step1 > index) {
