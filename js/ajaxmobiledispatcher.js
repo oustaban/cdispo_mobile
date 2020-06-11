@@ -1215,7 +1215,7 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
 
                                 myvalues2 = [];
                                 myvalues3 = [];
-                                my_step1 = data.from_value;
+
 
                                 for(let index3 in timecode) {
                                     for(let index4 in timecode[index3]) {
@@ -1224,6 +1224,7 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                                             console.log('from found');
                                             indexStart1 = index3;
                                             indexStart2 = index4;
+                                            my_step1 = indexStart1;
                                         }
                                         if (timecode[index3][index4] ==  data.to_value) {
                                             //console.log('to found');
