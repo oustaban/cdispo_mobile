@@ -1410,13 +1410,14 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                         });
 
                         var updateRangeFrom1 = function (direction) {
+                            console.log('updateRangeFrom1:'+my_from1);
                             my_from1 += step * direction;
                             if (my_from1 < timecode[0][0]) {
                                 my_from1 = timecode[0][0];
                             } else if (my_from1 > timecode[0][index]) {
                                 my_from1 = timecode[0][index];
                             }
-
+                            console.log('updateRangeFrom1:'+my_from1);
                             my_range1.update({
                                 from: my_from1
                             });
