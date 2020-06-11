@@ -1411,11 +1411,11 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
 
                         var updateRangeFrom1 = function (direction) {
                             console.log('updateRangeFrom1:'+my_from1);
-                            my_from1 += step * direction;
-                            if (my_from1 < timecode[0][0]) {
-                                my_from1 = timecode[0][0];
-                            } else if (my_from1 > timecode[0][index]) {
-                                my_from1 = timecode[0][index];
+                            my_from1 += direction;
+                            if (my_from1 < 0) {
+                                my_from1 = 0;
+                            } else if (my_from1 > index) {
+                                my_from1 = index;
                             }
                             console.log('updateRangeFrom1:'+my_from1);
                             my_range1.update({
@@ -1424,11 +1424,11 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                         };
 
                         var updateRangeTo1 = function (direction) {
-                            my_to1 += step * direction;
-                            if (my_to1 < timecode[0][0]) {
-                                my_to1 = timecode[0][0];
-                            } else if (my_to1 > timecode[0][index]) {
-                                my_to1 = timecode[0][index];
+                            my_to1 += direction;
+                            if (my_to1 < 0) {
+                                my_to1 = 0;
+                            } else if (my_to1 > index) {
+                                my_to1 = index
                             }
 
                             my_range1.update({
@@ -1437,11 +1437,11 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                         };
 
                         var updateRangeFrom2 = function (direction) {
-                            my_from2 += step * direction;
-                            if (my_from2 < timecode[indexStart1][0]) {
-                                my_from2 = timecode[indexStart1][0];
-                            } else if (my_from2 > timecode[indexStart1][end2]) {
-                                my_from2 = timecode[indexStart1][end2];
+                            my_from2 += direction;
+                            if (my_from2 < 0) {
+                                my_from2 = 0;
+                            } else if (my_from2 > end2) {
+                                my_from2 = end2;
                             }
 
                             my_range2.update({
@@ -1450,11 +1450,11 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                         };
 
                         var updateRangeFrom3 = function (direction) {
-                            my_from3 += step * direction;
-                            if (my_from3 < timecode[indexEnd1][0]) {
-                                my_from3 = timecode[indexEnd1][0];
-                            } else if (my_from3 > timecode[indexEnd1][end3]) {
-                                my_from3 = timecode[indexEnd1][end3];
+                            my_from3 += direction;
+                            if (my_from3 < 0) {
+                                my_from3 = 0;
+                            } else if (my_from3 > end3) {
+                                my_from3 = end3;
                             }
 
                             my_range3.update({
