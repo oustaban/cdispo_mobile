@@ -1281,30 +1281,6 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
 
                                 $('#modif_dateend').val(timecode[indexEnd1][indexEnd2]);
 
-                                $('#leftpaddle1').click(function() {
-                                  updateRangeFrom1(-1);
-                                });
-
-                                $('#rightpaddle1').click(function() {
-                                  updateRangeTo1(+1);
-                                });
-
-                                $('#leftpaddle2').click(function() {
-                                  updateRangeFrom2(-1);
-                                });
-
-                                $('#rightpaddle2').click(function() {
-                                  updateRangeFrom2(+1);
-                                });
-
-                                $('#leftpaddle3').click(function() {
-                                  updateRangeFrom3(-1);
-                                });
-
-                                $('#rightpaddle3').click(function() {
-                                  updateRangeFrom3(+1);
-                                });
-
                             }
                         });
 
@@ -1410,7 +1386,7 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                         });
 
                         $('#leftpaddle1').click(function() {
-                          updateRangeFrom1(-1);
+                          updateRangeFrom1(-1,my_from1);
                         });
 
                         $('#rightpaddle1').click(function() {
@@ -1433,7 +1409,7 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                           updateRangeFrom3(+1);
                         });
 
-                        var updateRangeFrom1 = function (direction) {
+                        var updateRangeFrom1 = function (direction,my_from1) {
                             console.log('updateRangeFrom1:'+my_from1);
                             my_from1 += direction;
                             if (my_from1 < 0) {
