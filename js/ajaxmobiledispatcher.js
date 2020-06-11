@@ -1414,7 +1414,7 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
 
                         var updateRangeFrom1 = function (direction) {
                             console.log('updateRangeFrom1:'+my_step1);
-                            my_step1 = my_step1+direction;
+                            my_step1 = parseInt(my_step1)+direction;
                             if (my_step1 < 0) {
                                 my_step1 = 0;
                             } else if (my_step1 > index) {
