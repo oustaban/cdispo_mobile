@@ -1399,11 +1399,18 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                         $('#leftpaddle1-1').click(function() {
                           updateRangeFrom1(+1);
                         });
-                        var el = document.getElementById('leftpaddle1-1');
-                        el.addEventListener('long-press', function(e) {
-                          // stop the event from bubbling up
-                          e.preventDefault();
-                          console.log('toto:'+e.target);
+
+                        var mytimeout1;
+                        $('#leftpaddle1-1').on("touchstart", function(e) {
+                            mytimeout1 = setInterval(function(){
+                                console.log('clicked');
+                            }, 500);
+                            return false;
+                        });
+
+                        $('#leftpaddle1-1').on("touchend", function(e) {
+                            clearInterval(mytimeout1);
+                            return false;
                         });
 
                         $('#leftpaddle2-1').click(function() {
@@ -1442,9 +1449,6 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                             }
                             my_range1.update({
                                 from: my_stepfrom1
-                            });
-                            $(document).on('touchmove', function() {
-                                console.log('Touch Move');
                             });
                         };
 
