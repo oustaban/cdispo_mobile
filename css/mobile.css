@@ -2618,6 +2618,11 @@ span.rightpaddle2 {
 	-webkit-user-select: none;
 }
 
+span.highlight {
+	background-color: #fff2ac;
+	background-image: linear-gradient(to right, #ffe359 0%, #fff2ac 100%);
+}
+
 @media (min-width: 480px) {
 	.container {
 		max-width: 590px;

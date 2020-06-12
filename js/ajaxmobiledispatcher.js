@@ -1402,13 +1402,16 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
 
                         var mytimeout1;
                         $('#leftpaddle1-1').on("touchstart", function(e) {
+                            $(this).addClass('highlight');
                             mytimeout1 = setInterval(function(){
                                 console.log('clicked');
-                            }, 500);
+                                updateRangeFrom1(+1);
+                            }, 100);
                             return false;
                         });
 
                         $('#leftpaddle1-1').on("touchend", function(e) {
+                            $(this).removeClass('highlight');
                             clearInterval(mytimeout1);
                             return false;
                         });
