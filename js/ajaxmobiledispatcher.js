@@ -1403,10 +1403,10 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                           updateRangeFrom1(-1);
                         });
 
-                        $('#leftpaddle2-1').click(function() {
+                        $('#rightpaddle2-1').click(function() {
                           updateRangeTo1(+1);
                         });
-                        $('#leftpaddle2-2').click(function() {
+                        $('#rightpaddle2-2').click(function() {
                           updateRangeTo1(-1);
                         });
 
