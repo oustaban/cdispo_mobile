@@ -1414,7 +1414,7 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                             e.preventDefault();
                             $(this).removeClass('highlight');
                             console.log('touchend');
-                            window.clearInterval(mytimeout1);
+                            clearInterval(mytimeout1);
                         });
 
                         $('#leftpaddle2-1').click(function() {
