@@ -11,9 +11,9 @@
     <link rel="stylesheet" href="css/mobile.css">
 	<link rel="stylesheet" href="css/ion.rangeSlider.min.css">
     <script language="javascript">
-		
+
 		var language = window.localStorage.getItem("lang");
-		
+
         // We use this code for handling unexpected errors.
         // Using alert, we are sure that the user get notified in a Mobile device.
         // We add this code at the begining of the index.html and we use only native javascript functions.
@@ -37,11 +37,11 @@
             // Let default error handler run.
             return false;
         };
-		
-		
+
+
 
     </script>
-	
+
 	<script src="cordova.js"></script>
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/jquery.touchSwipe.js"></script>
@@ -55,17 +55,17 @@
     <script src="js/jquery.validate.min.js"></script>
     <script src="js/messages_fr.js"></script>
 	<script>
-		
+
 		var url = window.location.href;
 		url = url.substring(0, url.lastIndexOf("/") + 1);
-		
-		
-		
-		
+
+
+
+
 		$(document).bind('deviceready', function() {
-		    
+
 			getTranslation();
-				
+
 			var domain = window.localStorage.getItem("domain");
 			if (Boolean(domain) === false) {
                 deconnect();
@@ -76,26 +76,26 @@
 					$('#portrait').attr('src',urlportrait);
 					$('#portrait').attr('srcset',urlportrait);
 				}
-				
+
 				document.addEventListener("offline", function(e){
 					var url = window.location.href;
 					url = url.substring(0, url.lastIndexOf("/") + 1);
 					cordova.InAppBrowser.open(url+'noconnexion.html', '_self');
 				}, false);
-				
+
 				var fe_typo_user = window.localStorage.getItem("fe_typo_user");
 				var ressourceId = getUrlVars()["ressourceId"];
 				var category = getUrlVars()["category"];
 				 var indexSlide = getUrlVars()["indexSlide"];
-				
+
 				console.log('ready:'+fe_typo_user+'/'+ressourceId+'/'+category);
-				
+
 				getScan(fe_typo_user,ressourceId,category,"init",indexSlide);
-				
+
 				initInvites(fe_typo_user);
 			}
-            
-            
+
+
             $("#formmessage").validate({
                 rules: {
                    'message' : {
@@ -103,15 +103,15 @@
                    }
                 }
             });
-			
-			
-			
+
+
+
         });
-		
+
 		$(document).bind('resume', function() {
-			
+
 			getTranslation();
-				
+
 			var domain = window.localStorage.getItem("domain");
 			if (Boolean(domain) === false) {
 				deconnect();
@@ -122,26 +122,26 @@
 					$('#portrait').attr('src',urlportrait);
 					$('#portrait').attr('srcset',urlportrait);
 				}
-				
+
 				document.addEventListener("offline", function(e){
 					var url = window.location.href;
 					url = url.substring(0, url.lastIndexOf("/") + 1);
 					cordova.InAppBrowser.open(url+'noconnexion.html', '_self');
 				}, false);
-				
+
 				var fe_typo_user = window.localStorage.getItem("fe_typo_user");
 				var ressourceId = getUrlVars()["ressourceId"];
 				var category = getUrlVars()["category"];
 				var indexSlide = getUrlVars()["indexSlide"];
-				
+
 				console.log('resume:'+fe_typo_user+'/'+ressourceId+'/'+category);
-				
+
 				getScan(fe_typo_user,ressourceId,category,"refresh",indexSlide);
-				
+
 				initInvites(fe_typo_user);
 			}
-            
-            
+
+
             $("#formmessage").validate({
                 rules: {
                    'message' : {
@@ -149,15 +149,15 @@
                    }
                 }
             });
-			
+
         });
     </script>
 </head>
 
 <body>
-	
+
 	<div class="loader2" id="loader2"></div>
-	
+
 	<!-- main container of all the page elements -->
 	<div id="wrapper">
 		<!-- header of the page -->
@@ -192,17 +192,17 @@
 					</a>
 				</strong>
 			</div>
-			
+
 			<div class="btn-block container" id="backtoshare" style="display:none">
                 <a href="javascript:void(0)" id="backtosharelink" onclick="" class="btn btn-blue">RETOUR AU PARTAGE N°<span id="eventid2"></span></a>
             </div>
-			
+
 			<!-- contain the main content of the page -->
 			<div class="container main-holder">
 				<div class="main-slider">
-					
+
 				</div>
-				
+
 				<div class="info-block light-block">
 					<div class="text-holder">
 						<div class="prewiewsharing_header">
@@ -214,7 +214,7 @@
 							</div>
 						</div>
 						<div class="previewsharing_content">
-						
+
 						</div>
 					</div>
 					<div class="btn-block">
@@ -222,7 +222,7 @@
 						<a href="javascript:void(0)" onclick="" class="btn btn-light" id="btn_cancel">&nbsp;</a>
 					</div>
 				</div>
-				
+
 				<div class="message-block light-block">
 					<div class="text-holder">
 						<div class="previewmessage_header">
@@ -248,7 +248,7 @@
 						<a href="javascript:void(0)" onclick="" class="btn btn-light" id="btn_back2">&nbsp;</a>
 					</div>
 				</div>
-				
+
 				<div class="modification-block light-block">
 					<h2 id="modification_title">LA MODIFICATION EST POSSIBLE <span>UNIQUEMENT AU SEIN DU CRENEAU DE PARTAGE</span></h2>
 					<strong class="title"><time id="date_start" datetime="2019-01-28T12:30">Lun., 28 Janvier, 12:30</time> – <time id="date_end" datetime="2019-01-29T15:30">Lun. 29 Janvier, 15h30</time></strong>
@@ -258,16 +258,24 @@
 						<i class="icon-warning"></i>
 						<p id="modification_texte2">Une fois modifiée, la réservation ne sera confirmée qu’après validation par le titulaire du partage. Vous serez tenu informé par email de la confirmation. En l’absence d’email de confirmation, la réservation est réputée non confirmée.</p>
 					</div>
-					<div class="slider-holder" id="slider_holder1">
+          <div class="slider-holder" id="slider_holder1">
 						<h2>date de début / date de fin</h2>
-						<input type="text" class="js-range-slider1" name="my_range1" value="" />
+            <input type="text" class="js-range-slider1" name="my_range1" value="" />
+            <span class="leftpaddle1" id="leftpaddle1-1">+</span>
+            <span class="leftpaddle2" id="leftpaddle2-1">-</span>
+            <span class="rightpaddle1" id="rightpaddle1-2">+</span>
+            <span class="rightpaddle2" id="rightpaddle2-2">-</span>
 					</div>
 					<div class="slider-holder" id="slider_holder2">
 						<h2>heure de début</h2>
+            <span class="leftpaddle" id="leftpaddle2">-</span>
+            <span class="rightpaddle" id="rightpaddle2">+</span>
 						<input type="text" class="js-range-slider2" name="my_range2" value="" />
 					</div>
 					<div class="slider-holder" id="slider_holder3">
 						<h2>heure de fin</h2>
+            <span class="leftpaddle" id="leftpaddle3">-</span>
+            <span class="rightpaddle" id="rightpaddle3">+</span>
 						<input type="text" class="js-range-slider3" name="my_range3" value="" />
 					</div>
 					<div class="slider-holder" id="slider_holder4">
@@ -283,7 +291,7 @@
 								<textarea rows="5" cols="30" id="description"></textarea>
 							</div>
 						</div>
-						
+
 						<div class="label-row">
 							<label for="invites" class="label" id="modifinputinvites">
 								<img src="images/utilisateur.png">invites
@@ -314,7 +322,7 @@
 					<input type="hidden" name="datestart" id="modif_datestart" value="">
 					<input type="hidden" name="dateend" id="modif_dateend" value="">
 				</div>
-				
+
 			</div>
 			<div class="nav-holder"></div>
 			<div class="btn-bottom-holder">
@@ -324,8 +332,8 @@
 		</main>
 		<a href="" data-prefetch id="invisible_link"></a>
 	</div>
-    
-    
-	
+
+
+
 </body>
 </html>
