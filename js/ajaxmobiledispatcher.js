@@ -1436,6 +1436,9 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                             my_range1.update({
                                 from: my_stepfrom1
                             });
+                            $(document).on('touchmove', function() {
+                                console.log('Touch Move');
+                            });
                         };
 
                         var updateRangeTo1 = function (direction) {
