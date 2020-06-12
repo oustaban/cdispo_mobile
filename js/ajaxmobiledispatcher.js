@@ -1404,7 +1404,7 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                         $('#leftpaddle1-1').on("touchstart", function(e) {
                             $(this).addClass('highlight');
                             mytimeout1 = setInterval(function(){
-                                console.log('clicked');
+                                console.log('touchstart');
                                 updateRangeFrom1(+1);
                             }, 100);
                             return false;
@@ -1412,6 +1412,7 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
 
                         $('#leftpaddle1-1').on("touchend", function(e) {
                             $(this).removeClass('highlight');
+                            console.log('touchend');
                             clearInterval(mytimeout1);
                             return false;
                         });
