@@ -1118,6 +1118,7 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                             var my_from1 = myvalues.indexOf(parseInt(result.dateStartBooking));
                         }
 
+                        var my_stepfrom1 = my_from1;
                         var my_to1 = myvalues.indexOf(parseInt(result.dateEndBooking));
                         //var my_to1 = myvalues.length-1;
 
@@ -1196,10 +1197,11 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
 
 
                         var my_from1 = myvalues1.indexOf(timecode[indexStart1][0]);
-                        var my_step1 = my_from1;
+                        var my_stepfrom1 = my_from1;
                         //var my_from1 = myvalues1.indexOf(timecode[indexStart1][indexStart2]);
 
                         var my_to1 = myvalues1.indexOf(timecode[indexEnd1][0]);
+                        var my_stepto1 = my_to1;
                         //var my_to1 = myvalues.length-1;
                         //var my_to1 = myvalues1.indexOf(timecode[indexEnd1][indexEnd2]);
 
@@ -1224,12 +1226,13 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                                             console.log('from found');
                                             indexStart1 = index3;
                                             indexStart2 = index4;
-                                            my_step1 = index3;
+                                            my_stepfrom1 = index3;
                                         }
                                         if (timecode[index3][index4] ==  data.to_value) {
                                             //console.log('to found');
                                             indexEnd1 = index3;
                                             indexEnd2 = index4;
+                                            my_stepto1 = index3;
                                         }
                                     }
                                 }
@@ -1242,6 +1245,7 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
 
                                 my_from2 = myvalues2.indexOf(timecode[indexStart1][indexStart2]);
                                 var end2 = timecode[indexStart1].length-1;
+                                var my_stepfrom2 = my_from2;
 
                                 my_range2.update({
                                     grid: false,
@@ -1266,6 +1270,7 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
 
                                 var my_from3 = myvalues3.indexOf(timecode[indexEnd1][indexEnd2]);
                                 var end3 = timecode[indexEnd1].length-1;
+                                var my_stepfrom3 = my_from3;
 
                                 my_range3.update({
                                     grid: false,
@@ -1315,6 +1320,7 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                         }
 
                         var my_from2 = myvalues2.indexOf(timecode[indexStart1][indexStart2]);
+                        var my_stepfrom2 = my_fromé;
 
                        $(".js-range-slider2").ionRangeSlider({
                             onUpdate: function (data) {
@@ -1356,6 +1362,7 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                         }
 
                         var my_from3 = myvalues3.indexOf(timecode[indexEnd1][indexEnd2]);
+                        var my_stepfrom3 = my_from3;
 
                        $(".js-range-slider3").ionRangeSlider({
                             onUpdate: function (data) {
@@ -1388,12 +1395,18 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                             values: myvalues3
                         });
 
-                        $('#leftpaddle1').click(function() {
+                        $('#leftpaddle1-1').click(function() {
+                          updateRangeFrom1(+1);
+                        });
+                        $('#leftpaddle2-1').click(function() {
                           updateRangeFrom1(-1);
                         });
 
-                        $('#rightpaddle1').click(function() {
+                        $('#leftpaddle2-1').click(function() {
                           updateRangeTo1(+1);
+                        });
+                        $('#leftpaddle2-2').click(function() {
+                          updateRangeTo1(-1);
                         });
 
                         $('#leftpaddle2').click(function() {
@@ -1413,58 +1426,52 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                         });
 
                         var updateRangeFrom1 = function (direction) {
-                            console.log('updateRangeFrom1:'+my_step1);
-                            my_step1 = parseInt(my_step1)+direction;
-                            if (my_step1 < 0) {
-                                my_step1 = 0;
-                            } else if (my_step1 > index) {
-                                my_step1 = index;
+                            my_stepfrom1 = parseInt(my_stepfrom1)+direction;
+                            if (my_stepfrom1 < 0) {
+                                my_stepfrom1 = 0;
+                            } else if (my_stepfrom1 > index) {
+                                my_stepfrom1 = index;
                             }
-                            console.log('updateRangeFrom1:'+my_step1);
                             my_range1.update({
-                                from: my_step1
+                                from: my_stepfrom1
                             });
                         };
 
                         var updateRangeTo1 = function (direction) {
-                            my_to1 += direction;
-                            if (my_to1 < 0) {
-                                my_to1 = 0;
-                            } else if (my_to1 > index) {
-                                my_to1 = index
+                            my_stepto1 = parseInt(my_stepto1)+direction;
+                            if (my_stepto1 < 0) {
+                                my_stepto1 = 0;
+                            } else if (my_stepto1 > index) {
+                                my_stepto1 = index;
                             }
-
                             my_range1.update({
-                                to: my_to1
+                                to: my_stepto1
                             });
                         };
 
                         var updateRangeFrom2 = function (direction) {
-                            my_from2 += direction;
-                            if (my_from2 < 0) {
-                                my_from2 = 0;
-                            } else if (my_from2 > end2) {
-                                my_from2 = end2;
+                            my_stepfrom2 = parseInt(my_stepfrom2)+direction;
+                            if (my_stepfrom2 < 0) {
+                                my_stepfrom2 = 0;
+                            } else if (my_stepfrom2 > end2) {
+                                my_stepfrom2 = end2;
                             }
-
                             my_range2.update({
-                                from: my_from2
+                                from: my_stepfrom2
                             });
                         };
 
                         var updateRangeFrom3 = function (direction) {
-                            my_from3 += direction;
-                            if (my_from3 < 0) {
-                                my_from3 = 0;
-                            } else if (my_from3 > end3) {
-                                my_from3 = end3;
+                            my_stepfrom3 = parseInt(my_stepfrom3)+direction;
+                            if (my_stepfrom3 < 0) {
+                                my_stepfrom3 = 0;
+                            } else if (my_stepfrom3 > end3) {
+                                my_stepfrom3 = end";
                             }
-
-                            my_range3.update({
-                                from: my_from3
+                            my_range".update({
+                                from: my_stepfrom3
                             });
                         };
-
                     }
                 }
 
