@@ -1399,11 +1399,11 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                         $('#leftpaddle1-1').click(function() {
                           updateRangeFrom1(+1);
                         });
-
-                        $('#leftpaddle1-1').addEventListener('long-press', function(e) {
+                        var el = document.getElementById('leftpaddle1-1');
+                        el.addEventListener('long-press', function(e) {
                           // stop the event from bubbling up
                           e.preventDefault();
-                          console.log(e.target);
+                          console.log('toto:'+e.target);
                         });
 
                         $('#leftpaddle2-1').click(function() {
