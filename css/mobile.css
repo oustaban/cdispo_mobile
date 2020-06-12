@@ -2540,6 +2540,7 @@ span.leftpaddle {
 	font-size: 20px;
 	border-radius: 5px;
 	border: 1px solid black;
+	-webkit-user-select: none;
 }
 
 span.leftpaddle1 {
@@ -2554,6 +2555,7 @@ span.leftpaddle1 {
 	font-size: 20px;
 	border-radius: 5px;
 	border: 1px solid black;
+	-webkit-user-select: none;
 }
 
 span.leftpaddle2 {
@@ -2568,6 +2570,7 @@ span.leftpaddle2 {
 	font-size: 20px;
 	border-radius: 5px;
 	border: 1px solid black;
+	-webkit-user-select: none;
 }
 
 span.rightpaddle {
@@ -2582,6 +2585,7 @@ span.rightpaddle {
 	font-size: 20px;
 	border-radius: 5px;
 	border: 1px solid black;
+	-webkit-user-select: none;
 }
 
 span.rightpaddle1 {
@@ -2596,6 +2600,7 @@ span.rightpaddle1 {
 	font-size: 20px;
 	border-radius: 5px;
 	border: 1px solid black;
+	-webkit-user-select: none;
 }
 
 span.rightpaddle2 {
@@ -2610,6 +2615,7 @@ span.rightpaddle2 {
 	font-size: 20px;
 	border-radius: 5px;
 	border: 1px solid black;
+	-webkit-user-select: none;
 }
 
 @media (min-width: 480px) {
