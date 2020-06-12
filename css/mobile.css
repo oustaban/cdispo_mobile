@@ -2591,7 +2591,7 @@ span.rightpaddle1 {
 	height: 20px;
 	line-height: 14px;
 	float: left;
-	eft: calc(100% - 35px);;
+	left: calc(100% - 35px);
 	top: 18px;
 	font-size: 20px;
 	border-radius: 5px;
@@ -2605,7 +2605,7 @@ span.rightpaddle2 {
 	height: 20px;
 	line-height: 14px;
 	float: left;
-	left: calc(100% - 45px);
+	left: calc(100% - 55px);
 	top: 40px;
 	font-size: 20px;
 	border-radius: 5px;
