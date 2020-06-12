@@ -1120,6 +1120,7 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
 
                         var my_stepfrom1 = my_from1;
                         var my_to1 = myvalues.indexOf(parseInt(result.dateEndBooking));
+                        var my_stepto1 = my_to1;
                         //var my_to1 = myvalues.length-1;
 
                         $(".js-range-slider1").ionRangeSlider({
@@ -1196,12 +1197,12 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
 
 
 
-                        var my_from1 = myvalues1.indexOf(timecode[indexStart1][0]);
-                        var my_stepfrom1 = my_from1;
+                        my_from1 = myvalues1.indexOf(timecode[indexStart1][0]);
+                        my_stepfrom1 = my_from1;
                         //var my_from1 = myvalues1.indexOf(timecode[indexStart1][indexStart2]);
 
                         var my_to1 = myvalues1.indexOf(timecode[indexEnd1][0]);
-                        var my_stepto1 = my_to1;
+                        my_stepto1 = my_to1;
                         //var my_to1 = myvalues.length-1;
                         //var my_to1 = myvalues1.indexOf(timecode[indexEnd1][indexEnd2]);
 
@@ -1320,7 +1321,7 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                         }
 
                         var my_from2 = myvalues2.indexOf(timecode[indexStart1][indexStart2]);
-                        var my_stepfrom2 = my_fromé;
+                        my_stepfrom2 = my_from2;
 
                        $(".js-range-slider2").ionRangeSlider({
                             onUpdate: function (data) {
@@ -1362,7 +1363,7 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                         }
 
                         var my_from3 = myvalues3.indexOf(timecode[indexEnd1][indexEnd2]);
-                        var my_stepfrom3 = my_from3;
+                        my_stepfrom3 = my_from3;
 
                        $(".js-range-slider3").ionRangeSlider({
                             onUpdate: function (data) {
@@ -1466,7 +1467,7 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                             if (my_stepfrom3 < 0) {
                                 my_stepfrom3 = 0;
                             } else if (my_stepfrom3 > end3) {
-                                my_stepfrom3 = end";
+                                my_stepfrom3 = end3;
                             }
                             my_range".update({
                                 from: my_stepfrom3
