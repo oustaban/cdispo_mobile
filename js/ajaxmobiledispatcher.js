@@ -1469,7 +1469,7 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                             } else if (my_stepfrom3 > end3) {
                                 my_stepfrom3 = end3;
                             }
-                            my_range".update({
+                            my_range3.update({
                                 from: my_stepfrom3
                             });
                         };
