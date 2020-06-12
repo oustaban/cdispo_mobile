@@ -1396,25 +1396,8 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                             values: myvalues3
                         });
 
-                        $('#leftpaddle1-1').click(function() {
-                          updateRangeFrom1(+1);
-                        });
-
-                        var mytimeout1;
                         $('#leftpaddle1-1').on("touchstart touchmove", function(e) {
-                            e.preventDefault();
-                            $(this).addClass('highlight');
-                            mytimeout1 = setInterval(function(){
-                                console.log('touchstart');
-                                updateRangeFrom1(+1);
-                            }, 100);
-                        });
-
-                        $('#leftpaddle1-1').on("touchend touchcancel", function(e) {
-                            e.preventDefault();
-                            $(this).removeClass('highlight');
-                            console.log('touchend');
-                            clearInterval(mytimeout1);
+                          updateRangeFrom1(+1);
                         });
 
                         $('#leftpaddle2-1').click(function() {
