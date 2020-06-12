@@ -2550,7 +2550,7 @@ span.leftpaddle1 {
 	line-height: 15px;
 	float: left;
 	left: -25px;
-	top: 10px;
+	top: 18px;
 	font-size: 20px;
 	border-radius: 5px;
 	border: 1px solid black;
@@ -2563,8 +2563,8 @@ span.leftpaddle2 {
 	height: 20px;
 	line-height: 15px;
 	float: left;
-	left: -25px;
-	top: 30px;
+	left: -45px;
+	top: 40px;
 	font-size: 20px;
 	border-radius: 5px;
 	border: 1px solid black;
@@ -2592,7 +2592,7 @@ span.rightpaddle1 {
 	line-height: 14px;
 	float: right;
 	left: 25px;
-	top: 10px;
+	top: 18px;
 	font-size: 20px;
 	border-radius: 5px;
 	border: 1px solid black;
@@ -2605,8 +2605,8 @@ span.rightpaddle2 {
 	height: 20px;
 	line-height: 14px;
 	float: right;
-	left: 25px;
-	top: 30px;
+	left: 45px;
+	top: 40px;
 	font-size: 20px;
 	border-radius: 5px;
 	border: 1px solid black;
