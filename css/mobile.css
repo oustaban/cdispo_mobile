@@ -1477,17 +1477,17 @@ textarea:focus {
 .slider-holder .irs--big {
 	height:75px;
 }
-#slider-holder1 .irs--big .irs-min, .irs--big .irs-max {
+#slider-holder1 .irs--big .irs-min, #slider-holder1 .irs--big .irs-max {
 	top:-15px;
 }
-#slider-holder1 .irs-from, .irs-to, .irs-single {
+#slider-holder1 .irs-from, #slider-holder1 .irs-to, .irs-single {
 	top:-15px;
 }
 
-#slider-holder2 .irs--big .irs-min, .irs--big .irs-max, #slider-holder3 .irs--big .irs-min, .irs--big .irs-max {
+#slider-holder2 .irs--big .irs-min, #slider-holder2 .irs--big .irs-max, #slider-holder3 .irs--big .irs-min, #slider-holder3 .irs--big .irs-max {
 	top:-5px;
 }
-#slider-holder2 .irs-from, .irs-to, .irs-single,#slider-holder3 .irs-from, .irs-to, .irs-single {
+#slider-holder2 .irs-from, #slider-holder2 .irs-to, .irs-single,#slider-holder3 .irs-from, #slider-holder3 .irs-to, .irs-single {
 	top:-5px;
 }
 
