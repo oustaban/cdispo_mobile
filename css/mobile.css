@@ -1412,7 +1412,8 @@ textarea:focus {
 .modification-block h2, .modification-block2 h2 {
 	font-size: 13px;
 	display: block;
-	margin-bottom: 10px;
+	margin-bottom: 20px;
+	white-space: nowrap;
 }
 
 .modification-block h2 span, .modification-block2 h2 span {
@@ -2553,7 +2554,7 @@ span.leftpaddle {
 	line-height: 15px;
 	float: left;
 	left: -35px;
-	top: 20px;
+	top: -55px;
 	font-size: 20px;
 	border-radius: 5px;
 	border: 1px solid black;
@@ -2600,8 +2601,8 @@ span.rightpaddle {
 	height: 20px;
 	line-height: 14px;
 	float: right;
-	left: 25px;
-	top: 20px;
+	left: 35px;
+	top: -55px;
 	font-size: 20px;
 	border-radius: 5px;
 	border: 1px solid black;
