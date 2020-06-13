@@ -1407,12 +1407,12 @@ textarea:focus {
 }
 .message-block .input-col {
 	width:100%;
-	padding-top:10px;
+	padding-top:20px;
 }
 .modification-block h2, .modification-block2 h2 {
 	font-size: 13px;
 	display: block;
-	margin-bottom: 5px;
+	margin-bottom: 10px;
 }
 
 .modification-block h2 span, .modification-block2 h2 span {
@@ -1470,8 +1470,25 @@ textarea:focus {
 
 .modification-block .slider-holder, .modification-block2 .slider-holder {
 	border-top: 1px solid white;
-	padding: 25px 31px 8px;
+	padding: 10px 31px 8px;
 	margin: 0 -13px;
+}
+
+.slider-holder .irs--big {
+	height:75px;
+}
+#slider-holder1 .irs--big .irs-min, .irs--big .irs-max {
+	top:-15px;
+}
+#slider-holder1 .irs-from, .irs-to, .irs-single {
+	top:-15px;
+}
+
+#slider-holder2 .irs--big .irs-min, .irs--big .irs-max, #slider-holder3 .irs--big .irs-min, .irs--big .irs-max {
+	top:-5px;
+}
+#slider-holder2 .irs-from, .irs-to, .irs-single,#slider-holder3 .irs-from, .irs-to, .irs-single {
+	top:-5px;
 }
 
 #slider_holder4 {
@@ -2535,12 +2552,13 @@ span.leftpaddle {
 	height: 20px;
 	line-height: 15px;
 	float: left;
-	left: -25px;
-	top: 30px;
+	left: -35px;
+	top: 20px;
 	font-size: 20px;
 	border-radius: 5px;
 	border: 1px solid black;
 	-webkit-user-select: none;
+	margin:10px;
 }
 
 span.leftpaddle1 {
@@ -2550,12 +2568,13 @@ span.leftpaddle1 {
 	height: 20px;
 	line-height: 15px;
 	float: left;
-	left: -25px;
-	top: -38px;
+	left: -35px;
+	top: -75px;
 	font-size: 20px;
 	border-radius: 5px;
 	border: 1px solid black;
 	-webkit-user-select: none;
+	margin:10px;
 }
 
 span.leftpaddle2 {
@@ -2565,12 +2584,13 @@ span.leftpaddle2 {
 	height: 20px;
 	line-height: 15px;
 	float: left;
-	left: -45px;
-	top: -15px;
+	left: -75px;
+	top: -35px;
 	font-size: 20px;
 	border-radius: 5px;
 	border: 1px solid black;
 	-webkit-user-select: none;
+	margin:10px;
 }
 
 span.rightpaddle {
@@ -2581,11 +2601,12 @@ span.rightpaddle {
 	line-height: 14px;
 	float: right;
 	left: 25px;
-	top: 30px;
+	top: 20px;
 	font-size: 20px;
 	border-radius: 5px;
 	border: 1px solid black;
 	-webkit-user-select: none;
+	margin:10px;
 }
 
 span.rightpaddle1 {
@@ -2595,12 +2616,13 @@ span.rightpaddle1 {
 	height: 20px;
 	line-height: 14px;
 	float: right;
-	left: 25px;
-	top: -38px;
+	left: 35px;
+	top: -75px;
 	font-size: 20px;
 	border-radius: 5px;
 	border: 1px solid black;
 	-webkit-user-select: none;
+	margin:10px;
 }
 
 span.rightpaddle2 {
@@ -2610,12 +2632,13 @@ span.rightpaddle2 {
 	height: 20px;
 	line-height: 14px;
 	float: right;
-	left: 45px;
-	top: -15px;
+	left: 75px;
+	top: -35px;
 	font-size: 20px;
 	border-radius: 5px;
 	border: 1px solid black;
 	-webkit-user-select: none;
+	margin:10px;
 }
 
 span.highlight {
