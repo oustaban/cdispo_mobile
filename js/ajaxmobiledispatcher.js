@@ -1247,6 +1247,8 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                         my_stepto1 = my_to1;
                         //var my_to1 = myvalues.length-1;
                         //var my_to1 = myvalues1.indexOf(timecode[indexEnd1][indexEnd2]);
+                        my_range2 = $(".js-range-slider2").data("ionRangeSlider");
+                        my_range3 = $(".js-range-slider3").data("ionRangeSlider");
 
 
                         $(".js-range-slider1").ionRangeSlider({
@@ -1454,7 +1456,7 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                             }
                         });
 
-                        my_range2 = $(".js-range-slider2").data("ionRangeSlider");
+                        //my_range2 = $(".js-range-slider2").data("ionRangeSlider");
                         var end2 = timecode[indexStart1].length-1;
 
                         my_range2.update({
@@ -1497,7 +1499,7 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                             }
                         });
 
-                        my_range3 = $(".js-range-slider3").data("ionRangeSlider");
+                        //my_range3 = $(".js-range-slider3").data("ionRangeSlider");
                         var end3 = timecode[indexEnd1].length-1;
 
 
@@ -2301,7 +2303,8 @@ function createMyBooking(event_id,category,ressourceid,datestart,dateend,udatest
                         my_stepto1 = my_to1;
                         //var my_to1 = myvalues.length-1;
 
-
+                        my_range2 = $(".js-range-slider2").data("ionRangeSlider");
+                        my_range3 = $(".js-range-slider3").data("ionRangeSlider");
 
 
 
@@ -2513,7 +2516,7 @@ function createMyBooking(event_id,category,ressourceid,datestart,dateend,udatest
                             }
                         });
 
-                        my_range2 = $(".js-range-slider2").data("ionRangeSlider");
+                        //my_range2 = $(".js-range-slider2").data("ionRangeSlider");
                         var end2 = timecode[indexStart1].length-1;
 
                         my_range2.update({
@@ -2557,7 +2560,7 @@ function createMyBooking(event_id,category,ressourceid,datestart,dateend,udatest
                             }
                         });
 
-                        my_range3 = $(".js-range-slider3").data("ionRangeSlider");
+                        //my_range3 = $(".js-range-slider3").data("ionRangeSlider");
                         var end3 = timecode[indexEnd1].length-1;
 
 
