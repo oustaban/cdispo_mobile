@@ -2549,97 +2549,97 @@ a#invisible_link {
 span.leftpaddle {
 	display: block;
 	position: relative;
-	width: 20px;
-	height: 20px;
-	line-height: 15px;
+	width: 25px;
+	height: 25px;
+	line-height: 18px;
 	float: left;
-	left: -35px;
-	top: -55px;
-	font-size: 20px;
+	left: -32px;
+	top: -52px;
+	font-size: 30px;
 	border-radius: 5px;
 	border: 1px solid black;
 	-webkit-user-select: none;
-	margin:10px;
+	margin:5px;
 }
 
 span.leftpaddle1 {
 	display: block;
 	position: relative;
-	width: 20px;
-	height: 20px;
-	line-height: 15px;
+	width: 25px;
+	height: 25px;
+	line-height: 19px;
 	float: left;
-	left: -35px;
-	top: -75px;
-	font-size: 20px;
+	left: -32px;
+	top: -70px;
+	font-size: 25px;
 	border-radius: 5px;
 	border: 1px solid black;
 	-webkit-user-select: none;
-	margin:10px;
+	margin:5px;
 }
 
 span.leftpaddle2 {
 	display: block;
 	position: relative;
-	width: 20px;
-	height: 20px;
-	line-height: 15px;
+	width: 25px;
+	height: 25px;
+	line-height: 18px;
 	float: left;
-	left: -75px;
-	top: -35px;
-	font-size: 20px;
+	left: -69px;
+	top: -38px;
+	font-size: 30px;
 	border-radius: 5px;
 	border: 1px solid black;
 	-webkit-user-select: none;
-	margin:10px;
+	margin:5px;
 }
 
 span.rightpaddle {
 	display: block;
 	position: relative;
-	width: 20px;
-	height: 20px;
-	line-height: 14px;
+	width: 25px;
+	height: 25px;
+	line-height: 19px;
 	float: right;
-	left: 35px;
+	left: 32px;
 	top: -55px;
-	font-size: 20px;
+	font-size: 25px;
 	border-radius: 5px;
 	border: 1px solid black;
 	-webkit-user-select: none;
-	margin:10px;
+	margin:5px;
 }
 
 span.rightpaddle1 {
 	display: block;
 	position: relative;
-	width: 20px;
-	height: 20px;
-	line-height: 14px;
+	width: 25px;
+	height: 25px;
+	line-height: 19px;
 	float: right;
-	left: 35px;
-	top: -75px;
-	font-size: 20px;
+	left: 31px;
+	top: -70px;
+	font-size: 25px;
 	border-radius: 5px;
 	border: 1px solid black;
 	-webkit-user-select: none;
-	margin:10px;
+	margin:5px;
 }
 
 span.rightpaddle2 {
 	display: block;
 	position: relative;
-	width: 20px;
-	height: 20px;
-	line-height: 14px;
+	width: 25px;
+	height: 25px;
+	line-height: 18px;
 	float: right;
-	left: 75px;
-	top: -35px;
-	font-size: 20px;
+	left: 66px;
+	top: -38px;
+	font-size: 30px;
 	border-radius: 5px;
 	border: 1px solid black;
 	-webkit-user-select: none;
-	margin:10px;
+	margin:5px;
 }
 
 span.highlight {
