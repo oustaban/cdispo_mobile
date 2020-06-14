@@ -1481,14 +1481,14 @@ textarea:focus {
 #slider_holder1 .irs--big .irs-min, #slider_holder1 .irs--big .irs-max {
 	top:-15px;
 }
-#slider_holder1 .irs-from, #slider_holder1 .irs-to, .irs-single {
+#slider_holder1 .irs-from, #slider_holder1 .irs-to, #slider_holder1 .irs-single {
 	top:-15px;
 }
 
 #slider_holder2 .irs--big .irs-min, #slider_holder2 .irs--big .irs-max, #slider_holder3 .irs--big .irs-min, #slider_holder3 .irs--big .irs-max {
 	top:-5px;
 }
-#slider_holder2 .irs-from, #slider_holder2 .irs-to, .irs-single,#slider_holder3 .irs-from, #slider_holder3 .irs-to, .irs-single {
+#slider_holder2 .irs-from, #slider_holder2 .irs-to, .irs-single,#slider_holder3 .irs-from, #slider_holder3 .irs-to, #slider_holder3 .irs-single {
 	top:-5px;
 }
 
