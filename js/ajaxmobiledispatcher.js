@@ -1128,6 +1128,8 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                                 $('.main-slider').hide();$('.nav-holder').hide();
                                 $('.nav-holder').hide();
                                 $('.modification-block').show();
+                                $('#modif_datestart').val(data.from_value);
+                                $('#modif_dateend').val(data.to_value);
                             },
                             onFinish: function (data) {
                                 var invites=$('.users').map(function(){
@@ -1164,6 +1166,46 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                         if (!result.firstEditable) {
                             my_range1.update({from_fixed: true});
                         }
+
+                        $('#leftpaddle1-1').on("touchstart touchmove", function(e) {
+                          updateRangeFrom1(+1);
+                        });
+
+                        $('#leftpaddle2-1').click(function() {
+                          updateRangeFrom1(-1);
+                        });
+
+                        $('#rightpaddle1-2').click(function() {
+                          updateRangeTo1(+1);
+                        });
+                        $('#rightpaddle2-2').click(function() {
+                          updateRangeTo1(-1);
+                        });
+
+                        var updateRangeFrom1 = function (direction) {
+                            my_stepfrom1 = parseInt(my_stepfrom1)+direction;
+                            if (my_stepfrom1 < 0) {
+                                my_stepfrom1 = 0;
+                            } else if (my_stepfrom1 > index) {
+                                my_stepfrom1 = index;
+                            }
+                            my_range1.update({
+                                from: my_stepfrom1
+                            });
+
+                        };
+
+                        var updateRangeTo1 = function (direction) {
+                            my_stepto1 = parseInt(my_stepto1)+direction;
+                            if (my_stepto1 < 0) {
+                                my_stepto1 = 0;
+                            } else if (my_stepto1 > index) {
+                                my_stepto1 = index;
+                            }
+                            my_range1.update({
+                                to: my_stepto1
+                            });
+                        };
 
                     //Dans le cas ou la plage est sur plus  d'1 jour => 3 slider (jours,heure debut, heure fin)
                     } else {
@@ -1439,6 +1481,8 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                             my_range1.update({
                                 from: my_stepfrom1
                             });
+
+
                         };
 
                         var updateRangeTo1 = function (direction) {
@@ -2096,6 +2140,45 @@ function createMyBooking(event_id,category,ressourceid,datestart,dateend,udatest
                         if (!result.firstEditable) {
                             my_range1.update({from_fixed: true});
                         }
+
+                        $('#leftpaddle1-1').on("touchstart touchmove", function(e) {
+                          updateRangeFrom1(+1);
+                        });
+
+                        $('#leftpaddle2-1').click(function() {
+                          updateRangeFrom1(-1);
+                        });
+
+                        $('#rightpaddle1-2').click(function() {
+                          updateRangeTo1(+1);
+                        });
+                        $('#rightpaddle2-2').click(function() {
+                          updateRangeTo1(-1);
+                        });
+
+                        var updateRangeFrom1 = function (direction) {
+                            my_stepfrom1 = parseInt(my_stepfrom1)+direction;
+                            if (my_stepfrom1 < 0) {
+                                my_stepfrom1 = 0;
+                            } else if (my_stepfrom1 > index) {
+                                my_stepfrom1 = index;
+                            }
+                            my_range1.update({
+                                from: my_stepfrom1
+                            });
+                        };
+
+                        var updateRangeTo1 = function (direction) {
+                            my_stepto1 = parseInt(my_stepto1)+direction;
+                            if (my_stepto1 < 0) {
+                                my_stepto1 = 0;
+                            } else if (my_stepto1 > index) {
+                                my_stepto1 = index;
+                            }
+                            my_range1.update({
+                                to: my_stepto1
+                            });
+                        };
 
                     //Dans le cas ou la plage est sur plus  d'1 jour => 3 slider (jours,heure debut, heure fin)
                     } else {
