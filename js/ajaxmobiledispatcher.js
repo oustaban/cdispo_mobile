@@ -1247,6 +1247,96 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                         my_stepto1 = my_to1;
                         //var my_to1 = myvalues.length-1;
                         //var my_to1 = myvalues1.indexOf(timecode[indexEnd1][indexEnd2]);
+
+
+                        $(".js-range-slider1").ionRangeSlider({
+                            onUpdate: function (data) {
+                                $('.main-slider').hide();$('.nav-holder').hide();
+                                $('.nav-holder').hide();
+                                $('.modification-block').show();
+                                $('#modif_datestart').val(data.from_value);
+                                $('#modif_dateend').val(data.to_value);
+                            },
+
+                            onFinish: function (data) {
+
+                                myvalues2 = [];
+                                myvalues3 = [];
+
+
+                                for(let index3 in timecode) {
+                                    for(let index4 in timecode[index3]) {
+                                        //console.log('Timecode:'+index3+'/'+index4+'/'+timecode[index3][index4]);
+                                        if (timecode[index3][index4] ==  data.from_value) {
+                                            console.log('from found');
+                                            indexStart1 = index3;
+                                            indexStart2 = index4;
+                                            my_stepfrom1 = index3;
+                                        }
+                                        if (timecode[index3][index4] ==  data.to_value) {
+                                            //console.log('to found');
+                                            indexEnd1 = index3;
+                                            indexEnd2 = index4;
+                                            my_stepto1 = index3;
+                                        }
+                                    }
+                                }
+
+                                //console.log('Index:'+data.from_value+'/'+data.to_value+':'+indexStart1+'/'+indexStart2+':'+indexEnd1+'/'+indexEnd2);
+
+                                for(var index5 in timecode[indexStart1]) {
+                                    myvalues2.push(timecode[indexStart1][index5]);
+                                }
+
+                                my_from2 = myvalues2.indexOf(timecode[indexStart1][indexStart2]);
+                                var end2 = timecode[indexStart1].length-1;
+                                var my_stepfrom2 = my_from2;
+
+                                my_range2.update({
+                                    grid: false,
+                                    grid_snap: true,
+                                    grid_num: 4,
+                                    min: timecode[indexStart1][0],
+                                    max: timecode[indexStart1][end2],
+                                    from: my_from2,
+                                    step: step,
+                                    skin: "big",
+                                    decorate_both: true,
+                                    drag_interval: true,
+                                    prettify: my_prettify3,
+                                    values: myvalues2
+                                });
+
+                                $('#modif_datestart').val(timecode[indexStart1][indexStart2]);
+
+                                for(var index6 in timecode[indexEnd1]) {
+                                    myvalues3.push(timecode[indexEnd1][index6]);
+                                }
+
+                                var my_from3 = myvalues3.indexOf(timecode[indexEnd1][indexEnd2]);
+                                var end3 = timecode[indexEnd1].length-1;
+                                var my_stepfrom3 = my_from3;
+
+                                my_range3.update({
+                                    grid: false,
+                                    grid_snap: true,
+                                    grid_num: 4,
+                                    min: timecode[indexEnd1][0],
+                                    max: timecode[indexEnd1][end3],
+                                    from: my_from3,
+                                    step: step,
+                                    skin: "big",
+                                    decorate_both: true,
+                                    drag_interval: true,
+                                    prettify: my_prettify3,
+                                    values: myvalues3
+                                });
+
+                                $('#modif_dateend').val(timecode[indexEnd1][indexEnd2]);
+
+                            }
+                        });
+
                         my_range1 = $(".js-range-slider1").data("ionRangeSlider");
 
                         my_range1.update({
@@ -1434,170 +1524,9 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                                 from: my_stepfrom3
                             });
                         };
-
-
-                        $(".js-range-slider1").ionRangeSlider({
-                            onUpdate: function (data) {
-                                $('.main-slider').hide();
-                                $('.nav-holder').hide();
-                                $('.nav-holder').hide();
-                                $('.modification-block').show();
-
-                                myvalues2 = [];
-                                myvalues3 = [];
-
-
-                                for(let index3 in timecode) {
-                                    for(let index4 in timecode[index3]) {
-                                        //console.log('Timecode:'+index3+'/'+index4+'/'+timecode[index3][index4]);
-                                        if (timecode[index3][index4] ==  data.from_value) {
-                                            console.log('from found');
-                                            indexStart1 = index3;
-                                            indexStart2 = index4;
-                                            my_stepfrom1 = index3;
-                                        }
-                                        if (timecode[index3][index4] ==  data.to_value) {
-                                            //console.log('to found');
-                                            indexEnd1 = index3;
-                                            indexEnd2 = index4;
-                                            my_stepto1 = index3;
-                                        }
-                                    }
-                                }
-
-                                //console.log('Index:'+data.from_value+'/'+data.to_value+':'+indexStart1+'/'+indexStart2+':'+indexEnd1+'/'+indexEnd2);
-
-                                for(var index5 in timecode[indexStart1]) {
-                                    myvalues2.push(timecode[indexStart1][index5]);
-                                }
-
-                                my_from2 = myvalues2.indexOf(timecode[indexStart1][indexStart2]);
-                                var end2 = timecode[indexStart1].length-1;
-                                var my_stepfrom2 = my_from2;
-
-                                my_range2.update({
-                                    grid: false,
-                                    grid_snap: true,
-                                    grid_num: 4,
-                                    min: timecode[indexStart1][0],
-                                    max: timecode[indexStart1][end2],
-                                    from: my_from2,
-                                    step: step,
-                                    skin: "big",
-                                    decorate_both: true,
-                                    drag_interval: true,
-                                    prettify: my_prettify3,
-                                    values: myvalues2
-                                });
-
-                                $('#modif_datestart').val(timecode[indexStart1][indexStart2]);
-
-                                for(var index6 in timecode[indexEnd1]) {
-                                    myvalues3.push(timecode[indexEnd1][index6]);
-                                }
-
-                                var my_from3 = myvalues3.indexOf(timecode[indexEnd1][indexEnd2]);
-                                var end3 = timecode[indexEnd1].length-1;
-                                var my_stepfrom3 = my_from3;
-
-                                my_range3.update({
-                                    grid: false,
-                                    grid_snap: true,
-                                    grid_num: 4,
-                                    min: timecode[indexEnd1][0],
-                                    max: timecode[indexEnd1][end3],
-                                    from: my_from3,
-                                    step: step,
-                                    skin: "big",
-                                    decorate_both: true,
-                                    drag_interval: true,
-                                    prettify: my_prettify3,
-                                    values: myvalues3
-                                });
-
-                                $('#modif_dateend').val(timecode[indexEnd1][indexEnd2]);
-                            },
-
-                            onFinish: function (data) {
-
-                                myvalues2 = [];
-                                myvalues3 = [];
-
-
-                                for(let index3 in timecode) {
-                                    for(let index4 in timecode[index3]) {
-                                        //console.log('Timecode:'+index3+'/'+index4+'/'+timecode[index3][index4]);
-                                        if (timecode[index3][index4] ==  data.from_value) {
-                                            console.log('from found');
-                                            indexStart1 = index3;
-                                            indexStart2 = index4;
-                                            my_stepfrom1 = index3;
-                                        }
-                                        if (timecode[index3][index4] ==  data.to_value) {
-                                            //console.log('to found');
-                                            indexEnd1 = index3;
-                                            indexEnd2 = index4;
-                                            my_stepto1 = index3;
-                                        }
-                                    }
-                                }
-
-                                //console.log('Index:'+data.from_value+'/'+data.to_value+':'+indexStart1+'/'+indexStart2+':'+indexEnd1+'/'+indexEnd2);
-
-                                for(var index5 in timecode[indexStart1]) {
-                                    myvalues2.push(timecode[indexStart1][index5]);
-                                }
-
-                                my_from2 = myvalues2.indexOf(timecode[indexStart1][indexStart2]);
-                                var end2 = timecode[indexStart1].length-1;
-                                var my_stepfrom2 = my_from2;
-
-                                my_range2.update({
-                                    grid: false,
-                                    grid_snap: true,
-                                    grid_num: 4,
-                                    min: timecode[indexStart1][0],
-                                    max: timecode[indexStart1][end2],
-                                    from: my_from2,
-                                    step: step,
-                                    skin: "big",
-                                    decorate_both: true,
-                                    drag_interval: true,
-                                    prettify: my_prettify3,
-                                    values: myvalues2
-                                });
-
-                                $('#modif_datestart').val(timecode[indexStart1][indexStart2]);
-
-                                for(var index6 in timecode[indexEnd1]) {
-                                    myvalues3.push(timecode[indexEnd1][index6]);
-                                }
-
-                                var my_from3 = myvalues3.indexOf(timecode[indexEnd1][indexEnd2]);
-                                var end3 = timecode[indexEnd1].length-1;
-                                var my_stepfrom3 = my_from3;
-
-                                my_range3.update({
-                                    grid: false,
-                                    grid_snap: true,
-                                    grid_num: 4,
-                                    min: timecode[indexEnd1][0],
-                                    max: timecode[indexEnd1][end3],
-                                    from: my_from3,
-                                    step: step,
-                                    skin: "big",
-                                    decorate_both: true,
-                                    drag_interval: true,
-                                    prettify: my_prettify3,
-                                    values: myvalues3
-                                });
-
-                                $('#modif_dateend').val(timecode[indexEnd1][indexEnd2]);
-
-                            }
-                        });
                     }
                 }
+
             }
 
             console.log('editBooking success');
@@ -2300,8 +2229,7 @@ function createMyBooking(event_id,category,ressourceid,datestart,dateend,udatest
                         my_stepto1 = my_to1;
                         //var my_to1 = myvalues.length-1;
 
-                        my_range2 = $(".js-range-slider2").data("ionRangeSlider");
-                        my_range3 = $(".js-range-slider3").data("ionRangeSlider");
+
 
 
 
@@ -2312,80 +2240,8 @@ function createMyBooking(event_id,category,ressourceid,datestart,dateend,udatest
                                 $('.nav-holder').hide();
                                 $('.modification-block2').hide();
                                 $('.modification-block').show();
-
-                                myvalues2 = [];
-                                myvalues3 = [];
-
-                                for(let index3 in timecode) {
-                                    for(let index4 in timecode[index3]) {
-                                        //console.log('Timecode:'+index3+'/'+index4+'/'+timecode[index3][index4]);
-                                        if (timecode[index3][index4] ==  data.from_value) {
-                                            console.log('from found');
-                                            indexStart1 = index3;
-                                            indexStart2 = index4;
-                                        }
-                                        if (timecode[index3][index4] ==  data.to_value) {
-                                            //console.log('to found');
-                                            indexEnd1 = index3;
-                                            indexEnd2 = index4;
-                                        }
-                                    }
-                                }
-
-                                //console.log('Index:'+data.from_value+'/'+data.to_value+':'+indexStart1+'/'+indexStart2+':'+indexEnd1+'/'+indexEnd2);
-
-                                for(var index5 in timecode[indexStart1]) {
-                                    myvalues2.push(timecode[indexStart1][index5]);
-                                }
-
-                                my_from2 = myvalues2.indexOf(timecode[indexStart1][indexStart2]);
-                                var my_stepfrom2 = my_from2;
-                                var end2 = timecode[indexStart1].length-1;
-
-                                my_range2.update({
-                                    grid: false,
-                                    grid_snap: true,
-                                    grid_num: 4,
-                                    min: timecode[indexStart1][0],
-                                    max: timecode[indexStart1][end2],
-                                    from: my_from2,
-                                    step: step,
-                                    skin: "big",
-                                    decorate_both: true,
-                                    drag_interval: true,
-                                    prettify: my_prettify3,
-                                    values: myvalues2
-                                });
-
-                                $('#modif_datestart').val(timecode[indexStart1][indexStart2]);
-                                //$('#btn_modifynow').attr('onclick','checkCreateBooking('+event_id+','+$('#modif_datestart').val()+','+$('#modif_dateend').val()+',\''+fe_typo_user+'\',\''+action+'\','+ressourceId+',\''+category2+'\')');
-
-                                //console.log(timecode[indexStart1][indexStart2]);
-
-                                for(var index6 in timecode[indexEnd1]) {
-                                    myvalues3.push(timecode[indexEnd1][index6]);
-                                }
-
-                                var my_from3 = myvalues3.indexOf(timecode[indexEnd1][indexEnd2]);
-                                var my_stepfrom3 = my_from3;
-                                var end3 = timecode[indexEnd1].length-1;
-
-                                my_range3.update({
-                                    grid: false,
-                                    grid_snap: true,
-                                    grid_num: 4,
-                                    min: timecode[indexEnd1][0],
-                                    max: timecode[indexEnd1][end3],
-                                    from: my_from3,
-                                    step: step,
-                                    skin: "big",
-                                    decorate_both: true,
-                                    drag_interval: true,
-                                    prettify: my_prettify3,
-                                    values: myvalues3
-                                });
-
-                                $('#modif_dateend').val(timecode[indexEnd1][indexEnd2]);
+                                $('#modif_datestart').val(data.from_value);
+                                $('#modif_dateend').val(data.to_value);
                             },
 
                             onFinish: function (data) {
@@ -2513,7 +2369,7 @@ function createMyBooking(event_id,category,ressourceid,datestart,dateend,udatest
                             }
                         });
 
-                        //my_range2 = $(".js-range-slider2").data("ionRangeSlider");
+                        my_range2 = $(".js-range-slider2").data("ionRangeSlider");
                         var end2 = timecode[indexStart1].length-1;
 
                         my_range2.update({
@@ -2557,7 +2413,7 @@ function createMyBooking(event_id,category,ressourceid,datestart,dateend,udatest
                             }
                         });
 
-                        //my_range3 = $(".js-range-slider3").data("ionRangeSlider");
+                        my_range3 = $(".js-range-slider3").data("ionRangeSlider");
                         var end3 = timecode[indexEnd1].length-1;
 
 
