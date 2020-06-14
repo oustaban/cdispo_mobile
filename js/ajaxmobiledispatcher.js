@@ -1285,7 +1285,6 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                                 my_from2 = myvalues2.indexOf(timecode[indexStart1][indexStart2]);
                                 var end2 = timecode[indexStart1].length-1;
                                 var my_stepfrom2 = my_from2;
-                                my_range2 = $(".js-range-slider2").data("ionRangeSlider");
 
                                 my_range2.update({
                                     grid: false,
@@ -1311,8 +1310,7 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                                 var my_from3 = myvalues3.indexOf(timecode[indexEnd1][indexEnd2]);
                                 var end3 = timecode[indexEnd1].length-1;
                                 var my_stepfrom3 = my_from3;
-                                my_range3 = $(".js-range-slider3").data("ionRangeSlider");
-                                
+
                                 my_range3.update({
                                     grid: false,
                                     grid_snap: true,
@@ -1410,7 +1408,9 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                             }
                         });
 
-
+                        my_range2 = $(".js-range-slider2").data("ionRangeSlider");
+                        my_range3 = $(".js-range-slider3").data("ionRangeSlider");
+                        sleep(1);
                         my_range1 = $(".js-range-slider1").data("ionRangeSlider");
 
                         my_range1.update({
@@ -6641,4 +6641,9 @@ function my_prettify3 (n) {
         var num =  moment(parseInt(n),'X');
         var formattedDate = num.format("LT");
         return formattedDate;
+}
+
+function sleep(seconds){
+  var waitUntil = new Date().getTime() + seconds*1000;
+  while(new Date().getTime() < waitUntil) true;
 }
