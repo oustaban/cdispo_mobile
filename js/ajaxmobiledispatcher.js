@@ -1254,6 +1254,8 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                                 $('.main-slider').hide();$('.nav-holder').hide();
                                 $('.nav-holder').hide();
                                 $('.modification-block').show();
+                                $('#modif_datestart').val(data.from_value);
+                                $('#modif_dateend').val(data.to_value);
                             },
 
                             onFinish: function (data) {
@@ -1370,6 +1372,7 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                                 $('.main-slider').hide();$('.nav-holder').hide();
                                 $('.nav-holder').hide();
                                 $('.modification-block').show();
+                                $('#modif_datestart').val(data.from_value);
                             },
                             onFinish: function (data) {
 
@@ -1413,6 +1416,7 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                                 $('.main-slider').hide();$('.nav-holder').hide();
                                 $('.nav-holder').hide();
                                 $('.modification-block').show();
+                                $('#modif_dateend').val(data.from_value);
                             },
                             onFinish: function (data) {
                                 $('#modif_dateend').val(data.from_value);
@@ -2108,6 +2112,8 @@ function createMyBooking(event_id,category,ressourceid,datestart,dateend,udatest
                                 $('.nav-holder').hide();
                                 $('.modification-block2').hide();
                                 $('.modification-block').show();
+                                $('#modif_datestart').val(data.from_value);
+                                $('#modif_dateend').val(data.to_value);
                             },
                             onFinish: function (data) {
                                 $('#modif_datestart').val(data.from_value);
@@ -2234,6 +2240,8 @@ function createMyBooking(event_id,category,ressourceid,datestart,dateend,udatest
                                 $('.nav-holder').hide();
                                 $('.modification-block2').hide();
                                 $('.modification-block').show();
+                                $('#modif_datestart').val(data.from_value);
+                                $('#modif_dateend').val(data.to_value);
                             },
 
                             onFinish: function (data) {
@@ -2352,6 +2360,7 @@ function createMyBooking(event_id,category,ressourceid,datestart,dateend,udatest
                                 $('.nav-holder').hide();
                                 $('.modification-block2').hide();
                                 $('.modification-block').show();
+                                $('#modif_datestart').val(data.from_value);
                             },
                             onFinish: function (data) {
                                 $('#modif_datestart').val(data.from_value);
@@ -2395,6 +2404,7 @@ function createMyBooking(event_id,category,ressourceid,datestart,dateend,udatest
                                 $('.nav-holder').hide();
                                 $('.modification-block2').hide();
                                 $('.modification-block').show();
+                                $('#modif_dateend').val(data.from_value);
                             },
                             onFinish: function (data) {
                                 $('#modif_dateend').val(data.from_value);
