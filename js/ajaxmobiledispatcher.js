@@ -1080,11 +1080,14 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
 
                 if (!result.firstEditable && !result.lastEditable) {
 
-                    $('.main-slider').hide();$('.nav-holder').hide();
+                    $('.main-slider').hide();
+                    $('.nav-holder').hide();
                     $('.nav-holder').hide();
                     $('#slider_holder1').hide();
                     $('#slider_holder2').hide();
                     $('#slider_holder3').hide();
+                    $('.modification-block').hide();
+
                     $('.modification-block').show();
 
                 } else {
@@ -1126,7 +1129,8 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
 
                         $(".js-range-slider1").ionRangeSlider({
                             onUpdate: function (data) {
-                                $('.main-slider').hide();$('.nav-holder').hide();
+                                $('.main-slider').hide();
+                                $('.nav-holder').hide();
                                 $('.nav-holder').hide();
                                 $('.modification-block').show();
                                 $('#modif_datestart').val(data.from_value);
@@ -1252,7 +1256,8 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
 
                         $(".js-range-slider1").ionRangeSlider({
                             onUpdate: function (data) {
-                                $('.main-slider').hide();$('.nav-holder').hide();
+                                $('.main-slider').hide();
+                                $('.nav-holder').hide();
                                 $('.nav-holder').hide();
                                 $('.modification-block').show();
                                 $('#modif_datestart').val(data.from_value);
@@ -1367,9 +1372,10 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
 
                         var my_from2 = myvalues2.indexOf(timecode[indexStart1][indexStart2]);
                         my_stepfrom2 = my_from2;
+
                         $('#modif_datestart').val(timecode[indexStart1][indexStart2]);
 
-                       $(".js-range-slider2").ionRangeSlider({
+                        $(".js-range-slider2").ionRangeSlider({
                             onUpdate: function (data) {
                                 $('.main-slider').hide();$('.nav-holder').hide();
                                 $('.nav-holder').hide();
