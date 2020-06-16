@@ -1367,6 +1367,7 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
 
                         var my_from2 = myvalues2.indexOf(timecode[indexStart1][indexStart2]);
                         my_stepfrom2 = my_from2;
+                        $('#modif_datestart').val(timecode[indexStart1][indexStart2]);
 
                        $(".js-range-slider2").ionRangeSlider({
                             onUpdate: function (data) {
