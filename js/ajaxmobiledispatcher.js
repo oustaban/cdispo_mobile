@@ -1082,13 +1082,14 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
 
                     $('.main-slider').hide();
                     $('.nav-holder').hide();
-                    $('.nav-holder').hide();
                     $('#slider_holder1').hide();
                     $('#slider_holder2').hide();
                     $('#slider_holder3').hide();
                     $('.modification-block').hide();
+                    setTimeout(function(){
+                      $('.modification-block').show();
+                    }, 1000); 
 
-                    $('.modification-block').show();
 
                 } else {
 
