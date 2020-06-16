@@ -1114,6 +1114,7 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
 
                         if (parseInt(result.dateStartBooking) < timecode[0][0]) {
                             var my_from1 = 0;
+                            $('#modif_datestart').val(timecode[0][0]);
                         } else {
                             var my_from1 = myvalues.indexOf(parseInt(result.dateStartBooking));
                         }
