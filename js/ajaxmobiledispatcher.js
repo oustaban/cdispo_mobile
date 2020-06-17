@@ -1086,9 +1086,11 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                     $('#slider_holder2').hide();
                     $('#slider_holder3').hide();
                     $('.modification-block').hide();
+                    $('#modif_datestart').val(result.dateStartBooking);
+                    $('#modif_dateend').val(result.dateEndBooking);
                     setTimeout(function(){
                       $('.modification-block').show();
-                    }, 1000); 
+                    }, 1000);
 
 
                 } else {
