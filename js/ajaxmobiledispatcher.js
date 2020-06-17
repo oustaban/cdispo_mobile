@@ -1122,7 +1122,10 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
 
                         if (parseInt(result.dateStartBooking) < timecode[0][0]) {
                             var my_from1 = 0;
-                            $('#modif_datestart').val(timecode[0][0]);
+                            if (result.firstEditable)
+                                $('#modif_datestart').val(timecode[0][0]);
+                            else
+                                $('#modif_datestart').val(result.dateStartBooking);
                         } else {
                             var my_from1 = myvalues.indexOf(parseInt(result.dateStartBooking));
                         }
@@ -1318,7 +1321,10 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                                     values: myvalues2
                                 });
 
-                                $('#modif_datestart').val(timecode[indexStart1][indexStart2]);
+                                if (result.firstEditable)
+                                  $('#modif_datestart').val(timecode[indexStart1][indexStart2]);
+                                else
+                                  $('#modif_datestart').val(result.dateStartBooking);
 
                                 for(var index6 in timecode[indexEnd1]) {
                                     myvalues3.push(timecode[indexEnd1][index6]);
@@ -1378,7 +1384,10 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                         var my_from2 = myvalues2.indexOf(timecode[indexStart1][indexStart2]);
                         my_stepfrom2 = my_from2;
 
-                        $('#modif_datestart').val(timecode[indexStart1][indexStart2]);
+                        if (result.firstEditable)
+                          $('#modif_datestart').val(timecode[indexStart1][indexStart2]);
+                        else
+                          $('#modif_datestart').val(result.dateStartBooking);
 
                         $(".js-range-slider2").ionRangeSlider({
                             onUpdate: function (data) {
