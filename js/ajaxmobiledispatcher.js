@@ -1141,7 +1141,10 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                                 $('.nav-holder').hide();
                                 $('.nav-holder').hide();
                                 $('.modification-block').show();
-                                $('#modif_datestart').val(data.from_value);
+                                if (result.firstEditable)
+                                    $('#modif_datestart').val(data.from_value);
+                                else
+                                    $('#modif_datestart').val(result.dateStartBooking);
                                 $('#modif_dateend').val(data.to_value);
                             },
                             onFinish: function (data) {
@@ -1151,7 +1154,10 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                                 var invitesemail=$('.usersemail').map(function(){
                                     return $(this).val()
                                 }).get();
-                                $('#modif_datestart').val(data.from_value);
+                                if (result.firstEditable)
+                                    $('#modif_datestart').val(data.from_value);
+                                else
+                                    $('#modif_datestart').val(result.dateStartBooking);
                                 $('#modif_dateend').val(data.to_value);
 
                             }
@@ -1268,7 +1274,10 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                                 $('.nav-holder').hide();
                                 $('.nav-holder').hide();
                                 $('.modification-block').show();
-                                $('#modif_datestart').val(data.from_value);
+                                if (result.firstEditable)
+                                    $('#modif_datestart').val(data.from_value);
+                                else
+                                    $('#modif_datestart').val(result.dateStartBooking);
                                 $('#modif_dateend').val(data.to_value);
                             },
 
@@ -1394,11 +1403,17 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                                 $('.main-slider').hide();$('.nav-holder').hide();
                                 $('.nav-holder').hide();
                                 $('.modification-block').show();
-                                $('#modif_datestart').val(data.from_value);
+                                if (result.firstEditable)
+                                    $('#modif_datestart').val(data.from_value);
+                                else
+                                    $('#modif_datestart').val(result.dateStartBooking);
                             },
                             onFinish: function (data) {
 
-                                $('#modif_datestart').val(data.from_value);
+                              if (result.firstEditable)
+                                  $('#modif_datestart').val(data.from_value);
+                              else
+                                  $('#modif_datestart').val(result.dateStartBooking);
                                 my_stepfrom2 = data.from;
 
                             }
