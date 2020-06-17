@@ -1074,8 +1074,10 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                 if (result.infosup) {
                     $('#modification_texte2').html(result.infosup);
                     $('.warning-block').show();
+                    $('.title-block').hide();
                 } else {
                     $('.warning-block').hide();
+                    $('.title-block').show();
                 }
 
                 if (!result.firstEditable && !result.lastEditable) {
