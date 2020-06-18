@@ -2396,6 +2396,7 @@ a.tooltip4 {
 	right: -1px;
 	justify-content: center;
 	bottom:53px;
+	padding:0;
 }
 
 span#autre_motif {
@@ -2643,6 +2644,10 @@ span.rightpaddle2 {
 span.highlight {
 	background-color: #fff2ac;
 	background-image: linear-gradient(to right, #ffe359 0%, #fff2ac 100%);
+}
+
+p.withoutpadding {
+	margin:0px;
 }
 
 @media (min-width: 480px) {
