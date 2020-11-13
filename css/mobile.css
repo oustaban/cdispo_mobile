@@ -2584,7 +2584,7 @@ span.leftpaddle2 {
 	height: 25px;
 	line-height: 18px;
 	float: left;
-	left: -69px;
+	left: -67px;
 	top: -38px;
 	font-size: 30px;
 	border-radius: 5px;
@@ -2792,6 +2792,10 @@ p.withoutpadding {
 		letter-spacing: normal;
 
 	}
+
+	#wrapper #main #backtoshare {
+		bottom:53px;
+	}	
 }
 
 @media (min-width: 768px) {
