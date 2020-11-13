@@ -2794,7 +2794,8 @@ p.withoutpadding {
 	}
 
 	#wrapper #main #backtoshare {
-		bottom:53px;
+		bottom:20px;
+		max-width:642px;
 	}	
 }
 
