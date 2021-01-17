@@ -5778,7 +5778,7 @@ function SearchForm(fe_typo_user,args) {
 }
 
 
-function SearchResult(fe_typo_user,args,indexSlide) {
+function SearchResult(fe_typo_user,args,indexSlide,plan) {
 
     var L = window.localStorage.getItem("language");
     var lang = window.localStorage.getItem("lang");
@@ -5791,7 +5791,7 @@ function SearchResult(fe_typo_user,args,indexSlide) {
           dataType: "jsonp",
           jsonp: 'callback',
           jsonpCallback: 'cdispoToken',
-          data: {action:"searchResult",fe_typo_user:fe_typo_user,parameters:args},
+          data: {action:"searchResult",fe_typo_user:fe_typo_user,parameters:args,plan:plan},
 
           success: function(result) {
 
