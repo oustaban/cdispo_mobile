@@ -3238,3 +3238,12 @@ p.withoutpadding {
 span.red {
 	color:red;
 }
+
+#btn_search_plan {
+	display:none;
+}
+
+div.panzoom-container2 {
+    width: 100%;
+	heigt:245px;
+}
