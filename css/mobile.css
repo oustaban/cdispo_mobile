@@ -3245,5 +3245,12 @@ span.red {
 
 div.panzoom-container2 {
     width: 100%;
-	heigt:245px;
+	height:245px;
+}
+
+img.blue-marker,img.green-marker {
+    width:5px;
+    position:absolute;
+    left:0;
+    top:0;
 }
