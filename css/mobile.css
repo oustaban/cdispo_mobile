@@ -3248,7 +3248,7 @@ div.panzoom-container2 {
 	height:245px;
 }
 
-img.blue-marker,img.green-marker,img.red-marker, {
+img.blue-marker,img.green-marker,img.red-marker {
     width:5px;
     position:absolute;
     left:0;
