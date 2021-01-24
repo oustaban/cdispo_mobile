@@ -3254,3 +3254,7 @@ img.blue-marker,img.green-marker,img.red-marker {
     left:0;
     top:0;
 }
+
+.slick-slider { 
+	touchAction: "auto"
+}
