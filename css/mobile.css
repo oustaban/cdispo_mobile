@@ -3258,3 +3258,12 @@ img.blue-marker,img.green-marker,img.red-marker {
 .slick-slider { 
 	touchAction: "auto"
 }
+
+
+div.planlocalisation {
+	position:absolute;
+	font-size: 15px;
+	color: #fff;
+	text-align: center;
+	font-weight: bold;
+}

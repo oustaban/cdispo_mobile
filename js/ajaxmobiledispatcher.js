@@ -5755,6 +5755,7 @@ function SearchForm(fe_typo_user,args) {
                     $('.info-block').show();
                     $('#backtoshare').hide();
                     $('.loader2').hide();
+                    $('.planlocalisation').html('');
 
                 }
 
@@ -5766,6 +5767,7 @@ function SearchForm(fe_typo_user,args) {
                     $('.modification-block2').show();
                     $('#backtoshare').hide();
                     $('.loader2').hide();
+                    $('.planlocalisation').html('');
 
                 }
           },
@@ -5816,6 +5818,7 @@ function SearchResult(fe_typo_user,args,indexSlide,plan) {
                     $('.modification-block').hide();
                     $('.modification-block2').hide();
                     $('.info-block').show();
+                    $('.planlocalisation').html('');
                     result.ok = 0;
 
                 }
@@ -5881,6 +5884,7 @@ function SearchResult(fe_typo_user,args,indexSlide,plan) {
                         $('.modification-block').hide();
                         $('.modification-block2').hide();
                         $('.info-block').show();
+                        $('.planlocalisation').html('');
                     }
                 }
 
