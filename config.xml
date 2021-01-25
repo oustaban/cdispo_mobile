@@ -215,7 +215,9 @@
 
     <preference name="cordova-custom-config-autorestore" value="true" />
     
-    
+    <gap:config-file overwrite="true" parent="NSLocationWhenInUseUsageDescription" platform="ios">
+      <string> your custom text here</string>
+    </gap:config-file>
     
     <gap:config-file platform="ios" parent="CFBundleDocumentTypes" mode="add">
         <array>
