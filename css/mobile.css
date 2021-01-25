@@ -3161,6 +3161,10 @@ p.withoutpadding {
 	.prewiewsharing_title a {
 		font-size: 18px;
 	}
+	div.planlocalisation {
+		font-size: 20px;
+		top:30px;
+	}
 }
 
 @media (min-width: 1024px) {
@@ -3184,10 +3188,7 @@ p.withoutpadding {
 		font-size: 20px;
 	}
 
-	div.planlocalisation {
-		font-size: 20px;
-		top:30px;
-	}
+	
 }
 
 @media (max-width: 767px) {
