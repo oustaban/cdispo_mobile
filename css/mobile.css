@@ -3183,6 +3183,11 @@ p.withoutpadding {
 	.active-position {
 		font-size: 20px;
 	}
+
+	div.planlocalisation {
+		font-size: 20px;
+		top:30px;
+	}
 }
 
 @media (max-width: 767px) {
