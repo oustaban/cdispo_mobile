@@ -73,12 +73,14 @@
         <config-file parent="UIStatusBarHidden" platform="ios" target="*-Info.plist"><true/></config-file>
         <config-file parent="UIViewControllerBasedStatusBarAppearance" platform="ios" target="*-Info.plist"><false/></config-file>
         
-        <config-file parent="NSLocationWhenInUseUsageDescription" platform="ios" target="*-Info.plist" mode="merge">
-          <string>[Custom message to show to user]</string>
-        </config-file>
-        <config-file parent="NSLocationAlwaysUsageDescription" platform="ios" target="*-Info.plist" mode="merge">
-          <string>[Custom message to show to user]</string>
-        </config-file>
+        
+
+        <edit-config file="*-Info.plist" mode="merge" target="NSLocationWhenInUseUsageDescription">
+            <string>To locate me</string>
+        </edit-config>
+        <edit-config file="*-Info.plist" mode="merge" target="NSLocationAlwaysUsageDescription">
+            <string>To locate me</string>
+        </edit-config>
 
 
         <config-file platform="ios" target="*-Info.plist" parent="CFBundleLocalizations" mode="replace">
