@@ -90,7 +90,11 @@
         
         <allow-navigation href="mailto:*" launch-external="yes"/>
         <allow-navigation href="tel:*" launch-external="yes"/>  
-    
+
+        <feature name="Geolocation">
+          <param name="ios-package" value="CDVLocation" />
+        </feature>
+
     </platform>
     
     <platform name="android">
@@ -134,6 +138,9 @@
             <uses-permission android:name="android.permission.CAMERA" />
             <uses-feature android:name="android.hardware.camera" />
             <uses-feature android:name="android.hardware.camera.autofocus" />
+            <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+            <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+            <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
         </config-file>
     
         <config-file platform="android" parent="/manifest">
@@ -215,9 +222,7 @@
 
     <preference name="cordova-custom-config-autorestore" value="true" />
     
-    <gap:config-file overwrite="true" parent="NSLocationWhenInUseUsageDescription" platform="ios">
-      <string> your custom text here</string>
-    </gap:config-file>
+    
     
     <gap:config-file platform="ios" parent="CFBundleDocumentTypes" mode="add">
         <array>
