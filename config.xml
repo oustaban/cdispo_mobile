@@ -174,6 +174,7 @@
     <plugin name="cordova-plugin-settings-hook" source="npm" spec="0.3.1" />
     <plugin name="cordova-plugin-keyboard" source="npm" spec="1.2.0" />
     <plugin name="skwas-cordova-plugin-datetimepicker" source="npm" spec="2.0.1" />
+    <plugin name="cordova-plugin-geolocation" source="npm" spec="4.1.0" />
     <!--<plugin name="skwas-cordova-plugin-datetimepicker" spec="https://github.com/skwasjer/skwas-cordova-plugin-datetimepicker.git#40957043012325ffca51d6ec4c846ff5f9cb24bd" />-->
     
     
