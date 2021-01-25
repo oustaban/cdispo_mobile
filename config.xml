@@ -76,10 +76,10 @@
         
 
         <edit-config file="*-Info.plist" mode="merge" target="NSLocationWhenInUseUsageDescription">
-            <string>To locate me</string>
+            <string>Pour vous localiser sur les plans</string>
         </edit-config>
         <edit-config file="*-Info.plist" mode="merge" target="NSLocationAlwaysUsageDescription">
-            <string>To locate me</string>
+            <string>Pour vous localiser sur les plans</string>
         </edit-config>
 
 
