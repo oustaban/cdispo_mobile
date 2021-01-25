@@ -6013,13 +6013,14 @@ function getDispo2(fe_typo_user,ressourceId,category,action,index,args) {
                 }
 
                 console.log('success getDispo2');
-
+                $('.planlocalisation').html('');
                 $('#scan_title').html(result.title);
                 $('.loader2').hide();
           },
           error: function(error) {
             console.log('nok getDispo2');
             console.log(error);
+            $('.planlocalisation').html('');
             $('.loader2').hide();
           }
     });
