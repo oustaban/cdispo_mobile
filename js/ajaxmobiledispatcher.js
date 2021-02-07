@@ -38,6 +38,8 @@ function getBooking(fe_typo_user,action,indexSlide) {
 						$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
 					}
 
+                    $('.planlocalisation').html('');
+
                     $('.main-slider').hide();
                     $('.nav-holder').hide();
                     $('.modification-block').hide();
@@ -90,6 +92,7 @@ function getBooking(fe_typo_user,action,indexSlide) {
                         $('#btn_cancel').hide();
                         $('.info-block').show();
                     }
+                    $('.planlocalisation').html('');
 
                 } else {
 
@@ -205,6 +208,7 @@ function getPreviewRessource(ressourceId,categoryRessource,fe_typo_user,from) {
                     }
                     $('#btn_cancel').text('');
                     $('#btn_cancel').attr('onclick','');
+                    $('.planlocalisation').html('');
 
                     $('.main-slider').hide();
                     $('.nav-holder').hide();
@@ -229,6 +233,7 @@ function getPreviewRessource(ressourceId,categoryRessource,fe_typo_user,from) {
 
                     $('#btn_cancel').text('');
                     $('#btn_cancel').attr('onclick','');
+                    $('.planlocalisation').html('');
                     //if (from == "getBooking")
                         //$('#btn_close').attr('onclick','getBooking(\''+fe_typo_user+'\',\'refresh\',0)');
 
@@ -255,7 +260,7 @@ function getPreviewRessource(ressourceId,categoryRessource,fe_typo_user,from) {
                     
                     if (result.plan) {
                         $('#btn_cancel').text(trad['btn_geoloc']);
-                        $('#btn_cancel').attr('onclick','geolocRessource('+ressourceId+','+categoryRessource+','+fe_typo_user+')');
+                        $('#btn_cancel').attr('onclick','geolocRessource('+ressourceId+',\''+categoryRessource+'\',\''+fe_typo_user+'\',0)');
                     } else {
                         $('#btn_cancel').text('');
                         $('#btn_cancel').attr('onclick','');
@@ -268,7 +273,7 @@ function getPreviewRessource(ressourceId,categoryRessource,fe_typo_user,from) {
                          $('#btn_close').attr('onclick','$(\'.modification-block2\').hide();$(\'.info-block\').hide();$(\'.main-slider\').show();$(\'.nav-holder\').show();$(\'#backtoshare\').show();$(\'.modification_block\').hide()');
                     }
 
-
+                    $('.planlocalisation').html('');
                     $('.main-slider').hide();
                     $('.nav-holder').hide();
                     $('.modification-block').hide();
@@ -325,6 +330,10 @@ function getUserInfo(fe_typo_user,owner_id,from,booking_id,ressourceId,category,
 						$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
 					}
 
+                    $('#btn_cancel').text('');
+                    $('#btn_cancel').attr('onclick','');
+                    $('.planlocalisation').html('');
+
                     $('.main-slider').hide();
                     $('.nav-holder').hide();
                     $('.modification-block').hide();
@@ -345,6 +354,8 @@ function getUserInfo(fe_typo_user,owner_id,from,booking_id,ressourceId,category,
                     $('#btn_close').text(trad['btn_close']);
                     $('#btn_close').attr('onclick','$(\'.modification-block2\').hide();$(\'.modification-block\').hide();$(\'.message-block\').hide();$(\'.info-block\').hide();$(\'.main-slider\').show();$(\'.nav-holder\').show();');
                     $('#btn_cancel').text('');
+                    $('#btn_cancel').attr('onclick','');
+                    $('.planlocalisation').html('');
 
                     if (from == "getBooking" || from == "getBookingToConfirm" || from == "getInvitations" ) {
                          $('#btn_close').text(trad['sendmessageto']+' '+result.owner);
@@ -434,9 +445,14 @@ function getSiteInfo(site_id,referentiel_id,fe_typo_user,from) {
                         $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
                     } else {
 						$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
-					}
+                    }
+                    
+                    $('#btn_cancel').text('');
+                    $('#btn_cancel').attr('onclick','');
+                    $('.planlocalisation').html('');
 
-                    $('.main-slider').hide();$('.nav-holder').hide();
+                    $('.main-slider').hide();
+                    $('.nav-holder').hide();
                     $('.info-block').show();
 
                 }
@@ -457,7 +473,7 @@ function getSiteInfo(site_id,referentiel_id,fe_typo_user,from) {
                          $('#btn_close').attr('onclick','$(\'.modification-block2\').hide();$(\'.info-block\').hide();$(\'.main-slider\').show();$(\'.nav-holder\').show();$(\'#backtoshare\').show();$(\'.modification_block\').hide()');
                     }
 
-
+                    $('.planlocalisation').html('');
 
                     $('.main-slider').hide();
                     $('.nav-holder').hide();
@@ -517,6 +533,7 @@ function getVisibilityInfo(fe_typo_user,event_id,indexSlide) {
 						$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
 					}
 
+                    
                     $('.main-slider').hide();
                     $('.nav-holder').hide();
                     $('.modification-block').hide();
@@ -6511,6 +6528,134 @@ function getMyAccount(fe_typo_user,action) {
           },
           error: function(error) {
             console.log('nok getMyAccount');
+            console.log(error);
+            $('.loader2').hide();
+          }
+    });
+}
+
+function geolocRessource(ressourceId,categoryRessource,fe_typo_user,indexSlide) {
+
+    var L = window.localStorage.getItem("language");
+    var lang = window.localStorage.getItem("lang");
+    $('.loader2').show();
+    var domain = window.localStorage.getItem("domain");
+    var url = "http://"+domain+"/?type=476&tx_cdispofrontend_fcdispofrontend[controller]=Mobile&tx_cdispofrontend_fcdispofrontend[action]=dispatcher&tx_cdispofrontend_fcdispofrontend[uid]=1&L="+L;
+    $.ajax({
+          type: 'GET',
+          url:url,
+          dataType: "jsonp",
+          jsonp: 'callback',
+          jsonpCallback: 'cdispoToken',
+          data:{action:'geolocRessource',ressourceId:ressourceId,categoryRessource:categoryRessource,fe_typo_user:fe_typo_user},
+          
+          success: function(result) {
+
+                result.ok = 1;
+
+                if (result.deconnexion) {
+
+                    initPopin();
+                    $('.prewiewsharing_header').hide();
+                    $('.previewsharing_content').html('<p></p><p>'+result.deconnexion+'</p>');
+
+                    var url = window.location.href;
+					url = url.substring(0, url.lastIndexOf("/") + 1);
+                    window.localStorage.clear();
+                    if (device.platform == "Android") {
+                        $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
+                    } else {
+						$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
+					}
+                    $('#btn_cancel').text('');
+                    $('#btn_cancel').attr('onclick','');
+
+                    $('.main-slider').hide();
+                    $('.nav-holder').hide();
+                    $('.modification-block').hide();
+                    $('.modification-block2').hide();
+                    $('.info-block').show();
+                    $('.planlocalisation').html('');
+                    result.ok = 0;
+
+                }
+
+                if (result.result) {
+                    console.log('countslide:'+countslide);
+                     //window.clearAllIntervals();
+
+                     for (var i = 0; i < 1000; i++) {
+                        var varInterval = "x"+i;
+                        //window.clearInterval(varInterval);
+                        window.clearInterval(i);
+                     }
+
+                     $("div.slick-slide").each(function() {
+                        var i = $(this).attr("data-slick-index");
+                        $('.main-slider').slick('slickRemove',i);
+                     });
+
+
+                     $('.main-slider').show();
+                     $('.nav-holder').show();
+                     $('.info-block').hide();
+                     if (countslide > 0)
+                        $('.main-slider').slick('unslick');
+
+                    countslide = result.countslide;
+                    //console.log(countslide);
+                    //console.log(result.slide);
+                    if (countslide > 0) {
+                        $('.nav-holder').show();
+                        $('.modification-block').hide();
+                        $('.modification-block2').hide();
+                        $('.info-block').hide();
+                        $('.main-slider').html(result.slide);
+                        initSlickCarousel();
+                        $('.main-slider').show();
+                        if (indexSlide)
+                            $('.main-slider').slick('slickGoTo', indexSlide);
+                        $('#backtoshare').show();
+                        $('#backtosharelink').html(result.linktitle);
+                        $('#backtosharelink').attr('onclick','getBooking(\''+fe_typo_user+'\',\'refresh\',0)');
+                    } else {
+                        $('#backtoshare').hide();
+                        $('.prewiewsharing_header').hide();
+                        $('.previewsharing_content').html(result.content);
+                        $('#btn_close').attr('onclick','$(\'.main-slider\').hide();$(\'.info-block\').hide();$(\'.nav-holder\').hide();$(\'.modification-block\').hide();$(\'.modification-block2\').show()');
+                        $('#btn_cancel').text('');
+                        $('#btn_cancel').attr('onclick','');
+                        $('.main-slider').hide();
+                        $('.nav-holder').hide();
+                        $('.modification-block').hide();
+                        $('.modification-block2').hide();
+                        $('.info-block').show();
+                    }
+
+                } else {
+                    if (result.ok) {
+                        $('#backtoshare').hide();
+                        $('.prewiewsharing_header').hide();
+                        $('.previewsharing_content').html(result.content);
+                        $('#btn_close').attr('onclick','$(\'.main-slider\').hide();$(\'.info-block\').hide();$(\'.nav-holder\').hide();$(\'.modification-block\').hide();$(\'.modification-block2\').show()');
+                        $('#btn_cancel').text('');
+                        $('#btn_cancel').attr('onclick','');
+                        $('.main-slider').hide();
+                        $('.nav-holder').hide();
+                        $('.modification-block').hide();
+                        $('.modification-block2').hide();
+                        $('.info-block').show();
+                        $('.planlocalisation').html('');
+                    }
+                }
+
+                console.log('success geolocRessource');
+
+                $('#scan_title').html(result.title);
+                $('.loader2').hide();
+          },
+          error: function(error) {
+            console.log('nok geolocRessource');
             console.log(error);
             $('.loader2').hide();
           }
