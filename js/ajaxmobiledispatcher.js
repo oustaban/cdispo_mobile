@@ -39,6 +39,7 @@ function getBooking(fe_typo_user,action,indexSlide) {
 					}
 
                     $('.planlocalisation').html('');
+                    $('#backtoshare').hide();
 
                     $('.main-slider').hide();
                     $('.nav-holder').hide();
@@ -93,6 +94,7 @@ function getBooking(fe_typo_user,action,indexSlide) {
                         $('.info-block').show();
                     }
                     $('.planlocalisation').html('');
+                    $('#backtoshare').hide();
 
                 } else {
 
@@ -209,6 +211,7 @@ function getPreviewRessource(ressourceId,categoryRessource,fe_typo_user,from) {
                     $('#btn_cancel').text('');
                     $('#btn_cancel').attr('onclick','');
                     $('.planlocalisation').html('');
+                    $('#backtoshare').hide();
 
                     $('.main-slider').hide();
                     $('.nav-holder').hide();
@@ -234,6 +237,7 @@ function getPreviewRessource(ressourceId,categoryRessource,fe_typo_user,from) {
                     $('#btn_cancel').text('');
                     $('#btn_cancel').attr('onclick','');
                     $('.planlocalisation').html('');
+                    $('#backtoshare').hide();
                     //if (from == "getBooking")
                         //$('#btn_close').attr('onclick','getBooking(\''+fe_typo_user+'\',\'refresh\',0)');
 
@@ -450,6 +454,7 @@ function getSiteInfo(site_id,referentiel_id,fe_typo_user,from) {
                     $('#btn_cancel').text('');
                     $('#btn_cancel').attr('onclick','');
                     $('.planlocalisation').html('');
+                    $('#backtoshare').hide();
 
                     $('.main-slider').hide();
                     $('.nav-holder').hide();
@@ -6576,6 +6581,7 @@ function geolocRessource(ressourceId,categoryRessource,fe_typo_user,indexSlide) 
                     $('.modification-block2').hide();
                     $('.info-block').show();
                     $('.planlocalisation').html('');
+                    $('#backtoshare').hide();
                     result.ok = 0;
 
                 }
