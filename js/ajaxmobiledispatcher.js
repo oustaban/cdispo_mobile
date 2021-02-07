@@ -179,7 +179,7 @@ function initPopin() {
     $('#btn_close').attr('onclick','');
 }
 
-function getPreviewRessource(ressourceId,categoryRessource,fe_typo_user,from) {
+function getPreviewRessource(ressourceId,categoryRessource,fe_typo_user,from,indexSlide) {
     $('.loader2').show();
     var domain = window.localStorage.getItem("domain");
     var L = window.localStorage.getItem("language");
@@ -262,9 +262,9 @@ function getPreviewRessource(ressourceId,categoryRessource,fe_typo_user,from) {
                     $('#btn_close').text(trad['btn_close']);
                     $('#btn_close').attr('onclick','$(\'.modification-block2\').hide();$(\'.modification-block\').hide();$(\'.message-block\').hide();$(\'.info-block\').hide();$(\'.main-slider\').show();$(\'.nav-holder\').show();');
                     
-                    if (result.plan) {
+                    if (result.plan && from == "getBooking") {
                         $('#btn_cancel').text(trad['btn_geoloc']);
-                        $('#btn_cancel').attr('onclick','geolocRessource('+ressourceId+',\''+categoryRessource+'\',\''+fe_typo_user+'\',0)');
+                        $('#btn_cancel').attr('onclick','geolocRessource('+ressourceId+',\''+categoryRessource+'\',\''+fe_typo_user+'\','+indexSlide+')');
                     } else {
                         $('#btn_cancel').text('');
                         $('#btn_cancel').attr('onclick','');
@@ -6623,7 +6623,7 @@ function geolocRessource(ressourceId,categoryRessource,fe_typo_user,indexSlide) 
                             $('.main-slider').slick('slickGoTo', indexSlide);
                         $('#backtoshare').show();
                         $('#backtosharelink').html(result.linktitle);
-                        $('#backtosharelink').attr('onclick','getBooking(\''+fe_typo_user+'\',\'refresh\',0)');
+                        $('#backtosharelink').attr('onclick','getBooking(\''+fe_typo_user+'\',\'refresh\','+indexSlide+')');
                     } else {
                         $('#backtoshare').hide();
                         $('.prewiewsharing_header').hide();
