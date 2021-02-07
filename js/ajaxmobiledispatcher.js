@@ -202,8 +202,12 @@ function getPreviewRessource(ressourceId,categoryRessource,fe_typo_user,from) {
                         $('#btn_close').attr('onclick','$(\'#invisible_link\').attr(\'href\',\'index.html\');$("#invisible_link")[0].click()');
                     } else {
 						$('#btn_close').attr('onclick','cordova.InAppBrowser.open(\''+url+'index.html\', \'_self\')');
-					}
-                    $('.main-slider').hide();$('.nav-holder').hide();
+                    }
+                    $('#btn_cancel').text('');
+                    $('#btn_cancel').attr('onclick','');
+
+                    $('.main-slider').hide();
+                    $('.nav-holder').hide();
                     $('.info-block').show();
 
                 }
@@ -223,6 +227,8 @@ function getPreviewRessource(ressourceId,categoryRessource,fe_typo_user,from) {
                          $('#btn_close').attr('onclick','$(\'.modification-block2\').hide();$(\'.info-block\').hide();$(\'.main-slider\').show();$(\'.nav-holder\').show();$(\'#backtoshare\').show();$(\'.modification_block\').hide()');
                     }
 
+                    $('#btn_cancel').text('');
+                    $('#btn_cancel').attr('onclick','');
                     //if (from == "getBooking")
                         //$('#btn_close').attr('onclick','getBooking(\''+fe_typo_user+'\',\'refresh\',0)');
 
@@ -246,7 +252,14 @@ function getPreviewRessource(ressourceId,categoryRessource,fe_typo_user,from) {
 
                     $('#btn_close').text(trad['btn_close']);
                     $('#btn_close').attr('onclick','$(\'.modification-block2\').hide();$(\'.modification-block\').hide();$(\'.message-block\').hide();$(\'.info-block\').hide();$(\'.main-slider\').show();$(\'.nav-holder\').show();');
-                    $('#btn_cancel').text('');
+                    
+                    if (result.plan) {
+                        $('#btn_cancel').text(trad['btn_geoloc']);
+                        $('#btn_cancel').attr('onclick','geolocRessource('+ressourceId+','+categoryRessource+','+fe_typo_user+')');
+                    } else {
+                        $('#btn_cancel').text('');
+                        $('#btn_cancel').attr('onclick','');
+                    }
 
                     if (from == "getBooking" || from == "getBookingToConfirm" || from == "getInvitations" || from == "getSharing" ) {
                          $('#btn_close').attr('onclick','$(\'.modification-block2\').hide();$(\'.info-block\').hide();$(\'.main-slider\').show();$(\'.nav-holder\').show();$(\'#backtoshare\').hide();$(\'.modification_block\').hide()');

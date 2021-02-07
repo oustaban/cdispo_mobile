@@ -35,6 +35,7 @@
 	"btn_back":"Retour",
 	"btn_back2":"Retour",
 	"btn_send":"ENVOYER",
+	"btn_geoloc":"GEOLOCALISATION",
 	"sharing_title":"MES PARTAGES",
 	"noconnexion_text":"Cette apllication nécessite une connection internet",
 	"bookingevent_title":"RESERVATIONS<br/> SUR LE PARTAGE N°<span id=\"eventid\"></span>",
