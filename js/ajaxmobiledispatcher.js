@@ -1195,22 +1195,8 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                                     $('#modif_datestart').val(result.dateStartBooking);
                                 $('#modif_dateend').val(data.to_value);
 
-                                myvalues2 = [];
-                                myvalues3 = [];
-
-
-                                for(let index3 in timecode) {
-                                    for(let index4 in timecode[index3]) {
-                                        //console.log('Timecode:'+index3+'/'+index4+'/'+timecode[index3][index4]);
-                                        if (timecode[index3][index4] ==  data.from_value) {
-                                            my_stepfrom1 = index3;
-                                        }
-                                        if (timecode[index3][index4] ==  data.to_value) {
-                                            //console.log('to found');
-                                            my_stepto1 = index3;
-                                        }
-                                    }
-                                }
+                                my_stepfrom1 = data.from;
+                                my_stepto1 = data.to;
 
                             }
                         });
