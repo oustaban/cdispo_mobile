@@ -4643,6 +4643,7 @@ function getBookingEvent(fe_typo_user,eventId,action,indexSlide) {
                                 $('.main-slider').slick('slickGoTo', result.gotoSlide);
                             }
                         }
+                        $('#backtoshare').show();
                     } else {
                         $('.prewiewsharing_header').hide();
                         $('.previewsharing_content').html(result.content);
@@ -4653,6 +4654,7 @@ function getBookingEvent(fe_typo_user,eventId,action,indexSlide) {
                         $('#btn_close').hide();
                         $('#btn_cancel').hide();
                         $('.info-block').show();
+                        $('#backtoshare').hide();
                     }
                     $('#eventid2').text(eventId);
                     $('#eventid').text(eventId);
