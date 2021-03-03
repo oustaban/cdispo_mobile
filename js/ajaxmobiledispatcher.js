@@ -264,7 +264,7 @@ function getPreviewRessource(ressourceId,categoryRessource,fe_typo_user,from,ind
                     
                     if (result.plan && (from == "getBooking" || from == "getInvitations" || from == "getSharing" | from == "getBookingEvent" || from == "getBookingToConfirm" || from == "getScan")) {
                         $('#btn_cancel').text(trad['btn_geoloc']);
-                        $('#btn_cancel').attr('onclick','geolocRessource('+ressourceId+',\''+categoryRessource+'\',\''+fe_typo_user+'\','+indexSlide+')');
+                        $('#btn_cancel').attr('onclick','geolocRessource('+ressourceId+',\''+categoryRessource+'\',\''+fe_typo_user+'\','+indexSlide+','+from+')');
                     } else {
                         $('#btn_cancel').text('');
                         $('#btn_cancel').attr('onclick','');
@@ -6554,7 +6554,7 @@ function getMyAccount(fe_typo_user,action) {
     });
 }
 
-function geolocRessource(ressourceId,categoryRessource,fe_typo_user,indexSlide) {
+function geolocRessource(ressourceId,categoryRessource,fe_typo_user,indexSlide,from) {
 
     var L = window.localStorage.getItem("language");
     var lang = window.localStorage.getItem("lang");
@@ -6626,6 +6626,7 @@ function geolocRessource(ressourceId,categoryRessource,fe_typo_user,indexSlide) 
                     countslide = result.countslide;
                     //console.log(countslide);
                     //console.log(result.slide);
+
                     if (countslide > 0) {
                         $('.nav-holder').show();
                         $('.modification-block').hide();
@@ -6638,7 +6639,22 @@ function geolocRessource(ressourceId,categoryRessource,fe_typo_user,indexSlide) 
                             $('.main-slider').slick('slickGoTo', indexSlide);
                         $('#backtoshare').show();
                         $('#backtosharelink').html(result.linktitle);
-                        $('#backtosharelink').attr('onclick','getBooking(\''+fe_typo_user+'\',\'refresh\','+indexSlide+')');
+
+                        if (from == "getBooking")
+                            $('#backtosharelink').attr('onclick','getBooking(\''+fe_typo_user+'\',\'refresh\','+indexSlide+')');
+                        if (from == "getInvitations")
+                            $('#backtosharelink').attr('onclick','getInvitations(\''+fe_typo_user+'\',\'refresh\','+indexSlide+')');
+                        if (from == "getSharing")
+                            $('#backtosharelink').attr('onclick','getSharing(\''+fe_typo_user+'\',\'refresh\','+indexSlide+')');
+                        if (from == "getBookingToConfirm")
+                            $('#backtosharelink').attr('onclick','getBookingToConfirm(\''+fe_typo_user+'\',\'refresh\','+indexSlide+')');
+                        if (from == "getScan")
+                            $('#backtosharelink').attr('onclick','getScan(\''+fe_typo_user+'\',\'refresh\','+indexSlide+')'); 
+                        if (from == "getBookingToStart" || from == "getBookingToEnd" || from == "getBookingToGo")
+                            $('#backtosharelink').attr('onclick','getScan(\''+fe_typo_user+'\','+ressourceId+',\''+categoryRessource+'\',\'refresh\','+indexSlide+')');
+                        if (from == "getBookingEvent")
+                            $('#backtosharelink').attr('onclick','getBookingEvent(\''+fe_typo_user+'\','+ressourceId+',\'refresh\','+indexSlide+')');
+                        
                     } else {
                         $('#backtoshare').hide();
                         $('.prewiewsharing_header').hide();
