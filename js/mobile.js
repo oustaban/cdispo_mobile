@@ -199,9 +199,9 @@ function initSlickCarousel() {
 function relocateslider() {
 	if (($('.main-slider').offset().top + $('.main-slider').height()) > $('.nav-holder').offset().top) {
 		var margintop = parseInt($(".main-slider").css("margin-top")) - ($('.main-slider').offset().top - (($('.main-slider').offset().top + $('.main-slider').height()) - $('.nav-holder').offset().top));
-		$('.main-slider').css('margin-top',margintop+'px');
-		console.log('relocateslider:'+$('.main-slider').offset().top+'/'+$('.main-slider').height()+'/'+$('.nav-holder').offset().top+'/'+margintop);
 		
+		console.log('relocateslider:'+$('.main-slider').offset().top+'/'+$('.main-slider').height()+'/'+$('.nav-holder').offset().top+'/'+$(".main-slider").css("margin-top")+'/'+margintop);
+		$('.main-slider').css('margin-top',margintop+'px');
 
 	} 
 	
