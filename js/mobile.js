@@ -197,6 +197,11 @@ function initSlickCarousel() {
 }
 
 function relocateslider() {
+	if (($('.main-slider').offset().top + $('.main-slider').height()) > $('.nav-holder').offset().top) {
+		var margintop = $('.main-slider').offset().top - (($('.main-slider').offset().top + $('.main-slider').height()) - $('.nav-holder').offset().top);
+		$('.main-slider').css('margin-top',margintop+'px');
+
+	} 
 	
 }
 
