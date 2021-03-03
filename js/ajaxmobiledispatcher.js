@@ -264,7 +264,7 @@ function getPreviewRessource(ressourceId,categoryRessource,fe_typo_user,from,ind
                     
                     if (result.plan && (from == "getBooking" || from == "getInvitations" || from == "getSharing" | from == "getBookingEvent" || from == "getBookingToConfirm" || from == "getScan")) {
                         $('#btn_cancel').text(trad['btn_geoloc']);
-                        $('#btn_cancel').attr('onclick','geolocRessource('+ressourceId+',\''+categoryRessource+'\',\''+fe_typo_user+'\','+indexSlide+','+from+')');
+                        $('#btn_cancel').attr('onclick','geolocRessource('+ressourceId+',\''+categoryRessource+'\',\''+fe_typo_user+'\','+indexSlide+',\''+from+'\')');
                     } else {
                         $('#btn_cancel').text('');
                         $('#btn_cancel').attr('onclick','');
