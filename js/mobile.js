@@ -191,6 +191,17 @@ function initSlickCarousel() {
 			appendDots: dotsHolder
 		});
 	});
+
+	relocateslider();
+	
+}
+
+function relocateslider() {
+	if (($('.main-slider').offset().top() + $('.main-slider').height()) > $('.nav-holder').offset().top) {
+		var margintop = $('.main-slider').offset().top() - (($('.main-slider').offset().top() + $('.main-slider').height()) - $('.nav-holder').offset().top);
+		$('.main-slider').css('margin-top',margin-top+'px');
+
+	} 
 }
 
 // mobile menu init
