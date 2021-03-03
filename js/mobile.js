@@ -197,8 +197,9 @@ function initSlickCarousel() {
 }
 
 function relocateslider() {
+	//197/318/442//124//93
 	if (($('.main-slider').offset().top + $('.main-slider').height()) > $('.nav-holder').offset().top) {
-		console.log('relocateslider:'+$('.main-slider').offset().top+'/'+$('.main-slider').height()+'/'+$('.nav-holder').offset().top);
+		console.log('relocateslider:'+$('.main-slider').offset().top+'/'+$('.main-slider').height()+'/'+$('.nav-holder').offset().top+'/'+$(document).scrollTop());
 		var margintop = $('.main-slider').offset().top - (($('.main-slider').offset().top + $('.main-slider').height()) - $('.nav-holder').offset().top);
 		$('.main-slider').css('margin-top',margintop+'px');
 
