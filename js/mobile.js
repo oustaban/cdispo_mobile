@@ -197,17 +197,11 @@ function initSlickCarousel() {
 }
 
 function relocateslider() {
-	//197/318/442//124//93
-	//137 402
-	//568
-	//44 / 24
-	//396 / 73 / 100
-	// 438
-	// 318 / 60 / 60
 	if (($('.main-slider').offset().top + $('.main-slider').height()) > $('.nav-holder').offset().top) {
-		console.log('relocateslider:'+$('.main-slider').offset().top+'/'+$('.main-slider').height()+'/'+$('.nav-holder').offset().top+'/'+$(document).scrollTop());
-		var margintop = $('.main-slider').offset().top - (($('.main-slider').offset().top + $('.main-slider').height()) - $('.nav-holder').offset().top);
-		//$('.main-slider').css('margin-top',margintop+'px');
+		var margintop = parseInt($(".main-slider").css("margin-top")) - ($('.main-slider').offset().top - (($('.main-slider').offset().top + $('.main-slider').height()) - $('.nav-holder').offset().top));
+		$('.main-slider').css('margin-top',margintop+'px');
+		console.log('relocateslider:'+$('.main-slider').offset().top+'/'+$('.main-slider').height()+'/'+$('.nav-holder').offset().top+'/'+margintop);
+		
 
 	} 
 	
