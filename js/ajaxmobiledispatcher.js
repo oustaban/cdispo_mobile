@@ -262,7 +262,7 @@ function getPreviewRessource(ressourceId,categoryRessource,fe_typo_user,from,ind
                     $('#btn_close').text(trad['btn_close']);
                     $('#btn_close').attr('onclick','$(\'.modification-block2\').hide();$(\'.modification-block\').hide();$(\'.message-block\').hide();$(\'.info-block\').hide();$(\'.main-slider\').show();$(\'.nav-holder\').show();');
                     
-                    if (result.plan && from == "getBooking") {
+                    if (result.plan && (from == "getBooking" || from == "getInvitation")) {
                         $('#btn_cancel').text(trad['btn_geoloc']);
                         $('#btn_cancel').attr('onclick','geolocRessource('+ressourceId+',\''+categoryRessource+'\',\''+fe_typo_user+'\','+indexSlide+')');
                     } else {
@@ -1543,13 +1543,12 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
 
                         if (result.firstEditable) {
                             $('#leftpaddle2').click(function() {
-                            updateRangeFrom2(-1);
+                                updateRangeFrom2(-1);
+                            });
+                            $('#rightpaddle2').click(function() {
+                                updateRangeFrom2(+1);
                             });
                         }
-
-                        $('#rightpaddle2').click(function() {
-                          updateRangeFrom2(+1);
-                        });
 
                         $('#leftpaddle3').click(function() {
                           updateRangeFrom3(-1);
