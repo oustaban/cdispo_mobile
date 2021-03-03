@@ -1101,7 +1101,7 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                 $('#date_end').text(result.lastDate);
                 $('#modification_lien1').text(domain);
                 $('#modification_lien1').attr('href',url);
-                $('#btn_back').attr('onclick','unlockBooking(\''+fe_typo_user+'\','+booking_id+');$(\'.modification-block\').hide();$(\'.main-slider\').show();$(\'.nav-holder\').show();$(\'#backtoshare\').show();');
+                $('#btn_back').attr('onclick','unlockBooking(\''+fe_typo_user+'\','+booking_id+');$(\'.modification-block\').hide();$(\'.main-slider\').show();$(\'.nav-holder\').show();$(\'#backtoshare\').hide();');
                 $('#btn_modifynow').html(result.submittitle);
 
                 //$('.modification-info').html(result.info);
@@ -1227,13 +1227,15 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                             my_range1.update({from_fixed: true});
                         }
 
-                        $('#leftpaddle1-1').on("touchstart touchmove", function(e) {
-                          updateRangeFrom1b(+1);
-                        });
+                        if (result.firstEditable) {
+                            $('#leftpaddle1-1').on("touchstart touchmove", function(e) {
+                            updateRangeFrom1b(+1);
+                            });
 
-                        $('#leftpaddle2-1').click(function() {
-                          updateRangeFrom1b(-1);
-                        });
+                            $('#leftpaddle2-1').click(function() {
+                            updateRangeFrom1b(-1);
+                            });
+                        }
 
                         $('#rightpaddle1-2').click(function() {
                           updateRangeTo1b(+1);
@@ -1522,13 +1524,15 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                             values: myvalues3
                         });
 
-                        $('#leftpaddle1-1').on("touchstart touchmove", function(e) {
-                          updateRangeFrom1(+1);
-                        });
+                        if (result.firstEditable) {
+                            $('#leftpaddle1-1').on("touchstart touchmove", function(e) {
+                            updateRangeFrom1(+1);
+                            });
 
-                        $('#leftpaddle2-1').click(function() {
-                          updateRangeFrom1(-1);
-                        });
+                            $('#leftpaddle2-1').click(function() {
+                            updateRangeFrom1(-1);
+                            });
+                        }
 
                         $('#rightpaddle1-2').click(function() {
                           updateRangeTo1(+1);
@@ -1537,9 +1541,11 @@ function editMyBooking(booking_id,category,ressourceid,datestart,dateend,udatest
                           updateRangeTo1(-1);
                         });
 
-                        $('#leftpaddle2').click(function() {
-                          updateRangeFrom2(-1);
-                        });
+                        if (result.firstEditable) {
+                            $('#leftpaddle2').click(function() {
+                            updateRangeFrom2(-1);
+                            });
+                        }
 
                         $('#rightpaddle2').click(function() {
                           updateRangeFrom2(+1);
